@@ -36,12 +36,24 @@ export function CasesSection() {
             className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8 border-t"
             style={{ borderColor: "var(--color-hairline)" }}
           >
-            <div
-              className="md:col-span-4 h-[180px] md:h-[232px] box-border border border-dashed rounded flex items-center justify-center text-sm text-center p-4"
-              style={{ borderColor: "var(--color-secondary)", color: "var(--color-secondary)" }}
-            >
-              {caseItem.imageAlt}
-            </div>
+            {caseItem.image ? (
+              <div className="md:col-span-4 h-[180px] md:h-[232px] box-border rounded overflow-hidden relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={caseItem.image}
+                  alt={caseItem.imageAlt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div
+                className="md:col-span-4 h-[180px] md:h-[232px] box-border border border-dashed rounded flex items-center justify-center text-sm text-center p-4"
+                style={{ borderColor: "var(--color-secondary)", color: "var(--color-secondary)" }}
+              >
+                {caseItem.imageAlt}
+              </div>
+            )}
             <div className="md:col-span-8 flex flex-col gap-3">
               <span
                 className="self-start text-[13px] font-semibold text-(--color-blue) px-2 py-1 rounded"

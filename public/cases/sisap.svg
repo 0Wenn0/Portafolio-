@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración abstracta de una red de nodos con un punto de supervisión humana al centro">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d8c3b2" />
+      <stop offset="100%" stop-color="#e6ded2" />
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7fa8d8" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#7fa8d8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" />
+
+  <!-- soft ambient node network -->
+  <g stroke="#aeb7c4" stroke-width="1.2" opacity="0.55">
+    <line x1="120" y1="120" x2="400" y2="250" />
+    <line x1="400" y1="250" x2="700" y2="110" />
+    <line x1="400" y1="250" x2="150" y2="380" />
+    <line x1="400" y1="250" x2="660" y2="400" />
+    <line x1="400" y1="250" x2="330" y2="90" />
+    <line x1="400" y1="250" x2="520" y2="380" />
+    <line x1="120" y1="120" x2="330" y2="90" />
+    <line x1="700" y1="110" x2="660" y2="400" opacity="0.3" />
+    <line x1="150" y1="380" x2="520" y2="380" opacity="0.3" />
+  </g>
+
+  <!-- central glow -->
+  <circle cx="400" cy="250" r="150" fill="url(#coreGlow)" />
+
+  <!-- outer nodes -->
+  <g fill="#1d2a45">
+    <circle cx="120" cy="120" r="7" />
+    <circle cx="700" cy="110" r="6" />
+    <circle cx="150" cy="380" r="6" />
+    <circle cx="660" cy="400" r="7" />
+    <circle cx="330" cy="90" r="5" />
+    <circle cx="520" cy="380" r="5" />
+  </g>
+
+  <!-- central node: human-in-the-loop -->
+  <circle cx="400" cy="250" r="34" fill="#1d2a45" />
+  <circle cx="400" cy="250" r="34" fill="none" stroke="#b88992" stroke-width="2.5" />
+
+  <!-- simple human silhouette inside the core, standing in for supervision -->
+  <g fill="#e6ded2">
+    <circle cx="400" cy="238" r="9" />
+    <path d="M382 270 Q400 250 418 270 L414 274 Q400 260 386 274 Z" />
+  </g>
+
+  <!-- a single check mark near the core, signaling human sign-off -->
+  <g stroke="#b88992" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M441 226 L451 236 L468 214" />
+  </g>
+</svg>

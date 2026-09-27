@@ -12,7 +12,8 @@ export const cases: CaseStudy[] = [
       "Mapeé actores y audiencias, diseñé programas por sector y facilité talleres con instituciones públicas y privadas.",
     resultado:
       "Más de 3,000 participantes en 8+ sectores y policy briefs para SEP, TecNM y Media Superior.",
-    imageAlt: "Foto de taller o material recreado",
+    imageAlt: "Wendy presentando en el escenario, con el logo de ChatGPT proyectado detrás",
+    image: "/cases/openai.jpg",
   },
   {
     line: "Aprendizaje y EdTech",
@@ -53,6 +54,7 @@ export const cases: CaseStudy[] = [
       "Lidero producto, estrategia y adopción institucional: mapeo de actores, estrategia regulatoria e historias de usuario con supervisión humana. El modelo lo desarrolla mi cofundador, Lauro Gutiérrez Castro.",
     resultado:
       "Proyecto en Jalisco MedTech 2026, con aceptación condicionada a JEEI Aceleración. El modelo del equipo está publicado en Springer (N=155).",
-    imageAlt: "Diagrama del flujo con supervisión humana",
+    imageAlt: "Ilustración abstracta de una red de nodos con un punto de supervisión humana al centro",
+    image: "/cases/sisap.svg",
   },
 ];

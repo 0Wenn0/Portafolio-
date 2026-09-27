@@ -21,6 +21,7 @@ export type CaseStudy = {
   contrib: string;
   resultado: string;
   imageAlt: string;
+  image?: string;
 };
 
 export type MethodExample = {
