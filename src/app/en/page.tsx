@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   title: "Wendy Ramírez Burgos — Change Management & AI Adoption",
   description:
     "I design adoption strategies, learning programs, and technology experiences based on how people learn, decide, and change.",
+  alternates: {
+    canonical: "/en",
+    languages: {
+      es: "/",
+      en: "/en",
+    },
+  },
 };
 
 export default function HomeEn() {

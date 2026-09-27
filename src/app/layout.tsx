@@ -16,9 +16,15 @@ export const metadata: Metadata = {
   description:
     "Diseño estrategias de adopción, programas de aprendizaje y experiencias tecnológicas basadas en cómo las personas aprenden, deciden y cambian.",
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      es: "/",
+      en: "/en",
+    },
   },
   openGraph: {
     title: "Wendy Ramírez Burgos — Change Management y adopción de IA",
