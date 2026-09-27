@@ -8,7 +8,7 @@ import "@fontsource/inter/600.css";
 import "./globals.css";
 import { HtmlLangSync } from "@/components/HtmlLangSync";
 
-const siteUrl = "https://portafolio-wendy.vercel.app";
+const siteUrl = "https://portafolio-wendyrb.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
