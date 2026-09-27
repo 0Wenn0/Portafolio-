@@ -26,7 +26,8 @@ export const cases: CaseStudy[] = [
       "Rediseñé la comunicación con una base de 200,000 contactos, gestioné la página de publicaciones Conciencias, construí cursos y micrositios en Rise 360, Storyline y Thinkific, e impartí talleres de formación en territorio.",
     resultado:
       "Apertura de correos de 8% a 30% y 30% más de finalización de programas, entre abril de 2023 y julio de 2025.",
-    imageAlt: "Captura anonimizada de curso o micrositio",
+    imageAlt: "Página de inicio de la revista Conciencias, publicación digital del INFP",
+    image: "/cases/infp-conciencias.jpg",
   },
   {
     line: "Datos, IA responsable y comportamiento",
