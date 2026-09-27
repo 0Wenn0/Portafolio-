@@ -8,7 +8,12 @@ export const site = {
   orcid: "0000-0001-9261-4859",
   orcidUrl: "https://orcid.org/0000-0001-9261-4859",
   cvHref: "/cv/Wendy-Ramirez-Burgos-CV.pdf",
+  cvHrefEn: "/cv/Wendy-Ramirez-Burgos-CV-EN.pdf",
 };
+
+export function getCvHref(locale: Locale): string {
+  return locale === "en" ? site.cvHrefEn : site.cvHref;
+}
 
 const navEs = [
   { href: "#casos", label: "Casos" },

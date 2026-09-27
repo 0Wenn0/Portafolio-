@@ -1,9 +1,10 @@
-import { site } from "@/content/site";
+import { getCvHref, site } from "@/content/site";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
 
 export function ContactSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
+  const cvHref = getCvHref(locale);
 
   return (
     <section
@@ -38,7 +39,7 @@ export function ContactSection({ locale = "es" }: { locale?: Locale }) {
         </a>
       </div>
       <a
-        href={site.cvHref}
+        href={cvHref}
         download
         className="btn-primary self-start inline-flex items-center h-12 px-6 rounded-lg bg-(--color-blue) text-(--color-ivory) no-underline font-medium mt-2"
       >

@@ -1,4 +1,4 @@
-import { getHero, site } from "@/content/site";
+import { getCvHref, getHero } from "@/content/site";
 import { networkLayoutDesktop, networkLayoutMobile } from "@/content/network";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
@@ -7,6 +7,7 @@ import { NetworkMap } from "./NetworkMap";
 export function HeroSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
   const hero = getHero(locale);
+  const cvHref = getCvHref(locale);
 
   return (
     <section
@@ -47,7 +48,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
         <div className="flex items-center gap-4 pt-2 flex-wrap">
           <a
             className="btn-primary inline-flex items-center h-[52px] px-7 rounded-lg bg-(--color-ivory) text-(--color-observatory) no-underline font-semibold text-base"
-            href={site.cvHref}
+            href={cvHref}
             download
           >
             {ui.downloadCvPdf}

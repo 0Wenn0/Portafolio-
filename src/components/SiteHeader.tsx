@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { getNav, site } from "@/content/site";
+import { getCvHref, getNav, site } from "@/content/site";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
 
 export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
   const nav = getNav(locale);
+  const cvHref = getCvHref(locale);
   const pathname = usePathname() ?? "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -84,7 +85,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
           </a>
         </div>
         <a
-          href={site.cvHref}
+          href={cvHref}
           download
           className="inline-flex items-center h-11 px-5 border border-(--color-blue) rounded-lg text-(--color-blue) no-underline font-medium"
         >
@@ -166,7 +167,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
             </a>
           </div>
           <a
-            href={site.cvHref}
+            href={cvHref}
             download
             className="inline-flex items-center justify-center h-12 mt-4 px-5 rounded-lg bg-(--color-blue) text-(--color-ivory) no-underline font-medium"
             onClick={() => setMenuOpen(false)}

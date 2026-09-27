@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { getCases } from "@/content/cases";
-import { site } from "@/content/site";
+import { getCvHref } from "@/content/site";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
 
 export function CasesSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
   const cases = getCases(locale);
+  const cvHref = getCvHref(locale);
   const [open, setOpen] = useState(0);
   const prefix = locale === "en" ? "/en" : "";
 
@@ -148,7 +149,7 @@ export function CasesSection({ locale = "es" }: { locale?: Locale }) {
                 </div>
                 <div className="sm:col-span-2 flex items-center gap-6 flex-wrap">
                   <a
-                    href={site.cvHref}
+                    href={cvHref}
                     download
                     className="inline-flex items-center h-11 px-5 rounded-lg bg-(--color-blue) text-(--color-ivory) no-underline font-medium text-[15px]"
                   >
