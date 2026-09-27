@@ -43,6 +43,7 @@ export const cases: CaseStudy[] = [
     resultado:
       "Una base lista para análisis ponderado, con controles de integridad obligatorios y documentación para incorporar a personal nuevo. Por acuerdo de confidencialidad no publico datos ni resultados del estudio.",
     imageAlt: "Diagrama de la arquitectura de datos, sin datos reales",
+    deepDiveHref: "/casos/ice-endes",
   },
   {
     line: "Datos, IA responsable y comportamiento",

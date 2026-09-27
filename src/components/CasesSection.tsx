@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { cases } from "@/content/cases";
 import { site } from "@/content/site";
 
@@ -148,6 +149,15 @@ export function CasesSection() {
                   >
                     Descargar CV
                   </a>
+                  {caseItem.deepDiveHref ? (
+                    <Link
+                      href={caseItem.deepDiveHref}
+                      className="inline-flex items-center h-11 px-5 rounded-lg border text-(--color-blue) no-underline font-medium text-[15px]"
+                      style={{ borderColor: "var(--color-blue)" }}
+                    >
+                      Ver la arquitectura completa
+                    </Link>
+                  ) : null}
                 </div>
               </div>
             ) : null}
