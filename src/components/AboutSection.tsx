@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { aboutIntro, education, timeline } from "@/content/about";
 
 export function AboutSection() {
@@ -9,11 +10,15 @@ export function AboutSection() {
       style={{ borderColor: "var(--color-hairline)" }}
     >
       <div className="md:col-span-5 flex flex-col gap-4">
-        <div
-          className="w-[160px] h-[200px] md:w-[200px] md:h-[240px] box-border border border-dashed rounded flex items-center justify-center text-sm text-center p-4"
-          style={{ borderColor: "var(--color-secondary)", color: "var(--color-secondary)" }}
-        >
-          Retrato profesional en un contexto de trabajo real
+        <div className="w-[160px] h-[200px] md:w-[200px] md:h-[240px] box-border rounded overflow-hidden relative">
+          <Image
+            src="/about/wendy-portrait.jpg"
+            alt="Wendy Ramírez Burgos"
+            fill
+            sizes="(min-width: 768px) 200px, 160px"
+            className="object-cover"
+            priority
+          />
         </div>
         <h2
           id="sobre-t"
