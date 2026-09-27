@@ -1,0 +1,70 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama esquemático de la arquitectura de datos: tres bloques — ingesta y catálogo, procesamiento, integración y salida">
+  <rect width="800" height="600" fill="#e6ded2"/>
+
+  <!-- Column headers -->
+  <text x="60" y="56" font-family="Inter, sans-serif" font-size="18" font-weight="600" letter-spacing="0.5" fill="#1d2a45">01</text>
+  <text x="60" y="82" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#1d2a45">Ingesta &amp; catálogo</text>
+  <line x1="60" y1="96" x2="266" y2="96" stroke="#c9bfb1" stroke-width="1.5"/>
+
+  <text x="306" y="56" font-family="Inter, sans-serif" font-size="18" font-weight="600" letter-spacing="0.5" fill="#1d2a45">02</text>
+  <text x="306" y="82" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#1d2a45">Procesamiento</text>
+  <line x1="306" y1="96" x2="512" y2="96" stroke="#c9bfb1" stroke-width="1.5"/>
+
+  <text x="552" y="56" font-family="Inter, sans-serif" font-size="18" font-weight="600" letter-spacing="0.5" fill="#1d2a45">03</text>
+  <text x="552" y="82" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#1d2a45">Integración &amp; salida</text>
+  <line x1="552" y1="96" x2="740" y2="96" stroke="#c9bfb1" stroke-width="1.5"/>
+
+  <!-- Column 1: Ingesta y catálogo (signal blue accent) -->
+  <g>
+    <rect x="60" y="120" width="206" height="4" fill="#7fa8d8"/>
+    <text x="76" y="146" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Raw layer</text>
+    <text x="76" y="168" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Microdatos inmutables</text>
+
+    <rect x="60" y="198" width="206" height="4" fill="#7fa8d8"/>
+    <text x="76" y="224" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Metadata catalog</text>
+    <text x="76" y="246" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Catálogo de variables</text>
+
+    <rect x="60" y="276" width="206" height="4" fill="#7fa8d8"/>
+    <text x="76" y="302" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Crosswalk</text>
+    <text x="76" y="324" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Equivalencias entre años</text>
+  </g>
+
+  <!-- Column 2: Procesamiento (rose accent) -->
+  <g>
+    <rect x="306" y="120" width="206" height="4" fill="#b88992"/>
+    <text x="322" y="146" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Data lineage</text>
+    <text x="322" y="168" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Trazabilidad de origen</text>
+
+    <rect x="306" y="198" width="206" height="4" fill="#b88992"/>
+    <text x="322" y="224" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Curated data layer</text>
+    <text x="322" y="246" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Tablas limpias por dominio</text>
+
+    <rect x="306" y="276" width="206" height="4" fill="#b88992"/>
+    <text x="322" y="302" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Survey design</text>
+    <text x="322" y="324" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Diseño muestral preservado</text>
+  </g>
+
+  <!-- Column 3: Integración y salida (metric accent) -->
+  <g>
+    <rect x="552" y="120" width="188" height="4" fill="#7e525b"/>
+    <text x="568" y="146" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Exposome</text>
+    <text x="568" y="168" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Llave espacio-temporal</text>
+
+    <rect x="552" y="198" width="188" height="4" fill="#7e525b"/>
+    <text x="568" y="224" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1d2a45">Observatorio</text>
+    <text x="568" y="246" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Explorador público</text>
+  </g>
+
+  <!-- Connecting arrows between column groups -->
+  <path d="M 276 220 L 296 220" stroke="#aeb7c4" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+  <path d="M 522 220 L 542 220" stroke="#aeb7c4" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#aeb7c4"/>
+    </marker>
+  </defs>
+
+  <!-- Footer label -->
+  <text x="60" y="560" font-family="Inter, sans-serif" font-size="13" fill="#43506b">Diagrama esquemático — arquitectura de datos, sin datos reales</text>
+</svg>
