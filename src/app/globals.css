@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  --color-ivory: #e6ded2;
+  --color-observatory: #0a1222;
+  --color-blue: #1d2a45;
+  --color-rose: #b88992;
+  --color-dawn: #d8c3b2;
+  --color-signal: #7fa8d8;
+  --color-mist: #aeb7c4;
+  --color-secondary: #43506b;
+  --color-hairline: #c9bfb1;
+  --color-link: #2f5e96;
+  --color-metric: #7e525b;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --motion-100: 100ms;
+  --motion-150: 150ms;
+  --motion-200: 200ms;
+  --motion-300: 300ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--color-ivory);
+    color: var(--color-blue);
+  }
+
+  a {
+    color: var(--color-link);
+    text-underline-offset: 3px;
+  }
+  a:hover {
+    color: var(--color-blue);
+  }
+
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  :focus {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-signal);
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 24px;
+  top: -64px;
+  padding: 12px 16px;
+  background: var(--color-blue);
+  color: var(--color-ivory);
+  border-radius: 8px;
+  z-index: 50;
+  transition: transform var(--motion-150) var(--ease-out);
+  text-decoration: none;
+}
+.skip-link:focus-visible {
+  transform: translateY(80px);
+}
+
+.reveal {
+  animation: reveal var(--motion-200) var(--ease-out) both;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.chev {
+  transition: transform var(--motion-200) var(--ease-out);
+}
+.chev.open {
+  transform: rotate(180deg);
+}
+
+.btn-primary {
+  transition: opacity var(--motion-150) ease-out;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.tab-btn {
+  transition: opacity var(--motion-150) ease-out;
+}
+.tab-btn:hover {
+  opacity: 0.85;
+}
+
+.tag {
+  transition: border-color var(--motion-150) ease-out;
+}
+.tag:hover {
+  border-color: var(--color-ivory);
+}
+
+.net-in {
+  animation: netin var(--motion-300) var(--ease-out) both;
+}
+@keyframes netin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.edge path {
+  transition: opacity var(--motion-200) var(--ease-out);
+}
+.node-dot {
+  transition: opacity var(--motion-200) var(--ease-out);
+}
+.node-btn:hover .node-label {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .net-in {
+    animation: none;
+  }
+  .edge path,
+  .node-dot {
+    transition: none;
+  }
+  .reveal {
+    animation: none;
+  }
+  .chev,
+  .skip-link,
+  .btn-primary,
+  .tab-btn,
+  .tag {
+    transition: none;
+  }
+}

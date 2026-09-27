@@ -1,0 +1,68 @@
+import { aboutIntro, education, timeline } from "@/content/about";
+
+export function AboutSection() {
+  return (
+    <section
+      id="sobre-mi"
+      aria-labelledby="sobre-t"
+      className="box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-t"
+      style={{ borderColor: "var(--color-hairline)" }}
+    >
+      <div className="md:col-span-5 flex flex-col gap-4">
+        <div
+          className="w-[160px] h-[200px] md:w-[200px] md:h-[240px] box-border border border-dashed rounded flex items-center justify-center text-sm text-center p-4"
+          style={{ borderColor: "var(--color-secondary)", color: "var(--color-secondary)" }}
+        >
+          Retrato profesional en un contexto de trabajo real
+        </div>
+        <h2
+          id="sobre-t"
+          className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
+        >
+          Trayectoria
+        </h2>
+        <p className="m-0 text-base md:text-[17px] leading-loose text-(--color-blue)">
+          {aboutIntro} (ver{" "}
+          <a href="#comunidad" className="underline" style={{ textUnderlineOffset: 3 }}>
+            Comunidad y divulgación
+          </a>
+          ).
+        </p>
+      </div>
+      <div className="md:col-start-7 md:col-span-6 flex flex-col gap-2">
+        <ol className="m-0 p-0 list-none flex flex-col">
+          {timeline.map((item) => (
+            <li
+              key={item.text}
+              className="grid grid-cols-1 sm:grid-cols-[128px_1fr] gap-2 sm:gap-4 py-4 border-t"
+              style={{ borderColor: "var(--color-hairline)" }}
+            >
+              <span
+                className="text-sm text-(--color-secondary)"
+                style={{ fontVariantNumeric: "tabular-nums" }}
+              >
+                {item.years}
+              </span>
+              <span className="text-base leading-snug text-(--color-blue)">
+                {item.text}
+              </span>
+            </li>
+          ))}
+        </ol>
+        <div
+          className="pt-4 border-t"
+          style={{ borderColor: "var(--color-hairline)" }}
+        >
+          <h3 className="mt-2 mb-2 text-sm font-semibold text-(--color-blue)">
+            Formación
+          </h3>
+          <ul className="m-0 p-0 list-none flex flex-col gap-1 text-sm leading-relaxed text-(--color-secondary)">
+            {education.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}

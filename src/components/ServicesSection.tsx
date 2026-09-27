@@ -1,0 +1,58 @@
+import { services } from "@/content/services";
+
+export function ServicesSection() {
+  return (
+    <section
+      aria-labelledby="servicios-t"
+      className="box-border px-6 md:px-24 pt-16 pb-12 grid grid-cols-1 md:grid-cols-12 gap-8"
+    >
+      <div className="md:col-span-4 flex flex-col gap-4">
+        <h2
+          id="servicios-t"
+          className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
+        >
+          Qué ofrezco
+        </h2>
+        <p className="m-0 text-base leading-relaxed text-(--color-secondary)">
+          Para equipos e instituciones que quieren adoptar IA con método,
+          formar a su gente o comunicar mejor sus proyectos.
+        </p>
+        <a href="#contacto" className="text-base font-medium py-3">
+          Agendar llamada de diagnóstico, 30 minutos sin costo
+        </a>
+      </div>
+      <ul className="md:col-start-6 md:col-span-7 m-0 p-0 list-none flex flex-col">
+        {services.map((service) => (
+          <li
+            key={service.name}
+            className="grid grid-cols-1 sm:grid-cols-[3fr_3fr_auto] sm:gap-6 gap-2 py-5 border-t"
+            style={{ borderColor: "var(--color-hairline)" }}
+          >
+            <span className="text-[17px] font-semibold text-(--color-blue)">
+              {service.name}
+            </span>
+            <span className="flex flex-col gap-1">
+              <span className="text-[15px] leading-relaxed text-(--color-secondary)">
+                {service.desc}
+              </span>
+              {service.link ? (
+                <a
+                  href="#laboratorio"
+                  className="self-start inline-flex items-center min-h-11 text-[15px] font-medium"
+                >
+                  {service.link}
+                </a>
+              ) : null}
+            </span>
+            <span
+              className="text-sm font-medium sm:text-right whitespace-nowrap"
+              style={{ color: "var(--color-metric)" }}
+            >
+              {service.price}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
