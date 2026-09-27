@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { AboutSection } from "@/components/AboutSection";
 import { BetaBadge } from "@/components/BetaBadge";
 import { CasesSection } from "@/components/CasesSection";
@@ -12,12 +13,18 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
-export default function Home() {
-  const locale = "es" as const;
+export const metadata: Metadata = {
+  title: "Wendy Ramírez Burgos — Change Management & AI Adoption",
+  description:
+    "I design adoption strategies, learning programs, and technology experiences based on how people learn, decide, and change.",
+};
+
+export default function HomeEn() {
+  const locale = "en" as const;
   return (
     <div className="flex flex-col min-h-screen" style={{ background: "var(--color-ivory)" }}>
       <a className="skip-link" href="#contenido">
-        Saltar al contenido
+        Skip to content
       </a>
       <SiteHeader locale={locale} />
       <main id="contenido" className="flex flex-col">

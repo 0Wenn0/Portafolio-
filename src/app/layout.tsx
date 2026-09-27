@@ -6,6 +6,7 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "./globals.css";
+import { HtmlLangSync } from "@/components/HtmlLangSync";
 
 const siteUrl = "https://portafolio-wendy.vercel.app";
 
@@ -64,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
+        <HtmlLangSync />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}

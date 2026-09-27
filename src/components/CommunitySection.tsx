@@ -1,6 +1,11 @@
-import { community } from "@/content/community";
+import { getCommunity } from "@/content/community";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function CommunitySection() {
+export function CommunitySection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+  const community = getCommunity(locale);
+
   return (
     <section
       id="comunidad"
@@ -13,11 +18,10 @@ export function CommunitySection() {
           id="comunidad-t"
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
         >
-          Comunidad y divulgación
+          {ui.communityTitle}
         </h2>
         <p className="m-0 text-base md:text-[17px] leading-relaxed text-(--color-secondary)">
-          Explicar la tecnología a quien empieza es parte del mismo oficio:
-          facilitar, enseñar y acompañar.
+          {ui.communitySubtitle}
         </p>
       </div>
       <ul className="md:col-start-5 md:col-span-8 m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-3 gap-6">

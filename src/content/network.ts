@@ -1,10 +1,10 @@
-import type { NetworkEdge, NetworkNode } from "./types";
+import type { Locale, NetworkEdge, NetworkNode } from "./types";
 
 // Posiciones calculadas con d3-force (script de referencia en scripts/network-layout.mjs)
 // y ajustadas a un layout en anillo con etiquetas siempre hacia afuera del nodo,
 // para mantener la legibilidad del mapa. Se guardan como constante: el navegador
 // solo recibe SVG y botones, sin simulación en tiempo real.
-export const networkNodes: NetworkNode[] = [
+const networkNodesEs: NetworkNode[] = [
   { id: "neuro", label: "Neuropsicología" },
   { id: "instr", label: "Diseño instruccional" },
   { id: "cm", label: "Change Management" },
@@ -13,7 +13,20 @@ export const networkNodes: NetworkNode[] = [
   { id: "ux", label: "UX y comunicación" },
 ];
 
-export const networkEdges: NetworkEdge[] = [
+const networkNodesEn: NetworkNode[] = [
+  { id: "neuro", label: "Neuropsychology" },
+  { id: "instr", label: "Instructional design" },
+  { id: "cm", label: "Change Management" },
+  { id: "datos", label: "Data" },
+  { id: "policy", label: "AI public policy" },
+  { id: "ux", label: "UX & communication" },
+];
+
+export function getNetworkNodes(locale: Locale): NetworkNode[] {
+  return locale === "en" ? networkNodesEn : networkNodesEs;
+}
+
+const networkEdgesEs: NetworkEdge[] = [
   ["policy", "cm", "el Programa OpenAI"],
   ["cm", "instr", "el Programa OpenAI"],
   ["policy", "instr", "el Programa OpenAI"],
@@ -28,6 +41,26 @@ export const networkEdges: NetworkEdge[] = [
   ],
   ["neuro", "instr", "mi trayectoria clínica"],
 ];
+
+const networkEdgesEn: NetworkEdge[] = [
+  ["policy", "cm", "the OpenAI Program"],
+  ["cm", "instr", "the OpenAI Program"],
+  ["policy", "instr", "the OpenAI Program"],
+  ["instr", "ux", "INFP and Aula"],
+  ["ux", "datos", "INFP"],
+  ["neuro", "cm", "SISAP Recover AI"],
+  ["neuro", "ux", "SISAP Recover AI"],
+  [
+    "neuro",
+    "datos",
+    "my role as data architect on a study of exposome and cognition",
+  ],
+  ["neuro", "instr", "my clinical background"],
+];
+
+export function getNetworkEdges(locale: Locale): NetworkEdge[] {
+  return locale === "en" ? networkEdgesEn : networkEdgesEs;
+}
 
 export type NetworkLayout = {
   width: number;

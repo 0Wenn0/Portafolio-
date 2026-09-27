@@ -1,6 +1,11 @@
-import { services } from "@/content/services";
+import { getServices } from "@/content/services";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function ServicesSection() {
+export function ServicesSection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+  const services = getServices(locale);
+
   return (
     <section
       aria-labelledby="servicios-t"
@@ -11,14 +16,13 @@ export function ServicesSection() {
           id="servicios-t"
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
         >
-          Qué ofrezco
+          {ui.servicesTitle}
         </h2>
         <p className="m-0 text-base leading-relaxed text-(--color-secondary)">
-          Para equipos e instituciones que quieren adoptar IA con método,
-          formar a su gente o comunicar mejor sus proyectos.
+          {ui.servicesSubtitle}
         </p>
         <a href="#contacto" className="text-base font-medium py-3">
-          Agendar llamada de diagnóstico, 30 minutos sin costo
+          {ui.bookCall}
         </a>
       </div>
       <ul className="md:col-start-6 md:col-span-7 m-0 p-0 list-none flex flex-col">

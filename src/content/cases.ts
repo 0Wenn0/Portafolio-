@@ -1,6 +1,6 @@
-import type { CaseStudy } from "./types";
+import type { CaseStudy, Locale } from "./types";
 
-export const cases: CaseStudy[] = [
+const casesEs: CaseStudy[] = [
   {
     line: "Adopción de IA",
     title: "Adopción de IA a escala nacional",
@@ -62,3 +62,70 @@ export const cases: CaseStudy[] = [
     image: "/cases/sisap.svg",
   },
 ];
+
+const casesEn: CaseStudy[] = [
+  {
+    line: "AI adoption",
+    title: "National-scale AI adoption",
+    org: "OpenAI Program (via Aurora Policy Solutions)",
+    period: "July 2025 to February 2026",
+    role: "Public Policy and Educational Programs Representative",
+    reto: "Bring AI to very different non-technical audiences, from the Senate to teachers and small businesses, when one single program couldn't serve everyone.",
+    contrib:
+      "Mapped stakeholders and audiences, designed sector-specific programs, and facilitated workshops with public and private institutions.",
+    resultado:
+      "Over 3,000 participants across 8+ sectors and policy briefs for SEP, TecNM, and Media Superior.",
+    imageAlt: "Wendy presenting on stage, with the ChatGPT logo projected behind her",
+    image: "/cases/openai.jpg",
+  },
+  {
+    line: "Learning & EdTech",
+    title: "Digital transformation of training programs",
+    org: "INFP",
+    period: "April 2023 to July 2025",
+    role: "Instructional Designer, Data Analyst, and Digital Marketing",
+    reto: "Enrollment for training programs was low, and many participants weren't finishing their courses.",
+    contrib:
+      "Redesigned communications for a base of 200,000 contacts, managed the Conciencias publications page, built courses and microsites in Rise 360, Storyline, and Thinkific, and ran in-person training workshops.",
+    resultado:
+      "Email open rates rose from 8% to 30%, and program completion rose 30%, between April 2023 and July 2025.",
+    imageAlt: "Homepage of Conciencias, INFP's digital publication",
+    image: "/cases/infp-conciencias.jpg",
+  },
+  {
+    line: "Data, responsible AI & behavior",
+    title: "Data architecture for researching exposome and cognition",
+    org: "Neuroscience and Mental Health Research Group, Universidad Científica del Sur",
+    period: "2026 to present",
+    role: "Research data architect",
+    reto: "Turn multiple editions of population surveys, with design and variable changes between years, into a reliable base that's comparable over time.",
+    bridge:
+      "The same thing a People Analytics team needs: reliable, traceable engagement or adoption surveys that are comparable across periods.",
+    contrib:
+      "I am solely responsible for the data infrastructure: structured the sources, defined keys and integration rules, harmonized variables over time, built crosswalks and the metadata catalog, and documented traceability and quality control.",
+    resultado:
+      "A base ready for weighted analysis, with mandatory integrity checks and documentation to onboard new staff. Under a confidentiality agreement I don't publish the study's data or results.",
+    imageAlt: "Diagram of the data architecture, with no real data",
+    image: "/cases/ice-endes-architecture.svg",
+    deepDiveHref: "/casos/ice-endes",
+    pdfHref: "/docs/ICE-ENDES-Arquitectura.pdf",
+  },
+  {
+    line: "Data, responsible AI & behavior",
+    title: "AI for clinical decisions, with human oversight",
+    org: "SISAP Recover AI",
+    period: "Ongoing",
+    role: "Co-founder: product, strategy, and adoption",
+    reto: "Support clinical decisions in substance use without letting the model replace the clinician's judgment.",
+    contrib:
+      "I lead product, strategy, and institutional adoption: stakeholder mapping, regulatory strategy, and user stories with human oversight. My co-founder, Lauro Gutiérrez Castro, develops the model.",
+    resultado:
+      "Project in Jalisco MedTech 2026, with conditional acceptance to JEEI Aceleración. The team's model is published in Springer (N=155).",
+    imageAlt: "Abstract illustration of a node network with a human-oversight point at its center",
+    image: "/cases/sisap.svg",
+  },
+];
+
+export function getCases(locale: Locale): CaseStudy[] {
+  return locale === "en" ? casesEn : casesEs;
+}

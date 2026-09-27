@@ -1,6 +1,6 @@
-import type { Metric } from "./types";
+import type { Locale, Metric } from "./types";
 
-export const metrics: Metric[] = [
+const metricsEs: Metric[] = [
   {
     value: "+3,000",
     aside: "participantes",
@@ -41,3 +41,46 @@ export const metrics: Metric[] = [
     limite: "Mide el alcance del análisis, no la adopción lograda",
   },
 ];
+
+const metricsEn: Metric[] = [
+  {
+    value: "3,000+",
+    aside: "participants",
+    label: "in AI training programs with government, universities, and companies",
+    case: "OpenAI Program",
+    mide: "Participants in AI training workshops and programs",
+    periodo: "July 2025 to February 2026",
+    contribucion: "Program design and facilitation; coordination with institutions",
+    fuente: "Per-cohort records",
+    limite: "Still need to separate unique participants from attendances",
+  },
+  {
+    value: "30%",
+    aside: "from 8%",
+    label: "open rate on training-program invitations",
+    case: "INFP",
+    mide: "Percentage of invitation emails opened",
+    periodo: "April 2023 to July 2025: from the start to the end of my tenure",
+    contribucion:
+      "As data analyst and digital marketing lead: base segmentation, automations and send pipelines, and copy and design with UX criteria",
+    fuente: "Mailchimp campaign reports",
+    limite: "Measures opens, not enrollment",
+  },
+  {
+    value: "15",
+    aside: "modules",
+    label:
+      "in SISAP's institutional-adoption dashboard: stakeholders, decision path, risks, and regulatory profile",
+    case: "SISAP Recover AI",
+    mide: "Scope of the institutional-adoption analysis",
+    periodo: "Version 0.2, September 2026",
+    contribucion:
+      "Full design and analysis of the dashboard: product, strategy, and institutional adoption",
+    fuente: "SISAP institutional dashboard v0.2",
+    limite: "Measures the analysis's scope, not adoption achieved",
+  },
+];
+
+export function getMetrics(locale: Locale): Metric[] {
+  return locale === "en" ? metricsEn : metricsEs;
+}

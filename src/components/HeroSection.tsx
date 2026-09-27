@@ -1,8 +1,13 @@
-import { hero, site } from "@/content/site";
+import { getHero, site } from "@/content/site";
 import { networkLayoutDesktop, networkLayoutMobile } from "@/content/network";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 import { NetworkMap } from "./NetworkMap";
 
-export function HeroSection() {
+export function HeroSection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+  const hero = getHero(locale);
+
   return (
     <section
       id="inicio"
@@ -45,21 +50,21 @@ export function HeroSection() {
             href={site.cvHref}
             download
           >
-            Descargar CV (PDF)
+            {ui.downloadCvPdf}
           </a>
           <a
             href="#casos"
             className="text-(--color-signal) text-base font-medium py-3.5 px-3"
           >
-            Ver casos
+            {ui.viewCases}
           </a>
         </div>
         <nav
-          aria-label="Casos por línea"
+          aria-label={locale === "en" ? "Cases by track" : "Casos por línea"}
           className="flex flex-wrap items-center gap-2"
         >
           <span className="text-sm text-(--color-mist) mr-1">
-            Casos por línea:
+            {ui.casesByLine}
           </span>
           {hero.tags.map((tag) => (
             <a
@@ -76,10 +81,10 @@ export function HeroSection() {
 
       <div className="relative mt-12 md:mt-0 md:col-span-5">
         <div className="hidden md:block">
-          <NetworkMap layout={networkLayoutDesktop} />
+          <NetworkMap layout={networkLayoutDesktop} locale={locale} />
         </div>
         <div className="md:hidden">
-          <NetworkMap layout={networkLayoutMobile} />
+          <NetworkMap layout={networkLayoutMobile} locale={locale} />
         </div>
       </div>
     </section>

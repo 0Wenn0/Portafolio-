@@ -1,6 +1,10 @@
 import { site } from "@/content/site";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function ContactSection() {
+export function ContactSection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+
   return (
     <section
       id="contacto"
@@ -12,11 +16,10 @@ export function ContactSection() {
         id="contacto-t"
         className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[40px] text-(--color-blue)"
       >
-        Hablemos
+        {ui.contactTitle}
       </h2>
       <p className="m-0 text-base md:text-[17px] leading-relaxed text-(--color-blue) max-w-[560px]">
-        Vacantes, talleres o proyectos de adopción de IA. Te respondo en un
-        máximo de 2 días hábiles.
+        {ui.contactSubtitle}
       </p>
       <div className="flex flex-col gap-2">
         <a
@@ -39,7 +42,7 @@ export function ContactSection() {
         download
         className="btn-primary self-start inline-flex items-center h-12 px-6 rounded-lg bg-(--color-blue) text-(--color-ivory) no-underline font-medium mt-2"
       >
-        Descargar CV (PDF)
+        {ui.downloadCvPdf}
       </a>
     </section>
   );

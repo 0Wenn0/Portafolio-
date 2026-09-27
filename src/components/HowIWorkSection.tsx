@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { methodFundamentals, methodSteps } from "@/content/method";
+import { getMethodFundamentals, getMethodSteps } from "@/content/method";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function HowIWorkSection() {
+export function HowIWorkSection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+  const methodFundamentals = getMethodFundamentals(locale);
+  const methodSteps = getMethodSteps(locale);
   const [step, setStep] = useState(0);
   const total = methodSteps.length;
   const current = methodSteps[step] ?? methodSteps[0]!;
@@ -25,10 +30,10 @@ export function HowIWorkSection() {
             id="como-t"
             className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[44px] text-(--color-ivory)"
           >
-            Cómo trabajo
+            {ui.howIWorkTitle}
           </h2>
           <p className="m-0 text-lg leading-relaxed text-(--color-mist)">
-            Tres fundamentos explican por qué trabajo así.
+            {ui.howIWorkSubtitle}
           </p>
         </div>
         <div className="md:col-start-6 md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -51,10 +56,10 @@ export function HowIWorkSection() {
       >
         <div className="flex justify-between items-baseline flex-wrap gap-2">
           <h3 id="metodo-t" className="m-0 text-lg font-semibold text-(--color-ivory)">
-            El método, con ejemplos reales
+            {ui.methodTitle}
           </h3>
           <p className="m-0 text-sm text-(--color-mist)">
-            Elige un paso para ver cómo lo apliqué en cada caso.
+            {ui.methodSubtitle}
           </p>
         </div>
 

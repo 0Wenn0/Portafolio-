@@ -1,4 +1,6 @@
-const groups = [
+import type { Locale } from "@/content/types";
+
+const groupsEs = [
   {
     n: "01",
     title: "Ingesta & catálogo",
@@ -30,15 +32,53 @@ const groups = [
   },
 ];
 
-export function ArchitectureDiagram() {
+const groupsEn = [
+  {
+    n: "01",
+    title: "Ingestion & catalog",
+    accent: "var(--color-signal)",
+    layers: [
+      { title: "Raw layer", desc: "Microdata (.sav) and dictionaries, immutable per year.", tool: "File system" },
+      { title: "Metadata catalog", desc: "Master catalog of variables.", tool: "DuckDB + Excel" },
+      { title: "Longitudinal crosswalk", desc: "Equivalences across yearly editions.", tool: "Excel + DuckDB" },
+    ],
+  },
+  {
+    n: "02",
+    title: "Processing",
+    accent: "var(--color-rose)",
+    layers: [
+      { title: "Data lineage", desc: "Traceable log of every transformation.", tool: "Git + DuckDB table" },
+      { title: "Curated data layer", desc: "Clean thematic tables by domain.", tool: "Parquet + DuckDB" },
+      { title: "Survey design layer", desc: "Survey design preserved from the source.", tool: "R · survey" },
+    ],
+  },
+  {
+    n: "03",
+    title: "Integration & output",
+    accent: "var(--color-metric)",
+    layers: [
+      { title: "Exposome integration", desc: "Space-time key for external sources.", tool: "DuckDB + geopandas" },
+      { title: "Observatory", desc: "Variable explorer, public-facing.", tool: "Quarto dashboard" },
+    ],
+  },
+];
+
+export function ArchitectureDiagram({ locale = "es" }: { locale?: Locale }) {
+  const groups = locale === "en" ? groupsEn : groupsEs;
+  const flow =
+    locale === "en"
+      ? ["Ingestion & catalog", "Processing", "Integration & output"]
+      : ["Ingesta & catálogo", "Procesamiento", "Integración & salida"];
+
   return (
     <div className="flex flex-col gap-6">
       <div className="hidden lg:flex items-center gap-3 text-sm font-medium text-(--color-secondary)">
-        <span>Ingesta &amp; catálogo</span>
+        <span>{flow[0]}</span>
         <span aria-hidden="true">&rarr;</span>
-        <span>Procesamiento</span>
+        <span>{flow[1]}</span>
         <span aria-hidden="true">&rarr;</span>
-        <span>Integración &amp; salida</span>
+        <span>{flow[2]}</span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {groups.map((group) => (

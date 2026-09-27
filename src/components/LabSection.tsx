@@ -1,7 +1,12 @@
 import Image from "next/image";
-import { lab } from "@/content/lab";
+import { getLab } from "@/content/lab";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function LabSection() {
+export function LabSection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+  const lab = getLab(locale);
+
   return (
     <section
       id="laboratorio"
@@ -14,17 +19,16 @@ export function LabSection() {
           id="lab-t"
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
         >
-          Laboratorio
+          {ui.labTitle}
         </h2>
         <p className="m-0 text-base md:text-[17px] leading-relaxed text-(--color-secondary)">
-          Prototipos de aprendizaje y experiencias digitales que diseño y
-          publico con herramientas de IA.
+          {ui.labSubtitle}
         </p>
         <a
           href="#contacto"
           className="self-start inline-flex items-center min-h-11 text-base font-medium"
         >
-          Cotizar un sitio o micrositio
+          {ui.quoteSite}
         </a>
       </div>
       <ul className="md:col-start-5 md:col-span-8 m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -50,7 +54,7 @@ export function LabSection() {
             </p>
             <p className="m-0 text-[15px] leading-snug text-(--color-secondary)">
               <strong className="font-semibold text-(--color-blue)">
-                Qué hice:
+                {ui.whatIDid}
               </strong>{" "}
               {item.contribution}
             </p>
@@ -58,10 +62,10 @@ export function LabSection() {
               href={item.href}
               target="_blank"
               rel="noopener"
-              aria-label={`Abrir ${item.title} (se abre en otra pestaña)`}
+              aria-label={`${ui.openLabel} ${item.title} ${ui.opensInNewTab}`}
               className="self-start inline-flex items-center min-h-11 text-base font-medium"
             >
-              Abrir {item.title}
+              {ui.openLabel} {item.title}
             </a>
           </li>
         ))}

@@ -2,11 +2,16 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { cases } from "@/content/cases";
+import { getCases } from "@/content/cases";
 import { site } from "@/content/site";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function CasesSection() {
+export function CasesSection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+  const cases = getCases(locale);
   const [open, setOpen] = useState(0);
+  const prefix = locale === "en" ? "/en" : "";
 
   return (
     <section
@@ -19,10 +24,10 @@ export function CasesSection() {
           id="casos-t"
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[44px] text-(--color-blue)"
         >
-          Casos seleccionados
+          {ui.casesTitle}
         </h2>
         <p className="m-0 text-lg leading-relaxed text-(--color-secondary)">
-          Cuatro problemas reales: qué decidí, qué hice y qué cambió.
+          {ui.casesSubtitle}
         </p>
       </div>
 
@@ -70,15 +75,15 @@ export function CasesSection() {
               </h3>
               <dl className="m-0 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm leading-snug">
                 <div>
-                  <dt className="text-(--color-secondary)">Organización</dt>
+                  <dt className="text-(--color-secondary)">{ui.org}</dt>
                   <dd className="m-0 mt-1 text-(--color-blue)">{caseItem.org}</dd>
                 </div>
                 <div>
-                  <dt className="text-(--color-secondary)">Periodo</dt>
+                  <dt className="text-(--color-secondary)">{ui.period}</dt>
                   <dd className="m-0 mt-1 text-(--color-blue)">{caseItem.period}</dd>
                 </div>
                 <div>
-                  <dt className="text-(--color-secondary)">Mi rol</dt>
+                  <dt className="text-(--color-secondary)">{ui.role}</dt>
                   <dd className="m-0 mt-1 text-(--color-blue)">{caseItem.role}</dd>
                 </div>
               </dl>
@@ -101,7 +106,7 @@ export function CasesSection() {
                 className="self-start inline-flex items-center gap-2 min-h-11 p-0 border-0 bg-transparent text-(--color-link) text-base font-medium underline"
                 style={{ textUnderlineOffset: 3 }}
               >
-                {isOpen ? "Ocultar resumen" : "Ver resumen del caso"}
+                {isOpen ? ui.hideSummary : ui.viewSummary}
                 <svg
                   className={`chev ${isOpen ? "open" : ""}`}
                   width="12"
@@ -127,7 +132,7 @@ export function CasesSection() {
               >
                 <div className="flex flex-col gap-2">
                   <h4 className="m-0 text-sm font-semibold text-(--color-blue)">
-                    Mi contribución
+                    {ui.myContribution}
                   </h4>
                   <p className="m-0 text-base leading-relaxed text-(--color-blue)">
                     {caseItem.contrib}
@@ -135,7 +140,7 @@ export function CasesSection() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <h4 className="m-0 text-sm font-semibold text-(--color-blue)">
-                    Resultado
+                    {ui.result}
                   </h4>
                   <p className="m-0 text-base leading-relaxed text-(--color-blue)">
                     {caseItem.resultado}
@@ -147,15 +152,15 @@ export function CasesSection() {
                     download
                     className="inline-flex items-center h-11 px-5 rounded-lg bg-(--color-blue) text-(--color-ivory) no-underline font-medium text-[15px]"
                   >
-                    Descargar CV
+                    {ui.downloadCv}
                   </a>
                   {caseItem.deepDiveHref ? (
                     <Link
-                      href={caseItem.deepDiveHref}
+                      href={`${prefix}${caseItem.deepDiveHref}`}
                       className="inline-flex items-center h-11 px-5 rounded-lg border text-(--color-blue) no-underline font-medium text-[15px]"
                       style={{ borderColor: "var(--color-blue)" }}
                     >
-                      Ver la arquitectura completa
+                      {ui.viewFullArchitecture}
                     </Link>
                   ) : null}
                   {caseItem.pdfHref ? (
@@ -165,7 +170,7 @@ export function CasesSection() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center h-11 px-5 rounded-lg text-(--color-blue) no-underline font-medium text-[15px] underline decoration-(--color-hairline) underline-offset-4"
                     >
-                      Descargar deck en PDF
+                      {ui.downloadDeckPdf}
                     </a>
                   ) : null}
                 </div>

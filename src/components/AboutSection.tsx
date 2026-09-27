@@ -1,7 +1,14 @@
 import Image from "next/image";
-import { aboutIntro, education, timeline } from "@/content/about";
+import { getAboutIntro, getEducation, getTimeline } from "@/content/about";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function AboutSection() {
+export function AboutSection({ locale = "es" }: { locale?: Locale }) {
+  const ui = t(locale);
+  const aboutIntro = getAboutIntro(locale);
+  const timeline = getTimeline(locale);
+  const education = getEducation(locale);
+
   return (
     <section
       id="sobre-mi"
@@ -24,12 +31,12 @@ export function AboutSection() {
           id="sobre-t"
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
         >
-          Trayectoria
+          {ui.trajectoryTitle}
         </h2>
         <p className="m-0 text-base md:text-[17px] leading-loose text-(--color-blue)">
-          {aboutIntro} (ver{" "}
+          {aboutIntro} ({ui.seeMore}{" "}
           <a href="#comunidad" className="underline" style={{ textUnderlineOffset: 3 }}>
-            Comunidad y divulgación
+            {ui.communityAndOutreach}
           </a>
           ).
         </p>
@@ -59,7 +66,7 @@ export function AboutSection() {
           style={{ borderColor: "var(--color-hairline)" }}
         >
           <h3 className="mt-2 mb-2 text-sm font-semibold text-(--color-blue)">
-            Formación
+            {ui.educationTitle}
           </h3>
           <ul className="m-0 p-0 list-none flex flex-col gap-1 text-sm leading-relaxed text-(--color-secondary)">
             {education.map((item) => (

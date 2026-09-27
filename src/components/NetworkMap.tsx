@@ -1,13 +1,20 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {
-  networkEdges,
-  networkNodes,
-  type NetworkLayout,
-} from "@/content/network";
+import { getNetworkEdges, getNetworkNodes, type NetworkLayout } from "@/content/network";
+import { t } from "@/content/ui";
+import type { Locale } from "@/content/types";
 
-export function NetworkMap({ layout }: { layout: NetworkLayout }) {
+export function NetworkMap({
+  layout,
+  locale = "es",
+}: {
+  layout: NetworkLayout;
+  locale?: Locale;
+}) {
+  const ui = t(locale);
+  const networkNodes = useMemo(() => getNetworkNodes(locale), [locale]);
+  const networkEdges = useMemo(() => getNetworkEdges(locale), [locale]);
   const [selected, setSelected] = useState(-1);
   const total = networkNodes.length;
   const { width, height, centerY, positions } = layout;
@@ -22,14 +29,13 @@ export function NetworkMap({ layout }: { layout: NetworkLayout }) {
       if (b === selectedId) set.add(a);
     });
     return set;
-  }, [selectedId]);
-
-  const labelOf = (id: string) =>
-    networkNodes.find((n) => n.id === id)?.label ?? id;
+  }, [selectedId, networkEdges]);
 
   const caption = useMemo(() => {
+    const labelOf = (id: string) =>
+      networkNodes.find((n) => n.id === id)?.label ?? id;
     if (!selectedId) {
-      return "Seis áreas y los proyectos que las unen. Elige un área para ver dónde se cruza con las demás.";
+      return ui.networkDefault;
     }
     const byCase = new Map<string, string[]>();
     networkEdges.forEach(([a, b, caseLabel]) => {
@@ -41,10 +47,10 @@ export function NetworkMap({ layout }: { layout: NetworkLayout }) {
       }
     });
     const parts = Array.from(byCase.entries()).map(
-      ([caseLabel, others]) => `${others.join(" y ")} en ${caseLabel}`,
+      ([caseLabel, others]) => `${others.join(` ${ui.networkAnd} `)} ${ui.networkIn} ${caseLabel}`,
     );
-    return `${labelOf(selectedId)} se cruza con ${parts.join("; con ")}.`;
-  }, [selectedId]);
+    return `${labelOf(selectedId)} ${ui.networkCrosses} ${parts.join(`${ui.networkWith} `)}.`;
+  }, [selectedId, networkEdges, networkNodes, ui]);
 
   const moveNode = (delta: number) => {
     setSelected((current) => {
@@ -60,7 +66,7 @@ export function NetworkMap({ layout }: { layout: NetworkLayout }) {
   return (
     <div className="net-in flex flex-col gap-3">
       <p id="mapa-td" className="m-0 text-sm font-medium text-(--color-mist)">
-        Dónde se cruzan mis áreas
+        {ui.networkCaption}
       </p>
       <div
         role="toolbar"

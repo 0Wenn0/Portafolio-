@@ -1,3 +1,5 @@
+export type Locale = "es" | "en";
+
 export type Metric = {
   value: string;
   aside: string;
