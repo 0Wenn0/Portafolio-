@@ -116,6 +116,14 @@ export default function IceEndesPage() {
             </p>
           </div>
           <ArchitectureDiagram />
+          <a
+            href="/docs/ICE-ENDES-Arquitectura.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start inline-flex items-center gap-2 text-sm font-medium text-(--color-blue) no-underline underline decoration-(--color-hairline) underline-offset-4"
+          >
+            Descargar el deck completo en PDF
+          </a>
         </section>
 
         {/* Cifras */}
@@ -310,13 +318,22 @@ export default function IceEndesPage() {
             confidencialidad no publico mis hallazgos ni resultados de análisis;
             los datos de ENDES en sí son públicos (INEI).
           </p>
-          <div className="pt-4">
+          <div className="pt-4 flex items-center gap-6 flex-wrap">
             <Link
               href="/#casos"
               className="inline-flex items-center h-11 px-5 rounded-lg bg-(--color-blue) text-(--color-ivory) no-underline font-medium text-[15px] w-fit"
             >
               Volver a casos
             </Link>
+            <a
+              href="/docs/ICE-ENDES-Arquitectura.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center h-11 px-5 rounded-lg border text-(--color-blue) no-underline font-medium text-[15px]"
+              style={{ borderColor: "var(--color-blue)" }}
+            >
+              Descargar deck en PDF
+            </a>
           </div>
         </section>
       </main>

@@ -23,6 +23,7 @@ export type CaseStudy = {
   imageAlt: string;
   image?: string;
   deepDiveHref?: string;
+  pdfHref?: string;
 };
 
 export type MethodExample = {

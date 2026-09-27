@@ -158,6 +158,16 @@ export function CasesSection() {
                       Ver la arquitectura completa
                     </Link>
                   ) : null}
+                  {caseItem.pdfHref ? (
+                    <a
+                      href={caseItem.pdfHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center h-11 px-5 rounded-lg text-(--color-blue) no-underline font-medium text-[15px] underline decoration-(--color-hairline) underline-offset-4"
+                    >
+                      Descargar deck en PDF
+                    </a>
+                  ) : null}
                 </div>
               </div>
             ) : null}
