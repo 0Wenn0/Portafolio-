@@ -18,6 +18,13 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
   const esPath = isEn ? pathname.replace(/^\/en/, "") || "/" : pathname;
   const enPath = isEn ? pathname : pathname === "/" ? "/en" : `/en${pathname}`;
 
+  // Nav items are #hash anchors that only work when we're already on the
+  // homepage — from any other route (e.g. a case study page) they need the
+  // homepage path in front so the browser navigates there first.
+  const homeHref = locale === "en" ? "/en" : "/";
+  const isHome = pathname === homeHref;
+  const toHome = (hash: string) => (isHome ? hash : `${homeHref}${hash}`);
+
   useEffect(() => {
     if (!menuOpen) return;
     const onKeyDown = (event: KeyboardEvent) => {
@@ -33,7 +40,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
   return (
     <header className="h-20 box-border px-6 md:px-24 flex items-center justify-between border-b border-(--color-hairline)">
       <a
-        href={locale === "en" ? "/en#inicio" : "#inicio"}
+        href={toHome("#inicio")}
         className="font-[family-name:var(--font-display)] text-2xl font-semibold text-(--color-blue) no-underline py-2"
       >
         {site.name}
@@ -47,7 +54,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
         {nav.map((item) => (
           <a
             key={item.href}
-            href={item.href}
+            href={toHome(item.href)}
             className="text-(--color-blue) no-underline py-3"
           >
             {item.label}
@@ -132,7 +139,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
           {nav.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={toHome(item.href)}
               className="text-lg text-(--color-blue) no-underline py-3 border-b border-(--color-hairline)"
               onClick={() => setMenuOpen(false)}
             >
