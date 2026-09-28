@@ -47,7 +47,7 @@ export function CasesSection({ locale = "es" }: { locale?: Locale }) {
             style={{ borderColor: "var(--color-hairline)" }}
           >
             {caseItem.image ? (
-              <div className="md:col-span-4 h-[180px] md:h-[232px] box-border rounded overflow-hidden relative">
+              <div className="frame md:col-span-4 h-[180px] md:h-[232px] box-border rounded">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={caseItem.image}

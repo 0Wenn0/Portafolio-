@@ -80,6 +80,10 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
             </a>
           ))}
         </nav>
+        <a href="#resultados" className="descend">
+          {ui.scrollHint}
+          <span className="descend-arrow" aria-hidden="true" />
+        </a>
       </div>
 
       <div className="relative mt-12 md:mt-0 md:col-span-5">

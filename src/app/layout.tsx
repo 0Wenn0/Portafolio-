@@ -7,6 +7,7 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "./globals.css";
 import { CustomCursor } from "@/components/CustomCursor";
+import { Grain } from "@/components/Grain";
 import { HtmlLangSync } from "@/components/HtmlLangSync";
 import { ScrollRevealInit } from "@/components/ScrollRevealInit";
 
@@ -74,6 +75,7 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <HtmlLangSync />
+        <Grain />
         <CustomCursor />
         <ScrollRevealInit />
         <script

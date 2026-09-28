@@ -40,8 +40,8 @@ export function LabSection({ locale = "es" }: { locale?: Locale }) {
             data-sr-delay={String(Math.min(index, 3))}
           >
             <div
-              className="relative w-full h-[220px] md:h-[280px] rounded border overflow-hidden"
-              style={{ borderColor: "var(--color-hairline)", background: "var(--color-observatory)" }}
+              className="frame w-full h-[220px] md:h-[280px] rounded"
+              style={{ background: "var(--color-observatory)" }}
             >
               <Image
                 src={item.image}

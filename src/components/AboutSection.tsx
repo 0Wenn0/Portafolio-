@@ -19,7 +19,7 @@ export function AboutSection({ locale = "es" }: { locale?: Locale }) {
     >
       <ActNumeral numeral="V" label={locale === "en" ? "V · About" : "V · Sobre mí"} />
       <div className="md:col-span-5 flex flex-col gap-4" data-sr>
-        <div className="w-[160px] h-[200px] md:w-[200px] md:h-[240px] box-border rounded overflow-hidden relative">
+        <div className="frame w-[160px] h-[200px] md:w-[200px] md:h-[240px] box-border rounded">
           <Image
             src="/about/wendy-portrait.jpg"
             alt="Wendy Ramírez Burgos"

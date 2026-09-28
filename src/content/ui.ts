@@ -8,6 +8,7 @@ export const ui = {
     downloadCvPdf: "Descargar CV (PDF)",
     viewCases: "Ver casos",
     casesByLine: "Casos por línea:",
+    scrollHint: "Desciende despacio",
     // Cases section
     casesTitle: "Casos seleccionados",
     casesSubtitle: "Cuatro problemas reales: qué decidí, qué hice y qué cambió.",
@@ -149,6 +150,7 @@ export const ui = {
     downloadCvPdf: "Download CV (PDF)",
     viewCases: "View case studies",
     casesByLine: "Case studies by track:",
+    scrollHint: "Descend slowly",
     // Cases section
     casesTitle: "Selected case studies",
     casesSubtitle: "Four real problems: what I decided, what I did, what changed.",
