@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
+import { DetailAccordion } from "@/components/DetailAccordion";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
 
@@ -210,25 +211,27 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
               {ui.endesSurveySubtitleA}<i>{ui.endesSurveySubtitleI}</i>{ui.endesSurveySubtitleB}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {surveyCards.map((card) => (
-              <div
-                key={card.code}
-                className="flex flex-col gap-2 p-6 rounded"
-                style={{ background: "var(--color-dawn)" }}
-              >
-                <span className="font-[family-name:var(--font-display)] font-semibold text-2xl text-(--color-blue)">
-                  {card.code}
-                </span>
-                <h3 className="m-0 text-[15px] font-semibold leading-tight text-(--color-blue)">
-                  {card.label}
-                </h3>
-                <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
-                  {card.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          <DetailAccordion label={ui.endesSurveyDetailLabel}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {surveyCards.map((card) => (
+                <div
+                  key={card.code}
+                  className="flex flex-col gap-2 p-6 rounded"
+                  style={{ background: "var(--color-dawn)" }}
+                >
+                  <span className="font-[family-name:var(--font-display)] font-semibold text-2xl text-(--color-blue)">
+                    {card.code}
+                  </span>
+                  <h3 className="m-0 text-[15px] font-semibold leading-tight text-(--color-blue)">
+                    {card.label}
+                  </h3>
+                  <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
+                    {card.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </DetailAccordion>
         </section>
 
         {/* Reproducibilidad */}
@@ -238,25 +241,29 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
               {ui.endesReproTitle}
             </h2>
           </div>
-          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="flex flex-col gap-2">
-              <h3 className="m-0 text-sm font-semibold text-(--color-blue)">{ui.endesReproVersioning}</h3>
-              <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
-                {ui.endesReproVersioningBody}
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="m-0 text-sm font-semibold text-(--color-blue)">{ui.endesReproLineage}</h3>
-              <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
-                {ui.endesReproLineageBody}
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="m-0 text-sm font-semibold text-(--color-blue)">{ui.endesReproDoc}</h3>
-              <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
-                {ui.endesReproDocBody}
-              </p>
-            </div>
+          <div className="md:col-span-7">
+            <DetailAccordion label={ui.endesReproDetailLabel}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="flex flex-col gap-2">
+                  <h3 className="m-0 text-sm font-semibold text-(--color-blue)">{ui.endesReproVersioning}</h3>
+                  <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
+                    {ui.endesReproVersioningBody}
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="m-0 text-sm font-semibold text-(--color-blue)">{ui.endesReproLineage}</h3>
+                  <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
+                    {ui.endesReproLineageBody}
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="m-0 text-sm font-semibold text-(--color-blue)">{ui.endesReproDoc}</h3>
+                  <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
+                    {ui.endesReproDocBody}
+                  </p>
+                </div>
+              </div>
+            </DetailAccordion>
           </div>
         </section>
 
@@ -270,33 +277,37 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
               {ui.endesValidationSubtitle}
             </p>
           </div>
-          <ul className="m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {externalSources.map((src) => (
-              <li key={src.name} className="flex flex-col gap-2 p-5 rounded border" style={{ borderColor: "var(--color-hairline)" }}>
-                <span className="text-xs font-bold tracking-wide" style={{ color: "var(--color-metric)" }}>
-                  {src.code}
-                </span>
-                <h3 className="m-0 text-[16px] font-semibold text-(--color-blue)">
-                  {src.name}
-                </h3>
-                <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
-                  {src.desc}
+          <DetailAccordion label={ui.endesValidationDetailLabel}>
+            <div className="flex flex-col gap-10">
+              <ul className="m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                {externalSources.map((src) => (
+                  <li key={src.name} className="flex flex-col gap-2 p-5 rounded border" style={{ borderColor: "var(--color-hairline)" }}>
+                    <span className="text-xs font-bold tracking-wide" style={{ color: "var(--color-metric)" }}>
+                      {src.code}
+                    </span>
+                    <h3 className="m-0 text-[16px] font-semibold text-(--color-blue)">
+                      {src.name}
+                    </h3>
+                    <p className="m-0 text-sm leading-relaxed text-(--color-secondary)">
+                      {src.desc}
+                    </p>
+                    <p className="m-0 text-xs text-(--color-secondary) font-mono">{src.tag}</p>
+                  </li>
+                ))}
+              </ul>
+              <div
+                className="rounded-lg p-6 flex flex-col gap-2"
+                style={{ background: "var(--color-blue)" }}
+              >
+                <p className="m-0 text-xs font-semibold uppercase tracking-wide text-(--color-signal)">
+                  {ui.endesNoReferentTitle}
                 </p>
-                <p className="m-0 text-xs text-(--color-secondary) font-mono">{src.tag}</p>
-              </li>
-            ))}
-          </ul>
-          <div
-            className="rounded-lg p-6 flex flex-col gap-2"
-            style={{ background: "var(--color-blue)" }}
-          >
-            <p className="m-0 text-xs font-semibold uppercase tracking-wide text-(--color-signal)">
-              {ui.endesNoReferentTitle}
-            </p>
-            <p className="m-0 text-base leading-relaxed text-(--color-ivory)">
-              {ui.endesNoReferentBody}
-            </p>
-          </div>
+                <p className="m-0 text-base leading-relaxed text-(--color-ivory)">
+                  {ui.endesNoReferentBody}
+                </p>
+              </div>
+            </div>
+          </DetailAccordion>
         </section>
 
         {/* Estado y visión */}

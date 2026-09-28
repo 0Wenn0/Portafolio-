@@ -406,9 +406,93 @@ html.has-custom-cursor button {
   }
 }
 
+/* ============================================================
+   DETAIL ACCORDION — collapsed-by-default technical depth
+   ============================================================ */
+.acc {
+  border-top: 1px solid var(--color-hairline);
+  padding-top: 0.25rem;
+}
+.acc > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-metric);
+  transition: color var(--motion-200) var(--ease-out);
+}
+.acc > summary::-webkit-details-marker {
+  display: none;
+}
+.acc > summary::marker {
+  content: "";
+}
+.acc > summary:hover,
+.acc > summary:focus-visible {
+  color: var(--color-blue);
+}
+.acc-sign {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  transition: transform var(--motion-300) var(--ease-out);
+}
+.acc-sign::before,
+.acc-sign::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--motion-200) ease-out;
+}
+.acc-sign::before {
+  width: 12px;
+  height: 1px;
+}
+.acc-sign::after {
+  width: 1px;
+  height: 12px;
+}
+.acc[open] > summary .acc-sign {
+  transform: rotate(90deg);
+}
+.acc[open] > summary .acc-sign::after {
+  opacity: 0;
+}
+.acc-body {
+  padding: 0.25rem 0 1.5rem;
+  animation: acc-unfold var(--motion-300) var(--ease-out);
+}
+@keyframes acc-unfold {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .acc-body {
+    animation: none;
+  }
+  .acc-sign {
+    transition: none;
   }
   .net-in {
     animation: none;

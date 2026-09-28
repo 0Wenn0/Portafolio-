@@ -119,6 +119,9 @@ export const ui = {
     endesSurveySubtitleI: "survey design",
     endesSurveySubtitleB:
       " ata estos parámetros a cada tabla desde su construcción, nunca como un parche posterior.",
+    endesSurveyDetailLabel: "Ver especificación técnica",
+    endesReproDetailLabel: "Ver detalle de reproducibilidad",
+    endesValidationDetailLabel: "Ver fuentes de validación",
     endesReproTitle: "Reproducibilidad como condición de entrada",
     endesReproVersioning: "Control de versiones",
     endesReproVersioningBody:
@@ -261,6 +264,9 @@ export const ui = {
     endesSurveySubtitleI: "survey design",
     endesSurveySubtitleB:
       " layer ties these parameters to every table from the moment it's built, never as a later patch.",
+    endesSurveyDetailLabel: "See technical specification",
+    endesReproDetailLabel: "See reproducibility detail",
+    endesValidationDetailLabel: "See validation sources",
     endesReproTitle: "Reproducibility as an entry condition",
     endesReproVersioning: "Version control",
     endesReproVersioningBody:
