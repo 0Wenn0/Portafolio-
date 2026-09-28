@@ -3,7 +3,7 @@ import type { Locale } from "./types";
 export const site = {
   name: "Wendy Ramírez Burgos",
   city: "Ciudad de México",
-  email: "warb91030@gmail.com",
+  email: "wendy.ramirez.lab@gmail.com",
   linkedin: "https://linkedin.com/in/wendyRB-ai",
   orcid: "0000-0001-9261-4859",
   orcidUrl: "https://orcid.org/0000-0001-9261-4859",

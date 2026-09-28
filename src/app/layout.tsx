@@ -59,7 +59,7 @@ export default function RootLayout({
     name: "Wendy Ramírez Burgos",
     jobTitle: "Change Management y adopción de IA a escala",
     url: siteUrl,
-    email: "mailto:warb91030@gmail.com",
+    email: "mailto:wendy.ramirez.lab@gmail.com",
     sameAs: [
       "https://orcid.org/0000-0001-9261-4859",
       "https://linkedin.com/in/wendyRB-ai",
