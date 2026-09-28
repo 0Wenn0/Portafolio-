@@ -147,10 +147,11 @@
 }
 
 /* ============================================================
-   CUSTOM CURSOR (two-layer: dot + trailing ring)
+   CUSTOM CURSOR — lead dot + a comet trail of shrinking, fading
+   echoes, each chasing the point ahead of it (see CustomCursor.tsx)
    ============================================================ */
 .cursor-dot,
-.cursor-ring {
+.cursor-echo {
   position: fixed;
   top: 0;
   left: 0;
@@ -164,20 +165,57 @@
   width: 6px;
   height: 6px;
   background: var(--color-ivory);
+  transition: width var(--motion-200) var(--ease-out), height var(--motion-200) var(--ease-out);
 }
-.cursor-ring {
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(230, 222, 210, 0.55);
-  transition:
-    width var(--motion-300) var(--ease-out),
-    height var(--motion-300) var(--ease-out),
-    border-color var(--motion-300) var(--ease-out);
+.cursor-dot.cursor-hot {
+  width: 9px;
+  height: 9px;
 }
-.cursor-ring.cursor-ring-hot {
-  width: 52px;
-  height: 52px;
-  border-color: var(--color-rose);
+
+/* Each echo is a little smaller and fainter than the last, and
+   alternates between the two accent hues for a bit of color drift
+   along the tail. Sizes/opacities are set per-index. */
+.cursor-echo {
+  width: 15px;
+  height: 15px;
+  background: var(--color-rose);
+  opacity: 0.55;
+  transition: width var(--motion-300) var(--ease-out), height var(--motion-300) var(--ease-out);
+}
+.cursor-echo-0 {
+  width: 15px;
+  height: 15px;
+  background: var(--color-rose);
+  opacity: 0.6;
+}
+.cursor-echo-0.cursor-hot {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+.cursor-echo-1 {
+  width: 12px;
+  height: 12px;
+  background: var(--color-signal);
+  opacity: 0.42;
+}
+.cursor-echo-2 {
+  width: 9px;
+  height: 9px;
+  background: var(--color-rose);
+  opacity: 0.3;
+}
+.cursor-echo-3 {
+  width: 6px;
+  height: 6px;
+  background: var(--color-signal);
+  opacity: 0.2;
+}
+.cursor-echo-4 {
+  width: 4px;
+  height: 4px;
+  background: var(--color-rose);
+  opacity: 0.12;
 }
 /* hide the native cursor only once the custom one is actually running */
 html.has-custom-cursor,
