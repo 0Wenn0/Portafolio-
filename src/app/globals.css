@@ -146,6 +146,114 @@
   text-decoration: underline;
 }
 
+/* ============================================================
+   CUSTOM CURSOR (two-layer: dot + trailing ring)
+   ============================================================ */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-ivory);
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(230, 222, 210, 0.55);
+  transition:
+    width var(--motion-300) var(--ease-out),
+    height var(--motion-300) var(--ease-out),
+    border-color var(--motion-300) var(--ease-out);
+}
+.cursor-ring.cursor-ring-hot {
+  width: 52px;
+  height: 52px;
+  border-color: var(--color-rose);
+}
+/* hide the native cursor only once the custom one is actually running */
+html.has-custom-cursor,
+html.has-custom-cursor a,
+html.has-custom-cursor button {
+  cursor: none;
+}
+
+/* ============================================================
+   SCROLL REVEAL (IntersectionObserver-driven, see ScrollRevealInit)
+   ============================================================ */
+[data-sr] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1s var(--ease-out),
+    transform 1s var(--ease-out);
+}
+[data-sr].sr-in {
+  opacity: 1;
+  transform: none;
+}
+[data-sr="d1"].sr-in,
+[data-sr-delay="1"] {
+  transition-delay: 0.12s;
+}
+[data-sr-delay="2"] {
+  transition-delay: 0.24s;
+}
+[data-sr-delay="3"] {
+  transition-delay: 0.36s;
+}
+
+/* ============================================================
+   ACT NUMERALS — chapter framing for major sections
+   ============================================================ */
+.act-numeral {
+  position: absolute;
+  top: -0.1em;
+  right: 3%;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(7rem, 18vw, 16rem);
+  line-height: 0.8;
+  color: rgba(184, 137, 146, 0.08);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.on-dark .act-numeral {
+  color: rgba(127, 168, 216, 0.1);
+}
+.act-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-rose);
+  margin-bottom: 0.75rem;
+}
+.on-dark .act-label {
+  color: var(--color-signal);
+}
+.act-label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -165,6 +273,11 @@
   .btn-primary,
   .tab-btn,
   .tag {
+    transition: none;
+  }
+  [data-sr] {
+    opacity: 1;
+    transform: none;
     transition: none;
   }
 }

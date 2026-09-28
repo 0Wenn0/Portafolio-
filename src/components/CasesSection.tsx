@@ -6,6 +6,7 @@ import { getCases } from "@/content/cases";
 import { getCvHref } from "@/content/site";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
+import { ActNumeral } from "./ActNumeral";
 
 export function CasesSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
@@ -18,9 +19,10 @@ export function CasesSection({ locale = "es" }: { locale?: Locale }) {
     <section
       id="casos"
       aria-labelledby="casos-t"
-      className="box-border px-6 md:px-24 pt-12 pb-16 md:pb-24 flex flex-col gap-8"
+      className="relative box-border px-6 md:px-24 pt-12 pb-16 md:pb-24 flex flex-col gap-8 overflow-hidden"
     >
-      <div className="flex flex-col gap-3 max-w-[720px]">
+      <ActNumeral numeral="II" label={locale === "en" ? "II · Case studies" : "II · Casos"} />
+      <div className="flex flex-col gap-3 max-w-[720px]" data-sr>
         <h2
           id="casos-t"
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[44px] text-(--color-blue)"
@@ -40,6 +42,7 @@ export function CasesSection({ locale = "es" }: { locale?: Locale }) {
           <article
             key={caseItem.title}
             aria-labelledby={titleId}
+            data-sr
             className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8 border-t"
             style={{ borderColor: "var(--color-hairline)" }}
           >

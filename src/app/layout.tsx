@@ -6,7 +6,9 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "./globals.css";
+import { CustomCursor } from "@/components/CustomCursor";
 import { HtmlLangSync } from "@/components/HtmlLangSync";
+import { ScrollRevealInit } from "@/components/ScrollRevealInit";
 
 const siteUrl = "https://portafolio-wendyrb.vercel.app";
 
@@ -72,6 +74,8 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <HtmlLangSync />
+        <CustomCursor />
+        <ScrollRevealInit />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}

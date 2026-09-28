@@ -4,6 +4,7 @@ import { useState } from "react";
 import { getMethodFundamentals, getMethodSteps } from "@/content/method";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
+import { ActNumeral } from "./ActNumeral";
 
 export function HowIWorkSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
@@ -20,11 +21,12 @@ export function HowIWorkSection({ locale = "es" }: { locale?: Locale }) {
   return (
     <section
       id="como-trabajo"
-      className="on-dark box-border px-6 md:px-24 py-16 md:py-24 flex flex-col gap-12"
+      className="on-dark relative box-border px-6 md:px-24 py-16 md:py-24 flex flex-col gap-12 overflow-hidden"
       style={{ background: "var(--color-blue)" }}
       aria-labelledby="como-t"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-6">
+      <ActNumeral numeral="III" label={locale === "en" ? "III · How I work" : "III · Cómo trabajo"} />
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-6" data-sr>
         <div className="md:col-span-4 flex flex-col gap-3">
           <h2
             id="como-t"

@@ -2,6 +2,7 @@ import { getCvHref, getHero } from "@/content/site";
 import { networkLayoutDesktop, networkLayoutMobile } from "@/content/network";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
+import { ActNumeral } from "./ActNumeral";
 import { NetworkMap } from "./NetworkMap";
 
 export function HeroSection({ locale = "es" }: { locale?: Locale }) {
@@ -32,6 +33,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
       </svg>
 
       <div className="relative flex flex-col gap-6 md:col-span-7">
+        <ActNumeral numeral="I" label={locale === "en" ? "I · Threshold" : "I · Umbral"} />
         <p className="m-0 text-base font-medium text-(--color-mist)">
           {hero.eyebrow}
         </p>

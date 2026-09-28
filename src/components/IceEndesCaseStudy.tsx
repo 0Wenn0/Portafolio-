@@ -93,7 +93,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* El problema */}
-        <section className="box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-b" style={{ borderColor: "var(--color-hairline)" }}>
+        <section className="box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-b" style={{ borderColor: "var(--color-hairline)" }} data-sr>
           <div className="md:col-span-4">
             <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[32px] text-(--color-blue)">
               {ui.endesProblemTitle}
@@ -125,7 +125,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* Diagrama de arquitectura */}
-        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }}>
+        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }} data-sr>
           <div className="flex flex-col gap-3 max-w-[70ch]">
             <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[32px] text-(--color-blue)">
               {ui.endesPipelineTitle}
@@ -146,7 +146,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* Cifras */}
-        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }}>
+        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }} data-sr>
           <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[32px] text-(--color-blue)">
             {ui.endesNumbersTitle}
           </h2>
@@ -173,7 +173,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* DuckDB vs PostgreSQL */}
-        <section className="box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-b" style={{ borderColor: "var(--color-hairline)" }}>
+        <section className="box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-b" style={{ borderColor: "var(--color-hairline)" }} data-sr>
           <div className="md:col-span-4">
             <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[32px] text-(--color-blue)">
               {ui.endesDuckdbTitle}
@@ -201,7 +201,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* Diseño de encuesta */}
-        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }}>
+        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }} data-sr>
           <div className="flex flex-col gap-3 max-w-[70ch]">
             <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[32px] text-(--color-blue)">
               {ui.endesSurveyTitle}
@@ -232,7 +232,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* Reproducibilidad */}
-        <section className="box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-b" style={{ borderColor: "var(--color-hairline)" }}>
+        <section className="box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-b" style={{ borderColor: "var(--color-hairline)" }} data-sr>
           <div className="md:col-span-4">
             <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[32px] text-(--color-blue)">
               {ui.endesReproTitle}
@@ -261,7 +261,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* Validación externa */}
-        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }}>
+        <section className="box-border px-6 md:px-24 py-16 flex flex-col gap-10 border-b" style={{ borderColor: "var(--color-hairline)" }} data-sr>
           <div className="flex flex-col gap-3 max-w-[70ch]">
             <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[32px] text-(--color-blue)">
               {ui.endesValidationTitle}
@@ -300,7 +300,7 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
         </section>
 
         {/* Estado y visión */}
-        <section className="box-border px-6 md:px-24 py-16 md:py-24 flex flex-col gap-6">
+        <section className="box-border px-6 md:px-24 py-16 md:py-24 flex flex-col gap-6" data-sr>
           <h2 className="m-0 font-[family-name:var(--font-display)] font-medium text-[28px] md:text-[36px] text-(--color-blue) max-w-[70ch]">
             {ui.endesClosingTitle}
           </h2>

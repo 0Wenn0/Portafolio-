@@ -14,7 +14,7 @@ export function LabSection({ locale = "es" }: { locale?: Locale }) {
       className="box-border px-6 md:px-24 pt-12 pb-16 md:pb-24 grid grid-cols-1 md:grid-cols-12 gap-8 border-t"
       style={{ borderColor: "var(--color-hairline)" }}
     >
-      <div className="md:col-span-4 flex flex-col gap-3">
+      <div className="md:col-span-4 flex flex-col gap-3" data-sr>
         <h2
           id="lab-t"
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
@@ -32,8 +32,13 @@ export function LabSection({ locale = "es" }: { locale?: Locale }) {
         </a>
       </div>
       <ul className="md:col-start-5 md:col-span-8 m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 gap-8">
-        {lab.map((item) => (
-          <li key={item.title} className="flex flex-col gap-3">
+        {lab.map((item, index) => (
+          <li
+            key={item.title}
+            className="flex flex-col gap-3"
+            data-sr
+            data-sr-delay={String(Math.min(index, 3))}
+          >
             <div
               className="relative w-full h-[220px] md:h-[280px] rounded border overflow-hidden"
               style={{ borderColor: "var(--color-hairline)", background: "var(--color-observatory)" }}
