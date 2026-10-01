@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
+import { CountUp } from "@/components/CountUp";
 import { DetailAccordion } from "@/components/DetailAccordion";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
@@ -158,12 +159,11 @@ export function IceEndesCaseStudy({ locale = "es" }: { locale?: Locale }) {
                 className="flex flex-col gap-2 pl-6 border-l"
                 style={{ borderColor: i === 0 ? "transparent" : "var(--color-hairline)" }}
               >
-                <p
-                  className="m-0 font-[family-name:var(--font-display)] font-semibold text-[36px] md:text-[44px] leading-none text-(--color-blue)"
+                <CountUp
+                  value={stat.value}
+                  className="font-[family-name:var(--font-display)] font-semibold text-[36px] md:text-[44px] leading-none text-(--color-blue)"
                   style={{ fontVariantNumeric: "tabular-nums" }}
-                >
-                  {stat.value}
-                </p>
+                />
                 <p className="m-0 text-sm leading-snug text-(--color-secondary)">{stat.label}</p>
               </div>
             ))}

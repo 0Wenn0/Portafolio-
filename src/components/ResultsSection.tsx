@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CountUp } from "@/components/CountUp";
 import { getMetrics } from "@/content/metrics";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
@@ -30,15 +31,14 @@ export function ResultsSection({ locale = "es" }: { locale?: Locale }) {
               data-sr-delay={String(Math.min(index, 3))}
             >
               <div className="flex items-baseline gap-3">
-                <span
+                <CountUp
+                  value={metric.value}
                   className="font-[family-name:var(--font-display)] text-[56px] font-medium leading-none"
                   style={{
                     color: "var(--color-metric)",
                     fontVariantNumeric: "tabular-nums",
                   }}
-                >
-                  {metric.value}
-                </span>
+                />
                 <span className="text-sm text-(--color-secondary)">
                   {metric.aside}
                 </span>
