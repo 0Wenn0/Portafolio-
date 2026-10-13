@@ -78,9 +78,10 @@ const es: OpenAiMethodContent = {
     {
       code: "P3",
       title: "Taller de 2 horas: verificar y proteger datos al usar IA",
-      desc: "Carta descriptiva conforme a los criterios de EC0301, guía de quien facilita, rúbrica de tres criterios e instrumento de satisfacción.",
-      notThis: "No está certificado ni se ha impartido. No depende de una herramienta concreta.",
-      status: "building",
+      desc: "Carta descriptiva conforme a los criterios de EC0301, guía de quien facilita, rúbrica de tres criterios, seis reactivos de conocimiento e instrumento de satisfacción.",
+      notThis: "No está certificado y no se ha impartido en esta forma, aunque sí impartí otros talleres (ver P5). No usa materiales de ellos ni depende de una herramienta concreta; el material de apoyo está especificado, no redactado.",
+      status: "draft",
+      href: "/piezas/taller-verificar-proteger-datos-ia.pdf",
     },
     {
       code: "P4",
@@ -188,9 +189,10 @@ const en: OpenAiMethodContent = {
     {
       code: "P3",
       title: "2-hour workshop: verifying and protecting data when using AI",
-      desc: "A session plan aligned to EC0301 criteria, a facilitator guide, a three-criterion rubric, and a satisfaction instrument.",
-      notThis: "Not certified and not delivered. It does not depend on a specific tool.",
-      status: "building",
+      desc: "A session plan aligned to EC0301 criteria, a facilitator guide, a three-criterion rubric, six knowledge items, and a satisfaction instrument.",
+      notThis: "Not certified and not delivered in this form, although I did deliver other workshops (see P5). It uses no material from them and does not depend on a specific tool; the support material is specified, not written. The document is in Spanish.",
+      status: "draft",
+      href: "/piezas/taller-verificar-proteger-datos-ia.pdf",
     },
     {
       code: "P4",
