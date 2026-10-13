@@ -47,7 +47,7 @@ const es: OpenAiMethodContent = {
   readTitle: "Qué es real y qué es nuevo",
   readItems: [
     "El trabajo con las instituciones ocurrió. Impartí talleres, apliqué diagnósticos y redacté policy briefs y planes completos. La tabla de alcance, al final, dice qué fue y con quién.",
-    "Los planes de TecNM y de la Secretaría de Educación Superior se aprobaron y no se implementaron.",
+    "Los planes de TecNM y de la Secretaría de Educación Superior se aprobaron y no se implementaron. El de SEMS se entregó desarrollado y no se aprobó, y la propuesta de educación básica no se autorizó.",
     "La escalera y las cuatro decisiones de diseño reflejan la lógica de ese trabajo. El diagnóstico y el taller de 2 horas los escribí ahora con esa lógica y todavía no los he aplicado.",
     "Los ejemplos son ilustrativos y los datos, cuando los hay, son sintéticos y están rotulados.",
     "Uso los estándares CONOCER como criterio de calidad. Ningún documento dice estar certificado.",
@@ -133,9 +133,9 @@ const es: OpenAiMethodContent = {
             limit: "No los publico.",
           },
           {
-            what: "Diseñé planes de adopción de IA por niveles, de la alfabetización a los agentes, y los entregué desarrollados, con su plan instruccional completo. Cada plan se adaptó a su institución. TecNM: una plataforma educativa con KPIs, proyectada para 30,000 docentes y de 50,000 a 100,000 estudiantes. Secretaría de Educación Superior: un programa de 30 horas para integrarse a Saberes MX. SEMS: planteé un programa para preparatorias.",
-            who: "TecNM, Secretaría de Educación Superior y SEMS.",
-            limit: "Las autoridades de TecNM y de la Secretaría de Educación Superior aprobaron sus planes. Se entregaron completos, pero no se implementaron; las cifras son metas proyectadas.",
+            what: "Diseñé planes de adopción de IA por niveles, de la alfabetización a los agentes, y los entregué desarrollados, con su plan instruccional completo. Cada plan se adaptó a su institución. TecNM: una plataforma educativa con KPIs, proyectada para 30,000 docentes y de 50,000 a 100,000 estudiantes. Secretaría de Educación Superior: un programa de 30 horas para integrarse a Saberes MX. SEMS: un programa para preparatorias. Educación básica: una propuesta alineada con el plan de estudios de la Nueva Escuela Mexicana (NEM).",
+            who: "TecNM, Secretaría de Educación Superior, SEMS y educación básica.",
+            limit: "Las autoridades de TecNM y de la Secretaría de Educación Superior aprobaron sus planes y no se implementaron. El de SEMS se entregó desarrollado y no se aprobó. La propuesta de educación básica no se autorizó ni se implementó. Las cifras son metas proyectadas.",
           },
           {
             what: "Más de 3,000 asistentes a talleres.",
@@ -160,7 +160,7 @@ const en: OpenAiMethodContent = {
   readTitle: "What is real and what is new",
   readItems: [
     "The work with the institutions happened. I delivered workshops, applied diagnostics, and wrote policy briefs and complete plans. The scope table at the end says what it was and with whom.",
-    "The TecNM and Secretariat of Higher Education plans were approved and not implemented.",
+    "The TecNM and Secretariat of Higher Education plans were approved and not implemented. The SEMS plan was handed over fully developed and not approved, and the basic education proposal was not authorized.",
     "The ladder and the four design decisions reflect the logic of that work. I wrote the diagnostic and the 2-hour workshop now with that logic and have not applied them yet.",
     "Examples are illustrative, and any data is synthetic and labeled.",
     "I use CONOCER standards as a quality criterion. No document claims to be certified.",
@@ -246,9 +246,9 @@ const en: OpenAiMethodContent = {
             limit: "I do not publish them.",
           },
           {
-            what: "I designed tiered AI adoption plans, from literacy to agents, and handed them over fully developed, with a complete instructional plan. Each plan was adapted to its institution. TecNM: an education platform with KPIs, projected for 30,000 teachers and 50,000 to 100,000 students. Secretariat of Higher Education: a 30-hour program to plug into Saberes MX. SEMS: I proposed a program for upper-secondary schools.",
-            who: "TecNM, the Secretariat of Higher Education, and SEMS.",
-            limit: "Authorities at TecNM and the Secretariat of Higher Education approved their plans. They were handed over complete but not implemented; the figures are projected targets.",
+            what: "I designed tiered AI adoption plans, from literacy to agents, and handed them over fully developed, with a complete instructional plan. Each plan was adapted to its institution. TecNM: an education platform with KPIs, projected for 30,000 teachers and 50,000 to 100,000 students. Secretariat of Higher Education: a 30-hour program to plug into Saberes MX. SEMS: a program for upper-secondary schools. Basic education: a proposal aligned with the Nueva Escuela Mexicana (NEM) curriculum.",
+            who: "TecNM, the Secretariat of Higher Education, SEMS, and basic education.",
+            limit: "Authorities at TecNM and the Secretariat of Higher Education approved their plans and they were not implemented. The SEMS plan was handed over fully developed and was not approved. The basic education proposal was neither authorized nor implemented. The figures are projected targets.",
           },
           {
             what: "Over 3,000 workshop attendees.",
