@@ -11,7 +11,7 @@ const casesEs: CaseStudy[] = [
     contrib:
       "Mapeé actores y audiencias, diseñé programas por sector y facilité talleres con instituciones públicas y privadas.",
     resultado:
-      "Más de 3,000 participantes en 8+ sectores y policy briefs para SEP, TecNM y Media Superior.",
+      "Más de 3,000 asistentes a talleres de los sectores productivo, de gobierno, legislativo y educativo, y policy briefs para cada institución participante.",
     imageAlt: "Wendy presentando en el escenario, con el logo de ChatGPT proyectado detrás",
     image: "/cases/openai.jpg",
     deepDiveHref: "/casos/openai-metodo",
@@ -76,7 +76,7 @@ const casesEn: CaseStudy[] = [
     contrib:
       "Mapped stakeholders and audiences, designed sector-specific programs, and facilitated workshops with public and private institutions.",
     resultado:
-      "Over 3,000 participants across 8+ sectors and policy briefs for SEP, TecNM, and Media Superior.",
+      "Over 3,000 workshop attendees from the productive, government, legislative, and education sectors, and policy briefs for each participating institution.",
     imageAlt: "Wendy presenting on stage, with the ChatGPT logo projected behind her",
     image: "/cases/openai.jpg",
     deepDiveHref: "/casos/openai-metodo",

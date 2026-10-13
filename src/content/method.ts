@@ -85,7 +85,7 @@ const methodStepsEs: MethodStep[] = [
     examples: [
       {
         case: "OpenAI",
-        text: "Talleres con más de 3,000 participantes en 8+ sectores.",
+        text: "Talleres con más de 3,000 asistentes de los sectores productivo, de gobierno, legislativo y educativo.",
       },
       {
         case: "INFP",
@@ -176,7 +176,7 @@ const methodStepsEn: MethodStep[] = [
     examples: [
       {
         case: "OpenAI",
-        text: "Workshops with over 3,000 participants across 8+ sectors.",
+        text: "Workshops with over 3,000 attendees from the productive, government, legislative, and education sectors.",
       },
       {
         case: "INFP",

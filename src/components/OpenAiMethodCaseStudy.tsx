@@ -93,6 +93,36 @@ export function OpenAiMethodCaseStudy({ locale = "es" }: { locale?: Locale }) {
                     <span className="font-semibold">{content.whatItIsNot}: </span>
                     {piece.notThis}
                   </p>
+                  {piece.table ? (
+                    <ul className="m-0 mt-2 p-0 list-none flex flex-col max-w-[900px]">
+                      {piece.table.rows.map((row) => (
+                        <li
+                          key={row.what}
+                          className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 py-4 border-t"
+                          style={{ borderColor: "var(--color-hairline)" }}
+                        >
+                          <p className="md:col-span-5 m-0 text-[16px] leading-relaxed text-(--color-blue)">
+                            <span className="block text-[13px] font-semibold uppercase tracking-wide text-(--color-secondary)">
+                              {piece.table?.heads.what}
+                            </span>
+                            {row.what}
+                          </p>
+                          <p className="md:col-span-4 m-0 text-[16px] leading-relaxed text-(--color-blue)">
+                            <span className="block text-[13px] font-semibold uppercase tracking-wide text-(--color-secondary)">
+                              {piece.table?.heads.who}
+                            </span>
+                            {row.who}
+                          </p>
+                          <p className="md:col-span-3 m-0 text-[15px] leading-relaxed text-(--color-secondary)">
+                            <span className="block text-[13px] font-semibold uppercase tracking-wide">
+                              {piece.table?.heads.limit}
+                            </span>
+                            {row.limit}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                   {piece.href ? (
                     <a
                       href={piece.href}

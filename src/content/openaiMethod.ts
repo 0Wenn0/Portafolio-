@@ -2,6 +2,13 @@ import type { Locale } from "./types";
 
 export type PieceStatus = "draft" | "building";
 
+export type ScopeRow = { what: string; who: string; limit: string };
+
+export type ScopeTable = {
+  heads: { what: string; who: string; limit: string };
+  rows: ScopeRow[];
+};
+
 export type MethodPiece = {
   code: string;
   title: string;
@@ -9,6 +16,7 @@ export type MethodPiece = {
   notThis: string;
   status: PieceStatus;
   href?: string;
+  table?: ScopeTable;
 };
 
 type OpenAiMethodContent = {
@@ -84,7 +92,42 @@ const es: OpenAiMethodContent = {
       title: "Alcance y colaboraciones",
       desc: "Qué diseñé, qué impartí y qué apliqué, con las instituciones con las que trabajé y una línea sobre lo que no puedo mostrar.",
       notThis: "No incluye materiales de ese trabajo ni nombres de personas.",
-      status: "building",
+      status: "draft",
+      table: {
+        heads: { what: "Qué hice", who: "Con quién", limit: "Límite" },
+        rows: [
+          {
+            what: "Impartí talleres de 2 horas sobre IA.",
+            who: "Docentes de educación media superior.",
+            limit: "No doy número de talleres ni de asistentes.",
+          },
+          {
+            what: "Impartí talleres de una sola sesión, cada uno con un kit de salida adaptado a su audiencia.",
+            who: "COSFAC, SECTUR, Secretaría de Economía, Tec de Monterrey, Universidad Regiomontana, Tecnológico de Yucatán, startups y pymes, Cámara de Diputados y Senado.",
+            limit: "El kit se entregó solo a quienes asistieron y no lo publico.",
+          },
+          {
+            what: "Redacté los diagnósticos: reuniones con encargados de área y un formulario con escala Likert, con pre y post por capacitación.",
+            who: "Las mismas instituciones de los talleres.",
+            limit: "No conservo los archivos, así que no doy cifra de respuestas. TecNM y la Secretaría de Educación Superior no lo recibieron.",
+          },
+          {
+            what: "Redacté policy briefs y decks para cada institución participante, junto con el mapeo de actores de cada una.",
+            who: "Las instituciones participantes y, como documentos internos, la consultora.",
+            limit: "No los publico.",
+          },
+          {
+            what: "Diseñé los planes de adopción de IA, con una escalera de la alfabetización a los agentes y ramas por rol y por área.",
+            who: "TecNM y Secretaría de Educación Superior.",
+            limit: "Las autoridades de ambas instituciones los aprobaron; no se ejecutaron.",
+          },
+          {
+            what: "Más de 3,000 asistentes a talleres.",
+            who: "Sectores productivo, de gobierno, legislativo y educativo.",
+            limit: "Son personas únicas porque cada taller fue de una sola sesión. Es un total, sin desglose por sector.",
+          },
+        ],
+      },
     },
   ],
   backToCases: "Volver a los casos",
@@ -146,7 +189,42 @@ const en: OpenAiMethodContent = {
       title: "Scope and collaborations",
       desc: "What I designed, delivered, and applied, with the institutions I worked with and a line on what I cannot show.",
       notThis: "It includes no material from that work and no names of people.",
-      status: "building",
+      status: "draft",
+      table: {
+        heads: { what: "What I did", who: "With whom", limit: "Limit" },
+        rows: [
+          {
+            what: "I delivered 2-hour AI workshops.",
+            who: "Upper-secondary teachers.",
+            limit: "I give no number of workshops or attendees.",
+          },
+          {
+            what: "I delivered single-session workshops, each with a leave-behind kit adapted to its audience.",
+            who: "COSFAC, SECTUR, the Ministry of Economy, Tec de Monterrey, Universidad Regiomontana, Tecnológico de Yucatán, startups and SMEs, the Chamber of Deputies, and the Senate.",
+            limit: "The kit went only to attendees and I do not publish it.",
+          },
+          {
+            what: "I wrote the diagnostics: meetings with area leads and a Likert-scale form, with pre and post for each training.",
+            who: "The same institutions as the workshops.",
+            limit: "I did not keep the files, so I give no response count. TecNM and the Secretariat of Higher Education did not receive it.",
+          },
+          {
+            what: "I wrote policy briefs and decks for each participating institution, alongside a stakeholder map for each.",
+            who: "The participating institutions and, as internal documents, the consultancy.",
+            limit: "I do not publish them.",
+          },
+          {
+            what: "I designed the AI adoption plans, with a ladder from literacy to agents and branches by role and by area.",
+            who: "TecNM and the Secretariat of Higher Education.",
+            limit: "Authorities at both institutions approved them; they were not carried out.",
+          },
+          {
+            what: "Over 3,000 workshop attendees.",
+            who: "Productive, government, legislative, and education sectors.",
+            limit: "Unique people, since each workshop was a single session. One total, with no breakdown by sector.",
+          },
+        ],
+      },
     },
   ],
   backToCases: "Back to the case studies",

@@ -3,16 +3,16 @@ import type { Locale, Metric } from "./types";
 const metricsEs: Metric[] = [
   {
     value: "+3,000",
-    aside: "participantes",
+    aside: "asistentes",
     label:
-      "en programas de formación en IA con gobierno, universidades y empresas",
+      "a talleres de IA con gobierno, legislativo, universidades y empresas",
     case: "Programa OpenAI",
-    mide: "Participantes en talleres y programas de formación en IA",
+    mide: "Asistentes a talleres de IA, de una sola sesión cada uno",
     periodo: "Julio de 2025 a febrero de 2026",
     contribucion:
       "Diseño y facilitación de los programas; coordinación con instituciones",
     fuente: "Registros por cohorte",
-    limite: "Falta separar participantes únicos de asistencias",
+    limite: "Personas únicas porque cada taller fue de una sola sesión; total sin desglose por sector",
   },
   {
     value: "30%",
@@ -45,14 +45,14 @@ const metricsEs: Metric[] = [
 const metricsEn: Metric[] = [
   {
     value: "3,000+",
-    aside: "participants",
-    label: "in AI training programs with government, universities, and companies",
+    aside: "attendees",
+    label: "at AI workshops with government, legislators, universities, and companies",
     case: "OpenAI Program",
-    mide: "Participants in AI training workshops and programs",
+    mide: "Attendees at AI workshops, each a single session",
     periodo: "July 2025 to February 2026",
     contribucion: "Program design and facilitation; coordination with institutions",
     fuente: "Per-cohort records",
-    limite: "Still need to separate unique participants from attendances",
+    limite: "Unique people since each workshop was a single session; one total with no breakdown by sector",
   },
   {
     value: "30%",
