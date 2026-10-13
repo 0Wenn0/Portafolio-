@@ -120,6 +120,11 @@ const es: OpenAiMethodContent = {
             limit: "No conservo los archivos, así que no doy cifra de respuestas. TecNM y la Secretaría de Educación Superior no lo recibieron.",
           },
           {
+            what: "Medí la satisfacción de los asistentes: 9.39 sobre 10 en DGCyVE y 8.0 sobre 10 en COSFAC.",
+            who: "DGCyVE y COSFAC.",
+            limit: "Entre 80 y 100 respuestas por institución, sin número exacto. Mide satisfacción, no aprendizaje.",
+          },
+          {
             what: "Redacté policy briefs y decks para cada institución participante, junto con el mapeo de actores de cada una.",
             who: "Las instituciones participantes y, como documentos internos, la consultora.",
             limit: "No los publico.",
@@ -223,6 +228,11 @@ const en: OpenAiMethodContent = {
             what: "I wrote the diagnostics: meetings with area leads and a Likert-scale form, with pre and post for each training.",
             who: "The same institutions as the workshops.",
             limit: "I did not keep the files, so I give no response count. TecNM and the Secretariat of Higher Education did not receive it.",
+          },
+          {
+            what: "I measured attendee satisfaction: 9.39 out of 10 at DGCyVE and 8.0 out of 10 at COSFAC.",
+            who: "DGCyVE and COSFAC.",
+            limit: "Between 80 and 100 responses per institution, no exact count. It measures satisfaction, not learning.",
           },
           {
             what: "I wrote policy briefs and decks for each participating institution, alongside a stakeholder map for each.",
