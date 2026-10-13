@@ -25,6 +25,7 @@ export type CaseStudy = {
   imageAlt: string;
   image?: string;
   deepDiveHref?: string;
+  deepDiveLabel?: string;
   pdfHref?: string;
 };
 

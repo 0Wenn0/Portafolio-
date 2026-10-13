@@ -14,6 +14,8 @@ const casesEs: CaseStudy[] = [
       "Más de 3,000 participantes en 8+ sectores y policy briefs para SEP, TecNM y Media Superior.",
     imageAlt: "Wendy presentando en el escenario, con el logo de ChatGPT proyectado detrás",
     image: "/cases/openai.jpg",
+    deepDiveHref: "/casos/openai-metodo",
+    deepDiveLabel: "Ver el método, rehecho desde cero",
   },
   {
     line: "Aprendizaje y EdTech",
@@ -77,6 +79,8 @@ const casesEn: CaseStudy[] = [
       "Over 3,000 participants across 8+ sectors and policy briefs for SEP, TecNM, and Media Superior.",
     imageAlt: "Wendy presenting on stage, with the ChatGPT logo projected behind her",
     image: "/cases/openai.jpg",
+    deepDiveHref: "/casos/openai-metodo",
+    deepDiveLabel: "See the method, rebuilt from scratch",
   },
   {
     line: "Learning & EdTech",

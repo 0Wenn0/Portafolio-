@@ -164,7 +164,7 @@ export function CasesSection({ locale = "es" }: { locale?: Locale }) {
                       className="inline-flex items-center h-11 px-5 rounded-lg border text-(--color-blue) no-underline font-medium text-[15px]"
                       style={{ borderColor: "var(--color-blue)" }}
                     >
-                      {ui.viewFullArchitecture}
+                      {caseItem.deepDiveLabel ?? ui.viewFullArchitecture}
                     </Link>
                   ) : null}
                   {caseItem.pdfHref ? (
