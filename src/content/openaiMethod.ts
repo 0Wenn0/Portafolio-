@@ -86,8 +86,9 @@ const es: OpenAiMethodContent = {
       code: "P4",
       title: "Cuatro fichas de razonamiento",
       desc: "Problema, restricciones, alternativas, decisión y verificación: entrega escalable, seguimiento y evaluación, gobernanza y actores, y soporte a escala.",
-      notThis: "Los problemas son genéricos. No son casos reales ni traen cifras.",
-      status: "building",
+      notThis: "Los problemas son genéricos. No son casos reales, no traen cifras y no se han aplicado.",
+      status: "draft",
+      href: "/piezas/fichas-de-razonamiento.pdf",
     },
     {
       code: "P5",
@@ -185,8 +186,9 @@ const en: OpenAiMethodContent = {
       code: "P4",
       title: "Four reasoning sheets",
       desc: "Problem, constraints, alternatives, decision, and verification: scalable delivery, monitoring and evaluation, governance and stakeholders, and support at scale.",
-      notThis: "The problems are generic. They are not real cases and carry no figures.",
-      status: "building",
+      notThis: "The problems are generic. They are not real cases, carry no figures, and have not been applied. The document is in Spanish.",
+      status: "draft",
+      href: "/piezas/fichas-de-razonamiento.pdf",
     },
     {
       code: "P5",
