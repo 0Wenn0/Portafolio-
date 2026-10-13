@@ -15,7 +15,7 @@ const casesEs: CaseStudy[] = [
     imageAlt: "Wendy presentando en el escenario, con el logo de ChatGPT proyectado detrás",
     image: "/cases/openai.jpg",
     deepDiveHref: "/casos/openai-metodo",
-    deepDiveLabel: "Ver el método, rehecho desde cero",
+    deepDiveLabel: "Ver el método detrás del programa",
   },
   {
     line: "Aprendizaje y EdTech",
@@ -80,7 +80,7 @@ const casesEn: CaseStudy[] = [
     imageAlt: "Wendy presenting on stage, with the ChatGPT logo projected behind her",
     image: "/cases/openai.jpg",
     deepDiveHref: "/casos/openai-metodo",
-    deepDiveLabel: "See the method, rebuilt from scratch",
+    deepDiveLabel: "See the method behind the program",
   },
   {
     line: "Learning & EdTech",
