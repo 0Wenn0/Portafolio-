@@ -106,8 +106,13 @@ const es: OpenAiMethodContent = {
           },
           {
             what: "Impartí talleres de una sola sesión, cada uno con un kit de salida adaptado a su audiencia.",
-            who: "COSFAC, SECTUR, Secretaría de Economía, Tec de Monterrey, Universidad Regiomontana, Tecnológico de Yucatán, startups y pymes, Cámara de Diputados y Senado.",
+            who: "COSFAC, DGCyVE, SECTUR, Secretaría de Economía, Tec de Monterrey, Universidad Regiomontana, Tecnológico de Yucatán, startups y pymes, Cámara de Diputados y Senado.",
             limit: "El kit se entregó solo a quienes asistieron y no lo publico.",
+          },
+          {
+            what: "Facilité tres cohortes con SECTUR, de unas 60 personas cada una: docentes, empresas de turismo y personal de la secretaría.",
+            who: "SECTUR.",
+            limit: "Cifra aproximada, cerca de 180 personas en total.",
           },
           {
             what: "Redacté los diagnósticos: reuniones con encargados de área y un formulario con escala Likert, con pre y post por capacitación.",
@@ -120,9 +125,9 @@ const es: OpenAiMethodContent = {
             limit: "No los publico.",
           },
           {
-            what: "Diseñé los planes de adopción de IA, con una escalera de la alfabetización a los agentes y ramas por rol y por área.",
-            who: "TecNM y Secretaría de Educación Superior.",
-            limit: "Las autoridades de ambas instituciones los aprobaron; no se ejecutaron.",
+            what: "Diseñé planes de adopción de IA por niveles, de la alfabetización a los agentes, adaptados a cada institución: para TecNM, una plataforma educativa con KPIs, proyectada para 30,000 docentes y entre 50,000 y 100,000 estudiantes; para la Secretaría de Educación Superior, un programa de 30 horas para integrarse a Saberes MX; para la SEMS, un programa para preparatorias.",
+            who: "TecNM, Secretaría de Educación Superior y SEMS.",
+            limit: "Las autoridades de TecNM y de la Secretaría de Educación Superior aprobaron sus planes. Ninguno se ejecutó y las cifras son metas proyectadas.",
           },
           {
             what: "Más de 3,000 asistentes a talleres.",
@@ -206,8 +211,13 @@ const en: OpenAiMethodContent = {
           },
           {
             what: "I delivered single-session workshops, each with a leave-behind kit adapted to its audience.",
-            who: "COSFAC, SECTUR, the Ministry of Economy, Tec de Monterrey, Universidad Regiomontana, Tecnológico de Yucatán, startups and SMEs, the Chamber of Deputies, and the Senate.",
+            who: "COSFAC, DGCyVE, SECTUR, the Ministry of Economy, Tec de Monterrey, Universidad Regiomontana, Tecnológico de Yucatán, startups and SMEs, the Chamber of Deputies, and the Senate.",
             limit: "The kit went only to attendees and I do not publish it.",
+          },
+          {
+            what: "I facilitated three cohorts with SECTUR, about 60 people each: teachers, tourism businesses, and staff of the ministry.",
+            who: "SECTUR.",
+            limit: "Approximate figure, around 180 people in total.",
           },
           {
             what: "I wrote the diagnostics: meetings with area leads and a Likert-scale form, with pre and post for each training.",
@@ -220,9 +230,9 @@ const en: OpenAiMethodContent = {
             limit: "I do not publish them.",
           },
           {
-            what: "I designed the AI adoption plans, with a ladder from literacy to agents and branches by role and by area.",
-            who: "TecNM and the Secretariat of Higher Education.",
-            limit: "Authorities at both institutions approved them; they were not carried out.",
+            what: "I designed tiered AI adoption plans, from literacy to agents, adapted to each institution: for TecNM, an education platform with KPIs, projected for 30,000 teachers and 50,000 to 100,000 students; for the Secretariat of Higher Education, a 30-hour program to plug into Saberes MX; for SEMS, a program for upper-secondary schools.",
+            who: "TecNM, the Secretariat of Higher Education, and SEMS.",
+            limit: "Authorities at TecNM and the Secretariat of Higher Education approved their plans. None was carried out, and the figures are projected targets.",
           },
           {
             what: "Over 3,000 workshop attendees.",
