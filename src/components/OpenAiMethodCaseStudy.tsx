@@ -71,7 +71,7 @@ export function OpenAiMethodCaseStudy({ locale = "es" }: { locale?: Locale }) {
               >
                 <div className="md:col-span-3 flex flex-col gap-2">
                   <span className="text-sm font-semibold text-(--color-secondary)">
-                    {content.pieceLabel} {piece.code}
+                    {piece.code}
                   </span>
                   <span
                     className="self-start text-[13px] font-semibold text-(--color-blue) px-2 py-1 rounded"
