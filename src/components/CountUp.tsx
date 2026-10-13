@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 // Matches a value made of an optional prefix, a run of digits (with
 // optional thousands separators), and an optional suffix — e.g. "+3,000",
@@ -23,65 +23,68 @@ export function CountUp({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const match = value.match(COUNTABLE);
-  const prefix = match?.[1] ?? "";
-  const digits = match?.[2] ?? "";
-  const suffix = match?.[3] ?? "";
-  const target = match ? parseInt(digits.replace(/,/g, ""), 10) : 0;
-
   const ref = useRef<HTMLSpanElement>(null);
-  const hasStarted = useRef(false);
   // The server renders the final value, so crawlers, link previews, screen
-  // readers and no-JS visitors never see a zero. The count-up only replays
-  // from zero for people who can see it happen.
-  const [display, setDisplay] = useState(value);
+  // readers and no-JS visitors never see a zero. The count-up replays from
+  // zero only for people who can see it happen. It writes straight to the
+  // DOM node so React never re-renders (or resets) the number mid-count.
 
   useEffect(() => {
-    if (!match) return;
+    const match = value.match(COUNTABLE);
     const el = ref.current;
-    if (!el) return;
+    if (!match || !el) return;
+
+    const prefix = match[1] ?? "";
+    const suffix = match[3] ?? "";
+    const target = parseInt((match[2] ?? "0").replace(/,/g, ""), 10);
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced || !("IntersectionObserver" in window)) return;
 
-    // Already on screen at load: leave the final value in place.
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) return;
+    const show = (text: string) => {
+      el.textContent = text;
+    };
+    show(formatValue(prefix, 0, suffix));
 
-    setDisplay(formatValue(prefix, 0, suffix));
+    let frame = 0;
+    let started = false;
 
     const run = () => {
-      if (hasStarted.current) return;
-      hasStarted.current = true;
-
+      if (started) return;
+      started = true;
       const start = performance.now();
       const step = (now: number) => {
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        setDisplay(formatValue(prefix, Math.round(target * eased), suffix));
-        if (progress < 1) requestAnimationFrame(step);
+        show(formatValue(prefix, Math.round(target * eased), suffix));
+        if (progress < 1) frame = requestAnimationFrame(step);
       };
-      requestAnimationFrame(step);
+      frame = requestAnimationFrame(step);
     };
 
+    // The observer also fires right away for elements already on screen,
+    // so the count plays on load when the metrics are visible.
     const io = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            run();
-            io.unobserve(entry.target);
-          }
+        if (entries.some((entry) => entry.isIntersecting)) {
+          run();
+          io.disconnect();
         }
       },
       { threshold: 0.3 },
     );
     io.observe(el);
-    return () => io.disconnect();
-  }, [match, prefix, suffix, target, duration]);
+
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(frame);
+      show(value);
+    };
+  }, [value, duration]);
 
   return (
     <span ref={ref} className={className} style={style}>
-      {match ? display : value}
+      {value}
     </span>
   );
 }
