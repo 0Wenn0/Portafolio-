@@ -120,7 +120,7 @@ const es: OpenAiMethodContent = {
             limit: "No conservo los archivos, así que no doy cifra de respuestas. TecNM y la Secretaría de Educación Superior no lo recibieron.",
           },
           {
-            what: "Medí la satisfacción de los asistentes: 9.39 sobre 10 en DGCyVE y 8.0 sobre 10 en COSFAC.",
+            what: "Medí el porcentaje de satisfacción de los asistentes: 93.9 % en DGCyVE y 80 % en COSFAC.",
             who: "DGCyVE y COSFAC.",
             limit: "Entre 80 y 100 respuestas por institución, sin número exacto. Mide satisfacción, no aprendizaje.",
           },
@@ -230,7 +230,7 @@ const en: OpenAiMethodContent = {
             limit: "I did not keep the files, so I give no response count. TecNM and the Secretariat of Higher Education did not receive it.",
           },
           {
-            what: "I measured attendee satisfaction: 9.39 out of 10 at DGCyVE and 8.0 out of 10 at COSFAC.",
+            what: "I measured the attendee satisfaction rate: 93.9% at DGCyVE and 80% at COSFAC.",
             who: "DGCyVE and COSFAC.",
             limit: "Between 80 and 100 responses per institution, no exact count. It measures satisfaction, not learning.",
           },
