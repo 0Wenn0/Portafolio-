@@ -63,8 +63,9 @@ const es: OpenAiMethodContent = {
       code: "P1",
       title: "Mapa de arquitectura",
       desc: "Una escalera de adopción de IA por rol, contexto y calidad: del taller de 2 horas a un plan nacional, con un núcleo común y adaptación local.",
-      notThis: "Un marco propio con ejemplos ilustrativos. No es el plan de ningún programa.",
-      status: "building",
+      notThis: "Un marco propio con un caso inventado. No es el plan de ningún programa ni está validado con grupos.",
+      status: "draft",
+      href: "/piezas/mapa-arquitectura-adopcion-ia.pdf",
     },
     {
       code: "P2",
@@ -161,8 +162,9 @@ const en: OpenAiMethodContent = {
       code: "P1",
       title: "Architecture map",
       desc: "An AI adoption ladder by role, context, and quality: from a 2-hour workshop to a national plan, with a common core and local adaptation.",
-      notThis: "An original framework with illustrative examples. It is not any program's plan.",
-      status: "building",
+      notThis: "An original framework with an invented case. It is not any program's plan and has not been validated with groups. The document is in Spanish.",
+      status: "draft",
+      href: "/piezas/mapa-arquitectura-adopcion-ia.pdf",
     },
     {
       code: "P2",
