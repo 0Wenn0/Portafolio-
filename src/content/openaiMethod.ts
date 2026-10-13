@@ -28,6 +28,7 @@ type OpenAiMethodContent = {
   readTitle: string;
   readItems: string[];
   piecesTitle: string;
+  pieceLabel: string;
   whatItIs: string;
   whatItIsNot: string;
   statusLabels: Record<PieceStatus, string>;
@@ -46,13 +47,14 @@ const es: OpenAiMethodContent = {
     "Aquí muestro cómo pensé y organicé el programa: el esqueleto y la lógica de lo que diseñé y apliqué con instituciones reales. Los planes completos, los materiales y los datos están bajo contrato y no los publico, así que lo que ves está escrito en genérico.",
   readTitle: "Cómo leer esta página",
   readItems: [
-    "Lo que hice con las instituciones ocurrió: impartí talleres, apliqué diagnósticos y redacté policy briefs y planes completos. La tabla de P5 dice qué fue y con quién.",
+    "Lo que hice con las instituciones ocurrió: impartí talleres, apliqué diagnósticos y redacté policy briefs y planes completos. La tabla de alcance dice qué fue y con quién.",
     "Los planes de TecNM y de la Secretaría de Educación Superior se aprobaron y no se implementaron.",
-    "P1 y P4 muestran el esqueleto y la lógica de ese trabajo. P2 y P3 son instrumentos que escribí ahora con esa misma lógica y que aún no he aplicado con este diseño.",
+    "La escalera de adopción y las cuatro decisiones de diseño muestran el esqueleto y la lógica de ese trabajo. El diagnóstico y el taller de 2 horas son instrumentos que escribí ahora con esa misma lógica y que aún no he aplicado con este diseño.",
     "Los ejemplos son ilustrativos y los datos, cuando los hay, son sintéticos y están rotulados.",
     "Los estándares CONOCER son un criterio de calidad (conforme a). Ninguna pieza dice estar certificada.",
   ],
   piecesTitle: "Las cinco piezas",
+  pieceLabel: "Pieza",
   whatItIs: "Qué es",
   whatItIsNot: "Límites",
   statusLabels: {
@@ -62,7 +64,7 @@ const es: OpenAiMethodContent = {
   openPiece: "Abrir la pieza",
   pieces: [
     {
-      code: "P1",
+      code: "1",
       title: "Mapa de arquitectura",
       desc: "La escalera de adopción de IA que ordena el programa: del taller de 2 horas a un plan nacional, con un núcleo común y ramas por rol y por área.",
       notThis: "No incluye el plan completo de ninguna institución, que está bajo contrato. El caso de ejemplo es ilustrativo y la escalera no está validada con datos.",
@@ -70,23 +72,23 @@ const es: OpenAiMethodContent = {
       href: "/piezas/mapa-arquitectura-adopcion-ia.pdf",
     },
     {
-      code: "P2",
+      code: "2",
       title: "Diagnóstico de adopción de IA",
       desc: "Banco de ítems, regla de decisión y plan de análisis para saber dónde está una institución antes de proponerle algo.",
-      notThis: "Es la versión formal del instrumento y todavía no la he pilotado con un grupo. Los diagnósticos que sí apliqué están en P5. El informe de ejemplo usa datos sintéticos rotulados.",
+      notThis: "Es la versión formal del instrumento y todavía no la he pilotado con un grupo. Los diagnósticos que sí apliqué están en la tabla de alcance. El informe de ejemplo usa datos sintéticos rotulados.",
       status: "draft",
       href: "/piezas/diagnostico-adopcion-ia.pdf",
     },
     {
-      code: "P3",
+      code: "3",
       title: "Taller de 2 horas: verificar y proteger datos al usar IA",
       desc: "Carta descriptiva conforme a los criterios de EC0301, guía de quien facilita, rúbrica de tres criterios, seis reactivos de conocimiento e instrumento de satisfacción.",
-      notThis: "No está certificado y no lo he impartido con este diseño, aunque sí impartí otros talleres (P5). Es un taller nuevo, sin materiales de aquellos, y no depende de una herramienta. El material de apoyo está especificado, no redactado.",
+      notThis: "No está certificado y no lo he impartido con este diseño, aunque sí impartí otros talleres (ver la tabla de alcance). Es un taller nuevo, sin materiales de aquellos, y no depende de una herramienta. El material de apoyo está especificado, no redactado.",
       status: "draft",
       href: "/piezas/taller-verificar-proteger-datos-ia.pdf",
     },
     {
-      code: "P4",
+      code: "4",
       title: "Cuatro fichas de razonamiento",
       desc: "Cuatro decisiones de diseño explicadas en el mismo orden (problema, restricciones, alternativas, decisión y verificación): entrega escalable, seguimiento y evaluación, gobernanza y actores, y soporte a escala.",
       notThis: "Están escritas en genérico, sin cifras, nombres ni materiales del programa.",
@@ -94,7 +96,7 @@ const es: OpenAiMethodContent = {
       href: "/piezas/fichas-de-razonamiento.pdf",
     },
     {
-      code: "P5",
+      code: "5",
       title: "Alcance y colaboraciones",
       desc: "Qué diseñé, qué impartí y qué apliqué, y con qué instituciones, más lo que no puedo mostrar.",
       notThis: "No incluye materiales de ese trabajo ni nombres de personas.",
@@ -159,13 +161,14 @@ const en: OpenAiMethodContent = {
     "Here I show how I thought through and organized the program: the skeleton and logic of what I designed and applied with real institutions. The full plans, materials, and data are under contract and I do not publish them, so what you see is written in generic terms.",
   readTitle: "How to read this page",
   readItems: [
-    "What I did with the institutions happened: I delivered workshops, applied diagnostics, and wrote policy briefs and complete plans. The P5 table says what it was and with whom.",
+    "What I did with the institutions happened: I delivered workshops, applied diagnostics, and wrote policy briefs and complete plans. The scope table says what it was and with whom.",
     "The TecNM and Secretariat of Higher Education plans were approved and not implemented.",
-    "P1 and P4 show the skeleton and logic of that work. P2 and P3 are instruments I wrote now with that same logic and have not yet applied in this design.",
+    "The adoption ladder and the four design decisions show the skeleton and logic of that work. The diagnostic and the 2-hour workshop are instruments I wrote now with that same logic and have not yet applied in this design.",
     "Examples are illustrative, and any data is synthetic and labeled as such.",
     "CONOCER standards are a quality criterion (aligned to). No piece claims to be certified.",
   ],
   piecesTitle: "The five pieces",
+  pieceLabel: "Piece",
   whatItIs: "What it is",
   whatItIsNot: "Limits",
   statusLabels: {
@@ -175,7 +178,7 @@ const en: OpenAiMethodContent = {
   openPiece: "Open the piece",
   pieces: [
     {
-      code: "P1",
+      code: "1",
       title: "Architecture map",
       desc: "The AI adoption ladder that orders the program: from a 2-hour workshop to a national plan, with a common core and branches by role and by area.",
       notThis: "It does not include any institution's full plan, which is under contract. The example case is illustrative and the ladder is not validated with data. The document is in Spanish.",
@@ -183,23 +186,23 @@ const en: OpenAiMethodContent = {
       href: "/piezas/mapa-arquitectura-adopcion-ia.pdf",
     },
     {
-      code: "P2",
+      code: "2",
       title: "AI adoption diagnostic",
       desc: "An item bank, a decision rule, and an analysis plan to learn where an institution stands before proposing anything.",
-      notThis: "This is the formal version of the instrument and I have not yet piloted it with a group. The diagnostics I did apply are in P5. The document is in Spanish. The sample report uses synthetic data, labeled.",
+      notThis: "This is the formal version of the instrument and I have not yet piloted it with a group. The diagnostics I did apply are in the scope table. The document is in Spanish. The sample report uses synthetic data, labeled.",
       status: "draft",
       href: "/piezas/diagnostico-adopcion-ia.pdf",
     },
     {
-      code: "P3",
+      code: "3",
       title: "2-hour workshop: verifying and protecting data when using AI",
       desc: "A session plan aligned to EC0301 criteria, a facilitator guide, a three-criterion rubric, six knowledge items, and a satisfaction instrument.",
-      notThis: "Not certified, and I have not delivered it in this design, although I did deliver other workshops (P5). It is a new workshop, with no material from those, and it does not depend on a tool. The support material is specified, not written. The document is in Spanish.",
+      notThis: "Not certified, and I have not delivered it in this design, although I did deliver other workshops (see the scope table). It is a new workshop, with no material from those, and it does not depend on a tool. The support material is specified, not written. The document is in Spanish.",
       status: "draft",
       href: "/piezas/taller-verificar-proteger-datos-ia.pdf",
     },
     {
-      code: "P4",
+      code: "4",
       title: "Four reasoning sheets",
       desc: "Four design decisions explained in the same order (problem, constraints, alternatives, decision, and verification): scalable delivery, monitoring and evaluation, governance and stakeholders, and support at scale.",
       notThis: "They are written in generic terms, with no figures, names, or program materials. The document is in Spanish.",
@@ -207,7 +210,7 @@ const en: OpenAiMethodContent = {
       href: "/piezas/fichas-de-razonamiento.pdf",
     },
     {
-      code: "P5",
+      code: "5",
       title: "Scope and collaborations",
       desc: "What I designed, delivered, and applied, and with which institutions, plus what I cannot show.",
       notThis: "It includes no material from that work and no names of people.",
