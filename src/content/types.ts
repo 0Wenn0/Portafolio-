@@ -10,6 +10,13 @@ export type Metric = {
   contribucion: string;
   fuente: string;
   limite: string;
+  compare?: MetricCompare;
+};
+
+export type MetricCompare = {
+  from: { label: string; value: number };
+  to: { label: string; value: number };
+  ariaLabel: string;
 };
 
 export type CaseStudy = {

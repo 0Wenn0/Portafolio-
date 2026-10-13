@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { getCvHref, getHero } from "@/content/site";
 import { networkLayoutDesktop, networkLayoutMobile } from "@/content/network";
 import { t } from "@/content/ui";
@@ -9,6 +10,13 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
   const hero = getHero(locale);
   const cvHref = getCvHref(locale);
+
+  // Entrance sequence: eyebrow, then the title word by word (80 ms apart),
+  // then each block ~100 ms after the previous one. Pure CSS (see .hero-in),
+  // so the text is in the server HTML and visible without JavaScript.
+  const titleWords = hero.title.split(" ");
+  const titleEnd = 80 + titleWords.length * 80;
+  const at = (ms: number) => ({ animationDelay: `${ms}ms` });
 
   return (
     <section
@@ -34,7 +42,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
 
       <div className="relative flex flex-col gap-6 md:col-span-7">
         <ActNumeral numeral="I" label={locale === "en" ? "I · Threshold" : "I · Umbral"} />
-        <p className="m-0 text-base font-medium text-(--color-mist)">
+        <p className="hero-in m-0 text-base font-medium text-(--color-mist)">
           {hero.eyebrow}
         </p>
         <h1
@@ -42,12 +50,21 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
           className="m-0 font-[family-name:var(--font-display)] font-medium text-[40px] md:text-[60px] leading-[1.08] text-(--color-ivory)"
           style={{ textWrap: "balance" }}
         >
-          {hero.title}
+          {titleWords.map((word, i) => (
+            <Fragment key={i}>
+              <span className="hero-in inline-block" style={at(80 + i * 80)}>
+                {word}
+              </span>{" "}
+            </Fragment>
+          ))}
         </h1>
-        <p className="m-0 text-lg md:text-xl leading-relaxed text-(--color-mist) max-w-[600px]">
+        <p
+          className="hero-in m-0 text-lg md:text-xl leading-relaxed text-(--color-mist) max-w-[600px]"
+          style={at(titleEnd)}
+        >
           {hero.subtitle}
         </p>
-        <div className="flex items-center gap-4 pt-2 flex-wrap">
+        <div className="hero-in flex items-center gap-4 pt-2 flex-wrap" style={at(titleEnd + 100)}>
           <a
             className="btn-primary inline-flex items-center h-[52px] px-7 rounded-lg bg-(--color-ivory) text-(--color-observatory) no-underline font-semibold text-base"
             href={cvHref}
@@ -64,7 +81,8 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
         </div>
         <nav
           aria-label={locale === "en" ? "Cases by track" : "Casos por línea"}
-          className="flex flex-wrap items-center gap-2"
+          className="hero-in flex flex-wrap items-center gap-2"
+          style={at(titleEnd + 200)}
         >
           <span className="text-sm text-(--color-mist) mr-1">
             {ui.casesByLine}
@@ -80,7 +98,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
             </a>
           ))}
         </nav>
-        <a href="#resultados" className="descend">
+        <a href="#resultados" className="hero-in descend" style={at(titleEnd + 300)}>
           {ui.scrollHint}
           <span className="descend-arrow" aria-hidden="true" />
         </a>

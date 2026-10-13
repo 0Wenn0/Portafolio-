@@ -26,6 +26,11 @@ const metricsEs: Metric[] = [
       "Como analista de datos y encargada de marketing digital: segmentación de la base, automatizaciones y pipelines de envío, y copys y diseño con criterios de UX",
     fuente: "Reportes de campañas en Mailchimp",
     limite: "Mide apertura, no inscripción",
+    compare: {
+      from: { label: "Abr 2023", value: 8 },
+      to: { label: "Jul 2025", value: 30 },
+      ariaLabel: "Apertura de convocatorias: 8% en abril de 2023 y 30% en julio de 2025",
+    },
   },
   {
     value: "15",
@@ -65,6 +70,11 @@ const metricsEn: Metric[] = [
       "As data analyst and digital marketing lead: base segmentation, automations and send pipelines, and copy and design with UX criteria",
     fuente: "Mailchimp campaign reports",
     limite: "Measures opens, not enrollment",
+    compare: {
+      from: { label: "Apr 2023", value: 8 },
+      to: { label: "Jul 2025", value: 30 },
+      ariaLabel: "Invitation open rate: 8% in April 2023 and 30% in July 2025",
+    },
   },
   {
     value: "15",

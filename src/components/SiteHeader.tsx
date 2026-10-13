@@ -13,6 +13,8 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
   const pathname = usePathname() ?? "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const progressRef = useRef<HTMLSpanElement>(null);
+  const [activeId, setActiveId] = useState("");
 
   const isEn = pathname === "/en" || pathname.startsWith("/en/");
   const esPath = isEn ? pathname.replace(/^\/en/, "") || "/" : pathname;
@@ -24,6 +26,51 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
   const homeHref = locale === "en" ? "/en" : "/";
   const isHome = pathname === homeHref;
   const toHome = (hash: string) => (isHome ? hash : `${homeHref}${hash}`);
+
+  // Reading progress: written straight to the bar's transform, so scrolling
+  // never re-renders the header.
+  useEffect(() => {
+    const bar = progressRef.current;
+    if (!bar) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      bar.style.transform = `scaleX(${progress})`;
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  // Current section (home only): the section that crosses the middle of the
+  // viewport. Sections that aren't in the menu leave no link marked.
+  useEffect(() => {
+    if (!isHome || !("IntersectionObserver" in window)) return;
+    const sections = document.querySelectorAll<HTMLElement>("main > section[id]");
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const id = entry.target.id;
+          setActiveId((current) =>
+            entry.isIntersecting ? id : current === id ? "" : current,
+          );
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((section) => io.observe(section));
+    return () => io.disconnect();
+  }, [isHome]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -38,7 +85,16 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
   }, [menuOpen]);
 
   return (
-    <header className="h-20 box-border px-6 md:px-24 flex items-center justify-between border-b border-(--color-hairline)">
+    <header
+      className="sticky top-0 z-[25] h-20 box-border px-6 md:px-24 flex items-center justify-between border-b border-(--color-hairline)"
+      style={{ background: "var(--color-ivory)" }}
+    >
+      <span
+        ref={progressRef}
+        aria-hidden="true"
+        className="read-progress absolute left-0 right-0 -bottom-px h-0.5"
+        style={{ background: "var(--color-rose)" }}
+      />
       <a
         href={toHome("#inicio")}
         className="font-[family-name:var(--font-display)] text-2xl font-semibold text-(--color-blue) no-underline py-2"
@@ -55,7 +111,8 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
           <a
             key={item.href}
             href={toHome(item.href)}
-            className="text-(--color-blue) no-underline py-3"
+            aria-current={activeId === item.href.slice(1) ? "location" : undefined}
+            className="nav-link text-(--color-blue) no-underline py-3"
           >
             {item.label}
           </a>

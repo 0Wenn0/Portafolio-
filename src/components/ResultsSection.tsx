@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { BeforeAfterBars } from "@/components/BeforeAfterBars";
 import { CountUp } from "@/components/CountUp";
 import { getMetrics } from "@/content/metrics";
 import { t } from "@/content/ui";
@@ -46,6 +47,7 @@ export function ResultsSection({ locale = "es" }: { locale?: Locale }) {
               <p className="m-0 text-base leading-relaxed text-(--color-blue)">
                 {metric.label}
               </p>
+              {metric.compare ? <BeforeAfterBars {...metric.compare} /> : null}
               <p className="m-0 text-sm text-(--color-secondary)">
                 {metric.case}
               </p>

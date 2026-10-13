@@ -31,6 +31,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* the sticky header is 80px tall: keep anchored sections clear of it */
+    scroll-padding-top: 80px;
   }
 
   body {
@@ -138,6 +140,94 @@
 
 .edge path {
   transition: opacity var(--motion-200) var(--ease-out);
+}
+
+/* ============================================================
+   HERO ENTRANCE — CSS only, delays are set inline per element
+   ============================================================ */
+.hero-in {
+  animation: hero-in var(--motion-300) var(--ease-out) both;
+}
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.node-in {
+  animation: node-in var(--motion-300) var(--ease-out) both;
+}
+@keyframes node-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Edges draw themselves (pathLength is normalised to 1 in NetworkMap). */
+.edge-draw {
+  stroke-dasharray: 1 1;
+  animation: edge-draw var(--motion-300) var(--ease-out) both;
+}
+@keyframes edge-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ============================================================
+   HEADER — reading progress + current-section underline
+   ============================================================ */
+.read-progress {
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-150) ease-in;
+}
+.nav-link:hover::after,
+.nav-link[aria-current="location"]::after {
+  transform: scaleX(1);
+  transition: transform var(--motion-200) var(--ease-out);
+}
+
+/* ============================================================
+   BEFORE / AFTER BARS — same 1.2 s and curve as CountUp
+   ============================================================ */
+.ba-fill {
+  transform-origin: left;
+}
+.ba.is-in .ba-fill {
+  animation: ba-grow 1200ms cubic-bezier(0.33, 1, 0.68, 1) both;
+}
+@keyframes ba-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 .node-dot {
   transition: opacity var(--motion-200) var(--ease-out);
@@ -559,5 +649,17 @@ html.has-custom-cursor button {
   }
   .descend-arrow {
     animation: none;
+  }
+  .hero-in,
+  .node-in,
+  .edge-draw,
+  .ba.is-in .ba-fill {
+    animation: none;
+  }
+  .edge-draw {
+    stroke-dasharray: none;
+  }
+  .nav-link::after {
+    transition: none;
   }
 }

@@ -94,11 +94,16 @@ export function NetworkMap({
             >
               <path
                 d={`M${x1} ${y1} Q${cx} ${cy} ${x2} ${y2}`}
+                pathLength={1}
+                className="edge-draw"
                 fill="none"
                 stroke={on ? "#B88992" : "#7FA8D8"}
                 strokeWidth={on ? 1.75 : 1}
                 strokeLinecap="round"
-                style={{ opacity: selectedId ? (on ? 1 : 0.12) : 0.45 }}
+                style={{
+                  opacity: selectedId ? (on ? 1 : 0.12) : 0.45,
+                  animationDelay: `${500 + index * 30}ms`,
+                }}
               />
             </svg>
           );
@@ -121,8 +126,9 @@ export function NetworkMap({
               key={node.id}
               type="button"
               id={`nodo-d${index}`}
-              className="node-btn absolute -translate-x-1/2 flex items-center gap-0 p-0 border-0 bg-transparent whitespace-nowrap"
+              className="node-btn node-in absolute -translate-x-1/2 flex items-center gap-0 p-0 border-0 bg-transparent whitespace-nowrap"
               style={{
+                animationDelay: `${300 + index * 70}ms`,
                 left: x,
                 top: up ? y - 44 : y - 22,
                 flexDirection: up ? "column-reverse" : "column",
