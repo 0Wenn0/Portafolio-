@@ -72,6 +72,7 @@ const es: OpenAiMethodContent = {
       desc: "Banco de ítems, regla de decisión y plan de análisis para saber dónde está una institución antes de proponerle nada.",
       notThis: "No está pilotado. El informe de ejemplo usará datos sintéticos rotulados como tales.",
       status: "draft",
+      href: "/piezas/diagnostico-adopcion-ia.pdf",
     },
     {
       code: "P3",
@@ -167,8 +168,9 @@ const en: OpenAiMethodContent = {
       code: "P2",
       title: "AI adoption diagnostic",
       desc: "An item bank, a decision rule, and an analysis plan to learn where an institution stands before proposing anything.",
-      notThis: "Not piloted. The sample report will use synthetic data labeled as such.",
+      notThis: "Not piloted. The document is in Spanish. The sample report will use synthetic data labeled as such.",
       status: "draft",
+      href: "/piezas/diagnostico-adopcion-ia.pdf",
     },
     {
       code: "P3",
