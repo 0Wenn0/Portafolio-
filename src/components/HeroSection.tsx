@@ -11,11 +11,12 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
   const hero = getHero(locale);
   const cvHref = getCvHref(locale);
 
-  // Entrance sequence: eyebrow, then the title word by word (80 ms apart),
-  // then each block ~100 ms after the previous one. Pure CSS (see .hero-in),
-  // so the text is in the server HTML and visible without JavaScript.
+  // Entrance sequence: eyebrow, then the title word by word (110 ms apart,
+  // each word still fading while the next starts), then each block 150 ms
+  // after the previous one. Pure CSS (see .hero-in), so the text is in the
+  // server HTML and visible without JavaScript.
   const titleWords = hero.title.split(" ");
-  const titleEnd = 80 + titleWords.length * 80;
+  const titleEnd = titleWords.length * 110;
   const at = (ms: number) => ({ animationDelay: `${ms}ms` });
 
   return (
@@ -52,7 +53,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
         >
           {titleWords.map((word, i) => (
             <Fragment key={i}>
-              <span className="hero-in inline-block" style={at(80 + i * 80)}>
+              <span className="hero-in inline-block" style={at(150 + i * 110)}>
                 {word}
               </span>{" "}
             </Fragment>
@@ -64,7 +65,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
         >
           {hero.subtitle}
         </p>
-        <div className="hero-in flex items-center gap-4 pt-2 flex-wrap" style={at(titleEnd + 100)}>
+        <div className="hero-in flex items-center gap-4 pt-2 flex-wrap" style={at(titleEnd + 150)}>
           <a
             className="btn-primary inline-flex items-center h-[52px] px-7 rounded-lg bg-(--color-ivory) text-(--color-observatory) no-underline font-semibold text-base"
             href={cvHref}
@@ -82,7 +83,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
         <nav
           aria-label={locale === "en" ? "Cases by track" : "Casos por línea"}
           className="hero-in flex flex-wrap items-center gap-2"
-          style={at(titleEnd + 200)}
+          style={at(titleEnd + 300)}
         >
           <span className="text-sm text-(--color-mist) mr-1">
             {ui.casesByLine}
@@ -98,7 +99,7 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
             </a>
           ))}
         </nav>
-        <a href="#resultados" className="hero-in descend" style={at(titleEnd + 300)}>
+        <a href="#resultados" className="hero-in descend" style={at(titleEnd + 450)}>
           {ui.scrollHint}
           <span className="descend-arrow" aria-hidden="true" />
         </a>

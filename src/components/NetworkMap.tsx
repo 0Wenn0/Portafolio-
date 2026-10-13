@@ -102,7 +102,7 @@ export function NetworkMap({
                 strokeLinecap="round"
                 style={{
                   opacity: selectedId ? (on ? 1 : 0.12) : 0.45,
-                  animationDelay: `${500 + index * 30}ms`,
+                  animationDelay: `${700 + index * 45}ms`,
                 }}
               />
             </svg>
@@ -128,7 +128,7 @@ export function NetworkMap({
               id={`nodo-d${index}`}
               className="node-btn node-in absolute -translate-x-1/2 flex items-center gap-0 p-0 border-0 bg-transparent whitespace-nowrap"
               style={{
-                animationDelay: `${300 + index * 70}ms`,
+                animationDelay: `${400 + index * 90}ms`,
                 left: x,
                 top: up ? y - 44 : y - 22,
                 flexDirection: up ? "column-reverse" : "column",
