@@ -31,9 +31,10 @@ export function CountUp({
 
   const ref = useRef<HTMLSpanElement>(null);
   const hasStarted = useRef(false);
-  const [display, setDisplay] = useState(() =>
-    match ? formatValue(prefix, 0, suffix) : value,
-  );
+  // The server renders the final value, so crawlers, link previews, screen
+  // readers and no-JS visitors never see a zero. The count-up only replays
+  // from zero for people who can see it happen.
+  const [display, setDisplay] = useState(value);
 
   useEffect(() => {
     if (!match) return;
@@ -41,15 +42,17 @@ export function CountUp({
     if (!el) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in window)) return;
+
+    // Already on screen at load: leave the final value in place.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) return;
+
+    setDisplay(formatValue(prefix, 0, suffix));
 
     const run = () => {
       if (hasStarted.current) return;
       hasStarted.current = true;
-
-      if (reduced) {
-        setDisplay(formatValue(prefix, target, suffix));
-        return;
-      }
 
       const start = performance.now();
       const step = (now: number) => {
@@ -60,11 +63,6 @@ export function CountUp({
       };
       requestAnimationFrame(step);
     };
-
-    if (!("IntersectionObserver" in window)) {
-      run();
-      return;
-    }
 
     const io = new IntersectionObserver(
       (entries) => {

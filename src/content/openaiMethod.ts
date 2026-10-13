@@ -49,7 +49,7 @@ const es: OpenAiMethodContent = {
     "El trabajo con las instituciones ocurrió. Todos los talleres se impartieron. Apliqué diagnósticos y redacté policy briefs y planes completos. La tabla de alcance, al final, dice qué fue y con quién.",
     "Lo único que no se implementó fueron los planes nacionales. Los de TecNM y de la Secretaría de Educación Superior se aprobaron. Los de SEMS y educación básica no llegaron a un acuerdo de implementación.",
     "La escalera, las cuatro decisiones de diseño y el taller de 2 horas recogen lo que implementé en el programa, escrito en genérico. El diagnóstico es la versión formal de los que apliqué, escrita ahora.",
-    "Los ejemplos son ilustrativos y los datos, cuando los hay, son sintéticos y están rotulados.",
+    "Los cuatro documentos son primeras versiones. Los ejemplos son ilustrativos y los datos, cuando los hay, son sintéticos y están rotulados.",
     "Uso los estándares CONOCER como criterio de calidad. Ningún documento dice estar certificado.",
   ],
   piecesTitle: "Lo que muestro",
@@ -133,9 +133,29 @@ const es: OpenAiMethodContent = {
             limit: "No los publico.",
           },
           {
-            what: "Diseñé planes de adopción de IA por niveles, de la alfabetización a los agentes, y los entregué desarrollados, con su plan instruccional completo. Cada plan se adaptó a su institución. TecNM: una plataforma educativa con KPIs, proyectada para 30,000 docentes y de 50,000 a 100,000 estudiantes. Secretaría de Educación Superior: un programa de 30 horas para integrarse a Saberes MX. SEMS: un programa para preparatorias. Educación básica: la integración de la IA en la Nueva Escuela Mexicana (NEM), según su plan de estudios.",
+            what: "Diseñé planes de adopción de IA por niveles, de la alfabetización a los agentes, adaptados a cada institución. Los entregué desarrollados, con su plan instruccional completo.",
             who: "TecNM, Secretaría de Educación Superior, SEMS y educación básica.",
-            limit: "Las autoridades de TecNM y de la Secretaría de Educación Superior aprobaron sus planes, y ningún plan nacional llegó a implementarse. SEMS y educación básica no llegaron a un acuerdo de implementación. Las cifras son metas proyectadas.",
+            limit: "Ningún plan nacional llegó a implementarse. Las cifras son metas proyectadas.",
+          },
+          {
+            what: "TecNM: una plataforma educativa con KPIs, proyectada para 30,000 docentes y de 50,000 a 100,000 estudiantes.",
+            who: "TecNM.",
+            limit: "Las autoridades aprobaron el plan y no se implementó.",
+          },
+          {
+            what: "Secretaría de Educación Superior: un programa de 30 horas para integrarse a Saberes MX.",
+            who: "Secretaría de Educación Superior.",
+            limit: "Las autoridades aprobaron el plan y no se implementó.",
+          },
+          {
+            what: "SEMS: un programa para preparatorias.",
+            who: "SEMS.",
+            limit: "No llegó a un acuerdo de implementación.",
+          },
+          {
+            what: "Educación básica: la integración de la IA en la Nueva Escuela Mexicana (NEM), según su plan de estudios.",
+            who: "Educación básica.",
+            limit: "No llegó a un acuerdo de implementación.",
           },
           {
             what: "Más de 3,000 asistentes a talleres.",
@@ -162,7 +182,7 @@ const en: OpenAiMethodContent = {
     "The work with the institutions happened. All workshops were delivered. I applied diagnostics and wrote policy briefs and complete plans. The scope table at the end says what it was and with whom.",
     "The only thing not implemented was the national plans. The TecNM and Secretariat of Higher Education plans were approved. The SEMS and basic education plans did not reach an implementation agreement.",
     "The ladder, the four design decisions, and the 2-hour workshop capture what I implemented in the program, written in generic terms. The diagnostic is the formal version of the ones I applied, written now.",
-    "Examples are illustrative, and any data is synthetic and labeled.",
+    "The four documents are first versions. Examples are illustrative, and any data is synthetic and labeled.",
     "I use CONOCER standards as a quality criterion. No document claims to be certified.",
   ],
   piecesTitle: "What I show",
@@ -246,9 +266,29 @@ const en: OpenAiMethodContent = {
             limit: "I do not publish them.",
           },
           {
-            what: "I designed tiered AI adoption plans, from literacy to agents, and handed them over fully developed, with a complete instructional plan. Each plan was adapted to its institution. TecNM: an education platform with KPIs, projected for 30,000 teachers and 50,000 to 100,000 students. Secretariat of Higher Education: a 30-hour program to plug into Saberes MX. SEMS: a program for upper-secondary schools. Basic education: the integration of AI into the Nueva Escuela Mexicana (NEM), following its curriculum.",
+            what: "I designed tiered AI adoption plans, from literacy to agents, adapted to each institution. I handed them over fully developed, with a complete instructional plan.",
             who: "TecNM, the Secretariat of Higher Education, SEMS, and basic education.",
-            limit: "Authorities at TecNM and the Secretariat of Higher Education approved their plans, and no national plan reached implementation. SEMS and basic education did not reach an implementation agreement. The figures are projected targets.",
+            limit: "No national plan reached implementation. The figures are projected targets.",
+          },
+          {
+            what: "TecNM: an education platform with KPIs, projected for 30,000 teachers and 50,000 to 100,000 students.",
+            who: "TecNM.",
+            limit: "Authorities approved the plan and it was not implemented.",
+          },
+          {
+            what: "Secretariat of Higher Education: a 30-hour program to plug into Saberes MX.",
+            who: "Secretariat of Higher Education.",
+            limit: "Authorities approved the plan and it was not implemented.",
+          },
+          {
+            what: "SEMS: a program for upper-secondary schools.",
+            who: "SEMS.",
+            limit: "It did not reach an implementation agreement.",
+          },
+          {
+            what: "Basic education: the integration of AI into the Nueva Escuela Mexicana (NEM), following its curriculum.",
+            who: "Basic education.",
+            limit: "It did not reach an implementation agreement.",
           },
           {
             what: "Over 3,000 workshop attendees.",

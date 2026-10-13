@@ -73,12 +73,6 @@ export function OpenAiMethodCaseStudy({ locale = "es" }: { locale?: Locale }) {
                   <span className="text-sm font-semibold text-(--color-secondary)">
                     {piece.code}
                   </span>
-                  <span
-                    className="self-start text-[13px] font-semibold text-(--color-blue) px-2 py-1 rounded"
-                    style={{ background: "var(--color-dawn)" }}
-                  >
-                    {content.statusLabels[piece.status]}
-                  </span>
                 </div>
                 <div className="md:col-span-9 flex flex-col gap-3">
                   <h3 className="m-0 font-[family-name:var(--font-display)] font-semibold text-[24px] md:text-[28px] leading-tight text-(--color-blue)">
