@@ -86,7 +86,10 @@ const learningDesignEs: LearningDesignItem[] = [
     title: "Pactos de ceniza",
     kind: "Juego multijugador de aprendizaje",
     tools: "JavaScript · Netlify · herramientas de OpenAI",
-    desc: "Juego bilingüe en navegador para 2 a 8 personas. En cinco crisis de ciencia ficción, los equipos investigan evidencia, reciben información privada según su rol, negocian y emiten un veredicto. El cierre no premia una respuesta correcta: pregunta qué midió el sistema, qué omitió, quién se benefició y quién cargó el costo.",
+    desc: "Juego bilingüe en tiempo real para 2 a 8 personas, de 25 a 30 minutos y un dispositivo por jugador. En cada misión de ciencia ficción, la tripulación toma cuatro decisiones enlazadas y cada una pasa por cuatro fases: explorar la evidencia, debatir, emitir un veredicto y revisar el impacto. Cada quien recibe un rol con información privada e intereses propios. El cierre no premia una respuesta correcta: pregunta qué midió el sistema, qué omitió, quién se benefició y quién cargó el costo.",
+    image: "/learning-design/pactos-partida.webp",
+    imageAlt:
+      "Partida de Pactos de ceniza en la misión «La cuarentena de Kestrel»: fases Explorar, Debatir, Veredicto e Impacto; acciones para reunir evidencia; un informe privado del rol de auditor de registros, y los indicadores de la colonia (seguridad, confianza y autonomía).",
     lenses: [
       {
         title: "Objetivos de aprendizaje",
@@ -190,7 +193,10 @@ const learningDesignEn: LearningDesignItem[] = [
     title: "Pacts After the Fall",
     kind: "Multiplayer learning game",
     tools: "JavaScript · Netlify · OpenAI tools",
-    desc: "A bilingual browser game for 2 to 8 players. Across five sci-fi crises, teams investigate evidence, receive private information by role, negotiate, and deliver a verdict. The ending rewards no right answer: it asks what the system measured, what it left out, who benefited, and who bore the cost.",
+    desc: "A bilingual real-time game for 2 to 8 players, 25 to 30 minutes, one device each. In each sci-fi mission the crew makes four linked decisions, and each one moves through four phases: explore the evidence, debate, deliver a verdict, and review the impact. Every player gets a role with private information and their own interests. The ending rewards no right answer: it asks what the system measured, what it left out, who benefited, and who bore the cost.",
+    image: "/learning-design/pactos-partida.webp",
+    imageAlt:
+      "A Pacts After the Fall game in the mission \"The Kestrel quarantine\": Explore, Debate, Final verdict, and Impact phases; actions to gather evidence; a private brief for the records auditor role; and the colony measures (safety, trust, and autonomy).",
     lenses: [
       {
         title: "Learning objectives",
