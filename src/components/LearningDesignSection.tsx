@@ -28,6 +28,28 @@ function ItemCard({ item, ui, index }: { item: LearningDesignItem; ui: Ui; index
           />
         </div>
       )}
+      {item.video && (
+        <figure className="m-0 flex flex-col gap-2">
+          <video
+            className="w-full h-auto rounded"
+            style={{ aspectRatio: "16 / 9", background: "var(--color-observatory)" }}
+            controls
+            playsInline
+            preload="none"
+            poster={item.video.poster}
+            aria-label={item.video.label}
+          >
+            <source src={item.video.src} type="video/mp4" />
+          </video>
+          <DetailAccordion label={item.video.transcriptLabel}>
+            <ol className="m-0 pl-5 flex flex-col gap-2 text-[15px] leading-snug text-(--color-secondary)">
+              {item.video.transcript.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ol>
+          </DetailAccordion>
+        </figure>
+      )}
       <p className="m-0 text-[13px] uppercase tracking-[0.08em] text-(--color-secondary)">
         {item.kind} · {item.tools}
       </p>

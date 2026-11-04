@@ -105,4 +105,11 @@ export type LearningDesignItem = {
   links: { label: string; href: string }[];
   image?: string;
   imageAlt?: string;
+  video?: {
+    src: string;
+    poster: string;
+    label: string;
+    transcriptLabel: string;
+    transcript: string[];
+  };
 };

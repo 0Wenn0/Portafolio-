@@ -11,6 +11,20 @@ const learningDesignEs: LearningDesignItem[] = [
   {
     group: "product",
     title: "Criterio",
+    video: {
+      src: "/learning-design/criterio-demo.mp4",
+      poster: "/learning-design/criterio-demo-poster.webp",
+      label: "Video de 32 segundos que recorre el flujo de Criterio",
+      transcriptLabel: "Texto del video",
+      transcript: [
+        "¿Quién decide? La IA solo sugiere.",
+        "Paso 1, Pienso: «Antes de preguntar, piensa tú». El docente escribe su idea antes de ver cualquier sugerencia; por ejemplo, equipos que analizan un caso real, calculan VPN y TIR a mano y después contrastan con la IA.",
+        "Paso 2, Consulto: «Tu idea, frente a otras». Tres propuestas de la IA: debate de dos posturas, detectives del error y rompecabezas de expertos. Hasta tres, sin obligación de quedarse con ninguna.",
+        "Paso 3, Decido: «Nada se guarda sin tu aprobación». El docente conserva, edita, combina o rechaza cada propuesta y lo justifica en una oración.",
+        "Paso 4, Reflexiono: aportó el docente la idea inicial, el cálculo a mano y la justificación; aportó la IA la dinámica de detectives y una rúbrica de tres niveles.",
+        "Cierre: «Tú decides. La IA sugiere». Criterio, para docentes universitarios.",
+      ],
+    },
     kind: "App para docentes universitarios",
     tools: "Replit · IA generativa",
     desc: "Herramienta para que docentes universitarios diseñen actividades de aprendizaje con IA sin dejarle a la IA el juicio pedagógico. Está pensada para cualquier carrera: lo central es el criterio del docente, no un banco de casos de una disciplina. No tiene puntos, insignias ni cuentas; la biblioteca de actividades se guarda solo en el navegador.",
@@ -118,6 +132,20 @@ const learningDesignEn: LearningDesignItem[] = [
   {
     group: "product",
     title: "Criterio",
+    video: {
+      src: "/learning-design/criterio-demo.mp4",
+      poster: "/learning-design/criterio-demo-poster.webp",
+      label: "32-second video walking through the Criterio flow (on-screen text in Spanish)",
+      transcriptLabel: "Video text, in English",
+      transcript: [
+        "Who decides? The AI only suggests.",
+        "Step 1, I think: \"Before you ask, think for yourself.\" The teacher writes their idea before seeing any suggestion; for example, teams analyze a real case, calculate NPV and IRR by hand, then compare with the AI.",
+        "Step 2, I consult: \"Your idea, next to others.\" Three AI proposals: a two-sided debate, error detectives, and an expert jigsaw. Up to three, with no obligation to keep any.",
+        "Step 3, I decide: \"Nothing is saved without your approval.\" The teacher keeps, edits, combines, or rejects each proposal and justifies it in one sentence.",
+        "Step 4, I reflect: the teacher contributed the initial idea, the hand calculation, and the justification; the AI contributed the detectives activity and a three-level rubric.",
+        "Closing: \"You decide. The AI suggests.\" Criterio, for university faculty.",
+      ],
+    },
     kind: "App for university faculty",
     tools: "Replit · generative AI",
     desc: "A tool that helps university faculty design learning activities with AI without handing their pedagogical judgment to the AI. It is meant for any field: the core is the teacher's judgment, not a case bank for one discipline. No points, badges, or accounts; the activity library is stored only in the browser.",
