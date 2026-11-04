@@ -81,3 +81,28 @@ export type NetworkNode = {
 };
 
 export type NetworkEdge = [source: string, target: string, caseLabel: string];
+
+export type LearningDesignLens = {
+  title: string;
+  points: string[];
+};
+
+export type LearningDesignItem = {
+  group: "product" | "authoring";
+  title: string;
+  kind: string;
+  tools: string;
+  desc: string;
+  flow?: { step: string; text: string }[];
+  lenses?: LearningDesignLens[];
+  compare?: {
+    caption: string;
+    headers: [string, string, string];
+    rows: [string, string, string][];
+  };
+  contribution: string;
+  evidence: string;
+  links: { label: string; href: string }[];
+  image?: string;
+  imageAlt?: string;
+};

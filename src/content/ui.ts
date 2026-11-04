@@ -38,6 +38,16 @@ export const ui = {
     servicesSubtitle:
       "Para equipos e instituciones que quieren adoptar IA con método, formar a su gente o comunicar mejor sus proyectos.",
     bookCall: "Agendar llamada de diagnóstico, 30 minutos sin costo",
+    // Learning design
+    ldTitle: "Diseño instruccional",
+    ldSubtitle:
+      "Experiencias de aprendizaje que diseño desde el objetivo y la forma en que las personas piensan, deciden y aprenden.",
+    ldProducts: "Productos propios",
+    ldAuthoring: "Muestras en herramientas de autoría",
+    ldFlow: "Flujo",
+    ldWhy: "Fundamento pedagógico",
+    ldDiff: "Qué la distingue",
+    ldStatus: "Estado de la evidencia:",
     // Lab
     labTitle: "Laboratorio",
     labSubtitle:
@@ -183,6 +193,16 @@ export const ui = {
     servicesSubtitle:
       "For teams and institutions that want to adopt AI with method, train their people, or communicate their projects better.",
     bookCall: "Book a free 30-minute diagnostic call",
+    // Learning design
+    ldTitle: "Instructional design",
+    ldSubtitle:
+      "Learning experiences I design from the objective and from how people think, decide, and learn.",
+    ldProducts: "Own products",
+    ldAuthoring: "Samples in authoring tools",
+    ldFlow: "Flow",
+    ldWhy: "Pedagogical rationale",
+    ldDiff: "What sets it apart",
+    ldStatus: "Evidence status:",
     // Lab
     labTitle: "Lab",
     labSubtitle:

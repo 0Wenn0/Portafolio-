@@ -17,6 +17,7 @@ export function getCvHref(locale: Locale): string {
 
 const navEs = [
   { href: "#casos", label: "Casos" },
+  { href: "#diseno-instruccional", label: "Diseño instruccional" },
   { href: "#como-trabajo", label: "Cómo trabajo" },
   { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#contacto", label: "Contacto" },
@@ -24,6 +25,7 @@ const navEs = [
 
 const navEn = [
   { href: "#casos", label: "Case studies" },
+  { href: "#diseno-instruccional", label: "Instructional design" },
   { href: "#como-trabajo", label: "How I work" },
   { href: "#sobre-mi", label: "About" },
   { href: "#contacto", label: "Contact" },

@@ -3,6 +3,7 @@ import { BetaBadge } from "@/components/BetaBadge";
 import { CasesSection } from "@/components/CasesSection";
 import { CommunitySection } from "@/components/CommunitySection";
 import { ContactSection } from "@/components/ContactSection";
+import { LearningDesignSection } from "@/components/LearningDesignSection";
 import { HeroSection } from "@/components/HeroSection";
 import { HowIWorkSection } from "@/components/HowIWorkSection";
 import { LabSection } from "@/components/LabSection";
@@ -24,6 +25,7 @@ export default function Home() {
         <HeroSection locale={locale} />
         <ResultsSection locale={locale} />
         <CasesSection locale={locale} />
+        <LearningDesignSection locale={locale} />
         <CommunitySection locale={locale} />
         <HowIWorkSection locale={locale} />
         <ServicesSection locale={locale} />
