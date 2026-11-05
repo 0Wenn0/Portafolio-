@@ -123,9 +123,9 @@ const es: OpenAiMethodContent = {
             limit: "No conservo los archivos, así que no doy cifra de respuestas. TecNM y la Secretaría de Educación Superior no lo recibieron.",
           },
           {
-            what: "Medí el porcentaje de satisfacción de los asistentes: 93.9 % en DGCyVE y 80 % en COSFAC.",
+            what: "Medí el porcentaje de satisfacción de los asistentes, nivel 1 (reacción) del modelo de Kirkpatrick: 93.9 % en DGCyVE y 80 % en COSFAC.",
             who: "DGCyVE y COSFAC.",
-            limit: "Entre 80 y 100 respuestas por institución, sin número exacto. Mide satisfacción, no aprendizaje.",
+            limit: "Entre 80 y 100 respuestas por institución, sin número exacto. Mide satisfacción, no aprendizaje ni cambio de conducta (niveles 2 y 3).",
           },
           {
             what: "Redacté policy briefs y decks para cada institución participante, junto con el mapeo de actores de cada una.",
@@ -256,9 +256,9 @@ const en: OpenAiMethodContent = {
             limit: "I did not keep the files, so I give no response count. TecNM and the Secretariat of Higher Education did not receive it.",
           },
           {
-            what: "I measured the attendee satisfaction rate: 93.9% at DGCyVE and 80% at COSFAC.",
+            what: "I measured the attendee satisfaction rate, Kirkpatrick level 1 (reaction): 93.9% at DGCyVE and 80% at COSFAC.",
             who: "DGCyVE and COSFAC.",
-            limit: "Between 80 and 100 responses per institution, no exact count. It measures satisfaction, not learning.",
+            limit: "Between 80 and 100 responses per institution, no exact count. It measures satisfaction, not learning or behavior change (levels 2 and 3).",
           },
           {
             what: "I wrote policy briefs and decks for each participating institution, alongside a stakeholder map for each.",
