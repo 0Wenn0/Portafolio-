@@ -68,6 +68,8 @@ export type LabItem = {
   href: string;
   image: string;
   imageAlt: string;
+  /** Enlace secundario opcional, p. ej. el estudio de caso del proyecto. */
+  secondary?: { label: string; href: string };
 };
 
 export type TimelineItem = {
