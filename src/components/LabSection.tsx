@@ -72,6 +72,17 @@ export function LabSection({ locale = "es" }: { locale?: Locale }) {
             >
               {ui.openLabel} {item.title}
             </a>
+            {item.secondary && (
+              <a
+                href={item.secondary.href}
+                target="_blank"
+                rel="noopener"
+                aria-label={`${item.secondary.label}: ${item.title} ${ui.opensInNewTab}`}
+                className="self-start inline-flex items-center min-h-11 -mt-3 text-base font-medium"
+              >
+                {item.secondary.label}
+              </a>
+            )}
           </li>
         ))}
       </ul>

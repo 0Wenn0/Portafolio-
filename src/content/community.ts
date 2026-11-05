@@ -17,7 +17,7 @@ const communityEs: CommunityItem[] = [
     title: "Bécalas Conectadas",
     role: "Mentora",
     period: "2022 a 2023 y de nuevo en 2026",
-    desc: "Mentoría en habilidades blandas para tecnología a jóvenes de media superior y superior. En 2022 y 2023 acompañé 5 grupos de 8 a 10 participantes; en 2026 volví como mentora en la edición actual. Capacitación certificada por International Youth Foundation.",
+    desc: "Mentoría en habilidades blandas para tecnología a jóvenes de media superior y superior. En 2022 y 2023 acompañé 5 grupos de 8 a 10 participantes; en 2026 volví como mentora en la edición actual y diseñé un micrositio accesible para mi grupo (está en el Laboratorio). Capacitación certificada por International Youth Foundation.",
   },
 ];
 
@@ -38,7 +38,7 @@ const communityEn: CommunityItem[] = [
     title: "Bécalas Conectadas",
     role: "Mentor",
     period: "2022 to 2023, and again in 2026",
-    desc: "Mentoring in soft skills for tech for high school and college-age youth. In 2022 and 2023 I guided 5 groups of 8 to 10 participants; in 2026 I returned as a mentor for the current edition. Training certified by the International Youth Foundation.",
+    desc: "Mentoring in soft skills for tech for high school and college-age youth. In 2022 and 2023 I guided 5 groups of 8 to 10 participants; in 2026 I returned as a mentor for the current edition and designed an accessible microsite for my group (see the Lab). Training certified by the International Youth Foundation.",
   },
 ];
 
