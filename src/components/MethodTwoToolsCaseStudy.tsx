@@ -231,6 +231,16 @@ export function MethodTwoToolsCaseStudy({ locale = "es" }: { locale?: Locale }) 
             >
               {c.pilotDecision}
             </p>
+            <a
+              href={c.pilotSheet.href}
+              target="_blank"
+              rel="noopener"
+              aria-label={`${c.pilotSheet.label} ${ui.opensInNewTab}`}
+              className="inline-flex items-center h-11 px-5 rounded-lg border text-(--color-blue) no-underline font-medium text-[15px] w-fit"
+              style={{ borderColor: "var(--color-blue)" }}
+            >
+              {c.pilotSheet.label}
+            </a>
           </div>
         </section>
 

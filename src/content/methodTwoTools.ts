@@ -61,6 +61,7 @@ type MethodTwoToolsContent = {
   pilotHeads: { dimension: string; indicator: string; target: string };
   pilotIndicators: PilotIndicator[];
   pilotDecision: string;
+  pilotSheet: { label: string; href: string };
   evalTitle: string;
   evalIntro: string;
   kirkTitle: string;
@@ -200,6 +201,10 @@ const es: MethodTwoToolsContent = {
   ],
   pilotDecision:
     "Se escala si se cumplen adopción y calidad; se ajusta y repite si solo se cumple una; se detiene si no se cumple ninguna.",
+  pilotSheet: {
+    label: "Descargar la ficha de pilotaje (PDF, 2 páginas)",
+    href: "/piezas/ficha-pilotaje-pienso-consulto-decido.pdf",
+  },
   evalTitle: "Cómo voy a evaluar el piloto",
   evalIntro:
     "Uso dos modelos que se complementan. Kirkpatrick dice cuánto funcionó en cada nivel. Los casos de éxito de Brinkerhoff explican por qué funcionó con unos docentes y no con otros, y qué cambiar antes de escalar.",
@@ -399,6 +404,10 @@ const en: MethodTwoToolsContent = {
   ],
   pilotDecision:
     "Scale if adoption and quality are met; adjust and repeat if only one is met; stop if neither is met.",
+  pilotSheet: {
+    label: "Download the pilot sheet (PDF, 2 pages)",
+    href: "/piezas/pilot-sheet-pienso-consulto-decido.pdf",
+  },
   evalTitle: "How I will evaluate the pilot",
   evalIntro:
     "I use two models that complement each other. Kirkpatrick tells me how well it worked at each level. Brinkerhoff's Success Case Method explains why it worked for some teachers and not others, and what to change before scaling.",
