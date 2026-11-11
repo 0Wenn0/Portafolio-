@@ -108,6 +108,35 @@ export function MethodTwoToolsCaseStudy({ locale = "es" }: { locale?: Locale }) 
           </ul>
         </section>
 
+        <section aria-labelledby="tutorial-t" className={sectionClass} style={hairline} data-sr>
+          <div className="md:col-span-4 flex flex-col gap-4">
+            <h2 id="tutorial-t" className={h2Class.replace("md:col-span-4 ", "")}>
+              {c.tutorial.title}
+            </h2>
+            <p className="m-0 text-[16px] leading-relaxed text-(--color-secondary)">{c.tutorial.intro}</p>
+          </div>
+          <figure className="md:col-span-8 m-0 flex flex-col gap-3">
+            <video
+              className="w-full h-auto rounded-lg"
+              style={{ aspectRatio: "16 / 9", background: "var(--color-observatory)" }}
+              controls
+              playsInline
+              preload="none"
+              poster={c.tutorial.poster}
+              aria-label={c.tutorial.label}
+            >
+              <source src={c.tutorial.src} type="video/mp4" />
+            </video>
+            <DetailAccordion label={c.tutorial.transcriptLabel}>
+              <ol className="m-0 pl-5 flex flex-col gap-2 text-[15px] leading-snug text-(--color-secondary)">
+                {c.tutorial.transcript.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ol>
+            </DetailAccordion>
+          </figure>
+        </section>
+
         <section aria-labelledby="pruebas-t" className="box-border px-6 md:px-24 py-12 md:py-16 flex flex-col gap-6 border-b" style={hairline}>
           <h2 id="pruebas-t" className={h2Class.replace("md:col-span-4 ", "")}>
             {c.testsTitle}
