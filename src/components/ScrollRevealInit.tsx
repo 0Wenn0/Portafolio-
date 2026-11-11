@@ -28,7 +28,11 @@ export function ScrollRevealInit() {
   const pathname = usePathname() ?? "/";
   const isHome = pathname === "/" || pathname === "/en";
 
+  // Re-runs on every route change: with client-side navigation the layout
+  // (and this component) stays mounted, so keying on isHome alone left the
+  // next page's sections hidden until a full reload.
   useEffect(() => {
+    const root = document.documentElement;
     const els = Array.from(document.querySelectorAll<HTMLElement>("[data-sr]"));
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -36,8 +40,17 @@ export function ScrollRevealInit() {
 
     if (reduced || !("IntersectionObserver" in window)) {
       els.forEach((el) => el.classList.add("sr-in"));
+      root.classList.add("sr-ready");
       return;
     }
+
+    // Anything already on screen (or scrolled past) stays visible: it is
+    // marked revealed before html.sr-ready starts hiding the rest.
+    const vh = window.innerHeight;
+    els.forEach((el) => {
+      if (el.getBoundingClientRect().top < vh) el.classList.add("sr-in");
+    });
+    root.classList.add("sr-ready");
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -57,17 +70,19 @@ export function ScrollRevealInit() {
           { threshold: 0, rootMargin: "0px 0px 20% 0px" },
     );
 
-    els.forEach((el) => io.observe(el));
+    els.forEach((el) => {
+      if (!el.classList.contains("sr-in")) io.observe(el);
+    });
 
     // Position-based safety net, not a timer: only reveals an element
     // that is actually within (or just below) the viewport right now.
     const poll = window.setInterval(() => {
-      const vh = window.innerHeight;
+      const viewport = window.innerHeight;
       let remaining = false;
       for (const el of els) {
         if (el.classList.contains("sr-in")) continue;
         const rect = el.getBoundingClientRect();
-        if (rect.top < vh * 1.15 && rect.bottom > -100) {
+        if (rect.top < viewport * 1.15 && rect.bottom > -100) {
           el.classList.add("sr-in");
           io.unobserve(el);
         } else {
@@ -81,7 +96,7 @@ export function ScrollRevealInit() {
       io.disconnect();
       window.clearInterval(poll);
     };
-  }, [isHome]);
+  }, [pathname, isHome]);
 
   return null;
 }

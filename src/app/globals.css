@@ -320,14 +320,19 @@ html.has-custom-cursor button {
 /* ============================================================
    SCROLL REVEAL (IntersectionObserver-driven, see ScrollRevealInit)
    ============================================================ */
+/* Content is visible by default (server HTML, slow or failed JS). Only once
+   ScrollRevealInit has run does html.sr-ready hide what is still below the
+   fold, so a reveal can never leave a section blank. */
 [data-sr] {
-  opacity: 0;
-  transform: translateY(28px);
   transition:
     opacity 1s var(--ease-out),
     transform 1s var(--ease-out);
 }
-[data-sr].sr-in {
+html.sr-ready [data-sr] {
+  opacity: 0;
+  transform: translateY(28px);
+}
+html.sr-ready [data-sr].sr-in {
   opacity: 1;
   transform: none;
 }
