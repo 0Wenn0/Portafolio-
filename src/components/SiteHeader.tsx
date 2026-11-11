@@ -25,7 +25,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
   // homepage path in front so the browser navigates there first.
   const homeHref = locale === "en" ? "/en" : "/";
   const isHome = pathname === homeHref;
-  const toHome = (hash: string) => (isHome ? hash : `${homeHref}${hash}`);
+  const toHome = (href: string) => (href.startsWith("/") || isHome ? href : `${homeHref}${href}`);
 
   // Reading progress: written straight to the bar's transform, so scrolling
   // never re-renders the header.
@@ -97,7 +97,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
       />
       <a
         href={toHome("#inicio")}
-        className="font-[family-name:var(--font-display)] text-2xl font-semibold text-(--color-blue) no-underline py-2"
+        className="font-[family-name:var(--font-display)] text-2xl font-semibold text-(--color-blue) no-underline py-2 whitespace-nowrap"
       >
         {site.name}
       </a>
@@ -105,13 +105,21 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
       {/* Desktop nav */}
       <nav
         aria-label={locale === "en" ? "Main" : "Principal"}
-        className="hidden md:flex items-center gap-8 text-base"
+        className="hidden xl:flex items-center gap-5 text-[15px] whitespace-nowrap"
       >
         {nav.map((item) => (
           <a
             key={item.href}
             href={toHome(item.href)}
-            aria-current={activeId === item.href.slice(1) ? "location" : undefined}
+            aria-current={
+              item.href.startsWith("/")
+                ? pathname === item.href
+                  ? "page"
+                  : undefined
+                : activeId === item.href.slice(1)
+                  ? "location"
+                  : undefined
+            }
             className="nav-link text-(--color-blue) no-underline py-3"
           >
             {item.label}
@@ -161,7 +169,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
       <button
         ref={menuButtonRef}
         type="button"
-        className="md:hidden inline-flex items-center justify-center w-11 h-11 border border-(--color-blue) rounded-lg"
+        className="xl:hidden inline-flex items-center justify-center w-11 h-11 border border-(--color-blue) rounded-lg"
         aria-expanded={menuOpen}
         aria-controls="menu-movil"
         aria-label={
@@ -191,7 +199,7 @@ export function SiteHeader({ locale = "es" }: { locale?: Locale }) {
           role="dialog"
           aria-modal="true"
           aria-label={locale === "en" ? "Main menu" : "Menú principal"}
-          className="md:hidden fixed inset-0 top-20 bg-(--color-ivory) z-40 flex flex-col p-6 gap-2"
+          className="xl:hidden fixed inset-0 top-20 bg-(--color-ivory) z-40 flex flex-col p-6 gap-2"
         >
           {nav.map((item) => (
             <a

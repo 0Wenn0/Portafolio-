@@ -65,6 +65,19 @@ export function HeroSection({ locale = "es" }: { locale?: Locale }) {
         >
           {hero.subtitle}
         </p>
+        <p
+          className="hero-in m-0 text-base leading-relaxed text-(--color-mist) max-w-[600px]"
+          style={at(titleEnd + 75)}
+        >
+          {hero.method.text}{" "}
+          <a
+            href={hero.method.href}
+            className="font-medium text-(--color-ivory) underline underline-offset-4"
+            style={{ textDecorationColor: "var(--color-rose)" }}
+          >
+            {hero.method.label}
+          </a>
+        </p>
         <div className="hero-in flex items-center gap-4 pt-2 flex-wrap" style={at(titleEnd + 150)}>
           <a
             className="btn-primary inline-flex items-center h-[52px] px-7 rounded-lg bg-(--color-ivory) text-(--color-observatory) no-underline font-semibold text-base"

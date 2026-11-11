@@ -35,7 +35,7 @@ export const ui = {
     methodSubtitle: "Elige un paso para ver cómo lo apliqué en cada caso.",
     methodFramework: "Marco:",
     evidentTeaser:
-      "Estos cuatro pasos se organizan en EVIDENT, mi marco de trabajo: ocho principios para que cada decisión tenga una razón y cada resultado, un indicador.",
+      "Estos cuatro pasos se organizan en EVIDENT, mi marco de trabajo: siete principios para que cada decisión tenga una razón y cada resultado, un indicador.",
     evidentLink: "Conocer EVIDENT",
     evidentHref: "/metodo-evident",
     trialsTitle: "En prueba",
@@ -197,7 +197,7 @@ export const ui = {
     methodSubtitle: "Choose a step to see how I applied it in each case.",
     methodFramework: "Framework:",
     evidentTeaser:
-      "These four steps are organized in EVIDENT, my working framework: eight principles so every decision has a reason and every result an indicator.",
+      "These four steps are organized in EVIDENT, my working framework: seven principles so every decision has a reason and every result an indicator.",
     evidentLink: "Explore EVIDENT",
     evidentHref: "/en/metodo-evident",
     trialsTitle: "Being tested",

@@ -354,7 +354,7 @@ const es: MethodTwoToolsContent = {
     "Trabajé sola, así que no es Scrum formal: no hubo equipo, roles ni ceremonias. Usé sus prácticas (ciclos cortos, criterios de aceptación y revisión) porque se ajustan bien a un producto que se prueba con usuarios.",
   evidentTitle: "Leído con EVIDENT",
   evidentIntro:
-    "Este kit es el primer caso de prueba de EVIDENT, mi marco de trabajo. Así se ve cada uno de sus ocho principios aquí, y qué falta.",
+    "Este kit es el primer caso de prueba de EVIDENT, mi marco de trabajo. Así se ve cada uno de sus siete principios aquí, y qué falta.",
   evidentLink: { label: "Conocer EVIDENT", href: "/metodo-evident" },
   readTitle: "Qué es real y qué falta",
   readItems: [
@@ -628,7 +628,7 @@ const en: MethodTwoToolsContent = {
     "I worked alone, so this isn't formal Scrum: there was no team, roles, or ceremonies. I used its practices (short cycles, acceptance criteria, and review) because they fit a product that is tested with users.",
   evidentTitle: "Read through EVIDENT",
   evidentIntro:
-    "This kit is the first test case for EVIDENT, my working framework. Here is how each of its eight principles shows up, and what is missing.",
+    "This kit is the first test case for EVIDENT, my working framework. Here is how each of its seven principles shows up, and what is missing.",
   evidentLink: { label: "Explore EVIDENT", href: "/en/metodo-evident" },
   readTitle: "What is real and what is missing",
   readItems: [
