@@ -39,7 +39,7 @@ const methodStepsEs: MethodStep[] = [
     name: "Diagnóstico",
     desc: "Entiendo cómo aprende y decide la audiencia, y qué frena la adopción, antes de diseñar nada.",
     framework:
-      "ADKAR: identifico en qué etapa está cada grupo (conciencia, deseo, conocimiento, habilidad o refuerzo) y dónde se atora.",
+      "COM-B para ubicar la barrera (capacidad, oportunidad o motivación) y ADKAR para ver en qué etapa está cada grupo (conciencia, deseo, conocimiento, habilidad o refuerzo) y dónde se atora.",
     examples: [
       {
         case: "OpenAI",
@@ -138,7 +138,7 @@ const methodStepsEn: MethodStep[] = [
     name: "Diagnose",
     desc: "I understand how the audience learns and decides, and what blocks adoption, before designing anything.",
     framework:
-      "ADKAR: I identify which stage each group is in (awareness, desire, knowledge, ability, or reinforcement) and where it gets stuck.",
+      "COM-B to locate the barrier (capability, opportunity, or motivation) and ADKAR to see which stage each group is in (awareness, desire, knowledge, ability, or reinforcement) and where it gets stuck.",
     examples: [
       {
         case: "OpenAI",
