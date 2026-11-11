@@ -31,6 +31,15 @@ type MethodTwoToolsContent = {
   problem: string;
   methodTitle: string;
   methodSteps: { step: string; text: string }[];
+  tutorial: {
+    title: string;
+    intro: string;
+    src: string;
+    poster: string;
+    label: string;
+    transcriptLabel: string;
+    transcript: string[];
+  };
   toolsTitle: string;
   toolsIntro: string;
   tools: {
@@ -110,6 +119,24 @@ const es: MethodTwoToolsContent = {
       text: "Compara, verifica y justifica qué acepta y qué rechaza. El docente evalúa ese proceso con una rúbrica de cuatro criterios.",
     },
   ],
+  tutorial: {
+    title: "Tutorial para docentes",
+    intro:
+      "Un video de dos minutos para que un docente entienda para qué sirve la Skill, cómo usarla y qué hacer con lo que devuelve. Las pantallas son capturas reales de las pruebas; tiene subtítulos y transcripción.",
+    src: "/learning-design/tutorial-pienso-consulto-decido.mp4",
+    poster: "/learning-design/tutorial-pienso-consulto-decido-poster.webp",
+    label: "Tutorial de dos minutos sobre cómo usar la Skill Pienso, consulto, decido",
+    transcriptLabel: "Texto del video",
+    transcript: [
+      "Si la IA puede escribir el ensayo de tus estudiantes en segundos, ¿qué estás evaluando realmente?",
+      "Prohibirla no funciona. Funciona rediseñar la actividad en tres momentos. Pienso: el estudiante produce una idea propia, sin IA. Consulto: usa la IA para pedir crítica o un contraejemplo, no la respuesta. Decido: compara, verifica y justifica qué acepta y qué no.",
+      "Para eso diseñé una Skill de Gemini. Escribes /pienso-consulto-decido y le cuentas tu actividad como la das hoy: la materia, la tarea y cómo la calificas.",
+      "Primero te dice qué tan fácil sería que la IA hiciera la tarea. Aquí, el riesgo es alto. Luego te propone el rediseño. En Pienso, cada estudiante escribe su explicación sin IA. En Consulto, pega su borrador en una plantilla y le pide preguntas y contraejemplos, no que escriba por él. En Decido, escribe su versión final y explica qué sugerencias aceptó, cuáles rechazó y por qué.",
+      "Así ya no calificas solo el producto. Revisas el borrador, la consulta y la versión final con una rúbrica de cuatro criterios: idea propia, uso intencional de la IA, verificación y decisión justificada.",
+      "También te entrega la instrucción lista para tus estudiantes. Si le pides que escriba el ensayo por ellos, se niega y te ofrece otra opción. La Skill no califica: tú validas cada rediseño.",
+      "Pruébalo con una sola actividad esta semana. La IA propone. Tú y tus estudiantes deciden."
+    ],
+  },
   toolsTitle: "Dos implementaciones",
   toolsIntro:
     "El método es independiente de la herramienta. Primero lo construí como app propia; después lo llevé a donde ya trabajan los docentes, para no pedirles que instalen algo nuevo.",
@@ -273,7 +300,7 @@ const es: MethodTwoToolsContent = {
     "Las pruebas las diseñé y evalué yo. Todavía no la han usado docentes reales.",
     "El plan de pilotaje y su plan de evaluación son una propuesta: no se han aplicado y no hay resultados. La rúbrica y las encuestas se validarán con el piloto.",
     "Los fundamentos (efecto de generación, metacognición, evaluación del proceso) son hipótesis sustentadas en la literatura, no efectos medidos en este proyecto.",
-    "El tutorial en video está en producción.",
+    "El tutorial usa una voz generada con ElevenLabs a partir de mi guion; las pantallas son capturas reales de las pruebas.",
   ],
   skillLink: {
     label: "Leer las instrucciones completas de la Skill",
@@ -313,6 +340,24 @@ const en: MethodTwoToolsContent = {
       text: "They compare, verify, and justify what they accept and reject. The teacher assesses that process with a four-criterion rubric.",
     },
   ],
+  tutorial: {
+    title: "Tutorial for faculty",
+    intro:
+      "A two-minute video so a teacher understands what the Skill is for, how to use it, and what to do with what it returns. The screens are real captures from the tests. Narration and subtitles are in Spanish; the transcript is translated below.",
+    src: "/learning-design/tutorial-pienso-consulto-decido.mp4",
+    poster: "/learning-design/tutorial-pienso-consulto-decido-poster.webp",
+    label: "Two-minute tutorial on how to use the Pienso, consulto, decido Skill (in Spanish)",
+    transcriptLabel: "Video transcript (English translation)",
+    transcript: [
+      "If AI can write your students' essay in seconds, what are you really assessing?",
+      "Banning it doesn't work. Redesigning the activity in three moments does. I think: the student produces their own idea, without AI. I consult: they use AI to ask for critique or a counterexample, not the answer. I decide: they compare, verify, and justify what they accept and what they don't.",
+      "That's why I designed a Gemini Skill. You type /pienso-consulto-decido and describe your activity as you run it today: the subject, the task, and how you grade it.",
+      "First it tells you how easy it would be for AI to do the task. Here, the risk is high. Then it proposes the redesign. In I think, each student writes their explanation without AI. In I consult, they paste their draft into a template and ask for questions and counterexamples, not for the AI to write for them. In I decide, they write their final version and explain which suggestions they accepted, which they rejected, and why.",
+      "So you no longer grade only the product. You review the draft, the consultation, and the final version with a four-criterion rubric: own idea, intentional use of AI, verification, and justified decision.",
+      "It also gives you the instructions ready for your students. If you ask it to write the essay for them, it refuses and offers another option. The Skill doesn't grade: you validate every redesign.",
+      "Try it with a single activity this week. AI proposes. You and your students decide."
+    ],
+  },
   toolsTitle: "Two implementations",
   toolsIntro:
     "The method doesn't depend on the tool. I first built it as my own app; then I took it to where faculty already work, so they don't have to install anything new.",
@@ -476,7 +521,7 @@ const en: MethodTwoToolsContent = {
     "I designed and evaluated the tests myself. Real faculty haven't used it yet.",
     "The pilot plan and its evaluation plan are a proposal: they haven't been run and there are no results. The rubric and surveys will be validated in the pilot.",
     "The rationale (generation effect, metacognition, process-based assessment) is a hypothesis grounded in the literature, not an effect measured in this project.",
-    "The video tutorial is in production.",
+    "The tutorial uses a voice generated with ElevenLabs from my script; the screens are real captures from the tests.",
   ],
   skillLink: {
     label: "Read the full Skill instructions (Spanish)",
