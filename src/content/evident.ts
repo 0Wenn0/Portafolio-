@@ -126,7 +126,7 @@ const es: EvidentContent = {
       letter: "N",
       name: "Navegación adaptativa",
       question: "¿Qué ajusto con lo que estoy viendo?",
-      practice: "Pruebo en pequeño, registro cada falla y la convierto en una regla antes de escalar.",
+      practice: "Trabajo en ciclos cortos: pruebo en pequeño, registro cada falla y la convierto en una regla antes de escalar.",
       step: "Adopción",
     },
     {
@@ -168,6 +168,12 @@ const es: EvidentContent = {
       step: "Medición",
       question: "¿Funcionó y por qué?",
       frameworks: "Kirkpatrick, niveles 1 a 3, y los casos de éxito de Brinkerhoff para explicar las diferencias.",
+    },
+    {
+      step: "Gestión, en todo el ciclo",
+      question: "¿Cómo avanzo sin perder el rumbo?",
+      frameworks:
+        "Prácticas ágiles de Scrum y Design Thinking: iteraciones cortas, prioridades claras, criterios de aceptación definidos antes y una revisión al cierre de cada ciclo.",
     },
   ],
   evidenceTitle: "La evidencia que lo sostiene",
@@ -370,7 +376,7 @@ const en: EvidentContent = {
       letter: "N",
       name: "Adaptive navigation",
       question: "What do I adjust based on what I see?",
-      practice: "I test small, log every failure, and turn it into a rule before scaling.",
+      practice: "I work in short cycles: I test small, log every failure, and turn it into a rule before scaling.",
       step: "Adopt",
     },
     {
@@ -411,6 +417,12 @@ const en: EvidentContent = {
       step: "Measure",
       question: "Did it work, and why?",
       frameworks: "Kirkpatrick levels 1 to 3, and Brinkerhoff's Success Case Method to explain the differences.",
+    },
+    {
+      step: "Management, across the cycle",
+      question: "How do I move forward without losing direction?",
+      frameworks:
+        "Agile practices from Scrum and Design Thinking: short iterations, clear priorities, acceptance criteria set in advance, and a review at the end of each cycle.",
     },
   ],
   evidenceTitle: "The evidence behind it",
