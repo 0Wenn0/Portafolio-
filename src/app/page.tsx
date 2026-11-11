@@ -35,7 +35,7 @@ export default function Home() {
         <MoreWorkSection locale={locale} />
       </main>
       <SiteFooter locale={locale} />
-      <BetaBadge />
+      <BetaBadge locale={locale} />
     </div>
   );
 }
