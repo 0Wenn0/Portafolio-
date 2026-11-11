@@ -340,6 +340,52 @@ export function MethodTwoToolsCaseStudy({ locale = "es" }: { locale?: Locale }) 
           </div>
         </section>
 
+        <section aria-labelledby="gestion-t" className={sectionClass} style={hairline} data-sr>
+          <div className="md:col-span-4 flex flex-col gap-4">
+            <h2 id="gestion-t" className={h2Class.replace("md:col-span-4 ", "")}>
+              {c.pmTitle}
+            </h2>
+            <p className="m-0 text-[16px] leading-relaxed text-(--color-secondary)">{c.pmIntro}</p>
+          </div>
+          <div className="md:col-span-8 flex flex-col gap-8">
+            <dl className="m-0 flex flex-col">
+              {c.pmItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="grid grid-cols-1 sm:grid-cols-12 gap-1 sm:gap-4 py-3 border-t"
+                  style={hairline}
+                >
+                  <dt className="sm:col-span-4 text-[15px] font-semibold text-(--color-blue)">{item.label}</dt>
+                  <dd className="sm:col-span-8 m-0 text-[15px] leading-relaxed text-(--color-blue)">{item.text}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="flex flex-col gap-3">
+              <h3 className="m-0 text-[17px] font-semibold text-(--color-blue)">{c.pmBoardLabel}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {c.pmBoard.map((col) => (
+                  <div key={col.column} className="flex flex-col gap-2 border-t pt-3" style={hairline}>
+                    <h4 className="m-0 text-[13px] font-semibold uppercase tracking-wide text-(--color-metric)">
+                      {col.column}
+                    </h4>
+                    <ul className="m-0 pl-5 list-disc flex flex-col gap-1 text-[15px] leading-snug text-(--color-blue)">
+                      {col.items.map((it) => (
+                        <li key={it}>{it}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p
+              className="m-0 pl-3 text-[16px] leading-relaxed text-(--color-blue) max-w-[70ch]"
+              style={{ borderLeft: "2px solid var(--color-rose)" }}
+            >
+              {c.pmNote}
+            </p>
+          </div>
+        </section>
+
         <section aria-labelledby="evident-t" className={sectionClass} style={hairline} data-sr>
           <div className="md:col-span-4 flex flex-col gap-4">
             <h2 id="evident-t" className={h2Class.replace("md:col-span-4 ", "")}>

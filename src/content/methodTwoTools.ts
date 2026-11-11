@@ -85,6 +85,12 @@ type MethodTwoToolsContent = {
   evidentTitle: string;
   evidentIntro: string;
   evidentLink: { label: string; href: string };
+  pmTitle: string;
+  pmIntro: string;
+  pmItems: { label: string; text: string }[];
+  pmBoardLabel: string;
+  pmBoard: { column: string; items: string[] }[];
+  pmNote: string;
   readTitle: string;
   readItems: string[];
   skillLink: { label: string; href: string };
@@ -297,6 +303,55 @@ const es: MethodTwoToolsContent = {
   ],
   ethicsNote:
     "La participación es voluntaria y con consentimiento. Las muestras de trabajos se anonimizan antes de revisarlas y los resultados se reportan por grupo, sin identificar a docentes ni estudiantes.",
+  pmTitle: "Cómo gestioné el proyecto",
+  pmIntro:
+    "Lo llevé en ciclos cortos, al estilo ágil: definir qué tenía que pasar, probar, revisar y ajustar antes de avanzar.",
+  pmItems: [
+    {
+      label: "Iteraciones",
+      text: "Cuatro pruebas y tres rondas de ajuste. Cada falla se registró y se convirtió en una regla de las instrucciones.",
+    },
+    {
+      label: "Criterios de aceptación",
+      text: "Cada prueba definía de antemano qué tenía que pasar para aprobarse.",
+    },
+    {
+      label: "Hoja de ruta",
+      text: "Un piloto de cuatro semanas con un entregable por semana: encuesta inicial, taller, aplicación en clase y cierre con entrevistas.",
+    },
+    {
+      label: "Decisión con reglas previas",
+      text: "Escalar, ajustar o detener según metas de adopción y calidad fijadas antes de empezar, no después de ver los resultados.",
+    },
+    {
+      label: "Riesgos",
+      text: "Participación voluntaria con consentimiento, trabajos anonimizados y un límite claro: la Skill propone, no califica.",
+    },
+  ],
+  pmBoardLabel: "Estado del trabajo",
+  pmBoard: [
+    {
+      column: "Hecho",
+      items: [
+        "Método en tres momentos",
+        "App Criterio (prototipo)",
+        "Skill de Gemini con cuatro pruebas",
+        "Tutorial con subtítulos",
+        "Plan de pilotaje y de evaluación",
+        "Ficha de pilotaje en PDF",
+      ],
+    },
+    {
+      column: "Siguiente",
+      items: ["Convocar a 20 docentes voluntarios", "Validar la rúbrica y las encuestas"],
+    },
+    {
+      column: "Después",
+      items: ["Aplicar el piloto", "Informe y decisión de escalar"],
+    },
+  ],
+  pmNote:
+    "Trabajé sola, así que no es Scrum formal: no hubo equipo, roles ni ceremonias. Usé sus prácticas (ciclos cortos, criterios de aceptación y revisión) porque se ajustan bien a un producto que se prueba con usuarios.",
   evidentTitle: "Leído con EVIDENT",
   evidentIntro:
     "Este kit es el primer caso de prueba de EVIDENT, mi marco de trabajo. Así se ve cada uno de sus ocho principios aquí, y qué falta.",
@@ -522,6 +577,55 @@ const en: MethodTwoToolsContent = {
   ],
   ethicsNote:
     "Participation is voluntary and with consent. Work samples are anonymized before review, and results are reported by group, without identifying teachers or students.",
+  pmTitle: "How I managed the project",
+  pmIntro:
+    "I ran it in short, agile-style cycles: define what had to happen, test, review, and adjust before moving on.",
+  pmItems: [
+    {
+      label: "Iterations",
+      text: "Four tests and three rounds of adjustment. Every failure was logged and turned into a rule in the instructions.",
+    },
+    {
+      label: "Acceptance criteria",
+      text: "Each test defined in advance what had to happen for it to pass.",
+    },
+    {
+      label: "Roadmap",
+      text: "A four-week pilot with one deliverable per week: initial survey, workshop, classroom use, and closing interviews.",
+    },
+    {
+      label: "Decision rules set upfront",
+      text: "Scale, adjust, or stop based on adoption and quality targets set before starting, not after seeing the results.",
+    },
+    {
+      label: "Risks",
+      text: "Voluntary participation with consent, anonymized work samples, and a clear limit: the Skill suggests, it doesn't grade.",
+    },
+  ],
+  pmBoardLabel: "Work status",
+  pmBoard: [
+    {
+      column: "Done",
+      items: [
+        "Three-moment method",
+        "Criterio app (prototype)",
+        "Gemini Skill with four tests",
+        "Captioned tutorial",
+        "Pilot and evaluation plan",
+        "Pilot sheet PDF",
+      ],
+    },
+    {
+      column: "Next",
+      items: ["Recruit 20 faculty volunteers", "Validate the rubric and surveys"],
+    },
+    {
+      column: "Later",
+      items: ["Run the pilot", "Report and scaling decision"],
+    },
+  ],
+  pmNote:
+    "I worked alone, so this isn't formal Scrum: there was no team, roles, or ceremonies. I used its practices (short cycles, acceptance criteria, and review) because they fit a product that is tested with users.",
   evidentTitle: "Read through EVIDENT",
   evidentIntro:
     "This kit is the first test case for EVIDENT, my working framework. Here is how each of its eight principles shows up, and what is missing.",
