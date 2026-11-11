@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DetailAccordion } from "@/components/DetailAccordion";
+import { EvidentKitList } from "@/components/EvidentFramework";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getMethodTwoTools } from "@/content/methodTwoTools";
@@ -337,6 +338,22 @@ export function MethodTwoToolsCaseStudy({ locale = "es" }: { locale?: Locale }) 
               {c.ethicsNote}
             </p>
           </div>
+        </section>
+
+        <section aria-labelledby="evident-t" className={sectionClass} style={hairline} data-sr>
+          <div className="md:col-span-4 flex flex-col gap-4">
+            <h2 id="evident-t" className={h2Class.replace("md:col-span-4 ", "")}>
+              {c.evidentTitle}
+            </h2>
+            <p className="m-0 text-[16px] leading-relaxed text-(--color-secondary)">{c.evidentIntro}</p>
+            <Link
+              href={c.evidentLink.href}
+              className="inline-flex items-center min-h-11 text-[15px] font-medium w-fit"
+            >
+              {c.evidentLink.label}
+            </Link>
+          </div>
+          <EvidentKitList locale={locale} className="md:col-span-8" />
         </section>
 
         <section aria-labelledby="real-t" className={sectionClass} style={hairline} data-sr>

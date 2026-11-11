@@ -8,10 +8,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/casos/ice-endes",
     "/casos/openai-metodo",
     "/casos/pienso-consulto-decido",
+    "/metodo-evident",
     "/en",
     "/en/casos/ice-endes",
     "/en/casos/openai-metodo",
     "/en/casos/pienso-consulto-decido",
+    "/en/metodo-evident",
   ];
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,

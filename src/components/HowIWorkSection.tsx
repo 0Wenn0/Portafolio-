@@ -66,6 +66,16 @@ export function HowIWorkSection({ locale = "es" }: { locale?: Locale }) {
             {ui.methodSubtitle}
           </p>
         </div>
+        <p className="m-0 -mt-4 text-base leading-relaxed text-(--color-mist) max-w-[70ch]">
+          {ui.evidentTeaser}{" "}
+          <Link
+            href={ui.evidentHref}
+            className="font-medium text-(--color-ivory) underline underline-offset-4"
+            style={{ textDecorationColor: "var(--color-rose)" }}
+          >
+            {ui.evidentLink}
+          </Link>
+        </p>
 
         <div
           role="tablist"

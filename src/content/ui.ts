@@ -34,6 +34,10 @@ export const ui = {
     methodTitle: "El método, con ejemplos reales",
     methodSubtitle: "Elige un paso para ver cómo lo apliqué en cada caso.",
     methodFramework: "Marco:",
+    evidentTeaser:
+      "Estos cuatro pasos se organizan en EVIDENT, mi marco de trabajo: ocho principios para que cada decisión tenga una razón y cada resultado, un indicador.",
+    evidentLink: "Conocer EVIDENT",
+    evidentHref: "/metodo-evident",
     trialsTitle: "En prueba",
     trialsSubtitle: "Métodos que estoy probando y documentando antes de presentarlos como resultados.",
     // Services
@@ -192,6 +196,10 @@ export const ui = {
     methodTitle: "The method, with real examples",
     methodSubtitle: "Choose a step to see how I applied it in each case.",
     methodFramework: "Framework:",
+    evidentTeaser:
+      "These four steps are organized in EVIDENT, my working framework: eight principles so every decision has a reason and every result an indicator.",
+    evidentLink: "Explore EVIDENT",
+    evidentHref: "/en/metodo-evident",
     trialsTitle: "Being tested",
     trialsSubtitle: "Methods I am testing and documenting before presenting them as results.",
     // Services

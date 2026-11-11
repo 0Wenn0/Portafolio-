@@ -82,6 +82,9 @@ type MethodTwoToolsContent = {
   interviewLabel: string;
   interviewQuestions: string[];
   ethicsNote: string;
+  evidentTitle: string;
+  evidentIntro: string;
+  evidentLink: { label: string; href: string };
   readTitle: string;
   readItems: string[];
   skillLink: { label: string; href: string };
@@ -294,6 +297,10 @@ const es: MethodTwoToolsContent = {
   ],
   ethicsNote:
     "La participación es voluntaria y con consentimiento. Las muestras de trabajos se anonimizan antes de revisarlas y los resultados se reportan por grupo, sin identificar a docentes ni estudiantes.",
+  evidentTitle: "Leído con EVIDENT",
+  evidentIntro:
+    "Este kit es el primer caso de prueba de EVIDENT, mi marco de trabajo. Así se ve cada uno de sus ocho principios aquí, y qué falta.",
+  evidentLink: { label: "Conocer EVIDENT", href: "/metodo-evident" },
   readTitle: "Qué es real y qué falta",
   readItems: [
     "La Skill está configurada en Gemini y la probé el 10 de noviembre de 2026 con cuatro casos; las conversaciones son públicas.",
@@ -515,6 +522,10 @@ const en: MethodTwoToolsContent = {
   ],
   ethicsNote:
     "Participation is voluntary and with consent. Work samples are anonymized before review, and results are reported by group, without identifying teachers or students.",
+  evidentTitle: "Read through EVIDENT",
+  evidentIntro:
+    "This kit is the first test case for EVIDENT, my working framework. Here is how each of its eight principles shows up, and what is missing.",
+  evidentLink: { label: "Explore EVIDENT", href: "/en/metodo-evident" },
   readTitle: "What is real and what is missing",
   readItems: [
     "The Skill is configured in Gemini, and I tested it on November 10, 2026, with four cases; the conversations are public.",
