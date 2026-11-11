@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
-import { getMethodFundamentals, getMethodSteps } from "@/content/method";
+import { getMethodFundamentals, getMethodSteps, getMethodTrials } from "@/content/method";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
 import { ActNumeral } from "./ActNumeral";
@@ -10,6 +11,7 @@ export function HowIWorkSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
   const methodFundamentals = getMethodFundamentals(locale);
   const methodSteps = getMethodSteps(locale);
+  const methodTrials = getMethodTrials(locale);
   const [step, setStep] = useState(0);
   const total = methodSteps.length;
   const current = methodSteps[step] ?? methodSteps[0]!;
@@ -129,12 +131,13 @@ export function HowIWorkSection({ locale = "es" }: { locale?: Locale }) {
           aria-labelledby={`tab-${step}`}
           className="grid grid-cols-1 md:grid-cols-12 gap-6"
         >
-          <p
-            key={`desc-${step}`}
-            className="reveal md:col-span-4 m-0 text-lg leading-relaxed text-(--color-ivory)"
-          >
-            {current.desc}
-          </p>
+          <div key={`desc-${step}`} className="reveal md:col-span-4 flex flex-col gap-4">
+            <p className="m-0 text-lg leading-relaxed text-(--color-ivory)">{current.desc}</p>
+            <p className="m-0 text-base leading-relaxed text-(--color-mist)">
+              <strong className="font-semibold text-(--color-ivory)">{ui.methodFramework}</strong>{" "}
+              {current.framework}
+            </p>
+          </div>
           <div className="md:col-start-6 md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {current.examples.map((example) => (
               <div
@@ -152,6 +155,48 @@ export function HowIWorkSection({ locale = "es" }: { locale?: Locale }) {
             ))}
           </div>
         </div>
+      </div>
+
+      <div
+        className="flex flex-col gap-8 pt-12 border-t"
+        style={{ borderColor: "var(--color-secondary)" }}
+        data-sr
+      >
+        <div className="flex justify-between items-baseline flex-wrap gap-2">
+          <h3 id="prueba-t" className="m-0 text-lg font-semibold text-(--color-ivory)">
+            {ui.trialsTitle}
+          </h3>
+          <p className="m-0 text-sm text-(--color-mist)">{ui.trialsSubtitle}</p>
+        </div>
+        <ul
+          aria-labelledby="prueba-t"
+          className="m-0 p-0 list-none grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {methodTrials.map((trial) => (
+            <li
+              key={trial.name}
+              className="flex flex-col gap-2 pt-4 border-t"
+              style={{ borderColor: "var(--color-rose)" }}
+            >
+              <h4 className="m-0 font-[family-name:var(--font-display)] text-[22px] font-semibold text-(--color-ivory)">
+                {trial.name}
+              </h4>
+              <p className="m-0 text-base leading-snug text-(--color-mist)">{trial.desc}</p>
+              <p className="m-0 text-sm font-semibold" style={{ color: "var(--color-rose)" }}>
+                {trial.status}
+              </p>
+              {trial.link && (
+                <Link
+                  href={trial.link.href}
+                  className="inline-flex items-center min-h-11 text-base font-medium text-(--color-ivory) underline underline-offset-4"
+                  style={{ textDecorationColor: "var(--color-rose)" }}
+                >
+                  {trial.link.label}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
