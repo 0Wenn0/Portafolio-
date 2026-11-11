@@ -66,13 +66,13 @@ export type EvidentContent = {
 const es: EvidentContent = {
   metaTitle: "EVIDENT: mi marco de trabajo basado en evidencia — Wendy Ramírez Burgos",
   metaDescription:
-    "EVIDENT integra diagnóstico, diseño, adopción y medición en ocho principios: cada teoría con una función, cada decisión con una razón y cada resultado con un indicador verificable.",
+    "EVIDENT integra diagnóstico, diseño, adopción y medición en siete principios: cada teoría con una función, cada decisión con una razón y cada resultado con un indicador verificable.",
   eyebrow: "Marco de trabajo · versión 1.0 en prueba",
   title: "EVIDENT",
   intro:
     "Es mi forma de diseñar formación y adopción de IA. Cada teoría tiene una función, cada decisión una razón y cada resultado un indicador que se puede verificar. Lo construí desde la neuropsicología: antes de elegir la herramienta, entiendo cómo aprende, decide y cambia la gente.",
   stats: [
-    { value: "8", label: "principios, uno por letra" },
+    { value: "7", label: "principios, uno por letra" },
     { value: "4", label: "pasos de mi método" },
     { value: "7", label: "síntesis de investigación verificadas" },
   ],
@@ -81,7 +81,7 @@ const es: EvidentContent = {
     "Muchos proyectos de IA se planean alrededor de la herramienta: qué licencia comprar, qué funciones activar. La adopción se decide en otro lugar, en si las personas entienden para qué sirve, si confían en ella y si su entorno les deja usarla.",
     "Los marcos que uso por separado responden preguntas distintas. ADKAR dice en qué etapa del cambio está cada grupo; la teoría de carga cognitiva, cómo presentar la información; Kirkpatrick, qué medir. EVIDENT los ordena para que ninguna decisión quede sin justificar y ningún resultado sin evidencia.",
   ],
-  principlesTitle: "Los ocho principios",
+  principlesTitle: "Los siete principios",
   principlesIntro: "Cada letra es una pregunta que me hago antes de avanzar.",
   stepLabel: "Paso",
   principles: [
@@ -131,17 +131,10 @@ const es: EvidentContent = {
     },
     {
       letter: "T",
-      name: "Transferencia",
-      question: "¿Se usa en el trabajo real?",
-      practice: "Mido el cambio de conducta, no solo la satisfacción o el examen al final del curso.",
-      step: "Medición",
-    },
-    {
-      letter: "T",
-      name: "Trazabilidad",
-      question: "¿Puede alguien más revisar cómo llegué aquí?",
+      name: "Transferencia y trazabilidad",
+      question: "¿Se usa en el trabajo real, y alguien más puede revisar cómo llegué aquí?",
       practice:
-        "Documento fuentes, decisiones y resultados, y separo lo medido de lo que todavía es hipótesis.",
+        "Mido el cambio de conducta, no solo la satisfacción o el examen final. Documento fuentes, decisiones y resultados, y separo lo medido de lo que todavía es hipótesis.",
       step: "Medición",
     },
   ],
@@ -287,25 +280,17 @@ const es: EvidentContent = {
     },
     {
       letter: "T",
-      name: "Transferencia",
-      where: "Kirkpatrick nivel 3: actividades aplicadas en clase y uso repetido de la Skill.",
+      name: "Transferencia y trazabilidad",
+      where: "Kirkpatrick nivel 3 para medir el uso en clase, conversaciones de prueba públicas y una sección que separa lo real de lo que falta.",
       href: "/casos/pienso-consulto-decido#evaluacion",
-      status: "Planeado · se mide con el piloto",
+      status: "Parcial · la trazabilidad está hecha; la transferencia se mide con el piloto",
       done: false,
-    },
-    {
-      letter: "T",
-      name: "Trazabilidad",
-      where: "Conversaciones de prueba públicas y una sección que separa lo real de lo que falta.",
-      href: "/casos/pienso-consulto-decido#real-t",
-      status: "Hecho",
-      done: true,
     },
   ],
   kitLink: { label: "Ver el caso completo", href: "/casos/pienso-consulto-decido" },
   readTitle: "Qué es real y qué falta",
   readItems: [
-    "EVIDENT es la versión 1.0 de un marco en construcción. Lo documento en un manual interno con fases, instrumentos y una bitácora de evidencia.",
+    "EVIDENT es la versión 1.0 de un marco en construcción. Lo documento en un manual interno con instrumentos y una bitácora de evidencia; cada letra es también una fase del proceso.",
     "No propone teorías nuevas. Mi aportación es la integración: qué marco responde cada pregunta y cómo se rastrea cada decisión.",
     "Todavía no lo he aplicado completo en un proyecto con resultados medidos. El primer caso es el piloto del kit Pienso, consulto, decido.",
     "Las cifras de la tabla de evidencia vienen de las síntesis citadas, no de mis proyectos.",
@@ -317,13 +302,13 @@ const es: EvidentContent = {
 const en: EvidentContent = {
   metaTitle: "EVIDENT: my evidence-based working framework — Wendy Ramírez Burgos",
   metaDescription:
-    "EVIDENT brings diagnosis, design, adoption, and measurement together in eight principles: every theory with a function, every decision with a reason, and every result with a verifiable indicator.",
+    "EVIDENT brings diagnosis, design, adoption, and measurement together in seven principles: every theory with a function, every decision with a reason, and every result with a verifiable indicator.",
   eyebrow: "Working framework · version 1.0 in testing",
   title: "EVIDENT",
   intro:
     "It is how I design learning and AI adoption. Every theory has a function, every decision a reason, and every result an indicator that can be checked. I built it from neuropsychology: before choosing the tool, I work out how people learn, decide, and change.",
   stats: [
-    { value: "8", label: "principles, one per letter" },
+    { value: "7", label: "principles, one per letter" },
     { value: "4", label: "steps in my method" },
     { value: "7", label: "verified research syntheses" },
   ],
@@ -332,7 +317,7 @@ const en: EvidentContent = {
     "Many AI projects are planned around the tool: which license to buy, which features to turn on. Adoption is decided elsewhere, in whether people understand what it is for, whether they trust it, and whether their environment lets them use it.",
     "The frameworks I use separately answer different questions. ADKAR tells me which stage of change each group is in; cognitive load theory, how to present information; Kirkpatrick, what to measure. EVIDENT puts them in order so no decision goes unjustified and no result goes without evidence.",
   ],
-  principlesTitle: "The eight principles",
+  principlesTitle: "The seven principles",
   principlesIntro: "Each letter is a question I ask before moving on.",
   stepLabel: "Step",
   principles: [
@@ -381,16 +366,10 @@ const en: EvidentContent = {
     },
     {
       letter: "T",
-      name: "Transfer",
-      question: "Is it used in real work?",
-      practice: "I measure behavior change, not just satisfaction or an end-of-course test.",
-      step: "Measure",
-    },
-    {
-      letter: "T",
-      name: "Traceability",
-      question: "Can someone else review how I got here?",
-      practice: "I document sources, decisions, and results, and separate what was measured from what is still a hypothesis.",
+      name: "Transfer and traceability",
+      question: "Is it used in real work, and can someone else review how I got here?",
+      practice:
+        "I measure behavior change, not just satisfaction or a final test. I document sources, decisions, and results, and separate what was measured from what is still a hypothesis.",
       step: "Measure",
     },
   ],
@@ -536,25 +515,17 @@ const en: EvidentContent = {
     },
     {
       letter: "T",
-      name: "Transfer",
-      where: "Kirkpatrick level 3: activities applied in class and repeated use of the Skill.",
+      name: "Transfer and traceability",
+      where: "Kirkpatrick level 3 to measure classroom use, public test conversations, and a section that separates what is real from what is missing.",
       href: "/en/casos/pienso-consulto-decido#evaluacion",
-      status: "Planned · measured with the pilot",
+      status: "Partial · traceability is done; transfer is measured with the pilot",
       done: false,
-    },
-    {
-      letter: "T",
-      name: "Traceability",
-      where: "Public test conversations and a section that separates what is real from what is missing.",
-      href: "/en/casos/pienso-consulto-decido#real-t",
-      status: "Done",
-      done: true,
     },
   ],
   kitLink: { label: "See the full case study", href: "/en/casos/pienso-consulto-decido" },
   readTitle: "What is real and what is missing",
   readItems: [
-    "EVIDENT is version 1.0 of a framework in progress. I document it in an internal manual with phases, instruments, and an evidence log.",
+    "EVIDENT is version 1.0 of a framework in progress. I document it in an internal manual with instruments and an evidence log; each letter is also a phase of the process.",
     "It doesn't propose new theories. My contribution is the integration: which framework answers each question and how each decision is traced.",
     "I haven't yet applied it end to end in a project with measured results. The first case is the pilot of the I think, I consult, I decide kit.",
     "The figures in the evidence table come from the cited syntheses, not from my projects.",

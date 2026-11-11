@@ -19,6 +19,7 @@ const navEs = [
   { href: "#casos", label: "Casos" },
   { href: "#diseno-instruccional", label: "Diseño instruccional" },
   { href: "#como-trabajo", label: "Cómo trabajo" },
+  { href: "/metodo-evident", label: "EVIDENT" },
   { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#contacto", label: "Contacto" },
 ];
@@ -27,6 +28,7 @@ const navEn = [
   { href: "#casos", label: "Case studies" },
   { href: "#diseno-instruccional", label: "Instructional design" },
   { href: "#como-trabajo", label: "How I work" },
+  { href: "/en/metodo-evident", label: "EVIDENT" },
   { href: "#sobre-mi", label: "About" },
   { href: "#contacto", label: "Contact" },
 ];
@@ -45,6 +47,11 @@ const heroEs = {
     "Aprendizaje y EdTech",
     "Datos, IA responsable y comportamiento",
   ],
+  method: {
+    text: "Trabajo con EVIDENT, mi marco basado en evidencia: cada decisión con una razón y cada resultado con un indicador.",
+    label: "Conocer el método",
+    href: "/metodo-evident",
+  },
 };
 
 const heroEn = {
@@ -57,6 +64,11 @@ const heroEn = {
     "Learning & EdTech",
     "Data, responsible AI & behavior",
   ],
+  method: {
+    text: "I work with EVIDENT, my evidence-based framework: every decision with a reason, every result with an indicator.",
+    label: "Explore the method",
+    href: "/en/metodo-evident",
+  },
 };
 
 export function getHero(locale: Locale) {
