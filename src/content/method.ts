@@ -246,7 +246,8 @@ const methodTrialsEs: MethodTrial[] = [
   {
     name: "Casos de éxito de Brinkerhoff",
     desc: "Para evaluar el piloto: buscar a quienes más y menos aplicaron lo aprendido y entender qué lo facilitó o lo frenó.",
-    status: "Plan de evaluación en preparación",
+    status: "Plan de evaluación listo · se aplica con el piloto",
+    link: { label: "Ver el plan", href: "/casos/pienso-consulto-decido#evaluacion" },
   },
   {
     name: "Dick y Carey",
@@ -265,7 +266,8 @@ const methodTrialsEn: MethodTrial[] = [
   {
     name: "Brinkerhoff's Success Case Method",
     desc: "To evaluate the pilot: find the people who applied the most and the least, and understand what helped or got in the way.",
-    status: "Evaluation plan in preparation",
+    status: "Evaluation plan ready · runs with the pilot",
+    link: { label: "See the plan", href: "/en/casos/pienso-consulto-decido#evaluacion" },
   },
   {
     name: "Dick and Carey",
