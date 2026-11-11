@@ -18,6 +18,8 @@ export type PilotWeek = { when: string; what: string };
 
 export type PilotIndicator = { dimension: string; indicator: string; target: string };
 
+export type EvalLevel = { level: string; question: string; instrument: string; when: string };
+
 type MethodTwoToolsContent = {
   metaTitle: string;
   metaDescription: string;
@@ -59,6 +61,17 @@ type MethodTwoToolsContent = {
   pilotHeads: { dimension: string; indicator: string; target: string };
   pilotIndicators: PilotIndicator[];
   pilotDecision: string;
+  evalTitle: string;
+  evalIntro: string;
+  kirkTitle: string;
+  kirkHeads: { question: string; instrument: string; when: string };
+  kirkLevels: EvalLevel[];
+  kirkOut: string;
+  scmTitle: string;
+  scmSteps: { step: string; text: string }[];
+  interviewLabel: string;
+  interviewQuestions: string[];
+  ethicsNote: string;
   readTitle: string;
   readItems: string[];
   skillLink: { label: string; href: string };
@@ -175,7 +188,7 @@ const es: MethodTwoToolsContent = {
     { when: "Semana 0", what: "Encuesta inicial de confianza y uso de IA." },
     { when: "Semana 1", what: "Taller de 90 minutos y tutorial." },
     { when: "Semanas 2 y 3", what: "Cada docente rediseña y aplica una actividad." },
-    { when: "Semana 4", what: "Encuesta final y grupo focal." },
+    { when: "Semana 4", what: "Encuesta final y entrevistas de casos de éxito." },
   ],
   pilotIndicatorsLabel: "Indicadores y meta para escalar",
   pilotHeads: { dimension: "Dimensión", indicator: "Indicador", target: "Meta inicial" },
@@ -187,11 +200,73 @@ const es: MethodTwoToolsContent = {
   ],
   pilotDecision:
     "Se escala si se cumplen adopción y calidad; se ajusta y repite si solo se cumple una; se detiene si no se cumple ninguna.",
+  evalTitle: "Cómo voy a evaluar el piloto",
+  evalIntro:
+    "Uso dos modelos que se complementan. Kirkpatrick dice cuánto funcionó en cada nivel. Los casos de éxito de Brinkerhoff explican por qué funcionó con unos docentes y no con otros, y qué cambiar antes de escalar.",
+  kirkTitle: "Kirkpatrick, niveles 1 a 3",
+  kirkHeads: { question: "Qué pregunto", instrument: "Instrumento", when: "Cuándo" },
+  kirkLevels: [
+    {
+      level: "1 · Reacción",
+      question: "¿La Skill les pareció útil y fácil de usar en su materia?",
+      instrument: "Encuesta final: utilidad, facilidad y carga de trabajo en escala de 1 a 5, y una pregunta abierta.",
+      when: "Semana 4",
+    },
+    {
+      level: "2 · Aprendizaje",
+      question: "¿Saben rediseñar una actividad con los tres momentos?",
+      instrument:
+        "Rúbrica de 4 criterios sobre la actividad rediseñada: idea propia antes de la IA, consulta con propósito, decisión argumentada y evidencia de proceso visible para el docente.",
+      when: "Semanas 2 y 3",
+    },
+    {
+      level: "3 · Conducta",
+      question: "¿La aplicaron en clase y la volverían a usar?",
+      instrument: "Actividad aplicada con muestras anónimas de trabajos y registro de usos de la Skill.",
+      when: "Semanas 3 y 4",
+    },
+  ],
+  kirkOut:
+    "No mido el nivel 4 (resultados) en este piloto: cuatro semanas no alcanzan para ver cambios en el aprendizaje de los estudiantes. Si se escala, el siguiente paso es comparar durante un semestre.",
+  scmTitle: "Casos de éxito de Brinkerhoff",
+  scmSteps: [
+    {
+      step: "Modelo de impacto",
+      text: "Defino qué se ve cuando funciona: el docente aplica en clase una actividad rediseñada y puede ver el razonamiento de sus estudiantes, no solo el producto.",
+    },
+    {
+      step: "Encuesta breve",
+      text: "En la semana 4, los 20 docentes responden tres preguntas: si aplicaron la actividad, cuánto cambió lo que ven del razonamiento y qué lo facilitó o lo frenó.",
+    },
+    {
+      step: "Selección de casos",
+      text: "Elijo de 3 a 4 docentes con más éxito y de 3 a 4 que no la aplicaron o la abandonaron.",
+    },
+    {
+      step: "Entrevistas",
+      text: "30 minutos con cada uno, con guion y pidiendo evidencia concreta, para confirmar que el éxito es real y entender qué lo explica.",
+    },
+    {
+      step: "Informe y decisión",
+      text: "Qué condiciones hacen posible el éxito, qué barreras lo frenan y qué cambiar en la Skill, el taller o el acompañamiento. Se suma a los indicadores para decidir si se escala.",
+    },
+  ],
+  interviewLabel: "Ver el guion de entrevista",
+  interviewQuestions: [
+    "Cuéntame qué actividad rediseñaste y cómo la aplicaste.",
+    "¿Qué viste en el trabajo de tus estudiantes que antes no veías? Muéstrame un ejemplo.",
+    "¿En qué momento te ayudó la Skill y en cuál te estorbó?",
+    "¿Qué te habría hecho falta para usarla más: tiempo, ejemplos o apoyo de tu institución?",
+    "Si no la aplicaste: ¿en qué punto se detuvo y qué lo habría cambiado?",
+    "¿La volverías a usar? ¿En qué actividad?",
+  ],
+  ethicsNote:
+    "La participación es voluntaria y con consentimiento. Las muestras de trabajos se anonimizan antes de revisarlas y los resultados se reportan por grupo, sin identificar a docentes ni estudiantes.",
   readTitle: "Qué es real y qué falta",
   readItems: [
     "La Skill está configurada en Gemini y la probé el 10 de noviembre de 2026 con cuatro casos; las conversaciones son públicas.",
     "Las pruebas las diseñé y evalué yo. Todavía no la han usado docentes reales.",
-    "El plan de pilotaje es una propuesta: no se ha aplicado y no hay resultados.",
+    "El plan de pilotaje y su plan de evaluación son una propuesta: no se han aplicado y no hay resultados. La rúbrica y las encuestas se validarán con el piloto.",
     "Los fundamentos (efecto de generación, metacognición, evaluación del proceso) son hipótesis sustentadas en la literatura, no efectos medidos en este proyecto.",
     "El tutorial en video está en producción.",
   ],
@@ -312,7 +387,7 @@ const en: MethodTwoToolsContent = {
     { when: "Week 0", what: "Baseline survey on confidence and AI use." },
     { when: "Week 1", what: "90-minute workshop and tutorial." },
     { when: "Weeks 2 and 3", what: "Each teacher redesigns and runs one activity." },
-    { when: "Week 4", what: "Final survey and focus group." },
+    { when: "Week 4", what: "Final survey and success case interviews." },
   ],
   pilotIndicatorsLabel: "Indicators and target to scale",
   pilotHeads: { dimension: "Dimension", indicator: "Indicator", target: "Starting target" },
@@ -324,11 +399,73 @@ const en: MethodTwoToolsContent = {
   ],
   pilotDecision:
     "Scale if adoption and quality are met; adjust and repeat if only one is met; stop if neither is met.",
+  evalTitle: "How I will evaluate the pilot",
+  evalIntro:
+    "I use two models that complement each other. Kirkpatrick tells me how well it worked at each level. Brinkerhoff's Success Case Method explains why it worked for some teachers and not others, and what to change before scaling.",
+  kirkTitle: "Kirkpatrick, levels 1 to 3",
+  kirkHeads: { question: "What I ask", instrument: "Instrument", when: "When" },
+  kirkLevels: [
+    {
+      level: "1 · Reaction",
+      question: "Did they find the Skill useful and easy to use in their subject?",
+      instrument: "Final survey: usefulness, ease, and workload on a 1–5 scale, plus one open question.",
+      when: "Week 4",
+    },
+    {
+      level: "2 · Learning",
+      question: "Can they redesign an activity with all three moments?",
+      instrument:
+        "Four-criterion rubric applied to the redesigned activity: own idea before AI, purposeful consultation, reasoned decision, and process evidence the teacher can see.",
+      when: "Weeks 2 and 3",
+    },
+    {
+      level: "3 · Behavior",
+      question: "Did they run it in class, and would they use it again?",
+      instrument: "The activity as run, with anonymized student work samples, and a log of Skill use.",
+      when: "Weeks 3 and 4",
+    },
+  ],
+  kirkOut:
+    "I don't measure level 4 (results) in this pilot: four weeks is too short to see changes in student learning. If it scales, the next step is a semester-long comparison.",
+  scmTitle: "Brinkerhoff's Success Case Method",
+  scmSteps: [
+    {
+      step: "Impact model",
+      text: "I define what success looks like: a teacher runs a redesigned activity in class and can see students' reasoning, not just the product.",
+    },
+    {
+      step: "Short survey",
+      text: "In week 4, all 20 teachers answer three questions: whether they ran the activity, how much it changed what they see of student reasoning, and what helped or got in the way.",
+    },
+    {
+      step: "Case selection",
+      text: "I pick 3 to 4 of the most successful teachers and 3 to 4 who didn't run it or dropped it.",
+    },
+    {
+      step: "Interviews",
+      text: "30 minutes each, scripted and asking for concrete evidence, to confirm the success is real and understand what explains it.",
+    },
+    {
+      step: "Report and decision",
+      text: "Which conditions make success possible, which barriers hold it back, and what to change in the Skill, the workshop, or the support. It feeds the scaling decision together with the indicators.",
+    },
+  ],
+  interviewLabel: "See the interview script",
+  interviewQuestions: [
+    "Tell me which activity you redesigned and how you ran it.",
+    "What did you see in your students' work that you didn't see before? Show me an example.",
+    "At what point did the Skill help you, and where did it get in the way?",
+    "What would you have needed to use it more: time, examples, or institutional support?",
+    "If you didn't run it: where did it stall, and what would have changed that?",
+    "Would you use it again? In which activity?",
+  ],
+  ethicsNote:
+    "Participation is voluntary and with consent. Work samples are anonymized before review, and results are reported by group, without identifying teachers or students.",
   readTitle: "What is real and what is missing",
   readItems: [
     "The Skill is configured in Gemini, and I tested it on November 10, 2026, with four cases; the conversations are public.",
     "I designed and evaluated the tests myself. Real faculty haven't used it yet.",
-    "The pilot plan is a proposal: it hasn't been run and there are no results.",
+    "The pilot plan and its evaluation plan are a proposal: they haven't been run and there are no results. The rubric and surveys will be validated in the pilot.",
     "The rationale (generation effect, metacognition, process-based assessment) is a hypothesis grounded in the literature, not an effect measured in this project.",
     "The video tutorial is in production.",
   ],

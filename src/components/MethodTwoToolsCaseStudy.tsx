@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DetailAccordion } from "@/components/DetailAccordion";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getMethodTwoTools } from "@/content/methodTwoTools";
@@ -229,6 +230,72 @@ export function MethodTwoToolsCaseStudy({ locale = "es" }: { locale?: Locale }) 
               style={{ borderLeft: "2px solid var(--color-rose)" }}
             >
               {c.pilotDecision}
+            </p>
+          </div>
+        </section>
+
+        <section id="evaluacion" aria-labelledby="eval-t" className={`${sectionClass} scroll-mt-24`} style={hairline} data-sr>
+          <div className="md:col-span-4 flex flex-col gap-4">
+            <h2 id="eval-t" className={h2Class.replace("md:col-span-4 ", "")}>
+              {c.evalTitle}
+            </h2>
+            <p className="m-0 text-[16px] leading-relaxed text-(--color-secondary)">{c.evalIntro}</p>
+          </div>
+          <div className="md:col-span-8 flex flex-col gap-10">
+            <div className="flex flex-col gap-3">
+              <h3 className="m-0 text-[17px] font-semibold text-(--color-blue)">{c.kirkTitle}</h3>
+              <ul className="m-0 p-0 list-none flex flex-col">
+                {c.kirkLevels.map((row) => (
+                  <li
+                    key={row.level}
+                    className="grid grid-cols-1 sm:grid-cols-12 gap-1 sm:gap-4 py-3 border-t"
+                    style={hairline}
+                  >
+                    <span className="sm:col-span-3 text-[15px] font-semibold text-(--color-blue)">{row.level}</span>
+                    <span className="sm:col-span-7 flex flex-col gap-1">
+                      <span className="text-[15px] leading-snug text-(--color-blue)">
+                        <span className="sr-only">{c.kirkHeads.question}: </span>
+                        {row.question}
+                      </span>
+                      <span className="text-[15px] leading-snug text-(--color-secondary)">
+                        <span className="sr-only">{c.kirkHeads.instrument}: </span>
+                        {row.instrument}
+                      </span>
+                    </span>
+                    <span className="sm:col-span-2 text-[15px] font-medium text-(--color-metric)">
+                      <span className="sr-only">{c.kirkHeads.when}: </span>
+                      {row.when}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="m-0 text-[15px] leading-relaxed text-(--color-secondary) max-w-[70ch]">{c.kirkOut}</p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <h3 className="m-0 text-[17px] font-semibold text-(--color-blue)">{c.scmTitle}</h3>
+              <ol className="m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {c.scmSteps.map((s, i) => (
+                  <li key={s.step} className="flex flex-col gap-1 border-t pt-3" style={hairline}>
+                    <span className="text-[13px] font-semibold uppercase tracking-wide text-(--color-metric)">
+                      {i + 1}. {s.step}
+                    </span>
+                    <span className="text-[15px] leading-snug text-(--color-blue)">{s.text}</span>
+                  </li>
+                ))}
+              </ol>
+              <DetailAccordion label={c.interviewLabel}>
+                <ol className="m-0 pl-5 flex flex-col gap-2 text-[15px] leading-snug text-(--color-blue)">
+                  {c.interviewQuestions.map((q) => (
+                    <li key={q}>{q}</li>
+                  ))}
+                </ol>
+              </DetailAccordion>
+            </div>
+            <p
+              className="m-0 pl-3 text-[16px] leading-relaxed text-(--color-blue) max-w-[70ch]"
+              style={{ borderLeft: "2px solid var(--color-rose)" }}
+            >
+              {c.ethicsNote}
             </p>
           </div>
         </section>
