@@ -93,6 +93,11 @@ const learningDesignEs: LearningDesignItem[] = [
         label: "Abrir Criterio",
         href: "https://criterio-pedagogico-wennai.replit.app",
       },
+      {
+        label: "Ver el caso: un método, dos herramientas",
+        href: "/casos/pienso-consulto-decido",
+        internal: true,
+      },
     ],
   },
   {
@@ -213,6 +218,11 @@ const learningDesignEn: LearningDesignItem[] = [
       {
         label: "Open Criterio",
         href: "https://criterio-pedagogico-wennai.replit.app",
+      },
+      {
+        label: "See the case study: one method, two tools",
+        href: "/en/casos/pienso-consulto-decido",
+        internal: true,
       },
     ],
   },

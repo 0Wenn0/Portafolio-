@@ -104,7 +104,7 @@ export type LearningDesignItem = {
   };
   contribution: string;
   evidence: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; internal?: boolean }[];
   image?: string;
   imageAlt?: string;
   video?: {

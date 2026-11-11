@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { DetailAccordion } from "@/components/DetailAccordion";
 import { getLearningDesign } from "@/content/learningDesign";
 import { t } from "@/content/ui";
@@ -152,18 +153,28 @@ function ItemCard({ item, ui, index }: { item: LearningDesignItem; ui: Ui; index
       </p>
 
       <div className="flex flex-wrap gap-x-6">
-        {item.links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            target="_blank"
-            rel="noopener"
-            aria-label={`${link.label}: ${item.title} ${ui.opensInNewTab}`}
-            className="inline-flex items-center min-h-11 text-base font-medium"
-          >
-            {link.label}
-          </a>
-        ))}
+        {item.links.map((link) =>
+          link.internal ? (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="inline-flex items-center min-h-11 text-base font-medium"
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener"
+              aria-label={`${link.label}: ${item.title} ${ui.opensInNewTab}`}
+              className="inline-flex items-center min-h-11 text-base font-medium"
+            >
+              {link.label}
+            </a>
+          ),
+        )}
       </div>
     </li>
   );
