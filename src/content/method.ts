@@ -1,4 +1,4 @@
-import type { Locale, MethodStep } from "./types";
+import type { Locale, MethodStep, MethodTrial } from "./types";
 
 const methodFundamentalsEs = [
   {
@@ -38,6 +38,8 @@ const methodStepsEs: MethodStep[] = [
   {
     name: "Diagnóstico",
     desc: "Entiendo cómo aprende y decide la audiencia, y qué frena la adopción, antes de diseñar nada.",
+    framework:
+      "ADKAR: identifico en qué etapa está cada grupo (conciencia, deseo, conocimiento, habilidad o refuerzo) y dónde se atora.",
     examples: [
       {
         case: "OpenAI",
@@ -60,6 +62,8 @@ const methodStepsEs: MethodStep[] = [
   {
     name: "Diseño",
     desc: "Convierto el diagnóstico en programas, materiales y experiencias a la medida del contexto.",
+    framework:
+      "ADDIE para el proceso, Merrill para la secuencia de actividades y Bloom para redactar objetivos que se puedan evaluar.",
     examples: [
       {
         case: "OpenAI",
@@ -82,6 +86,8 @@ const methodStepsEs: MethodStep[] = [
   {
     name: "Adopción",
     desc: "Acompaño el cambio con facilitación, comunicación y redes que lo sostienen.",
+    framework:
+      "ADKAR: la comunicación construye conciencia y deseo; la formación y la práctica, conocimiento y habilidad.",
     examples: [
       {
         case: "OpenAI",
@@ -104,6 +110,8 @@ const methodStepsEs: MethodStep[] = [
   {
     name: "Medición",
     desc: "Mido contra una línea base e indicadores acordados, y vuelvo al diagnóstico con lo aprendido.",
+    framework:
+      "Kirkpatrick, niveles 1 a 3, y el refuerzo de ADKAR: qué sostiene el cambio cuando termina el acompañamiento.",
     examples: [
       {
         case: "OpenAI",
@@ -129,6 +137,8 @@ const methodStepsEn: MethodStep[] = [
   {
     name: "Diagnose",
     desc: "I understand how the audience learns and decides, and what blocks adoption, before designing anything.",
+    framework:
+      "ADKAR: I identify which stage each group is in (awareness, desire, knowledge, ability, or reinforcement) and where it gets stuck.",
     examples: [
       {
         case: "OpenAI",
@@ -151,6 +161,8 @@ const methodStepsEn: MethodStep[] = [
   {
     name: "Design",
     desc: "I turn the diagnosis into programs, materials, and experiences tailored to the context.",
+    framework:
+      "ADDIE for the process, Merrill for the sequence of activities, and Bloom to write objectives that can be assessed.",
     examples: [
       {
         case: "OpenAI",
@@ -173,6 +185,8 @@ const methodStepsEn: MethodStep[] = [
   {
     name: "Adopt",
     desc: "I support the change with facilitation, communication, and the networks that sustain it.",
+    framework:
+      "ADKAR: communication builds awareness and desire; training and practice build knowledge and ability.",
     examples: [
       {
         case: "OpenAI",
@@ -195,6 +209,8 @@ const methodStepsEn: MethodStep[] = [
   {
     name: "Measure",
     desc: "I measure against a baseline and agreed indicators, and return to diagnosis with what I learned.",
+    framework:
+      "Kirkpatrick levels 1 to 3, plus ADKAR's reinforcement: what sustains the change once support ends.",
     examples: [
       {
         case: "OpenAI",
@@ -218,4 +234,46 @@ const methodStepsEn: MethodStep[] = [
 
 export function getMethodSteps(locale: Locale): MethodStep[] {
   return locale === "en" ? methodStepsEn : methodStepsEs;
+}
+
+const methodTrialsEs: MethodTrial[] = [
+  {
+    name: "Pienso, consulto, decido",
+    desc: "Método propio para usar IA sin delegarle el criterio. Lo probé en dos herramientas: la app Criterio y una Skill de Gemini para docentes.",
+    status: "4 pruebas documentadas · piloto con docentes en diseño",
+    link: { label: "Ver el caso", href: "/casos/pienso-consulto-decido" },
+  },
+  {
+    name: "Casos de éxito de Brinkerhoff",
+    desc: "Para evaluar el piloto: buscar a quienes más y menos aplicaron lo aprendido y entender qué lo facilitó o lo frenó.",
+    status: "Plan de evaluación en preparación",
+  },
+  {
+    name: "Dick y Carey",
+    desc: "Para alinear cada objetivo con su instrumento de evaluación antes de diseñar la actividad.",
+    status: "En preparación para el próximo curso del portafolio",
+  },
+];
+
+const methodTrialsEn: MethodTrial[] = [
+  {
+    name: "Pienso, consulto, decido",
+    desc: "My own method (\"I think, I consult, I decide\") for using AI without handing over judgment. I tested it in two tools: the Criterio app and a Gemini Skill for teachers.",
+    status: "4 documented tests · teacher pilot in design",
+    link: { label: "See the case study", href: "/en/casos/pienso-consulto-decido" },
+  },
+  {
+    name: "Brinkerhoff's Success Case Method",
+    desc: "To evaluate the pilot: find the people who applied the most and the least, and understand what helped or got in the way.",
+    status: "Evaluation plan in preparation",
+  },
+  {
+    name: "Dick and Carey",
+    desc: "To align each objective with its assessment instrument before designing the activity.",
+    status: "In preparation for the next portfolio course",
+  },
+];
+
+export function getMethodTrials(locale: Locale): MethodTrial[] {
+  return locale === "en" ? methodTrialsEn : methodTrialsEs;
 }

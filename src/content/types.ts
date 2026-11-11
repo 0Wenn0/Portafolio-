@@ -44,7 +44,15 @@ export type MethodExample = {
 export type MethodStep = {
   name: string;
   desc: string;
+  framework: string;
   examples: MethodExample[];
+};
+
+export type MethodTrial = {
+  name: string;
+  desc: string;
+  status: string;
+  link?: { label: string; href: string };
 };
 
 export type Service = {

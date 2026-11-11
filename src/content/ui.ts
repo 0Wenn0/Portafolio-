@@ -33,6 +33,9 @@ export const ui = {
     howIWorkSubtitle: "Tres fundamentos explican por qué trabajo así.",
     methodTitle: "El método, con ejemplos reales",
     methodSubtitle: "Elige un paso para ver cómo lo apliqué en cada caso.",
+    methodFramework: "Marco:",
+    trialsTitle: "En prueba",
+    trialsSubtitle: "Métodos que estoy probando y documentando antes de presentarlos como resultados.",
     // Services
     servicesTitle: "Qué ofrezco",
     servicesSubtitle:
@@ -188,6 +191,9 @@ export const ui = {
     howIWorkSubtitle: "Three fundamentals explain why I work this way.",
     methodTitle: "The method, with real examples",
     methodSubtitle: "Choose a step to see how I applied it in each case.",
+    methodFramework: "Framework:",
+    trialsTitle: "Being tested",
+    trialsSubtitle: "Methods I am testing and documenting before presenting them as results.",
     // Services
     servicesTitle: "What I offer",
     servicesSubtitle:
