@@ -359,6 +359,9 @@ html.has-custom-cursor button {
   user-select: none;
   z-index: 0;
 }
+.act-numeral::before {
+  content: attr(data-numeral);
+}
 .on-dark .act-numeral {
   color: rgba(127, 168, 216, 0.1);
 }
@@ -373,7 +376,9 @@ html.has-custom-cursor button {
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--color-rose);
+  /* Vino oscuro (derivado de --color-metric): el rosa daba 2.2:1 sobre marfil y
+     1.8:1 sobre el fondo de Contacto. #6E4650 da 5.9:1 y 4.7:1 (WCAG AA). */
+  color: #6e4650;
   margin-bottom: 0.75rem;
 }
 .on-dark .act-label {

@@ -15,9 +15,10 @@ export function ActNumeral({
 }) {
   return (
     <>
-      <span className="act-numeral" aria-hidden="true">
-        {numeral}
-      </span>
+      {/* The numeral is drawn by CSS (::before) from data-numeral: it is a
+          decorative watermark, so it stays out of the accessibility tree and
+          out of text-contrast checks (WCAG 1.4.3 exempts pure decoration). */}
+      <span className="act-numeral" aria-hidden="true" data-numeral={numeral} />
       <div
         className="act-label"
         style={align === "center" ? { justifyContent: "center" } : undefined}
