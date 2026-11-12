@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { BeforeAfterBars } from "@/components/BeforeAfterBars";
 import { CountUp } from "@/components/CountUp";
 import { getMetrics } from "@/content/metrics";
@@ -10,7 +7,6 @@ import type { Locale } from "@/content/types";
 export function ResultsSection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
   const metrics = getMetrics(locale);
-  const [open, setOpen] = useState(-1);
 
   return (
     <section
@@ -22,8 +18,6 @@ export function ResultsSection({ locale = "es" }: { locale?: Locale }) {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
         {metrics.map((metric, index) => {
-          const isOpen = open === index;
-          const panelId = `ficha-${index}`;
           return (
             <div
               key={metric.case}
@@ -51,55 +45,17 @@ export function ResultsSection({ locale = "es" }: { locale?: Locale }) {
               <p className="m-0 text-sm text-(--color-secondary)">
                 {metric.case}
               </p>
-              <button
-                type="button"
-                onClick={() => setOpen(isOpen ? -1 : index)}
-                aria-expanded={isOpen}
-                aria-controls={panelId}
-                className="self-start inline-flex items-center gap-2 min-h-11 p-0 border-0 bg-transparent text-(--color-link) text-[15px] font-medium underline"
-                style={{ textUnderlineOffset: 3 }}
-              >
-                {ui.whereFrom}
-                <svg
-                  className={`chev ${isOpen ? "open" : ""}`}
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2 4l4 4 4-4"
-                    fill="none"
-                    stroke="#2F5E96"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-              {isOpen ? (
-                <dl
-                  id={panelId}
-                  className="reveal m-0 p-4 grid grid-cols-[112px_1fr] gap-x-3 gap-y-2 rounded text-sm leading-snug"
-                  style={{ background: "var(--color-dawn)" }}
-                >
-                  <dt className="font-semibold text-(--color-blue)">{ui.whatItMeasures}</dt>
-                  <dd className="m-0 text-(--color-blue)">{metric.mide}</dd>
-                  <dt className="font-semibold text-(--color-blue)">{ui.period}</dt>
-                  <dd className="m-0 text-(--color-blue)">{metric.periodo}</dd>
-                  <dt className="font-semibold text-(--color-blue)">{ui.contributionLabel}</dt>
-                  <dd className="m-0 text-(--color-blue)">
-                    {metric.contribucion}
-                  </dd>
-                  <dt className="font-semibold text-(--color-blue)">{ui.source}</dt>
-                  <dd className="m-0 text-(--color-blue)">{metric.fuente}</dd>
-                  <dt className="font-semibold text-(--color-blue)">{ui.limit}</dt>
-                  <dd className="m-0 text-(--color-blue)">{metric.limite}</dd>
-                </dl>
-              ) : null}
             </div>
           );
         })}
       </div>
+      <p className="m-0 text-[15px] text-(--color-secondary)" data-sr>
+        {locale === "en" ? "Each number has its fact sheet (what it measures, source, limitation) in the " : "Cada cifra tiene su ficha (qué mide, fuente y límite) en el "}
+        <a href="#casos" className="underline" style={{ textUnderlineOffset: 3 }}>
+          {locale === "en" ? "case summary" : "resumen de su caso"}
+        </a>
+        .
+      </p>
     </section>
   );
 }

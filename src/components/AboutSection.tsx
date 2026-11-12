@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getAboutIntro, getEducation, getTimeline } from "@/content/about";
+import { getCommunity } from "@/content/community";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
 import { ActNumeral } from "./ActNumeral";
@@ -9,6 +10,7 @@ export function AboutSection({ locale = "es" }: { locale?: Locale }) {
   const aboutIntro = getAboutIntro(locale);
   const timeline = getTimeline(locale);
   const education = getEducation(locale);
+  const community = getCommunity(locale);
 
   return (
     <section
@@ -35,13 +37,20 @@ export function AboutSection({ locale = "es" }: { locale?: Locale }) {
         >
           {ui.trajectoryTitle}
         </h2>
-        <p className="m-0 text-base md:text-[17px] leading-loose text-(--color-blue)">
-          {aboutIntro} ({ui.seeMore}{" "}
-          <a href="#comunidad" className="underline" style={{ textUnderlineOffset: 3 }}>
-            {ui.communityAndOutreach}
-          </a>
-          ).
-        </p>
+        <p className="m-0 text-base md:text-[17px] leading-loose text-(--color-blue)">{aboutIntro}</p>
+        <div id="comunidad" className="flex flex-col gap-3 pt-4 mt-2 border-t" style={{ borderColor: "var(--color-hairline)" }}>
+          <h3 className="m-0 text-sm font-semibold text-(--color-blue)">{ui.communityTitle}</h3>
+          <ul className="m-0 p-0 list-none flex flex-col gap-3">
+            {community.map((item) => (
+              <li key={item.title} className="flex flex-col">
+                <span className="text-base font-semibold text-(--color-blue)">{item.title}</span>
+                <span className="text-sm text-(--color-secondary)">
+                  {item.role} · {item.period}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div className="md:col-start-7 md:col-span-6 flex flex-col gap-2" data-sr>
         <ol className="m-0 p-0 list-none flex flex-col">

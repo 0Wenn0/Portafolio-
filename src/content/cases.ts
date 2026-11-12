@@ -2,6 +2,7 @@ import type { CaseStudy, Locale } from "./types";
 
 const casesEs: CaseStudy[] = [
   {
+    id: "openai",
     line: "Adopción de IA",
     title: "Adopción de IA a escala nacional",
     org: "Programa OpenAI (vía Aurora Policy Solutions)",
@@ -14,10 +15,13 @@ const casesEs: CaseStudy[] = [
       "Más de 3,000 asistentes a talleres de los sectores productivo, de gobierno, legislativo y educativo, y policy briefs para cada institución participante.",
     imageAlt: "Wendy presentando en el escenario, con el logo de ChatGPT proyectado detrás",
     image: "/cases/openai.jpg",
+    metric: "+3,000",
+    metricLabel: "asistentes en talleres de IA",
     deepDiveHref: "/casos/openai-metodo",
     deepDiveLabel: "Ver el método detrás del programa",
   },
   {
+    id: "infp",
     line: "Aprendizaje y EdTech",
     title: "Transformación digital de programas formativos",
     org: "INFP",
@@ -30,8 +34,11 @@ const casesEs: CaseStudy[] = [
       "Apertura de correos de 8% a 30% y 30% más de finalización de programas, entre abril de 2023 y julio de 2025.",
     imageAlt: "Página de inicio de la revista Conciencias, publicación digital del INFP",
     image: "/cases/infp-conciencias.jpg",
+    metric: "8% → 30%",
+    metricLabel: "apertura de convocatorias, y +30% de finalización",
   },
   {
+    id: "ice-endes",
     line: "Datos, IA responsable y comportamiento",
     title: "Arquitectura de datos para investigar exposoma y cognición",
     org: "Grupo de Investigación en Neurociencia y Salud Mental, Universidad Científica del Sur",
@@ -46,10 +53,14 @@ const casesEs: CaseStudy[] = [
       "Una base lista para análisis ponderado, con controles de integridad obligatorios y documentación para incorporar a personal nuevo. Por acuerdo de confidencialidad no publico datos ni resultados del estudio.",
     imageAlt: "Diagrama de la arquitectura de datos, sin datos reales",
     image: "/cases/ice-endes-architecture.svg",
+    metric: "8 capas",
+    metricLabel: "de un pipeline de datos reproducible",
     deepDiveHref: "/casos/ice-endes",
+    deepDiveLabel: "Ver la arquitectura",
     pdfHref: "/docs/ICE-ENDES-Arquitectura.pdf",
   },
   {
+    id: "sisap",
     line: "Datos, IA responsable y comportamiento",
     title: "IA para decisiones clínicas, con supervisión humana",
     org: "SISAP Recover AI",
@@ -62,11 +73,14 @@ const casesEs: CaseStudy[] = [
       "Proyecto en Jalisco MedTech 2026, con aceptación condicionada a JEEI Aceleración. El modelo del equipo está publicado en Springer (N=155).",
     imageAlt: "Ilustración abstracta de una red de nodos con un punto de supervisión humana al centro",
     image: "/cases/sisap.svg",
+    metric: "N=155",
+    metricLabel: "modelo del equipo publicado en Springer",
   },
 ];
 
 const casesEn: CaseStudy[] = [
   {
+    id: "openai",
     line: "AI adoption",
     title: "National-scale AI adoption",
     org: "OpenAI Program (via Aurora Policy Solutions)",
@@ -79,10 +93,13 @@ const casesEn: CaseStudy[] = [
       "Over 3,000 workshop attendees from the productive, government, legislative, and education sectors, and policy briefs for each participating institution.",
     imageAlt: "Wendy presenting on stage, with the ChatGPT logo projected behind her",
     image: "/cases/openai.jpg",
+    metric: "3,000+",
+    metricLabel: "AI workshop attendees",
     deepDiveHref: "/casos/openai-metodo",
     deepDiveLabel: "See the method behind the program",
   },
   {
+    id: "infp",
     line: "Learning & EdTech",
     title: "Digital transformation of training programs",
     org: "INFP",
@@ -95,8 +112,11 @@ const casesEn: CaseStudy[] = [
       "Email open rates rose from 8% to 30%, and program completion rose 30%, between April 2023 and July 2025.",
     imageAlt: "Homepage of Conciencias, INFP's digital publication",
     image: "/cases/infp-conciencias.jpg",
+    metric: "8% → 30%",
+    metricLabel: "email open rate, and +30% completion",
   },
   {
+    id: "ice-endes",
     line: "Data, responsible AI & behavior",
     title: "Data architecture for researching exposome and cognition",
     org: "Neuroscience and Mental Health Research Group, Universidad Científica del Sur",
@@ -111,10 +131,14 @@ const casesEn: CaseStudy[] = [
       "A base ready for weighted analysis, with mandatory integrity checks and documentation to onboard new staff. Under a confidentiality agreement I don't publish the study's data or results.",
     imageAlt: "Diagram of the data architecture, with no real data",
     image: "/cases/ice-endes-architecture.svg",
+    metric: "8 layers",
+    metricLabel: "in a reproducible data pipeline",
     deepDiveHref: "/casos/ice-endes",
+    deepDiveLabel: "See the architecture",
     pdfHref: "/docs/ICE-ENDES-Arquitectura.pdf",
   },
   {
+    id: "sisap",
     line: "Data, responsible AI & behavior",
     title: "AI for clinical decisions, with human oversight",
     org: "SISAP Recover AI",
@@ -127,6 +151,8 @@ const casesEn: CaseStudy[] = [
       "Project in Jalisco MedTech 2026, with conditional acceptance to JEEI Aceleración. The team's model is published in Springer (N=155).",
     imageAlt: "Abstract illustration of a node network with a human-oversight point at its center",
     image: "/cases/sisap.svg",
+    metric: "N=155",
+    metricLabel: "team model published in Springer",
   },
 ];
 

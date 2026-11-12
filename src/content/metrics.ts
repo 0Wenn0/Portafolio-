@@ -2,6 +2,7 @@ import type { Locale, Metric } from "./types";
 
 const metricsEs: Metric[] = [
   {
+    caseId: "openai",
     value: "+3,000",
     aside: "asistentes",
     label:
@@ -15,6 +16,7 @@ const metricsEs: Metric[] = [
     limite: "Personas únicas porque cada taller fue de una sola sesión; total sin desglose por sector",
   },
   {
+    caseId: "infp",
     value: "30%",
     aside: "desde 8%",
     label: "de apertura en las convocatorias a programas formativos",
@@ -33,6 +35,7 @@ const metricsEs: Metric[] = [
     },
   },
   {
+    caseId: "sisap",
     value: "15",
     aside: "módulos",
     label:
@@ -49,6 +52,7 @@ const metricsEs: Metric[] = [
 
 const metricsEn: Metric[] = [
   {
+    caseId: "openai",
     value: "3,000+",
     aside: "attendees",
     label: "at AI workshops with government, legislators, universities, and companies",
@@ -60,6 +64,7 @@ const metricsEn: Metric[] = [
     limite: "Unique people since each workshop was a single session; one total with no breakdown by sector",
   },
   {
+    caseId: "infp",
     value: "30%",
     aside: "from 8%",
     label: "open rate on training-program invitations",
@@ -77,6 +82,7 @@ const metricsEn: Metric[] = [
     },
   },
   {
+    caseId: "sisap",
     value: "15",
     aside: "modules",
     label:
