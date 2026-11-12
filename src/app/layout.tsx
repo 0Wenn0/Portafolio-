@@ -6,6 +6,7 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Grain } from "@/components/Grain";
 import { HtmlLangSync } from "@/components/HtmlLangSync";
@@ -83,7 +84,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
         />
         {children}
-      </body>
+        <Analytics />
+        </body>
     </html>
   );
 }

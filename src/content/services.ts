@@ -25,7 +25,7 @@ const servicesEs: Service[] = [
     name: "Sitio o micrositio para proyectos educativos o institucionales",
     desc: "Arquitectura de contenido, diseño UX/UI y sitio publicado.",
     price: "A la medida",
-    link: "Ver ejemplos en Laboratorio",
+    link: "Ver ejemplos de trabajo",
   },
 ];
 
@@ -54,7 +54,7 @@ const servicesEn: Service[] = [
     name: "Site or microsite for educational or institutional projects",
     desc: "Content architecture, UX/UI design, and a published site.",
     price: "Custom",
-    link: "See examples in the Lab",
+    link: "See work examples",
   },
 ];
 

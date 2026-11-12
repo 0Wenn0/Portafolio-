@@ -46,7 +46,7 @@ export function ServicesSection({ locale = "es" }: { locale?: Locale }) {
               </span>
               {service.link ? (
                 <a
-                  href="#laboratorio"
+                  href={locale === "en" ? "/en#diseno-instruccional" : "/#diseno-instruccional"}
                   className="self-start inline-flex items-center min-h-11 text-[15px] font-medium"
                 >
                   {service.link}

@@ -23,7 +23,7 @@ const labEs: LabItem[] = [
   },
   {
     title: "Observatorio de mentoría BécALAS",
-    desc: "Micrositio para mi grupo de mentoradas de Bécalas Conectadas 2026: fechas, una primera misión para presentarse con IA y herramientas para cada sesión (metas SMART, bitácora y mapa de intereses). Pensado para abrirse desde WhatsApp en el celular.",
+    desc: "Micrositio para mi grupo de mentoradas de BécALAS 2026: fechas, una primera misión para presentarse con IA y herramientas para cada sesión (metas SMART, bitácora y mapa de intereses). Pensado para abrirse desde WhatsApp en el celular.",
     contribution:
       "Diseño UX/UI y desarrollo asistido por IA. Prioridades: accesibilidad WCAG 2.1 AA (0 violaciones en axe-core), comprensión inmediata y mi marca de fondo.",
     href: "https://becalas-observatory.vercel.app",
@@ -57,7 +57,7 @@ const labEn: LabItem[] = [
   },
   {
     title: "BécALAS Mentoring Observatory",
-    desc: "Microsite for my Bécalas Conectadas 2026 mentoring group: session dates, a first mission to introduce themselves with AI, and tools for each session (SMART goals, a reflection log, and an interests map). Built to be opened from WhatsApp on a phone.",
+    desc: "Microsite for my BécALAS 2026 mentoring group: session dates, a first mission to introduce themselves with AI, and tools for each session (SMART goals, a reflection log, and an interests map). Built to be opened from WhatsApp on a phone.",
     contribution:
       "UX/UI design and AI-assisted development. Priorities: WCAG 2.1 AA accessibility (0 axe-core violations), instant comprehension, and my brand in the background.",
     href: "https://becalas-observatory.vercel.app",

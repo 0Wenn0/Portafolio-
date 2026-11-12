@@ -25,7 +25,7 @@ export function LabSection({ locale = "es" }: { locale?: Locale }) {
           {ui.labSubtitle}
         </p>
         <a
-          href="#contacto"
+          href={locale === "en" ? "/en/servicios" : "/servicios"}
           className="self-start inline-flex items-center min-h-11 text-base font-medium"
         >
           {ui.quoteSite}

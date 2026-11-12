@@ -11,6 +11,8 @@ export type Metric = {
   fuente: string;
   limite: string;
   compare?: MetricCompare;
+  /** id del caso donde vive la ficha de esta cifra. */
+  caseId: string;
 };
 
 export type MetricCompare = {
@@ -20,6 +22,8 @@ export type MetricCompare = {
 };
 
 export type CaseStudy = {
+  /** Enlaza el caso con su cifra de «Resultados con contexto». */
+  id?: string;
   line: string;
   title: string;
   org: string;
@@ -31,6 +35,9 @@ export type CaseStudy = {
   resultado: string;
   imageAlt: string;
   image?: string;
+  /** Cifra protagonista de la tarjeta y su etiqueta. */
+  metric?: string;
+  metricLabel?: string;
   deepDiveHref?: string;
   deepDiveLabel?: string;
   pdfHref?: string;
