@@ -54,8 +54,8 @@ function WorkCard({
     >
       <article className="relative h-full flex flex-col gap-3">
         <div
-          className="frame relative w-full aspect-[16/10] rounded-lg overflow-hidden border"
-          style={{ background: "var(--color-observatory)", borderColor: "var(--color-hairline)" }}
+          className="frame relative w-full aspect-[16/10] rounded-2xl overflow-hidden"
+          style={{ background: "var(--color-observatory)", boxShadow: "0 24px 48px -28px rgba(17,26,46,.45)" }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -65,11 +65,11 @@ function WorkCard({
             className="work-thumb absolute inset-0 w-full h-full object-cover object-top"
           />
         </div>
-        <p className="m-0 text-[13px] font-semibold uppercase tracking-wide text-(--color-secondary)">{item.kind}</p>
+        <p className="m-0 text-[15px] text-(--color-secondary)">{item.kind}</p>
         <h3
           ref={focusRef}
           tabIndex={focusRef ? -1 : undefined}
-          className="m-0 font-[family-name:var(--font-display)] font-semibold text-[24px] leading-tight text-(--color-blue) outline-none"
+          className="m-0 font-[family-name:var(--font-display)] font-[450] text-[28px] leading-tight text-(--color-blue) outline-none"
         >
           {item.title}
         </h3>
@@ -81,7 +81,7 @@ function WorkCard({
             newTab={newTab}
             className="work-primary inline-flex items-center min-h-11 font-medium text-[15px] text-(--color-link) underline"
           >
-            {item.linkLabel} →
+            {item.linkLabel}
           </WorkLink>
           {item.secondary ? (
             <WorkLink
@@ -121,22 +121,12 @@ export function WorkGallery({ locale = "es" }: { locale?: Locale }) {
     <section
       id="diseno-instruccional"
       aria-labelledby="trabajo-t"
-      className="relative box-border px-6 md:px-24 py-16 md:py-24 flex flex-col gap-10 border-t overflow-hidden"
-      style={{ borderColor: "var(--color-hairline)" }}
+      className="relative box-border px-6 md:px-24 py-20 md:py-28 flex flex-col gap-12 overflow-hidden"
     >
       <ActNumeral numeral="III" label={en ? "III · Work" : "III · Trabajo"} />
-      <div className="flex flex-col gap-3 max-w-[720px]" data-sr>
-        <h2
-          id="trabajo-t"
-          className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[44px] text-(--color-blue)"
-        >
-          {en ? "Learning design and prototypes" : "Diseño instruccional y prototipos"}
-        </h2>
-        <p className="m-0 text-lg leading-relaxed text-(--color-secondary)">
-          {en
-            ? "Tools, games and experiences I designed and built. Open them: they work."
-            : "Herramientas, juegos y experiencias que diseñé y construí. Ábrelas: funcionan."}
-        </p>
+      <div className="section-head" data-sr>
+        <h2 id="trabajo-t">{en ? "Learning design and prototypes" : "Diseño instruccional y prototipos"}</h2>
+        <p>{en ? "Tools, games and experiences I designed and built. Open them: they work." : "Herramientas, juegos y experiencias que diseñé y construí. Ábrelas: funcionan."}</p>
       </div>
       <ul
         id="galeria-piezas"

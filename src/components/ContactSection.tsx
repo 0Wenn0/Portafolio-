@@ -11,13 +11,13 @@ export function ContactSection({ locale = "es" }: { locale?: Locale }) {
     <section
       id="contacto"
       aria-labelledby="contacto-t"
-      className="relative box-border mx-6 md:mx-24 my-8 p-8 md:p-12 rounded flex flex-col gap-4 overflow-hidden"
-      style={{ background: "var(--color-dawn)" }}
+      className="relative box-border mx-6 md:mx-24 my-16 p-8 md:p-16 rounded-3xl flex flex-col gap-5 overflow-hidden"
+      style={{ background: "var(--gradient-dawn)" }}
     >
       <ActNumeral numeral="VI" label={locale === "en" ? "VI · Contact" : "VI · Contacto"} />
       <h2
         id="contacto-t"
-        className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[40px] text-(--color-blue)"
+        className="m-0 font-[family-name:var(--font-display)] font-[350] text-[44px] md:text-[clamp(48px,5vw,72px)] leading-none tracking-[-0.02em] text-(--color-blue)"
         data-sr
       >
         {ui.contactTitle}
@@ -44,7 +44,7 @@ export function ContactSection({ locale = "es" }: { locale?: Locale }) {
       <a
         href={cvHref}
         download
-        className="btn-primary self-start inline-flex items-center h-12 px-6 rounded-lg bg-(--color-blue) text-(--color-ivory) no-underline font-medium mt-2"
+        className="btn-ink self-start mt-2"
         data-sr
         data-sr-delay="2"
       >

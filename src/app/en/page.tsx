@@ -5,7 +5,6 @@ import { CasesSection } from "@/components/CasesSection";
 import { ContactSection } from "@/components/ContactSection";
 import { HeroSection } from "@/components/HeroSection";
 import { HowIWorkCompact } from "@/components/HowIWorkCompact";
-import { ResultsSection } from "@/components/ResultsSection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { WorkGallery } from "@/components/WorkGallery";
@@ -33,7 +32,6 @@ export default function HomeEn() {
       <SiteHeader locale={locale} />
       <main id="contenido" className="flex flex-col">
         <HeroSection locale={locale} />
-        <ResultsSection locale={locale} />
         <CasesSection locale={locale} />
         <WorkGallery locale={locale} />
         <HowIWorkCompact locale={locale} />

@@ -19,17 +19,12 @@ export function HowIWorkCompact({ locale = "es" }: { locale?: Locale }) {
       style={{ background: "var(--color-blue)" }}
     >
       <ActNumeral numeral="IV" label={en ? "IV · How I work" : "IV · Cómo trabajo"} />
-      <div className="flex flex-col gap-3 max-w-[720px]" data-sr>
-        <h2
-          id="como-t"
-          className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[44px] text-(--color-ivory)"
-        >
-          {ui.howIWorkTitle}
-        </h2>
-        <p className="m-0 text-lg leading-relaxed text-(--color-mist)">
+      <div className="section-head" data-sr>
+        <h2 id="como-t">{ui.howIWorkTitle}</h2>
+        <p>
           {en
-            ? "Four steps that repeat in every project. Each one has a framework behind it and an indicator at the end."
-            : "Cuatro pasos que se repiten en cada proyecto. Cada uno tiene un marco detrás y un indicador al final."}
+            ? "Four steps that repeat in every project, each with a framework behind it and an indicator at the end."
+            : "Cuatro pasos que se repiten en cada proyecto, cada uno con un marco detrás y un indicador al final."}
         </p>
       </div>
       <ol className="m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -43,12 +38,12 @@ export function HowIWorkCompact({ locale = "es" }: { locale?: Locale }) {
           >
             <span
               aria-hidden="true"
-              className="font-[family-name:var(--font-display)] text-[40px] leading-none"
-              style={{ color: "var(--color-rose)", fontVariantNumeric: "tabular-nums" }}
+              className="font-[family-name:var(--font-display)] text-[48px] font-[350] leading-none"
+              style={{ color: "var(--color-rose)", fontVariantNumeric: "lining-nums tabular-nums" }}
             >
               {String(index + 1).padStart(2, "0")}
             </span>
-            <h3 className="m-0 font-[family-name:var(--font-display)] text-[26px] font-semibold text-(--color-ivory)">
+            <h3 className="m-0 font-[family-name:var(--font-display)] text-[28px] font-[450] text-(--color-ivory)">
               {step.name}
             </h3>
             <p className="m-0 text-base leading-relaxed text-(--color-mist)">{step.desc}</p>
@@ -60,10 +55,10 @@ export function HowIWorkCompact({ locale = "es" }: { locale?: Locale }) {
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 shrink-0">
         <Link
           href={ui.evidentHref}
-          className="self-start sm:self-auto shrink-0 inline-flex items-center h-11 px-5 rounded-lg no-underline font-medium text-[15px] text-(--color-blue)"
-          style={{ background: "var(--color-ivory)" }}
+          className="shrink-0 inline-flex items-center min-h-12 px-6 rounded-full no-underline font-bold text-[16px] text-(--color-blue) hover:text-(--color-blue)"
+          style={{ background: "var(--color-amber)" }}
         >
-          {ui.evidentLink} →
+          {ui.evidentLink}
         </Link>
         <Link
           href={en ? "/en/como-trabajo" : "/como-trabajo"}

@@ -22,7 +22,7 @@ export function SiteFooter({ locale = "es" }: { locale?: Locale }) {
         className="py-3"
         style={{ color: "var(--color-signal)" }}
       >
-        ORCID {site.orcid}
+        ORCID <span style={{ fontFamily: "var(--font-display)", fontSize: 16 }}>{site.orcid}</span>
       </a>
       </span>
     </footer>

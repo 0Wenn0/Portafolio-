@@ -16,12 +16,11 @@ export function AboutSection({ locale = "es" }: { locale?: Locale }) {
     <section
       id="sobre-mi"
       aria-labelledby="sobre-t"
-      className="relative box-border px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-t overflow-hidden"
-      style={{ borderColor: "var(--color-hairline)" }}
+      className="relative box-border px-6 md:px-24 py-20 md:py-28 grid grid-cols-1 md:grid-cols-12 gap-8 overflow-hidden"
     >
       <ActNumeral numeral="V" label={locale === "en" ? "V · About" : "V · Sobre mí"} />
       <div className="md:col-span-5 flex flex-col gap-4" data-sr>
-        <div className="frame w-[160px] h-[200px] md:w-[200px] md:h-[240px] box-border rounded">
+        <div className="frame w-[160px] h-[200px] md:w-[220px] md:h-[264px] box-border rounded-2xl overflow-hidden">
           <Image
             src="/about/wendy-portrait.jpg"
             alt="Wendy Ramírez Burgos"
@@ -33,7 +32,7 @@ export function AboutSection({ locale = "es" }: { locale?: Locale }) {
         </div>
         <h2
           id="sobre-t"
-          className="m-0 font-[family-name:var(--font-display)] font-medium text-[32px] md:text-[36px] text-(--color-blue)"
+          className="m-0 font-[family-name:var(--font-display)] font-[350] text-[44px] md:text-[clamp(48px,5vw,72px)] leading-none tracking-[-0.02em] text-(--color-blue)"
         >
           {ui.trajectoryTitle}
         </h2>
@@ -61,8 +60,8 @@ export function AboutSection({ locale = "es" }: { locale?: Locale }) {
               style={{ borderColor: "var(--color-hairline)" }}
             >
               <span
-                className="text-sm text-(--color-secondary)"
-                style={{ fontVariantNumeric: "tabular-nums" }}
+                className="font-[family-name:var(--font-display)] text-[17px] text-(--color-secondary)"
+                style={{ fontVariantNumeric: "lining-nums tabular-nums" }}
               >
                 {item.years}
               </span>
