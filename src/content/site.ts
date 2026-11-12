@@ -38,7 +38,7 @@ export function getNav(locale: Locale) {
 }
 
 const heroEs = {
-  eyebrow: "Wendy Ramírez Burgos · Neuropsicóloga y científica de datos",
+  eyebrow: "Neuropsicóloga y científica de datos",
   title: "Change Management y adopción de IA a escala.",
   subtitle:
     "Diseño estrategias de adopción, programas de aprendizaje y experiencias tecnológicas basadas en cómo las personas aprenden, deciden y cambian.",
@@ -55,7 +55,7 @@ const heroEs = {
 };
 
 const heroEn = {
-  eyebrow: "Wendy Ramírez Burgos · Neuropsychologist & data scientist",
+  eyebrow: "Neuropsychologist and data scientist",
   title: "Change Management and AI adoption at scale.",
   subtitle:
     "I design adoption strategies, learning programs, and technology experiences based on how people learn, decide, and change.",

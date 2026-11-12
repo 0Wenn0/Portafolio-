@@ -65,7 +65,7 @@ export function NetworkMap({
 
   return (
     <div className="net-in flex flex-col gap-3">
-      <p id="mapa-td" className="m-0 text-sm font-medium text-(--color-mist)">
+      <p id="mapa-td" className="m-0 text-sm text-(--color-secondary)">
         {ui.networkCaption}
       </p>
       <div
@@ -97,11 +97,11 @@ export function NetworkMap({
                 pathLength={1}
                 className="edge-draw"
                 fill="none"
-                stroke={on ? "#B88992" : "#7FA8D8"}
+                stroke={on ? "#C47A12" : "#5C6F93"}
                 strokeWidth={on ? 1.75 : 1}
                 strokeLinecap="round"
                 style={{
-                  opacity: selectedId ? (on ? 1 : 0.12) : 0.45,
+                  opacity: selectedId ? (on ? 1 : 0.15) : 0.55,
                   animationDelay: `${700 + index * 45}ms`,
                 }}
               />
@@ -116,10 +116,10 @@ export function NetworkMap({
           const isNeighbor = neighbors.has(node.id);
           const tabbable = selected < 0 ? index === 0 : isSelected;
           const dotColor = isSelected
-            ? "#B88992"
+            ? "#E39A2D"
             : isNeighbor
-              ? "#E6DED2"
-              : "#7FA8D8";
+              ? "#111A2E"
+              : "#111A2E";
           const dimmed = Boolean(selectedId && !isSelected && !isNeighbor);
           return (
             <button
@@ -161,9 +161,9 @@ export function NetworkMap({
                     height: isSelected ? 14 : 10,
                     background: dotColor,
                     boxShadow: isSelected
-                      ? "0 0 0 6px rgba(184,137,146,0.25)"
+                      ? "0 0 0 7px rgba(227,154,45,0.25)"
                       : "none",
-                    opacity: dimmed ? 0.45 : 1,
+                    opacity: dimmed ? 0.35 : 1,
                     display: "block",
                   }}
                 />
@@ -171,10 +171,11 @@ export function NetworkMap({
               <span
                 className="node-label"
                 style={{
-                  lineHeight: "22px",
-                  fontSize: 14,
-                  fontWeight: isSelected ? 600 : 500,
-                  color: dimmed ? "#AEB7C4" : "#E6DED2",
+                  lineHeight: "24px",
+                  fontFamily: "var(--font-display)",
+                  fontSize: 19,
+                  fontWeight: isSelected ? 600 : 420,
+                  color: dimmed ? "#6B7486" : isSelected ? "#8A5208" : "#111A2E",
                 }}
               >
                 {node.label}
@@ -186,7 +187,7 @@ export function NetworkMap({
       <p
         id="mapa-cd"
         aria-live="polite"
-        className="m-0 text-[15px] leading-relaxed text-(--color-ivory)"
+        className="m-0 text-[15px] leading-relaxed text-(--color-blue)"
         style={{ minHeight: 72, maxWidth: width }}
       >
         {caption}
