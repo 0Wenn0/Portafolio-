@@ -16,6 +16,16 @@ export type WorkItem = {
 
 const workEs: WorkItem[] = [
   {
+    title: "El cuarto de Mary",
+    kind: "Diseño instruccional · Planeación completa",
+    line: "Curso de 40 minutos sobre criterio e IA, planeado de punta a punta: perfilamiento, objetivos con Bloom y Marzano, escuadra invertida, Gagné y rúbrica.",
+    image: "/learning-design/cuarto-de-mary-poster.webp",
+    imageAlt: "Cuarto gris con una sola franja roja que entra por la puerta",
+    href: "/casos/el-cuarto-de-mary",
+    linkLabel: "Ver el caso",
+    internal: true,
+  },
+  {
     title: "Criterio",
     kind: "Diseño instruccional · Herramienta",
     line: "Para que docentes universitarios diseñen actividades con IA sin cederle a la IA el juicio pedagógico.",
@@ -76,6 +86,16 @@ const workEs: WorkItem[] = [
 ];
 
 const workEn: WorkItem[] = [
+  {
+    title: "Mary's Room",
+    kind: "Instructional design · Complete plan",
+    line: "A 40-minute course on judgment and AI, planned end to end: learner profile, objectives with Bloom and Marzano, competency mapping, Gagné and a rubric.",
+    image: "/learning-design/cuarto-de-mary-poster.webp",
+    imageAlt: "A gray room with a single red strip of light coming through the door",
+    href: "/en/casos/el-cuarto-de-mary",
+    linkLabel: "See the case",
+    internal: true,
+  },
   {
     title: "Criterio",
     kind: "Instructional design · Tool",
