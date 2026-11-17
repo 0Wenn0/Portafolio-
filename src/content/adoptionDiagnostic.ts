@@ -50,9 +50,9 @@ const es: AdoptionDiagnosticContent = {
   problemTitle: "El problema",
   problem: [
     "Una aseguradora regional de 340 personas despliega Copilot en toda la organización. Tres meses después, casi nadie fuera de TI lo sigue usando.",
-    "Parece terquedad, pero no lo es. En una industria regulada, «nadie usa la herramienta» suele ser gobernanza, auditoría y miedo a un error que nadie pueda explicar después. Recetar más capacitación antes de saber qué falla es gastar dos veces.",
+    "Parece terquedad. En una industria regulada, cuando nadie usa la herramienta suele haber detrás gobernanza, auditoría y miedo a un error que nadie pueda explicar después. Recetar más capacitación antes de saber qué falla es gastar dos veces.",
   ],
-  variablesTitle: "Seis variables, no una intuición",
+  variablesTitle: "Seis variables para encontrar la barrera",
   variablesIntro: "El diagnóstico revisa seis barreras. En el caso, las más severas fueron el contexto organizacional y el valor percibido.",
   variables: [
     { name: "Valor percibido", desc: "El proceso de siempre ya resuelve el problema; no hay urgencia de cambiar." },
@@ -77,19 +77,19 @@ const es: AdoptionDiagnosticContent = {
       letter: "V",
       name: "Voz",
       inCase:
-        "Diagnóstico con las seis variables, a partir de lo que dicen el equipo de suscripción y siniestros y sus responsables. La barrera estaba en el contexto y en el valor percibido, no en la capacidad técnica.",
+        "Diagnóstico con las seis variables, a partir de lo que dicen el equipo de suscripción y siniestros y sus responsables. Las barreras más fuertes fueron el contexto organizacional y el valor percibido.",
     },
     {
       letter: "I",
       name: "Intención",
       inCase:
-        "El objetivo no es que la gente abra Copilot, sino que cambie un flujo de trabajo concreto: la revisión de siniestros, con tiempo por caso y tasa de error como indicadores.",
+        "El objetivo es que cambie un flujo de trabajo concreto: la revisión de siniestros, con tiempo por caso y tasa de error como indicadores.",
     },
     {
       letter: "D",
       name: "Diseño cognitivo-conductual",
       inCase:
-        "Mapa de personas por motivación e influencia frente a capacidad técnica. La palanca fueron los suscriptores senior con peso en el equipo, no los más expertos en tecnología.",
+        "Mapa de personas por motivación e influencia frente a capacidad técnica. La palanca fueron los suscriptores senior, por la influencia que tienen en el equipo.",
     },
     {
       letter: "E · N",
@@ -104,7 +104,7 @@ const es: AdoptionDiagnosticContent = {
         "Antes y después con datos de uso (frecuencia, tiempo por siniestro, errores de captura) y traducción a lo que aprueba un presupuesto: horas recuperadas al mes. Una nota metodológica separa lo simulado de lo real.",
     },
   ],
-  realTitle: "Qué es real y qué no",
+  realTitle: "Qué es real y qué es simulado",
   real: [
     {
       label: "Real",
@@ -142,9 +142,9 @@ const en: AdoptionDiagnosticContent = {
   problemTitle: "The problem",
   problem: [
     "A regional insurer with 340 employees rolls out Copilot across the organization. Three months later, almost nobody outside IT is still using it.",
-    "It looks like stubbornness, but it isn't. In a regulated industry, \"nobody uses the tool\" usually means governance, audits, and fear of an error no one can explain later. Prescribing more training before knowing what's failing means paying twice.",
+    "It looks like stubbornness. In a regulated industry, when nobody uses the tool, the cause is usually governance, audits, and fear of an error no one can explain later. Prescribing more training before knowing what's failing means paying twice.",
   ],
-  variablesTitle: "Six variables, not a hunch",
+  variablesTitle: "Six variables to find the barrier",
   variablesIntro: "The diagnostic checks six barriers. In this case, the most severe were organizational context and perceived value.",
   variables: [
     { name: "Perceived value", desc: "The usual process already solves the problem; there's no urgency to change." },
@@ -169,19 +169,19 @@ const en: AdoptionDiagnosticContent = {
       letter: "V",
       name: "Voice",
       inCase:
-        "A diagnostic with the six variables, based on what the underwriting and claims team and their leads say. The barrier was context and perceived value, not technical skill.",
+        "A diagnostic with the six variables, based on what the underwriting and claims team and their leads say. The strongest barriers were organizational context and perceived value.",
     },
     {
       letter: "I",
       name: "Intent",
       inCase:
-        "The goal isn't for people to open Copilot but for a specific workflow to change: claims review, with time per case and error rate as indicators.",
+        "The goal is for a specific workflow to change: claims review, with time per case and error rate as indicators.",
     },
     {
       letter: "D",
       name: "Cognitive-behavioral design",
       inCase:
-        "A map of people by motivation and influence versus technical skill. The lever was senior underwriters with weight in the team, not the most tech-savvy.",
+        "A map of people by motivation and influence versus technical skill. The lever was senior underwriters, because of their influence on the team.",
     },
     {
       letter: "E · N",
@@ -196,7 +196,7 @@ const en: AdoptionDiagnosticContent = {
         "Before and after with usage data (frequency, time per claim, data-entry errors) and a translation into what gets a budget approved: hours recovered per month. A methodological note separates what's simulated from what's real.",
     },
   ],
-  realTitle: "What's real and what isn't",
+  realTitle: "What's real and what's simulated",
   real: [
     {
       label: "Real",

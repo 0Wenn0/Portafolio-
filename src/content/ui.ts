@@ -98,7 +98,7 @@ export const ui = {
     endesCoverageValue: "1996–2024 (28 años)",
     endesProblemTitle: "El problema de arquitectura",
     endesProblemBody:
-      "28 años de encuestas nacionales no forman, por sí solos, una serie longitudinal. Sin una capa de homologación explícita, comparar un año contra otro produce diferencias que no son reales: son artefactos del instrumento, no del fenómeno.",
+      "28 años de encuestas nacionales no forman, por sí solos, una serie longitudinal. Sin una capa de homologación explícita, comparar un año contra otro produce diferencias que en realidad vienen de cambios en el instrumento de medición.",
     endesWhatExists: "Lo que existe",
     endesWhatExistsList: [
       "Microdatos anuales en formato propietario (.sav), sin catálogo unificado.",
@@ -129,7 +129,7 @@ export const ui = {
     endesDuckdbP2c: " conceptual, activada por umbrales explícitos.",
     endesMigrationRule: "Regla de migración",
     endesMigrationRuleBody:
-      "DuckDB → PostgreSQL queda definido como decisión activada por evento, no por antojo: concurrencia real de usuarios, control de acceso por rol, o crecimiento del catálogo más allá de lo que una sola analista puede sostener sin servidor.",
+      "DuckDB → PostgreSQL queda definido como una decisión que se activa ante tres eventos: concurrencia real de usuarios, control de acceso por rol, o crecimiento del catálogo más allá de lo que una sola analista puede sostener sin servidor.",
     endesSurveyTitle: "El diseño muestral se preserva en el origen",
     endesSurveySubtitleA:
       "Una encuesta con conglomerados, estratos y ponderación no admite análisis directo sobre las filas crudas — la capa de ",
@@ -155,7 +155,7 @@ export const ui = {
     endesNoReferentTitle: "Lo que ningún referente externo tiene",
     endesNoReferentBody:
       "Conocimiento del contexto histórico específico de esta encuesta nacional — discontinuidades de diseño muestral, cambios de instrumento entre ediciones, variables que existen solo en ciertos años — documentado en 45 advertencias metodológicas, trazable variable por variable.",
-    endesClosingTitle: "Infraestructura, no un análisis puntual",
+    endesClosingTitle: "Una infraestructura que se puede reutilizar",
     endesClosingQuote:
       "La entidad central del sistema es la variable — no la persona, el hogar ni el conglomerado.",
     endesClosingBody:
@@ -260,7 +260,7 @@ export const ui = {
     endesCoverageValue: "1996–2024 (28 years)",
     endesProblemTitle: "The architecture problem",
     endesProblemBody:
-      "28 years of national surveys do not, on their own, form a longitudinal series. Without an explicit harmonization layer, comparing one year against another produces differences that aren't real: they're artifacts of the instrument, not of the phenomenon.",
+      "28 years of national surveys do not, on their own, form a longitudinal series. Without an explicit harmonization layer, comparing one year against another produces differences that actually come from changes in the measurement instrument.",
     endesWhatExists: "What exists",
     endesWhatExistsList: [
       "Annual microdata in a proprietary format (.sav), with no unified catalog.",
@@ -291,7 +291,7 @@ export const ui = {
     endesDuckdbP2c: ", triggered by explicit thresholds.",
     endesMigrationRule: "Migration rule",
     endesMigrationRuleBody:
-      "DuckDB → PostgreSQL is defined as an event-triggered decision, not a whim: real concurrent users, role-based access control, or the catalog growing beyond what a single analyst can sustain without a server.",
+      "DuckDB → PostgreSQL is defined as a decision triggered by three events: real concurrent users, role-based access control, or the catalog growing beyond what a single analyst can sustain without a server.",
     endesSurveyTitle: "Survey design is preserved at the source",
     endesSurveySubtitleA:
       "A survey with clusters, strata, and weighting doesn't allow direct analysis on raw rows — the ",
@@ -317,7 +317,7 @@ export const ui = {
     endesNoReferentTitle: "What no external benchmark has",
     endesNoReferentBody:
       "Knowledge of this national survey's specific historical context — survey-design discontinuities, instrument changes between editions, variables that exist only in certain years — documented in 45 methodological warnings, traceable variable by variable.",
-    endesClosingTitle: "Infrastructure, not a one-off analysis",
+    endesClosingTitle: "Infrastructure built to be reused",
     endesClosingQuote:
       "The system's central entity is the variable — not the person, the household, or the cluster.",
     endesClosingBody:

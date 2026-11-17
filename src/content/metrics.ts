@@ -27,7 +27,7 @@ const metricsEs: Metric[] = [
     contribucion:
       "Como analista de datos y encargada de marketing digital: segmentación de la base, automatizaciones y pipelines de envío, y copys y diseño con criterios de UX",
     fuente: "Reportes de campañas en Mailchimp",
-    limite: "Mide apertura, no inscripción",
+    limite: "Mide la apertura de correos; la inscripción es otro indicador",
     compare: {
       from: { label: "Abr 2023", value: 8 },
       to: { label: "Jul 2025", value: 30 },
@@ -46,7 +46,7 @@ const metricsEs: Metric[] = [
     contribucion:
       "Diseño y análisis completos del tablero: producto, estrategia y adopción institucional",
     fuente: "Tablero institucional SISAP v0.2",
-    limite: "Mide el alcance del análisis, no la adopción lograda",
+    limite: "Mide el alcance del análisis; la adopción aún no se ha medido",
   },
 ];
 
@@ -74,7 +74,7 @@ const metricsEn: Metric[] = [
     contribucion:
       "As data analyst and digital marketing lead: base segmentation, automations and send pipelines, and copy and design with UX criteria",
     fuente: "Mailchimp campaign reports",
-    limite: "Measures opens, not enrollment",
+    limite: "Measures email opens; enrollment is a separate metric",
     compare: {
       from: { label: "Apr 2023", value: 8 },
       to: { label: "Jul 2025", value: 30 },
@@ -93,7 +93,7 @@ const metricsEn: Metric[] = [
     contribucion:
       "Full design and analysis of the dashboard: product, strategy, and institutional adoption",
     fuente: "SISAP institutional dashboard v0.2",
-    limite: "Measures the analysis's scope, not adoption achieved",
+    limite: "Measures the analysis's scope; adoption has not been measured yet",
   },
 ];
 

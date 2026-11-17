@@ -89,7 +89,7 @@ const es: EvidentContent = {
       letter: "E",
       name: "Evidencia",
       question: "¿Qué sabemos antes de empezar?",
-      practice: "Reviso la investigación disponible y levanto una línea base. No diseño sobre supuestos.",
+      practice: "Reviso la investigación disponible y levanto una línea base antes de diseñar.",
       step: "Diagnóstico",
     },
     {
@@ -134,7 +134,7 @@ const es: EvidentContent = {
       name: "Transferencia y trazabilidad",
       question: "¿Se usa en el trabajo real, y alguien más puede revisar cómo llegué aquí?",
       practice:
-        "Mido el cambio de conducta, no solo la satisfacción o el examen final. Documento fuentes, decisiones y resultados, y separo lo medido de lo que todavía es hipótesis.",
+        "Mido el cambio de conducta, además de la satisfacción y el examen final. Documento fuentes, decisiones y resultados, y separo lo medido de lo que todavía es hipótesis.",
       step: "Medición",
     },
   ],
@@ -177,7 +177,7 @@ const es: EvidentContent = {
     {
       finding:
         "En aulas reales, practicar recordando mejora el aprendizaje (g = 0.37) y repartir el estudio en el tiempo también (g = 0.20), aunque con efectos menores a los del laboratorio. 53 estudios.",
-      decision: "Incluyo práctica de recuperación y repaso espaciado, y planeo para efectos moderados, no espectaculares.",
+      decision: "Incluyo práctica de recuperación y repaso espaciado, y planeo con los efectos moderados que reporta la evidencia.",
       source: "Ruitenburg et al. (2026), Educational Psychology Review",
       href: "https://doi.org/10.1007/s10648-026-10225-5",
     },
@@ -218,7 +218,7 @@ const es: EvidentContent = {
     {
       finding:
         "Depender en exceso de asistentes de IA se asocia con menos pensamiento crítico y razonamiento analítico (revisión sistemática de 14 estudios).",
-      decision: "Pido una idea propia antes de consultar a la IA y evalúo el proceso, no solo el producto.",
+      decision: "Pido una idea propia antes de consultar a la IA y evalúo tanto el proceso como el producto.",
       source: "Zhai, Wibowo y Li (2024), Smart Learning Environments",
       href: "https://doi.org/10.1186/s40561-024-00316-7",
     },
@@ -293,7 +293,7 @@ const es: EvidentContent = {
     "EVIDENT es la versión 1.0 de un marco en construcción. Lo documento en un manual interno con instrumentos y una bitácora de evidencia; cada letra es también una fase del proceso.",
     "No propone teorías nuevas. Mi aportación es la integración: qué marco responde cada pregunta y cómo se rastrea cada decisión.",
     "Todavía no lo he aplicado completo en un proyecto con resultados medidos. El primer caso es el piloto del kit Pienso, consulto, decido.",
-    "Las cifras de la tabla de evidencia vienen de las síntesis citadas, no de mis proyectos.",
+    "Las cifras de la tabla de evidencia vienen de las síntesis citadas, hechas por otros investigadores.",
   ],
   backToMethod: "Volver a Cómo trabajo",
   backHref: "/#como-trabajo",
@@ -325,7 +325,7 @@ const en: EvidentContent = {
       letter: "E",
       name: "Evidence",
       question: "What do we know before we start?",
-      practice: "I review the available research and set a baseline. I don't design on assumptions.",
+      practice: "I review the available research and set a baseline before designing.",
       step: "Diagnose",
     },
     {
@@ -369,7 +369,7 @@ const en: EvidentContent = {
       name: "Transfer and traceability",
       question: "Is it used in real work, and can someone else review how I got here?",
       practice:
-        "I measure behavior change, not just satisfaction or a final test. I document sources, decisions, and results, and separate what was measured from what is still a hypothesis.",
+        "I measure behavior change in addition to satisfaction and the final test. I document sources, decisions, and results, and separate what was measured from what is still a hypothesis.",
       step: "Measure",
     },
   ],
@@ -412,7 +412,7 @@ const en: EvidentContent = {
     {
       finding:
         "In real classrooms, practicing recall improves learning (g = 0.37) and spacing study over time does too (g = 0.20), though both effects are smaller than in the lab. 53 studies.",
-      decision: "I build in retrieval practice and spaced review, and plan for moderate effects, not spectacular ones.",
+      decision: "I build in retrieval practice and spaced review, and plan for the moderate effects the evidence reports.",
       source: "Ruitenburg et al. (2026), Educational Psychology Review",
       href: "https://doi.org/10.1007/s10648-026-10225-5",
     },
@@ -453,7 +453,7 @@ const en: EvidentContent = {
     {
       finding:
         "Over-reliance on AI assistants is associated with weaker critical thinking and analytical reasoning (systematic review of 14 studies).",
-      decision: "I ask for an original idea before consulting AI, and I assess the process, not just the product.",
+      decision: "I ask for an original idea before consulting AI, and I assess both the process and the product.",
       source: "Zhai, Wibowo, and Li (2024), Smart Learning Environments",
       href: "https://doi.org/10.1186/s40561-024-00316-7",
     },
@@ -528,7 +528,7 @@ const en: EvidentContent = {
     "EVIDENT is version 1.0 of a framework in progress. I document it in an internal manual with instruments and an evidence log; each letter is also a phase of the process.",
     "It doesn't propose new theories. My contribution is the integration: which framework answers each question and how each decision is traced.",
     "I haven't yet applied it end to end in a project with measured results. The first case is the pilot of the I think, I consult, I decide kit.",
-    "The figures in the evidence table come from the cited syntheses, not from my projects.",
+    "The figures in the evidence table come from the cited syntheses by other researchers.",
   ],
   backToMethod: "Back to How I work",
   backHref: "/en#como-trabajo",

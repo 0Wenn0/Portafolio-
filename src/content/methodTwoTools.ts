@@ -112,7 +112,7 @@ const es: MethodTwoToolsContent = {
   ],
   problemTitle: "El problema",
   problem:
-    "Si la IA puede escribir el ensayo de un estudiante en segundos, calificar solo el producto ya no dice si el estudiante comprendió. Prohibir la IA tampoco funciona. Hace falta rediseñar las actividades para que la IA entrene el criterio en lugar de reemplazarlo, y que el docente pueda ver el razonamiento, no solo el resultado.",
+    "Si la IA puede escribir el ensayo de un estudiante en segundos, calificar solo el producto ya no dice si el estudiante comprendió. Prohibir la IA tampoco funciona. Hace falta rediseñar las actividades para que la IA ayude a entrenar el criterio y el docente pueda ver el razonamiento además del resultado.",
   methodTitle: "El método",
   methodSteps: [
     {
@@ -138,9 +138,9 @@ const es: MethodTwoToolsContent = {
     transcriptLabel: "Texto del video",
     transcript: [
       "Si la IA puede escribir el ensayo de tus estudiantes en segundos, ¿qué estás evaluando realmente?",
-      "Prohibirla no funciona. Funciona rediseñar la actividad en tres momentos. Pienso: el estudiante produce una idea propia, sin IA. Consulto: usa la IA para pedir crítica o un contraejemplo, no la respuesta. Decido: compara, verifica y justifica qué acepta y qué no.",
+      "La propuesta es rediseñar la actividad en tres momentos. Pienso: el estudiante produce una idea propia, sin IA. Consulto: usa la IA para pedir crítica o un contraejemplo. Decido: compara, verifica y justifica qué acepta y qué no.",
       "Para eso diseñé una Skill de Gemini. Escribes /pienso-consulto-decido y le cuentas tu actividad como la das hoy: la materia, la tarea y cómo la calificas.",
-      "Primero te dice qué tan fácil sería que la IA hiciera la tarea. Aquí, el riesgo es alto. Luego te propone el rediseño. En Pienso, cada estudiante escribe su explicación sin IA. En Consulto, pega su borrador en una plantilla y le pide preguntas y contraejemplos, no que escriba por él. En Decido, escribe su versión final y explica qué sugerencias aceptó, cuáles rechazó y por qué.",
+      "Primero te dice qué tan fácil sería que la IA hiciera la tarea. Aquí, el riesgo es alto. Luego te propone el rediseño. En Pienso, cada estudiante escribe su explicación sin IA. En Consulto, pega su borrador en una plantilla y le pide preguntas y contraejemplos sobre su texto. En Decido, escribe su versión final y explica qué sugerencias aceptó, cuáles rechazó y por qué.",
       "Así ya no calificas solo el producto. Revisas el borrador, la consulta y la versión final con una rúbrica de cuatro criterios: idea propia, uso intencional de la IA, verificación y decisión justificada.",
       "También te entrega la instrucción lista para tus estudiantes. Si le pides que escriba el ensayo por ellos, se niega y te ofrece otra opción. La Skill no califica: tú validas cada rediseño.",
       "Pruébalo con una sola actividad esta semana. La IA propone. Tú y tus estudiantes deciden."
@@ -216,7 +216,7 @@ const es: MethodTwoToolsContent = {
     "La versión anterior le daba al estudiante una tesis ya escrita, y además incorrecta. La nueva regla: el prompt es una plantilla donde el estudiante pega su propia idea.",
   pilotTitle: "Plan de pilotaje",
   pilotIntro:
-    "Una propuesta para decidir con datos si la Skill se escala en una institución. Los umbrales son metas iniciales a validar, no resultados.",
+    "Una propuesta para decidir con datos si la Skill se escala en una institución. Los umbrales son metas iniciales que falta validar.",
   pilotQuestionLabel: "Pregunta",
   pilotQuestion:
     "¿La Skill ayuda a los docentes a rediseñar actividades que muestran el razonamiento del estudiante, con una carga de trabajo aceptable?",
@@ -273,7 +273,7 @@ const es: MethodTwoToolsContent = {
   scmSteps: [
     {
       step: "Modelo de impacto",
-      text: "Defino qué se ve cuando funciona: el docente aplica en clase una actividad rediseñada y puede ver el razonamiento de sus estudiantes, no solo el producto.",
+      text: "Defino qué se ve cuando funciona: el docente aplica en clase una actividad rediseñada y puede ver el razonamiento de sus estudiantes además del producto.",
     },
     {
       step: "Encuesta breve",
@@ -321,11 +321,11 @@ const es: MethodTwoToolsContent = {
     },
     {
       label: "Decisión con reglas previas",
-      text: "Escalar, ajustar o detener según metas de adopción y calidad fijadas antes de empezar, no después de ver los resultados.",
+      text: "Escalar, ajustar o detener según metas de adopción y calidad fijadas antes de empezar el piloto.",
     },
     {
       label: "Riesgos",
-      text: "Participación voluntaria con consentimiento, trabajos anonimizados y un límite claro: la Skill propone, no califica.",
+      text: "Participación voluntaria con consentimiento, trabajos anonimizados y un límite claro: la Skill propone y el docente califica.",
     },
   ],
   pmBoardLabel: "Estado del trabajo",
@@ -351,7 +351,7 @@ const es: MethodTwoToolsContent = {
     },
   ],
   pmNote:
-    "Trabajé sola, así que no es Scrum formal: no hubo equipo, roles ni ceremonias. Usé sus prácticas (ciclos cortos, criterios de aceptación y revisión) porque se ajustan bien a un producto que se prueba con usuarios.",
+    "Trabajé sola, sin equipo, roles ni ceremonias, así que tomé de Scrum solo sus prácticas (ciclos cortos, criterios de aceptación y revisión) porque se ajustan bien a un producto que se prueba con usuarios.",
   evidentTitle: "Leído con EVIDENT",
   evidentIntro:
     "Este kit es el primer caso de prueba de EVIDENT, mi marco de trabajo. Así se ve cada uno de sus siete principios aquí, y qué falta.",
@@ -361,7 +361,7 @@ const es: MethodTwoToolsContent = {
     "La Skill está configurada en Gemini y la probé el 10 de noviembre de 2026 con cuatro casos; las conversaciones son públicas.",
     "Las pruebas las diseñé y evalué yo. Todavía no la han usado docentes reales.",
     "El plan de pilotaje y su plan de evaluación son una propuesta: no se han aplicado y no hay resultados. La rúbrica y las encuestas se validarán con el piloto.",
-    "Los fundamentos (efecto de generación, metacognición, evaluación del proceso) son hipótesis sustentadas en la literatura, no efectos medidos en este proyecto.",
+    "Los fundamentos (efecto de generación, metacognición, evaluación del proceso) son hipótesis sustentadas en la literatura; en este proyecto aún no se han medido.",
     "El tutorial usa una voz generada con ElevenLabs a partir de mi guion; las pantallas son capturas reales de las pruebas.",
   ],
   skillLink: {
@@ -386,7 +386,7 @@ const en: MethodTwoToolsContent = {
   ],
   problemTitle: "The problem",
   problem:
-    "If AI can write a student's essay in seconds, grading only the product no longer shows whether the student understood. Banning AI doesn't work either. Activities need to be redesigned so AI trains judgment instead of replacing it, and so the teacher can see the reasoning, not just the result.",
+    "If AI can write a student's essay in seconds, grading only the product no longer shows whether the student understood. Banning AI doesn't work either. Activities need to be redesigned so AI helps train judgment and the teacher can see the reasoning as well as the result.",
   methodTitle: "The method",
   methodSteps: [
     {
@@ -412,9 +412,9 @@ const en: MethodTwoToolsContent = {
     transcriptLabel: "Video transcript (English translation)",
     transcript: [
       "If AI can write your students' essay in seconds, what are you really assessing?",
-      "Banning it doesn't work. Redesigning the activity in three moments does. I think: the student produces their own idea, without AI. I consult: they use AI to ask for critique or a counterexample, not the answer. I decide: they compare, verify, and justify what they accept and what they don't.",
+      "The approach is to redesign the activity in three moments. I think: the student produces their own idea, without AI. I consult: they use AI to ask for critique or a counterexample. I decide: they compare, verify, and justify what they accept and what they don't.",
       "That's why I designed a Gemini Skill. You type /pienso-consulto-decido and describe your activity as you run it today: the subject, the task, and how you grade it.",
-      "First it tells you how easy it would be for AI to do the task. Here, the risk is high. Then it proposes the redesign. In I think, each student writes their explanation without AI. In I consult, they paste their draft into a template and ask for questions and counterexamples, not for the AI to write for them. In I decide, they write their final version and explain which suggestions they accepted, which they rejected, and why.",
+      "First it tells you how easy it would be for AI to do the task. Here, the risk is high. Then it proposes the redesign. In I think, each student writes their explanation without AI. In I consult, they paste their draft into a template and ask for questions and counterexamples about their text. In I decide, they write their final version and explain which suggestions they accepted, which they rejected, and why.",
       "So you no longer grade only the product. You review the draft, the consultation, and the final version with a four-criterion rubric: own idea, intentional use of AI, verification, and justified decision.",
       "It also gives you the instructions ready for your students. If you ask it to write the essay for them, it refuses and offers another option. The Skill doesn't grade: you validate every redesign.",
       "Try it with a single activity this week. AI proposes. You and your students decide."
@@ -490,7 +490,7 @@ const en: MethodTwoToolsContent = {
     "The earlier version handed the student a ready-made thesis, and a wrong one. The new rule: the prompt is a template where the student pastes their own idea.",
   pilotTitle: "Pilot plan",
   pilotIntro:
-    "A proposal for deciding, with data, whether an institution should scale the Skill. The thresholds are starting targets to validate, not results.",
+    "A proposal for deciding, with data, whether an institution should scale the Skill. The thresholds are starting targets that still need validation.",
   pilotQuestionLabel: "Question",
   pilotQuestion:
     "Does the Skill help faculty redesign activities that show student reasoning, with an acceptable workload?",
@@ -547,7 +547,7 @@ const en: MethodTwoToolsContent = {
   scmSteps: [
     {
       step: "Impact model",
-      text: "I define what success looks like: a teacher runs a redesigned activity in class and can see students' reasoning, not just the product.",
+      text: "I define what success looks like: a teacher runs a redesigned activity in class and can see students' reasoning as well as the product.",
     },
     {
       step: "Short survey",
@@ -595,11 +595,11 @@ const en: MethodTwoToolsContent = {
     },
     {
       label: "Decision rules set upfront",
-      text: "Scale, adjust, or stop based on adoption and quality targets set before starting, not after seeing the results.",
+      text: "Scale, adjust, or stop based on adoption and quality targets set before the pilot starts.",
     },
     {
       label: "Risks",
-      text: "Voluntary participation with consent, anonymized work samples, and a clear limit: the Skill suggests, it doesn't grade.",
+      text: "Voluntary participation with consent, anonymized work samples, and a clear limit: the Skill suggests and the teacher grades.",
     },
   ],
   pmBoardLabel: "Work status",
@@ -625,7 +625,7 @@ const en: MethodTwoToolsContent = {
     },
   ],
   pmNote:
-    "I worked alone, so this isn't formal Scrum: there was no team, roles, or ceremonies. I used its practices (short cycles, acceptance criteria, and review) because they fit a product that is tested with users.",
+    "I worked alone, without a team, roles, or ceremonies, so I took only Scrum's practices (short cycles, acceptance criteria, and review) because they fit a product that is tested with users.",
   evidentTitle: "Read through EVIDENT",
   evidentIntro:
     "This kit is the first test case for EVIDENT, my working framework. Here is how each of its seven principles shows up, and what is missing.",
@@ -635,7 +635,7 @@ const en: MethodTwoToolsContent = {
     "The Skill is configured in Gemini, and I tested it on November 10, 2026, with four cases; the conversations are public.",
     "I designed and evaluated the tests myself. Real faculty haven't used it yet.",
     "The pilot plan and its evaluation plan are a proposal: they haven't been run and there are no results. The rubric and surveys will be validated in the pilot.",
-    "The rationale (generation effect, metacognition, process-based assessment) is a hypothesis grounded in the literature, not an effect measured in this project.",
+    "The rationale (generation effect, metacognition, process-based assessment) is a hypothesis grounded in the literature; it has not been measured in this project yet.",
     "The tutorial uses a voice generated with ElevenLabs from my script; the screens are real captures from the tests.",
   ],
   skillLink: {
