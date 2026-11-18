@@ -10,10 +10,10 @@ import { NodoCeroFlowSim } from "./NodoCeroFlowSim";
 type Scene = { title: string; chapter: number; notes: string };
 
 const SCENES: Scene[] = [
-  { title: "Portada", chapter: 0, notes: "Saludo y agradecimiento a WTM Santa Cruz y a Geraldine. Presentarte en una frase: neuropsicóloga que estudia cómo las personas adoptan la tecnología." },
+  { title: "Portada", chapter: 0, notes: "Saludo y agradecimiento a WTM Santa Cruz y a Geraldine. Presentarte en una frase: neuropsicóloga y científica de datos que estudia cómo las personas adoptan la tecnología." },
   { title: "Encuadre", chapter: 0, notes: "Encuadre: el objetivo en una frase, el camino en cinco fases y qué se llevan. Explicar cómo participar en los comentarios. Mañana construyen; hoy deciden qué vale la pena construir." },
   { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria. Pausa: ¿quién es la Valeria de su comunidad? Cinco segundos de silencio antes de seguir." },
-  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Luego tus tres lentes, cada una con dónde la verán hoy. Remata: su proyecto del sábado sigue el mismo orden." },
+  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Luego tus tres lentes, cada una con dónde la verán hoy. Subrayar la ciencia de datos: es la que les permite medir si su solución funciona. Remata: su proyecto del sábado sigue el mismo orden." },
   { title: "Proto-persona", chapter: 1, notes: "Empatizar. Proto-persona: una persona hecha con supuestos que luego verifican. Presentar a Valeria y pedir su usuaria en los comentarios." },
   { title: "Mini journey map", chapter: 1, notes: "Cinco pasos de Valeria. El paso coral es donde más duele: ahí va el flujo. Cerrar la fase con la frase: primero la persona, después el flujo." },
   { title: "¿Vale la pena el problema?", chapter: 2, notes: "Definir. El corazón de la charla. Marcar los criterios con Valeria (cumple los seis) y pedir que cada equipo escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar. Equipos sin idea: elegir un reto." },
@@ -526,7 +526,7 @@ export function NodoCeroDeck() {
             <p className="nc-lede">Cómo enfocar tu proyecto y contarlo en un minuto, antes de la hackathon del sábado.</p>
             <div className="nc-meta">
               <span>Wendy Ramírez Burgos</span>
-              <span>Neuropsicóloga · adopción de IA</span>
+              <span>Neuropsicóloga y científica de datos · adopción de IA</span>
               <span>Embajadora de Women Techmakers · México</span>
             </div>
           </div>
@@ -587,8 +587,8 @@ export function NodoCeroDeck() {
               </article>
               <article className="nc-card">
                 <span className="nc-num">03</span>
-                <h3>IA y datos</h3>
-                <p>Construir soluciones, evaluarlas y aprender de la evidencia.</p>
+                <h3>Ciencia de datos e IA</h3>
+                <p>Construir soluciones, medirlas y aprender de la evidencia.</p>
                 <p className="nc-lens">En esta charla: el flujo y la métrica.</p>
               </article>
             </div>
