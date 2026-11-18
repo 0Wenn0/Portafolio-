@@ -12,8 +12,8 @@ type Scene = { title: string; chapter: number; notes: string };
 const SCENES: Scene[] = [
   { title: "Portada", chapter: 0, notes: "Saludo y agradecimiento a WTM Santa Cruz y a Geraldine. Presentarte en una frase: neuropsicóloga que estudia cómo las personas adoptan la tecnología." },
   { title: "Encuadre", chapter: 0, notes: "Encuadre: el objetivo en una frase, el camino en cinco fases y qué se llevan. Explicar cómo participar en los comentarios. Mañana construyen; hoy deciden qué vale la pena construir." },
-  { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria y preguntar: ¿a cuántas les ha pasado?" },
-  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Remata: su proyecto del sábado sigue el mismo orden." },
+  { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria. Pausa: ¿quién es la Valeria de su comunidad? Cinco segundos de silencio antes de seguir." },
+  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Luego tus tres lentes, cada una con dónde la verán hoy. Remata: su proyecto del sábado sigue el mismo orden." },
   { title: "Proto-persona", chapter: 1, notes: "Empatizar. Proto-persona: una persona hecha con supuestos que luego verifican. Presentar a Valeria y pedir su usuaria en los comentarios." },
   { title: "Mini journey map", chapter: 1, notes: "Cinco pasos de Valeria. El paso coral es donde más duele: ahí va el flujo. Cerrar la fase con la frase: primero la persona, después el flujo." },
   { title: "¿Vale la pena el problema?", chapter: 2, notes: "Definir. El corazón de la charla. Marcar los criterios con Valeria (cumple los seis) y pedir que cada equipo escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar. Equipos sin idea: elegir un reto." },
@@ -27,6 +27,7 @@ const SCENES: Scene[] = [
   { title: "Errores que restan puntos", chapter: 6, notes: "Contraste con el ejemplo. En el de los premios: Clerk y Avalanche tienen mención; úsenlos si resuelven algo de su usuaria." },
   { title: "Práctica del pitch", chapter: 6, notes: "Ahora ellas: correr el reloj de 60 s. Si hay tiempo, pedir a un equipo que lo intente en voz alta." },
   { title: "El sábado en cinco bloques", chapter: 7, notes: "Construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45. Dividir al equipo durante los talleres. Congelar a las 14:00. Presentación de un minuto a las 15:00." },
+  { title: "La historia de una idea", chapter: 7, notes: "Cerrar el arco de Valeria, paso por paso, ligando cada uno a su fase. Remate despacio: la joven innovadora de esta historia son ustedes." },
   { title: "Lo que se llevan", chapter: 7, notes: "Regresar al encuadre: hoy eligieron su problema, escribieron su job story y conocen su minuto. Esta noche, solo decisiones." },
   { title: "Cierre", chapter: 7, notes: "Eco del lema del evento. Mensaje central despacio, la pregunta y unos segundos de silencio. Preguntas (10 min), LinkedIn y agradecer a WTM Santa Cruz." },
 ];
@@ -561,6 +562,7 @@ export function NodoCeroDeck() {
               <p className="after nc-step">La semana pasada se le pasó una beca por dos días. Ya lo ve como algo normal.</p>
             </div>
             <p className="nc-sub nc-step">Ahí empieza un proyecto: en algo que alguien aprendió a soportar.</p>
+            <p className="nc-ask nc-step"><span>“</span>¿Quién es la Valeria de su comunidad?</p>
           </div>
         </section>
 
@@ -569,22 +571,25 @@ export function NodoCeroDeck() {
           <div>
             <p className="nc-kicker">Lo que aprendí con más de 3,000 personas</p>
             <h2>Antes de usar la IA, aprendimos a decidir cuándo usarla</h2>
-            <p className="nc-sub">En el programa de adopción de IA con OpenAI en México, la herramienta ya estaba disponible. El trabajo fue construir las bases.</p>
+            <p className="nc-sub">En el programa de adopción de IA con OpenAI en México, la herramienta ya estaba disponible. El trabajo fue construir pensamiento crítico, alfabetización digital y criterio de uso. Hoy les hablo desde tres lentes:</p>
             <div className="nc-grid">
               <article className="nc-card">
                 <span className="nc-num">01</span>
-                <h3>Pensamiento crítico</h3>
-                <p>Dudar de una respuesta, contrastarla y decidir si sirve.</p>
+                <h3>Neuropsicología</h3>
+                <p>Cómo las personas piensan, deciden y actúan.</p>
+                <p className="nc-lens">En esta charla: Valeria y la elección del problema.</p>
               </article>
               <article className="nc-card">
                 <span className="nc-num">02</span>
-                <h3>Alfabetización digital</h3>
-                <p>Entender qué hace la herramienta y qué pasa con tus datos.</p>
+                <h3>Diseño tecnopedagógico</h3>
+                <p>Convertir necesidades en experiencias que se entienden.</p>
+                <p className="nc-lens">En esta charla: los momentos de contacto y el pitch.</p>
               </article>
               <article className="nc-card">
                 <span className="nc-num">03</span>
-                <h3>Criterio de uso</h3>
-                <p>Elegir cuándo conviene la IA y cuándo basta algo más simple.</p>
+                <h3>IA y datos</h3>
+                <p>Construir soluciones, evaluarlas y aprender de la evidencia.</p>
+                <p className="nc-lens">En esta charla: el flujo y la métrica.</p>
               </article>
             </div>
             <p className="nc-sub nc-step">Primero el criterio, después la herramienta. <b>Su proyecto del sábado sigue el mismo orden.</b></p>
@@ -790,8 +795,6 @@ export function NodoCeroDeck() {
               <span className="nc-step">«Es para todas las mujeres»<i>→ elige a una</i></span>
               <span className="nc-step">Prometer impacto sin pruebas<i>→ muestra tu métrica</i></span>
               <span className="nc-step">Usar una herramienta solo por el premio<i>→ úsala si resuelve algo de tu usuaria</i></span>
-              <span className="nc-step">Demo en vivo sin respaldo<i>→ lleva el video</i></span>
-              <span className="nc-step">Terminar sin pedir nada<i>→ di qué necesitan</i></span>
             </div>
           </div>
         </section>
@@ -842,8 +845,27 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* Para mañana */}
+        {/* Historia de una idea */}
         <section {...sceneProps(17)}>
+          <div>
+            <p className="nc-kicker">La historia de una idea</p>
+            <h2>Lo que vimos hoy, contado como la historia de Valeria</h2>
+            <ol className="nc-arc">
+              <li className="nc-step"><span>Inicio</span>Valeria tiene un problema que aprendió a soportar.</li>
+              <li className="nc-step"><span>Empatizar</span>Alguien decide observarlo y comprenderlo.</li>
+              <li className="nc-step"><span>Definir</span>Una joven innovadora elige qué vale la pena resolver.</li>
+              <li className="nc-step"><span>Idear</span>Su equipo decide lo que cabe en un día.</li>
+              <li className="nc-step"><span>Prototipar</span>Lo construyen con n8n, Supabase y Clerk.</li>
+              <li className="nc-step"><span>Probar y contar</span>Lo prueban, lo miden y lo cuentan en un minuto.</li>
+              <li className="nc-step"><span>Impacto</span>Valeria llega a tiempo a la siguiente convocatoria.</li>
+            </ol>
+            <p className="nc-thesis nc-step" style={{ marginTop: "3vh" }}>Una necesidad se convierte en una posibilidad.</p>
+            <p className="nc-takeaway nc-step">La joven innovadora de esta historia son ustedes.</p>
+          </div>
+        </section>
+
+        {/* Para mañana */}
+        <section {...sceneProps(18)}>
           <div>
             <p className="nc-kicker">Lo que se llevan</p>
             <h2>Tres decisiones para esta noche</h2>
@@ -857,7 +879,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Cierre */}
-        <section {...sceneProps(18)}>
+        <section {...sceneProps(19)}>
           <div>
             <p className="nc-kicker">Para cerrar</p>
             <p className="nc-sub">Todo workflow empieza con un nodo. Todo proyecto empieza con una persona.</p>
