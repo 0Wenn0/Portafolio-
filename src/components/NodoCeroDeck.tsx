@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { NodoCeroFlowSim } from "./NodoCeroFlowSim";
 
 /* Presentación «De la idea al pitch» para Nodo Cero (WTM Santa Cruz).
    Navegación con flechas por escenas y pasos, notas de la ponente (N),
@@ -9,19 +10,24 @@ import { useCallback, useEffect, useRef, useState } from "react";
 type Scene = { title: string; chapter: number; notes: string };
 
 const SCENES: Scene[] = [
-  { title: "Portada", chapter: 0, notes: "Saludo y agradecimiento a WTM Santa Cruz y a Geraldine. Presentarte en una frase: neuropsicóloga que diseña cómo las personas adoptan la tecnología." },
-  { title: "Quién te habla", chapter: 0, notes: "30 segundos por tarjeta, como máximo. La idea: vengo del lado de las personas, y eso también se aprende para una hackathon." },
-  { title: "Primera pregunta", chapter: 1, notes: "Pedir que escriban en el chat el problema que resuelve su equipo, en una sola frase. Leer dos o tres en voz alta. Si nadie escribe, usar el ejemplo de las vacantes." },
-  { title: "Empezar por el problema", chapter: 1, notes: "Tres preguntas antes de abrir n8n. Hacer clic en cada tarjeta mientras la explicas." },
-  { title: "Tu problema en una frase", chapter: 1, notes: "Mostrar la fórmula y el antes y después. Dar 3 minutos con el temporizador (tecla T) para que cada equipo escriba su frase." },
-  { title: "Lo que cabe en un día", chapter: 2, notes: "Clasificar en vivo con ayuda del chat: ¿esto cabe hoy o va para después? Al final, mostrar la sugerencia." },
-  { title: "Anatomía de una demo", chapter: 2, notes: "Ejemplo: un flujo que revisa vacantes. Cada flecha enciende un nodo. Subrayar el nodo coral: una persona revisa antes de actuar." },
-  { title: "Reglas de la demo", chapter: 2, notes: "Cuatro reglas prácticas para el sábado. Insistir en el plan B: grabar la demo por si falla el internet o la API." },
-  { title: "Diseñar para las personas", chapter: 3, notes: "Privacidad, decisión humana y a quién deja fuera. Proyectos para mujeres: cuidar especialmente datos sensibles." },
-  { title: "El pitch en 60 segundos", chapter: 4, notes: "Explicar la estructura y correr el reloj de 60 s con un ejemplo en voz alta: tú lo haces primero." },
-  { title: "Errores que restan puntos", chapter: 4, notes: "Leer cada error y su arreglo. Preguntar en el chat cuál han visto más." },
-  { title: "Un pitch armado", chapter: 4, notes: "Leer el ejemplo completo con cronómetro mental. Invitar a que cada equipo lo copie y lo adapte esta noche." },
-  { title: "Para mañana", chapter: 5, notes: "Cerrar con las tres tareas, abrir preguntas (10 min) y dejar LinkedIn. Agradecer a WTM Santa Cruz." },
+  { title: "Portada", chapter: 0, notes: "Saludo y agradecimiento a WTM Santa Cruz y a Geraldine. Presentarte en una frase: neuropsicóloga que estudia cómo las personas adoptan la tecnología." },
+  { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria: convocatorias en grupos, correos y capturas; la semana pasada se le pasó una por dos días. Preguntar: ¿a cuántas les ha pasado?" },
+  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto. En el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir bases: pensamiento crítico, alfabetización digital y criterio para decidir cuándo usarla. Remata: su proyecto del sábado sigue el mismo orden." },
+  { title: "Primera pregunta", chapter: 1, notes: "Pedir en los comentarios: ¿qué fricción cotidiana resuelve su proyecto? Si un equipo aún no tiene idea, puede elegir un reto: la carga invisible, el laberinto de la información o las horas que no tenemos. Leer dos o tres respuestas." },
+  { title: "¿Vale la pena el problema?", chapter: 1, notes: "El corazón de la charla. Marcar en vivo los criterios con el problema de Valeria (los cumple todos). Luego pedir que cada equipo lo haga con su idea y escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar. Mañana es para construir; hoy es para elegir bien." },
+  { title: "Proto-persona y job story", chapter: 1, notes: "Proto-persona: una persona hecha con supuestos que luego verifican. Job story: la situación es literalmente el disparador del flujo en n8n. Hacer clic en cada tarjeta." },
+  { title: "Sin nombrar la tecnología", chapter: 1, notes: "Reto de 3 minutos (tecla T): escribir su job story sin decir n8n, IA, agente ni app. Pedirla en los comentarios." },
+  { title: "Mini journey map", chapter: 2, notes: "Cinco pasos de Valeria. Cada flecha enciende uno. El paso coral es donde más duele: ahí va el flujo. Pedir que hagan lo mismo con su usuaria." },
+  { title: "MoSCoW en un día", chapter: 2, notes: "MoSCoW versión hackathon: lo que debe estar hoy y lo que puede esperar. Clasificar con ayuda de los comentarios y mostrar la sugerencia." },
+  { title: "Simulación del flujo", chapter: 2, notes: "Aclarar: es una simulación didáctica; la plantilla real para importar en n8n se comparte con los equipos. Avanzar nodo por nodo con las flechas. Momento clave: la IA interpreta, el código calcula y Valeria decide. En el nodo 5, preguntar al público qué respondería ella." },
+  { title: "Diseñar para las personas", chapter: 3, notes: "Privacidad, decisión humana y a quién deja fuera. El perfil de una estudiante incluye datos sensibles: pedir solo lo necesario. RLS (Row Level Security) en Supabase hace que cada usuaria solo pueda leer sus propias filas." },
+  { title: "¿Cómo sabrás que funciona?", chapter: 3, notes: "Hipótesis Lean UX: creemos que… sabremos que funciona cuando… Luego la pregunta de impacto: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
+  { title: "El pitch en 60 segundos", chapter: 4, notes: "Explicar la estructura y correr el reloj de 60 s con el caso de Valeria en voz alta: tú lo haces primero." },
+  { title: "Errores que restan puntos", chapter: 4, notes: "Leer cada error y su arreglo. En el de los premios: Clerk y Avalanche tienen mención; úsenlos si resuelven algo de su usuaria. Preguntar en los comentarios cuál han visto más." },
+  { title: "Un pitch armado", chapter: 4, notes: "Leer el ejemplo completo. Aclarar que Valeria y sus números son ficticios. Invitar a que cada equipo lo adapte esta noche." },
+  { title: "El sábado en cinco bloques", chapter: 5, notes: "Con la agenda real: construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45. Sugerir que dividan al equipo: quien va al taller trae lo aprendido. Congelar a las 14:00. La presentación es de un minuto a las 15:00." },
+  { title: "Para esta noche", chapter: 5, notes: "Solo decisiones, nada de código: el sábado es para construir. Mencionar que la plantilla de Valeria es un ejemplo para estudiar cómo se conectan los nodos; no es para copiar su proyecto." },
+  { title: "Cierre", chapter: 5, notes: "Eco del lema del evento: todo workflow empieza con un nodo. Decir el mensaje central despacio. Leer la pregunta y dejar unos segundos de silencio. Abrir preguntas (10 min), dejar LinkedIn y agradecer a WTM Santa Cruz." },
 ];
 
 const CHAPTERS = 6;
@@ -61,14 +67,18 @@ function Timer({ seconds, id }: { seconds: number; id: string }) {
 /* ───────── Clasificador: ¿cabe hoy? ───────── */
 type Where = "pool" | "today" | "later";
 const SORT_ITEMS: { text: string; fit: Exclude<Where, "pool"> }[] = [
-  { text: "Un flujo que hace una sola cosa de principio a fin", fit: "today" },
-  { text: "Inicio de sesión con roles y permisos", fit: "later" },
-  { text: "Datos de prueba realistas", fit: "today" },
+  { text: "Leer una convocatoria pegada y extraer fecha y requisitos", fit: "today" },
+  { text: "Buscar convocatorias en 50 sitios automáticamente", fit: "later" },
+  { text: "Calcular los días restantes con código", fit: "today" },
   { text: "App móvil nativa", fit: "later" },
-  { text: "Un panel con diez gráficas", fit: "later" },
-  { text: "La respuesta de la IA revisada por una persona", fit: "today" },
-  { text: "Conectar seis servicios distintos", fit: "later" },
-  { text: "Un caso real de una usuaria", fit: "today" },
+  { text: "Valeria decide si aplica", fit: "today" },
+  { text: "Recomendaciones de IA para toda su carrera", fit: "later" },
+  { text: "Un recordatorio por correo", fit: "today" },
+  { text: "Inicio de sesión con Clerk", fit: "today" },
+  { text: "Roles y permisos complejos", fit: "later" },
+  { text: "Blockchain solo por la mención especial", fit: "later" },
+  { text: "Una métrica para mostrar que funciona", fit: "today" },
+  { text: "Panel con diez gráficas", fit: "later" },
 ];
 
 function Sorter() {
@@ -91,12 +101,12 @@ function Sorter() {
             </span>
             {key !== "today" ? (
               <button type="button" className="to-today" onClick={() => move(i, "today")}>
-                Cabe hoy
+                Debe estar hoy
               </button>
             ) : null}
             {key !== "later" ? (
               <button type="button" className="to-later" onClick={() => move(i, "later")}>
-                Para después
+                Puede esperar
               </button>
             ) : null}
           </div>
@@ -108,8 +118,8 @@ function Sorter() {
     <>
       <div className="nc-sort">
         {column("pool", "Ideas del equipo")}
-        {column("today", "Cabe hoy")}
-        {column("later", "Para después")}
+        {column("today", "Debe estar hoy")}
+        {column("later", "Puede esperar")}
       </div>
       <p className="nc-sub">
         <button type="button" className="nc-hud-btn" style={{ width: "auto", padding: "0 18px", borderRadius: 999 }} onClick={() => setReveal((r) => !r)}>
@@ -120,13 +130,51 @@ function Sorter() {
   );
 }
 
+/* ───────── ¿Vale la pena este problema? ───────── */
+const CRITERIA = [
+  "Le pasa a una persona concreta que puedo contactar",
+  "Pasa seguido: cada semana o más",
+  "Hoy se resuelve a mano o con algo improvisado",
+  "Cabe en 3.5 horas con n8n, Supabase y Clerk",
+  "Tengo o puedo inventar datos de prueba realistas",
+  "Se puede mostrar funcionando en un minuto",
+];
+
+function ProblemCheck() {
+  const [on, setOn] = useState<boolean[]>(() => CRITERIA.map(() => false));
+  const score = on.filter(Boolean).length;
+  const verdict =
+    score >= 5
+      ? { cls: "nc-mint", text: "Adelante: es un buen problema para el sábado." }
+      : score >= 3
+        ? { cls: "nc-coral", text: "Acótalo: elige una persona y un solo momento del problema." }
+        : { cls: "nc-coral", text: "Busca otro, o vuelve a observar antes de construir." };
+  return (
+    <div className="nc-check">
+      <ul>
+        {CRITERIA.map((c, i) => (
+          <li key={c}>
+            <button type="button" aria-pressed={on[i]} onClick={() => setOn((o) => o.map((x, k) => (k === i ? !x : x)))}>
+              <span aria-hidden="true">{on[i] ? "✓" : ""}</span>
+              {c}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p className="nc-verdict" aria-live="polite">
+        <b>{score} / {CRITERIA.length}</b> <span className={verdict.cls}>{verdict.text}</span>
+      </p>
+    </div>
+  );
+}
+
 /* ───────── Reloj del pitch ───────── */
 const PITCH = [
   { label: "Problema", until: 15, cue: "Cuenta el problema con una persona concreta: quién es y qué le pasa." },
   { label: "Para quién", until: 25, cue: "Di a quién ayuda y cuántas personas viven ese problema." },
   { label: "Qué hace", until: 40, cue: "Explica la solución en una frase, sin nombres de herramientas." },
   { label: "Demo", until: 55, cue: "Muestra el flujo funcionando con un caso real." },
-  { label: "Siguiente paso", until: 60, cue: "Cierra con lo que necesitan: usuarias, aliados o mentoría." },
+  { label: "Siguiente paso", until: 60, cue: "Cierra con tu evidencia y con lo que necesitan: usuarias, aliados o mentoría." },
 ];
 
 function PitchClock() {
@@ -313,6 +361,11 @@ export function NodoCeroDeck() {
     const next = () => {
       const s = scenesEl()[indexRef.current];
       if (!s) return;
+      const sim = s.querySelector<HTMLButtonElement>("[data-sim-next]:not(:disabled)");
+      if (sim) {
+        sim.click();
+        return;
+      }
       const pending = stepsOf(s).find((el) => !el.classList.contains("is-shown"));
       if (pending) pending.classList.add("is-shown");
       else if (indexRef.current < SCENES.length - 1) show(indexRef.current + 1);
@@ -320,6 +373,11 @@ export function NodoCeroDeck() {
     const prev = () => {
       const s = scenesEl()[indexRef.current];
       if (!s) return;
+      const simBack = s.querySelector<HTMLButtonElement>("[data-sim-prev]:not(:disabled)");
+      if (simBack) {
+        simBack.click();
+        return;
+      }
       const shown = stepsOf(s).filter((el) => el.classList.contains("is-shown"));
       const last = shown.at(-1);
       if (last) last.classList.remove("is-shown");
@@ -440,7 +498,7 @@ export function NodoCeroDeck() {
       <div className="nc-vignette" aria-hidden="true" />
 
       <main>
-        {/* 0 · Portada */}
+        {/* Portada */}
         <section {...sceneProps(0)}>
           <div>
             <p className="nc-kicker">Nodo Cero · Hackathon n8n · WTM Santa Cruz</p>
@@ -452,170 +510,208 @@ export function NodoCeroDeck() {
             <p className="nc-lede">Cómo enfocar tu proyecto y contarlo en un minuto, antes de la hackathon del sábado.</p>
             <div className="nc-meta">
               <span>Wendy Ramírez Burgos</span>
+              <span>Neuropsicóloga · adopción de IA</span>
               <span>Embajadora de Women Techmakers · México</span>
             </div>
           </div>
         </section>
 
-        {/* 1 · Quién te habla */}
+        {/* Problemas normalizados */}
         <section {...sceneProps(1)}>
           <div>
-            <p className="nc-kicker">Quién te habla</p>
-            <h2>Vengo del lado de las personas</h2>
-            <div className="nc-grid">
-              <article className="nc-card">
-                <span className="nc-num">01</span>
-                <h3>Neuropsicóloga (UNAM)</h3>
-                <p>Estudio cómo aprendemos, decidimos y cambiamos de hábitos.</p>
-              </article>
-              <article className="nc-card">
-                <span className="nc-num">02</span>
-                <h3>Adopción de IA</h3>
-                <p>Con OpenAI formé a <b>más de 3,000 personas</b> de gobierno, universidades y empresas en México.</p>
-              </article>
-              <article className="nc-card">
-                <span className="nc-num">03</span>
-                <h3>Comunidad</h3>
-                <p>Embajadora de Women Techmakers y mentora de universitarias en BécALAS.</p>
-              </article>
+            <p className="nc-kicker">Para empezar</p>
+            <h2>¿Qué problemas hemos normalizado tanto que dejamos de verlos?</h2>
+            <div className="nc-ba story">
+              <p className="before nc-step">Valeria tiene 20 años, estudia ingeniería y trabaja medio tiempo. Las convocatorias le llegan por grupos de WhatsApp, correos y capturas de pantalla.</p>
+              <p className="after nc-step">La semana pasada se le pasó una beca por dos días. Ya lo ve como algo normal.</p>
             </div>
+            <p className="nc-sub nc-step">Ahí empieza un proyecto: en algo que alguien aprendió a soportar.</p>
           </div>
         </section>
 
-        {/* 2 · Primera pregunta */}
-        <section {...sceneProps(2, "nc-two")}>
+        {/* Lo que aprendí */}
+        <section {...sceneProps(2)}>
           <div>
-            <p className="nc-kicker">Antes de empezar</p>
-            <h2>¿Qué problema resuelve tu equipo?</h2>
+            <p className="nc-kicker">Lo que aprendí con más de 3,000 personas</p>
+            <h2>Antes de usar la IA, aprendimos a decidir cuándo usarla</h2>
+            <p className="nc-sub">En el programa de adopción de IA con OpenAI en México, la herramienta ya estaba disponible. El trabajo fue construir las bases.</p>
+            <div className="nc-grid">
+              <article className="nc-card">
+                <span className="nc-num">01</span>
+                <h3>Pensamiento crítico</h3>
+                <p>Dudar de una respuesta, contrastarla y decidir si sirve.</p>
+              </article>
+              <article className="nc-card">
+                <span className="nc-num">02</span>
+                <h3>Alfabetización digital</h3>
+                <p>Entender qué hace la herramienta y qué pasa con tus datos.</p>
+              </article>
+              <article className="nc-card">
+                <span className="nc-num">03</span>
+                <h3>Criterio de uso</h3>
+                <p>Elegir cuándo conviene la IA y cuándo basta algo más simple.</p>
+              </article>
+            </div>
+            <p className="nc-sub nc-step">Primero el criterio, después la herramienta. <b>Su proyecto del sábado sigue el mismo orden.</b></p>
+          </div>
+        </section>
+
+        {/* Primera pregunta */}
+        <section {...sceneProps(3, "nc-two")}>
+          <div>
+            <p className="nc-kicker">1 · Observar</p>
+            <h2>¿Qué fricción cotidiana resuelve tu proyecto?</h2>
             <p className="nc-ask">
-              <span>“</span>Escríbelo en el chat, en una sola frase.
+              <span>“</span>Escríbelo en los comentarios, en una sola frase.
             </p>
-            <p className="nc-sub nc-step">Si te costó escribirlo, esta charla es para tu equipo.</p>
+            <p className="nc-sub nc-step">¿Tu equipo aún no tiene idea? Elige un reto: <b>la carga invisible</b>, <b>el laberinto de la información</b> o <b>las horas que no tenemos</b>.</p>
           </div>
           <Timer seconds={60} id="pregunta" />
         </section>
 
-        {/* 3 · Empezar por el problema */}
-        <section {...sceneProps(3)}>
+        {/* ¿Vale la pena? */}
+        <section {...sceneProps(4)}>
           <div>
-            <p className="nc-kicker">1 · Empezar por el problema</p>
-            <h2>Tres preguntas antes de abrir n8n</h2>
-            <div className="nc-grid">
-              <article className="nc-card">
-                <span className="nc-num">¿Quién?</span>
-                <h3>¿A quién le pasa?</h3>
-                <p>Piensa en <b>una persona concreta</b>: su edad, dónde está, qué hace en un día normal.</p>
-              </article>
-              <article className="nc-card">
-                <span className="nc-num">¿Cuánto?</span>
-                <h3>¿Qué tan seguido?</h3>
-                <p>Un problema de todos los días pesa más que uno de una vez al año.</p>
-              </article>
-              <article className="nc-card">
-                <span className="nc-num">¿Cómo?</span>
-                <h3>¿Cómo lo resuelve hoy?</h3>
-                <p>Si ya usa Excel, WhatsApp o una libreta, ahí está tu punto de partida.</p>
-              </article>
-            </div>
-            <p className="nc-sub nc-step">Si no sabes alguna respuesta, <b>pregúntale a dos personas</b> que vivan el problema. Cinco minutos de llamada te ahorran horas de construir.</p>
+            <p className="nc-kicker">1 · Elegir bien el problema</p>
+            <h2>¿Vale la pena este problema para el sábado?</h2>
+            <p className="nc-sub">Probemos con el de Valeria. Marca lo que cumple; después hazlo con el de tu equipo.</p>
+            <ProblemCheck />
           </div>
         </section>
 
-        {/* 4 · Tu problema en una frase */}
-        <section {...sceneProps(4, "nc-two")}>
+        {/* Proto-persona y job story */}
+        <section {...sceneProps(5)}>
           <div>
-            <p className="nc-kicker">1 · Ejercicio · 3 minutos</p>
-            <h2>Tu problema en una frase</h2>
+            <p className="nc-kicker">1 · Dos herramientas de diseño</p>
+            <h2>Conoce a Valeria antes de abrir n8n</h2>
+            <div className="nc-persona">
+              <article className="nc-card">
+                <span className="nc-tag">Proto-persona · UX</span>
+                <h3>Valeria, 20 años</h3>
+                <ul>
+                  <li><b>Hace:</b> estudia ingeniería y trabaja medio tiempo.</li>
+                  <li><b>Hoy:</b> guarda convocatorias en capturas y chats.</li>
+                  <li><b>Le duele:</b> entender requisitos y no perder fechas.</li>
+                  <li><b>Supuesto a verificar:</b> revisa convocatorias de noche, desde el celular.</li>
+                </ul>
+              </article>
+              <article className="nc-card">
+                <span className="nc-tag coral">Job story · Jobs to be Done</span>
+                <p className="nc-story">
+                  <em>Cuando</em> veo una convocatoria, <em>quiero</em> saber en un minuto si califico y qué necesito, <em>para</em> no perder la fecha.
+                </p>
+                <p className="nc-sub">La situación de la job story es el disparador de tu flujo.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* Sin nombrar la tecnología */}
+        <section {...sceneProps(6, "nc-two")}>
+          <div>
+            <p className="nc-kicker">1 · Reto · 3 minutos</p>
+            <h2>Explica tu proyecto sin nombrar la tecnología</h2>
             <div className="nc-formula">
-              <span><em>[Persona]</em> necesita</span>
-              <span><em>[algo]</em> porque</span>
-              <span><em>[razón]</em>, pero hoy</span>
-              <span><em>[obstáculo]</em>.</span>
+              <span><em>Cuando</em> [situación],</span>
+              <span><em>quiero</em> [motivación],</span>
+              <span><em>para</em> [resultado].</span>
             </div>
             <div className="nc-ba">
-              <p className="before nc-step">Una app con IA para empoderar a las mujeres.</p>
-              <p className="after nc-step">Las universitarias que buscan su primera práctica necesitan saber qué vacantes encajan con su perfil, pero hoy revisan decenas a mano y se desaniman.</p>
+              <p className="before nc-step">Un agente de IA con n8n que automatiza la búsqueda de becas.</p>
+              <p className="after nc-step">Cuando una estudiante ve una convocatoria, quiere saber en un minuto si califica y qué necesita, para no perder la fecha.</p>
             </div>
-            <p className="nc-action nc-step">Escribe la frase de tu equipo con la fórmula.</p>
+            <p className="nc-action nc-step">Escribe la de tu equipo sin decir n8n, IA, agente ni app.</p>
           </div>
           <Timer seconds={180} id="frase" />
         </section>
 
-        {/* 5 · Lo que cabe en un día */}
-        <section {...sceneProps(5)}>
+        {/* Mini journey map */}
+        <section {...sceneProps(7)}>
           <div>
-            <p className="nc-kicker">2 · Acotar la solución</p>
-            <h2>¿Qué cabe en un día?</h2>
-            <p className="nc-sub">Ayúdame a clasificar. En una hackathon gana <b>lo pequeño que funciona</b>.</p>
-            <Sorter />
-          </div>
-        </section>
-
-        {/* 6 · Anatomía de una demo */}
-        <section {...sceneProps(6)}>
-          <div>
-            <p className="nc-kicker">2 · Ejemplo con n8n</p>
-            <h2>Anatomía de una demo</h2>
-            <p className="nc-sub">Un flujo que ayuda a una estudiante a filtrar vacantes. Cinco nodos y uno es humano.</p>
+            <p className="nc-kicker">2 · Acotar · Mini journey map</p>
+            <h2>¿En qué paso duele más?</h2>
+            <p className="nc-sub">El camino de Valeria con una convocatoria. Tu flujo va donde más duele.</p>
             <ol className="nc-flow">
               <li className="nc-step">
                 <div className="nc-node" aria-hidden="true">1</div>
-                <b>Disparador</b>
-                <small>Llega una alerta de vacante al correo.</small>
+                <b>Le llega</b>
+                <small>Por un grupo, entre otros 50 mensajes.</small>
               </li>
               <li className="nc-step">
                 <div className="nc-node" aria-hidden="true">2</div>
-                <b>Datos</b>
-                <small>Se extraen puesto, sueldo, ciudad e idioma.</small>
-              </li>
-              <li className="nc-step">
-                <div className="nc-node" aria-hidden="true">3</div>
-                <b>IA evalúa</b>
-                <small>Compara con las reglas que ella definió.</small>
+                <b>La lee</b>
+                <small>Tres páginas de bases y requisitos.</small>
               </li>
               <li className="nc-step human">
+                <div className="nc-node" aria-hidden="true">3</div>
+                <b>¿Califico?</b>
+                <small>Aquí se atora y lo deja para después.</small>
+              </li>
+              <li className="nc-step">
                 <div className="nc-node" aria-hidden="true">4</div>
-                <b>Ella decide</b>
-                <small>Revisa la sugerencia y aprueba o descarta.</small>
+                <b>Junta documentos</b>
+                <small>Sin saber cuánto tiempo le queda.</small>
               </li>
               <li className="nc-step">
                 <div className="nc-node" aria-hidden="true">5</div>
-                <b>Resultado</b>
-                <small>Queda registrada en una hoja de cálculo.</small>
+                <b>Aplica</b>
+                <small>…o se le pasa la fecha.</small>
               </li>
             </ol>
           </div>
         </section>
 
-        {/* 7 · Reglas de la demo */}
-        <section {...sceneProps(7)}>
+        {/* MoSCoW */}
+        <section {...sceneProps(8)}>
           <div>
-            <p className="nc-kicker">2 · Para el sábado</p>
-            <h2>Cuatro reglas para tu demo</h2>
-            <div className="nc-grid" style={{ "--cols": 4 } as React.CSSProperties}>
-              <article className="nc-card"><span className="nc-num">1</span><h3>Un solo flujo</h3><p>Que haga una cosa completa, de principio a fin.</p></article>
-              <article className="nc-card"><span className="nc-num">2</span><h3>Un caso real</h3><p>Usa el ejemplo de una persona con nombre ficticio y una situación creíble.</p></article>
-              <article className="nc-card"><span className="nc-num">3</span><h3>Datos de prueba</h3><p>Prepara datos inventados pero realistas; nunca datos personales reales.</p></article>
-              <article className="nc-card"><span className="nc-num">4</span><h3>Plan B</h3><p>Graba un video de la demo por si falla el internet o una API.</p></article>
-            </div>
+            <p className="nc-kicker">2 · Acotar · MoSCoW en un día</p>
+            <h2>¿Qué debe estar el sábado?</h2>
+            <p className="nc-sub">Ayúdame a clasificar. En una hackathon gana <b>lo pequeño que funciona</b>.</p>
+            <Sorter />
           </div>
         </section>
 
-        {/* 8 · Diseñar para las personas */}
-        <section {...sceneProps(8)}>
+        {/* Simulación */}
+        <section {...sceneProps(9)}>
+          <div>
+            <p className="nc-kicker">2 · Simulación didáctica del flujo</p>
+            <h2>La IA interpreta, el código calcula y Valeria decide</h2>
+            <NodoCeroFlowSim />
+          </div>
+        </section>
+
+        {/* Diseñar para las personas */}
+        <section {...sceneProps(10)}>
           <div>
             <p className="nc-kicker">3 · Diseñar para las personas</p>
             <h2>Tres preguntas que dan puntos</h2>
             <div className="nc-grid">
-              <article className="nc-card"><span className="nc-num">🔒</span><h3>¿Qué datos usas?</h3><p>Pide solo lo necesario. En proyectos para mujeres, la información puede ser <b>sensible</b>: violencia, salud, dinero.</p></article>
-              <article className="nc-card"><span className="nc-num">🧭</span><h3>¿Quién decide?</h3><p>La IA sugiere y una persona aprueba. Dilo en tu pitch: genera confianza.</p></article>
+              <article className="nc-card"><span className="nc-num">🔒</span><h3>¿Qué datos usas?</h3><p>El perfil de una estudiante puede incluir edad, promedio o ingresos. <b>Pide solo lo necesario.</b> Si guardas datos reales en Supabase, activa RLS para que cada usuaria vea solo lo suyo.</p></article>
+              <article className="nc-card"><span className="nc-num">🧭</span><h3>¿Quién decide?</h3><p>La IA organiza y una persona aprueba. Dilo en tu pitch: genera confianza.</p></article>
               <article className="nc-card"><span className="nc-num">🌱</span><h3>¿A quién dejas fuera?</h3><p>Piensa en quien tiene poca señal, usa solo celular o lee con lector de pantalla.</p></article>
             </div>
           </div>
         </section>
 
-        {/* 9 · Pitch en 60 s */}
-        <section {...sceneProps(9)}>
+        {/* Evidencia */}
+        <section {...sceneProps(11)}>
+          <div>
+            <p className="nc-kicker">3 · Evidencia · Hipótesis Lean UX</p>
+            <h2>¿Cómo sabrás que funciona?</h2>
+            <p className="nc-story">
+              <em>Creemos que</em> si Valeria sabe en un minuto si califica, aplicará a más convocatorias. <em>Sabremos que funciona cuando</em> no pierda ninguna fecha en un mes.
+            </p>
+            <div className="nc-grid">
+              <article className="nc-card"><span className="nc-num">📏</span><h3>Una métrica</h3><p>Antes tardaba 40 minutos en entender una convocatoria; con el flujo, dos.</p></article>
+              <article className="nc-card"><span className="nc-num">🧪</span><h3>Una prueba</h3><p>Corre el flujo con 10 convocatorias de prueba y cuenta en cuántas acertó la fecha.</p></article>
+              <article className="nc-card"><span className="nc-num">🗣️</span><h3>Una voz</h3><p>Muéstraselo a una estudiante real y anota lo que dice.</p></article>
+            </div>
+            <p className="nc-action nc-step">¿Qué podrá hacer mañana Valeria que hoy no puede?</p>
+          </div>
+        </section>
+
+        {/* Pitch en 60 s */}
+        <section {...sceneProps(12)}>
           <div>
             <p className="nc-kicker">4 · Contarlo</p>
             <h2>Tu pitch en 60 segundos</h2>
@@ -623,47 +719,99 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 10 · Errores */}
-        <section {...sceneProps(10)}>
+        {/* Errores */}
+        <section {...sceneProps(13)}>
           <div>
             <p className="nc-kicker">4 · Lo que más resta</p>
             <h2>Errores comunes y su arreglo</h2>
             <div className="nc-banned">
               <span className="nc-step">Empezar por la tecnología<i>→ empieza por la persona</i></span>
               <span className="nc-step">«Es para todas las mujeres»<i>→ elige a una</i></span>
+              <span className="nc-step">Prometer impacto sin pruebas<i>→ muestra tu métrica</i></span>
+              <span className="nc-step">Usar una herramienta solo por el premio<i>→ úsala si resuelve algo de tu usuaria</i></span>
               <span className="nc-step">Demo en vivo sin respaldo<i>→ lleva el video</i></span>
-              <span className="nc-step">Leer las diapositivas<i>→ cuéntalo como historia</i></span>
               <span className="nc-step">Terminar sin pedir nada<i>→ di qué necesitan</i></span>
             </div>
           </div>
         </section>
 
-        {/* 11 · Pitch armado */}
-        <section {...sceneProps(11)}>
+        {/* Pitch armado */}
+        <section {...sceneProps(14)}>
           <div>
-            <p className="nc-kicker">4 · Ejemplo completo</p>
+            <p className="nc-kicker">4 · Ejemplo completo · caso ficticio</p>
             <h2>Así suena un pitch armado</h2>
             <div className="nc-template">
-              <p className="nc-step"><em>Problema</em>Ana tiene 21 años y busca su primera práctica. Cada semana revisa 40 vacantes y casi ninguna encaja.</p>
-              <p className="nc-step"><em>Para quién</em>Para universitarias de los últimos semestres que buscan su primer empleo.</p>
-              <p className="nc-step"><em>Qué hace</em>Nuestro flujo lee las vacantes, las compara con su perfil y le sugiere cuáles revisar.</p>
-              <p className="nc-step"><em>Demo</em>Aquí entra una vacante… y en segundos Ana ve si encaja y por qué. Ella decide.</p>
-              <p className="nc-step"><em>Siguiente paso</em>Queremos probarlo con 20 estudiantes. Si conoces una universidad, hablemos.</p>
+              <p className="nc-step"><em>Problema</em>Valeria tiene 20 años, estudia y trabaja. La semana pasada perdió una beca por dos días porque la convocatoria se quedó entre 50 mensajes.</p>
+              <p className="nc-step"><em>Para quién</em>Para universitarias que buscan becas mientras estudian y trabajan.</p>
+              <p className="nc-step"><em>Qué hace</em>Lee la convocatoria y le dice en un minuto si califica, qué documentos necesita y cuántos días le quedan.</p>
+              <p className="nc-step"><em>Demo</em>Aquí pegamos una convocatoria… y Valeria decide si aplica. Siete días antes, el sistema le recuerda lo que falta.</p>
+              <p className="nc-step"><em>Siguiente paso</em>Con 10 convocatorias de prueba acertó la fecha en 9. Queremos probarlo con 30 estudiantes. Cuando una consigue una beca, se la comparte a otras.</p>
             </div>
           </div>
         </section>
 
-        {/* 12 · Cierre */}
-        <section {...sceneProps(12)}>
+        {/* El sábado */}
+        <section {...sceneProps(15)}>
           <div>
-            <p className="nc-kicker">Para mañana</p>
-            <h2>Llega al sábado con tres cosas</h2>
+            <p className="nc-kicker">El sábado en cinco bloques</p>
+            <h2>Tienen unas 3.5 horas para construir</h2>
+            <p className="nc-sub">Entre talleres, almuerzo y refrigerio, el tiempo real de desarrollo es corto. Planéenlo desde hoy.</p>
+            <ol className="nc-flow times">
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">Vie</div>
+                <b>Esta noche</b>
+                <small>Elegir el problema. Nada de construir todavía.</small>
+              </li>
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">9:45</div>
+                <b>Antes del almuerzo</b>
+                <small>Construir el flujo mínimo de punta a punta.</small>
+              </li>
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">13:15</div>
+                <b>Después del almuerzo</b>
+                <small>Lo que sigue del MoSCoW y su métrica.</small>
+              </li>
+              <li className="nc-step human">
+                <div className="nc-node" aria-hidden="true">14:00</div>
+                <b>Congelar</b>
+                <small>Nada nuevo. Solo arreglar lo que falla.</small>
+              </li>
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">14:30</div>
+                <b>Grabar y ensayar</b>
+                <small>Video de respaldo y el minuto con reloj.</small>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        {/* Para mañana */}
+        <section {...sceneProps(16)}>
+          <div>
+            <p className="nc-kicker">Para esta noche</p>
+            <h2>Tres decisiones antes de construir</h2>
             <div className="nc-close">
-              <article className="nc-card"><span className="nc-num">1</span><h3>Tu frase</h3><p>El problema de tu equipo en una sola oración.</p></article>
-              <article className="nc-card"><span className="nc-num">2</span><h3>Tu demo pequeña</h3><p>Un flujo completo y su video de respaldo.</p></article>
-              <article className="nc-card"><span className="nc-num">3</span><h3>Tu minuto</h3><p>El pitch ensayado en voz alta, con reloj.</p></article>
+              <article className="nc-card"><span className="nc-num">1</span><h3>Su problema</h3><p>El que pasó la prueba de los seis criterios.</p></article>
+              <article className="nc-card"><span className="nc-num">2</span><h3>Su job story</h3><p>Una frase, sin nombrar la tecnología. Su «cuando» será el disparador del flujo.</p></article>
+              <article className="nc-card"><span className="nc-num">3</span><h3>Su MoSCoW</h3><p>Qué debe estar el sábado y qué puede esperar.</p></article>
             </div>
-            <p className="nc-contact nc-step">¿Preguntas? Te leo en el chat. Después, búscame en LinkedIn: <b>linkedin.com/in/wendyRB-ai</b></p>
+            <p className="nc-sub nc-step">El sábado lo construyen ustedes. Les comparto el <b>flujo de Valeria</b> como ejemplo para estudiar cómo se conectan los nodos con Clerk y Supabase.</p>
+          </div>
+        </section>
+
+        {/* Cierre */}
+        <section {...sceneProps(17)}>
+          <div>
+            <p className="nc-kicker">Para cerrar</p>
+            <p className="nc-sub">Todo workflow empieza con un nodo. Todo proyecto empieza con una persona.</p>
+            <p className="nc-thesis nc-step">Ustedes pueden decidir qué problemas vale la pena resolver con tecnología.</p>
+            <h2 className="nc-step">
+              Si mañana desapareciera la tecnología que usaste,
+              <br />
+              <span className="nc-coral">¿seguiría existiendo la necesidad?</span>
+            </h2>
+            <p className="nc-contact nc-step">¿Preguntas? Te leo en los comentarios. Después, búscame en LinkedIn: <b>linkedin.com/in/wendyRB-ai</b></p>
           </div>
         </section>
       </main>
