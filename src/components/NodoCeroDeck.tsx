@@ -19,13 +19,14 @@ const SCENES: Scene[] = [
   { title: "Mini journey map", chapter: 2, notes: "Cinco pasos de Valeria. Cada flecha enciende uno. El paso coral es donde más duele: ahí va el flujo. Pedir que hagan lo mismo con su usuaria." },
   { title: "MoSCoW en un día", chapter: 2, notes: "MoSCoW versión hackathon: lo que debe estar hoy y lo que puede esperar. Clasificar con ayuda de los comentarios y mostrar la sugerencia." },
   { title: "Simulación del flujo", chapter: 2, notes: "Aclarar: es una simulación didáctica; la plantilla real para importar en n8n se comparte con los equipos. Avanzar nodo por nodo con las flechas. Momento clave: la IA interpreta, el código calcula y Valeria decide. En el nodo 5, preguntar al público qué respondería ella." },
-  { title: "Diseñar para las personas", chapter: 3, notes: "Privacidad, decisión humana y a quién deja fuera. El perfil de una estudiante incluye datos sensibles: pedir solo lo necesario." },
+  { title: "Diseñar para las personas", chapter: 3, notes: "Privacidad, decisión humana y a quién deja fuera. El perfil de una estudiante incluye datos sensibles: pedir solo lo necesario. RLS (Row Level Security) en Supabase hace que cada usuaria solo pueda leer sus propias filas." },
   { title: "¿Cómo sabrás que funciona?", chapter: 3, notes: "Hipótesis Lean UX: creemos que… sabremos que funciona cuando… Luego la pregunta de impacto: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
   { title: "El pitch en 60 segundos", chapter: 4, notes: "Explicar la estructura y correr el reloj de 60 s con el caso de Valeria en voz alta: tú lo haces primero." },
-  { title: "Errores que restan puntos", chapter: 4, notes: "Leer cada error y su arreglo. Preguntar en los comentarios cuál han visto más." },
+  { title: "Errores que restan puntos", chapter: 4, notes: "Leer cada error y su arreglo. En el de los premios: Clerk y Avalanche tienen mención; úsenlos si resuelven algo de su usuaria. Preguntar en los comentarios cuál han visto más." },
   { title: "Un pitch armado", chapter: 4, notes: "Leer el ejemplo completo. Aclarar que Valeria y sus números son ficticios. Invitar a que cada equipo lo adapte esta noche." },
+  { title: "El sábado en cinco bloques", chapter: 5, notes: "Con la agenda real: construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45. Sugerir que dividan al equipo: quien va al taller trae lo aprendido. Congelar a las 14:00. La presentación es de un minuto a las 15:00." },
   { title: "Para mañana", chapter: 5, notes: "Las tres tareas para el sábado y dónde encontrar la plantilla de n8n y el lienzo del equipo." },
-  { title: "Cierre", chapter: 5, notes: "Decir el mensaje central despacio. Leer la pregunta y dejar unos segundos de silencio. Abrir preguntas (10 min), dejar LinkedIn y agradecer a WTM Santa Cruz." },
+  { title: "Cierre", chapter: 5, notes: "Eco del lema del evento: todo workflow empieza con un nodo. Decir el mensaje central despacio. Leer la pregunta y dejar unos segundos de silencio. Abrir preguntas (10 min), dejar LinkedIn y agradecer a WTM Santa Cruz." },
 ];
 
 const CHAPTERS = 6;
@@ -72,7 +73,9 @@ const SORT_ITEMS: { text: string; fit: Exclude<Where, "pool"> }[] = [
   { text: "Valeria decide si aplica", fit: "today" },
   { text: "Recomendaciones de IA para toda su carrera", fit: "later" },
   { text: "Un recordatorio por correo", fit: "today" },
-  { text: "Inicio de sesión con roles y permisos", fit: "later" },
+  { text: "Inicio de sesión con Clerk", fit: "today" },
+  { text: "Roles y permisos complejos", fit: "later" },
+  { text: "Blockchain solo por la mención especial", fit: "later" },
   { text: "Una métrica para mostrar que funciona", fit: "today" },
   { text: "Panel con diez gráficas", fit: "later" },
 ];
@@ -634,7 +637,7 @@ export function NodoCeroDeck() {
             <p className="nc-kicker">3 · Diseñar para las personas</p>
             <h2>Tres preguntas que dan puntos</h2>
             <div className="nc-grid">
-              <article className="nc-card"><span className="nc-num">🔒</span><h3>¿Qué datos usas?</h3><p>El perfil de una estudiante puede incluir edad, promedio o ingresos. <b>Pide solo lo necesario.</b></p></article>
+              <article className="nc-card"><span className="nc-num">🔒</span><h3>¿Qué datos usas?</h3><p>El perfil de una estudiante puede incluir edad, promedio o ingresos. <b>Pide solo lo necesario.</b> Si guardas datos reales en Supabase, activa RLS para que cada usuaria vea solo lo suyo.</p></article>
               <article className="nc-card"><span className="nc-num">🧭</span><h3>¿Quién decide?</h3><p>La IA organiza y una persona aprueba. Dilo en tu pitch: genera confianza.</p></article>
               <article className="nc-card"><span className="nc-num">🌱</span><h3>¿A quién dejas fuera?</h3><p>Piensa en quien tiene poca señal, usa solo celular o lee con lector de pantalla.</p></article>
             </div>
@@ -676,6 +679,7 @@ export function NodoCeroDeck() {
               <span className="nc-step">Empezar por la tecnología<i>→ empieza por la persona</i></span>
               <span className="nc-step">«Es para todas las mujeres»<i>→ elige a una</i></span>
               <span className="nc-step">Prometer impacto sin pruebas<i>→ muestra tu métrica</i></span>
+              <span className="nc-step">Usar una herramienta solo por el premio<i>→ úsala si resuelve algo de tu usuaria</i></span>
               <span className="nc-step">Demo en vivo sin respaldo<i>→ lleva el video</i></span>
               <span className="nc-step">Terminar sin pedir nada<i>→ di qué necesitan</i></span>
             </div>
@@ -697,25 +701,62 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 14 · Para mañana */}
+        {/* 14 · El sábado */}
         <section {...sceneProps(14)}>
+          <div>
+            <p className="nc-kicker">El sábado en cinco bloques</p>
+            <h2>Tienen unas 3.5 horas para construir</h2>
+            <p className="nc-sub">Entre talleres, almuerzo y refrigerio, el tiempo real de desarrollo es corto. Planéenlo desde hoy.</p>
+            <ol className="nc-flow times">
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">Vie</div>
+                <b>Esta noche</b>
+                <small>Job story y MoSCoW listos. Quién hace qué.</small>
+              </li>
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">9:45</div>
+                <b>Antes del almuerzo</b>
+                <small>El flujo mínimo funcionando de punta a punta.</small>
+              </li>
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">13:15</div>
+                <b>Después del almuerzo</b>
+                <small>Lo que sigue del MoSCoW y su métrica.</small>
+              </li>
+              <li className="nc-step human">
+                <div className="nc-node" aria-hidden="true">14:00</div>
+                <b>Congelar</b>
+                <small>Nada nuevo. Solo arreglar lo que falla.</small>
+              </li>
+              <li className="nc-step">
+                <div className="nc-node" aria-hidden="true">14:30</div>
+                <b>Grabar y ensayar</b>
+                <small>Video de respaldo y el minuto con reloj.</small>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        {/* 15 · Para mañana */}
+        <section {...sceneProps(15)}>
           <div>
             <p className="nc-kicker">Para mañana</p>
             <h2>Llega al sábado con tres cosas</h2>
             <div className="nc-close">
               <article className="nc-card"><span className="nc-num">1</span><h3>Tu job story</h3><p>El problema de tu equipo en una frase, sin nombrar la tecnología.</p></article>
-              <article className="nc-card"><span className="nc-num">2</span><h3>Tu demo pequeña</h3><p>Un flujo completo, su video de respaldo y una métrica.</p></article>
+              <article className="nc-card"><span className="nc-num">2</span><h3>Tu solución funcionando</h3><p>Un flujo de punta a punta, su video de respaldo y una métrica.</p></article>
               <article className="nc-card"><span className="nc-num">3</span><h3>Tu minuto</h3><p>El pitch ensayado en voz alta, con reloj.</p></article>
             </div>
-            <p className="nc-sub nc-step">Les comparto la <b>plantilla del flujo de Valeria</b> para importar en n8n.</p>
+            <p className="nc-sub nc-step">Les comparto la <b>plantilla del flujo de Valeria</b> para importar en n8n. Usa Clerk y Supabase, igual que las plantillas del sábado.</p>
           </div>
         </section>
 
-        {/* 15 · Cierre */}
-        <section {...sceneProps(15)}>
+        {/* 16 · Cierre */}
+        <section {...sceneProps(16)}>
           <div>
             <p className="nc-kicker">Para cerrar</p>
-            <p className="nc-thesis">Ustedes pueden decidir qué problemas vale la pena resolver con tecnología.</p>
+            <p className="nc-sub">Todo workflow empieza con un nodo. Todo proyecto empieza con una persona.</p>
+            <p className="nc-thesis nc-step">Ustedes pueden decidir qué problemas vale la pena resolver con tecnología.</p>
             <h2 className="nc-step">
               Si mañana desapareciera la tecnología que usaste,
               <br />
