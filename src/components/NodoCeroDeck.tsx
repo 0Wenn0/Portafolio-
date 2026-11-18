@@ -14,6 +14,7 @@ const SCENES: Scene[] = [
   { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria: convocatorias en grupos, correos y capturas; la semana pasada se le pasó una por dos días. Preguntar: ¿a cuántas les ha pasado?" },
   { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto. En el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir bases: pensamiento crítico, alfabetización digital y criterio para decidir cuándo usarla. Remata: su proyecto del sábado sigue el mismo orden." },
   { title: "Primera pregunta", chapter: 1, notes: "Pedir en los comentarios: ¿qué fricción cotidiana resuelve su proyecto? Si un equipo aún no tiene idea, puede elegir un reto: la carga invisible, el laberinto de la información o las horas que no tenemos. Leer dos o tres respuestas." },
+  { title: "¿Vale la pena el problema?", chapter: 1, notes: "El corazón de la charla. Marcar en vivo los criterios con el problema de Valeria (los cumple todos). Luego pedir que cada equipo lo haga con su idea y escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar. Mañana es para construir; hoy es para elegir bien." },
   { title: "Proto-persona y job story", chapter: 1, notes: "Proto-persona: una persona hecha con supuestos que luego verifican. Job story: la situación es literalmente el disparador del flujo en n8n. Hacer clic en cada tarjeta." },
   { title: "Sin nombrar la tecnología", chapter: 1, notes: "Reto de 3 minutos (tecla T): escribir su job story sin decir n8n, IA, agente ni app. Pedirla en los comentarios." },
   { title: "Mini journey map", chapter: 2, notes: "Cinco pasos de Valeria. Cada flecha enciende uno. El paso coral es donde más duele: ahí va el flujo. Pedir que hagan lo mismo con su usuaria." },
@@ -25,7 +26,7 @@ const SCENES: Scene[] = [
   { title: "Errores que restan puntos", chapter: 4, notes: "Leer cada error y su arreglo. En el de los premios: Clerk y Avalanche tienen mención; úsenlos si resuelven algo de su usuaria. Preguntar en los comentarios cuál han visto más." },
   { title: "Un pitch armado", chapter: 4, notes: "Leer el ejemplo completo. Aclarar que Valeria y sus números son ficticios. Invitar a que cada equipo lo adapte esta noche." },
   { title: "El sábado en cinco bloques", chapter: 5, notes: "Con la agenda real: construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45. Sugerir que dividan al equipo: quien va al taller trae lo aprendido. Congelar a las 14:00. La presentación es de un minuto a las 15:00." },
-  { title: "Para mañana", chapter: 5, notes: "Las tres tareas para el sábado y dónde encontrar la plantilla de n8n y el lienzo del equipo." },
+  { title: "Para esta noche", chapter: 5, notes: "Solo decisiones, nada de código: el sábado es para construir. Mencionar que la plantilla de Valeria es un ejemplo para estudiar cómo se conectan los nodos; no es para copiar su proyecto." },
   { title: "Cierre", chapter: 5, notes: "Eco del lema del evento: todo workflow empieza con un nodo. Decir el mensaje central despacio. Leer la pregunta y dejar unos segundos de silencio. Abrir preguntas (10 min), dejar LinkedIn y agradecer a WTM Santa Cruz." },
 ];
 
@@ -126,6 +127,44 @@ function Sorter() {
         </button>
       </p>
     </>
+  );
+}
+
+/* ───────── ¿Vale la pena este problema? ───────── */
+const CRITERIA = [
+  "Le pasa a una persona concreta que puedo contactar",
+  "Pasa seguido: cada semana o más",
+  "Hoy se resuelve a mano o con algo improvisado",
+  "Cabe en 3.5 horas con n8n, Supabase y Clerk",
+  "Tengo o puedo inventar datos de prueba realistas",
+  "Se puede mostrar funcionando en un minuto",
+];
+
+function ProblemCheck() {
+  const [on, setOn] = useState<boolean[]>(() => CRITERIA.map(() => false));
+  const score = on.filter(Boolean).length;
+  const verdict =
+    score >= 5
+      ? { cls: "nc-mint", text: "Adelante: es un buen problema para el sábado." }
+      : score >= 3
+        ? { cls: "nc-coral", text: "Acótalo: elige una persona y un solo momento del problema." }
+        : { cls: "nc-coral", text: "Busca otro, o vuelve a observar antes de construir." };
+  return (
+    <div className="nc-check">
+      <ul>
+        {CRITERIA.map((c, i) => (
+          <li key={c}>
+            <button type="button" aria-pressed={on[i]} onClick={() => setOn((o) => o.map((x, k) => (k === i ? !x : x)))}>
+              <span aria-hidden="true">{on[i] ? "✓" : ""}</span>
+              {c}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p className="nc-verdict" aria-live="polite">
+        <b>{score} / {CRITERIA.length}</b> <span className={verdict.cls}>{verdict.text}</span>
+      </p>
+    </div>
   );
 }
 
@@ -459,7 +498,7 @@ export function NodoCeroDeck() {
       <div className="nc-vignette" aria-hidden="true" />
 
       <main>
-        {/* 0 · Portada */}
+        {/* Portada */}
         <section {...sceneProps(0)}>
           <div>
             <p className="nc-kicker">Nodo Cero · Hackathon n8n · WTM Santa Cruz</p>
@@ -477,7 +516,7 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 1 · Problemas normalizados */}
+        {/* Problemas normalizados */}
         <section {...sceneProps(1)}>
           <div>
             <p className="nc-kicker">Para empezar</p>
@@ -490,7 +529,7 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 2 · Lo que aprendí */}
+        {/* Lo que aprendí */}
         <section {...sceneProps(2)}>
           <div>
             <p className="nc-kicker">Lo que aprendí con más de 3,000 personas</p>
@@ -517,7 +556,7 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 3 · Primera pregunta */}
+        {/* Primera pregunta */}
         <section {...sceneProps(3, "nc-two")}>
           <div>
             <p className="nc-kicker">1 · Observar</p>
@@ -530,8 +569,18 @@ export function NodoCeroDeck() {
           <Timer seconds={60} id="pregunta" />
         </section>
 
-        {/* 4 · Proto-persona y job story */}
+        {/* ¿Vale la pena? */}
         <section {...sceneProps(4)}>
+          <div>
+            <p className="nc-kicker">1 · Elegir bien el problema</p>
+            <h2>¿Vale la pena este problema para el sábado?</h2>
+            <p className="nc-sub">Probemos con el de Valeria. Marca lo que cumple; después hazlo con el de tu equipo.</p>
+            <ProblemCheck />
+          </div>
+        </section>
+
+        {/* Proto-persona y job story */}
+        <section {...sceneProps(5)}>
           <div>
             <p className="nc-kicker">1 · Dos herramientas de diseño</p>
             <h2>Conoce a Valeria antes de abrir n8n</h2>
@@ -557,8 +606,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 5 · Sin nombrar la tecnología */}
-        <section {...sceneProps(5, "nc-two")}>
+        {/* Sin nombrar la tecnología */}
+        <section {...sceneProps(6, "nc-two")}>
           <div>
             <p className="nc-kicker">1 · Reto · 3 minutos</p>
             <h2>Explica tu proyecto sin nombrar la tecnología</h2>
@@ -576,8 +625,8 @@ export function NodoCeroDeck() {
           <Timer seconds={180} id="frase" />
         </section>
 
-        {/* 6 · Mini journey map */}
-        <section {...sceneProps(6)}>
+        {/* Mini journey map */}
+        <section {...sceneProps(7)}>
           <div>
             <p className="nc-kicker">2 · Acotar · Mini journey map</p>
             <h2>¿En qué paso duele más?</h2>
@@ -612,8 +661,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 7 · MoSCoW */}
-        <section {...sceneProps(7)}>
+        {/* MoSCoW */}
+        <section {...sceneProps(8)}>
           <div>
             <p className="nc-kicker">2 · Acotar · MoSCoW en un día</p>
             <h2>¿Qué debe estar el sábado?</h2>
@@ -622,8 +671,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 8 · Simulación */}
-        <section {...sceneProps(8)}>
+        {/* Simulación */}
+        <section {...sceneProps(9)}>
           <div>
             <p className="nc-kicker">2 · Simulación didáctica del flujo</p>
             <h2>La IA interpreta, el código calcula y Valeria decide</h2>
@@ -631,8 +680,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 9 · Diseñar para las personas */}
-        <section {...sceneProps(9)}>
+        {/* Diseñar para las personas */}
+        <section {...sceneProps(10)}>
           <div>
             <p className="nc-kicker">3 · Diseñar para las personas</p>
             <h2>Tres preguntas que dan puntos</h2>
@@ -644,8 +693,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 10 · Evidencia */}
-        <section {...sceneProps(10)}>
+        {/* Evidencia */}
+        <section {...sceneProps(11)}>
           <div>
             <p className="nc-kicker">3 · Evidencia · Hipótesis Lean UX</p>
             <h2>¿Cómo sabrás que funciona?</h2>
@@ -661,8 +710,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 11 · Pitch en 60 s */}
-        <section {...sceneProps(11)}>
+        {/* Pitch en 60 s */}
+        <section {...sceneProps(12)}>
           <div>
             <p className="nc-kicker">4 · Contarlo</p>
             <h2>Tu pitch en 60 segundos</h2>
@@ -670,8 +719,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 12 · Errores */}
-        <section {...sceneProps(12)}>
+        {/* Errores */}
+        <section {...sceneProps(13)}>
           <div>
             <p className="nc-kicker">4 · Lo que más resta</p>
             <h2>Errores comunes y su arreglo</h2>
@@ -686,8 +735,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 13 · Pitch armado */}
-        <section {...sceneProps(13)}>
+        {/* Pitch armado */}
+        <section {...sceneProps(14)}>
           <div>
             <p className="nc-kicker">4 · Ejemplo completo · caso ficticio</p>
             <h2>Así suena un pitch armado</h2>
@@ -701,8 +750,8 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 14 · El sábado */}
-        <section {...sceneProps(14)}>
+        {/* El sábado */}
+        <section {...sceneProps(15)}>
           <div>
             <p className="nc-kicker">El sábado en cinco bloques</p>
             <h2>Tienen unas 3.5 horas para construir</h2>
@@ -711,12 +760,12 @@ export function NodoCeroDeck() {
               <li className="nc-step">
                 <div className="nc-node" aria-hidden="true">Vie</div>
                 <b>Esta noche</b>
-                <small>Job story y MoSCoW listos. Quién hace qué.</small>
+                <small>Elegir el problema. Nada de construir todavía.</small>
               </li>
               <li className="nc-step">
                 <div className="nc-node" aria-hidden="true">9:45</div>
                 <b>Antes del almuerzo</b>
-                <small>El flujo mínimo funcionando de punta a punta.</small>
+                <small>Construir el flujo mínimo de punta a punta.</small>
               </li>
               <li className="nc-step">
                 <div className="nc-node" aria-hidden="true">13:15</div>
@@ -737,22 +786,22 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* 15 · Para mañana */}
-        <section {...sceneProps(15)}>
+        {/* Para mañana */}
+        <section {...sceneProps(16)}>
           <div>
-            <p className="nc-kicker">Para mañana</p>
-            <h2>Llega al sábado con tres cosas</h2>
+            <p className="nc-kicker">Para esta noche</p>
+            <h2>Tres decisiones antes de construir</h2>
             <div className="nc-close">
-              <article className="nc-card"><span className="nc-num">1</span><h3>Tu job story</h3><p>El problema de tu equipo en una frase, sin nombrar la tecnología.</p></article>
-              <article className="nc-card"><span className="nc-num">2</span><h3>Tu solución funcionando</h3><p>Un flujo de punta a punta, su video de respaldo y una métrica.</p></article>
-              <article className="nc-card"><span className="nc-num">3</span><h3>Tu minuto</h3><p>El pitch ensayado en voz alta, con reloj.</p></article>
+              <article className="nc-card"><span className="nc-num">1</span><h3>Su problema</h3><p>El que pasó la prueba de los seis criterios.</p></article>
+              <article className="nc-card"><span className="nc-num">2</span><h3>Su job story</h3><p>Una frase, sin nombrar la tecnología. Su «cuando» será el disparador del flujo.</p></article>
+              <article className="nc-card"><span className="nc-num">3</span><h3>Su MoSCoW</h3><p>Qué debe estar el sábado y qué puede esperar.</p></article>
             </div>
-            <p className="nc-sub nc-step">Les comparto la <b>plantilla del flujo de Valeria</b> para importar en n8n. Usa Clerk y Supabase, igual que las plantillas del sábado.</p>
+            <p className="nc-sub nc-step">El sábado lo construyen ustedes. Les comparto el <b>flujo de Valeria</b> como ejemplo para estudiar cómo se conectan los nodos con Clerk y Supabase.</p>
           </div>
         </section>
 
-        {/* 16 · Cierre */}
-        <section {...sceneProps(16)}>
+        {/* Cierre */}
+        <section {...sceneProps(17)}>
           <div>
             <p className="nc-kicker">Para cerrar</p>
             <p className="nc-sub">Todo workflow empieza con un nodo. Todo proyecto empieza con una persona.</p>

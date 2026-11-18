@@ -243,3 +243,14 @@
   .nc-sim-node { transition: none; }
 }
 .nc-flow.times .nc-node { width: fit-content; min-width: 72px; padding: 0 12px; font-family: var(--sans); font-size: clamp(16px, 1.25vw, 22px); font-weight: 700; }
+
+/* ¿Vale la pena este problema? */
+.nc-check ul { list-style: none; padding: 0; margin: 3vh 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 1100px; }
+.nc-check button { width: 100%; display: flex; align-items: center; gap: 14px; text-align: left; font: inherit; font-size: clamp(16px, 1.2vw, 21px); padding: 14px 18px; border-radius: 14px; cursor: pointer; color: var(--ivory); background: rgba(24, 33, 58, 0.6); border: 1px solid rgba(244, 241, 234, 0.2); transition: border-color 0.3s, background 0.3s; }
+.nc-check button > span { flex: 0 0 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; border: 1.5px solid rgba(244, 241, 234, 0.4); color: var(--ink); font-weight: 700; }
+.nc-check button[aria-pressed="true"] { border-color: var(--mint); background: rgba(111, 227, 200, 0.1); }
+.nc-check button[aria-pressed="true"] > span { background: var(--mint); border-color: var(--mint); }
+.nc-check button:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.nc-verdict { margin-top: 3vh; font-size: clamp(18px, 1.5vw, 26px); }
+.nc-verdict b { font-family: var(--serif); font-size: 1.4em; margin-right: 10px; }
+@media (max-width: 900px) { .nc-check ul { grid-template-columns: 1fr; } }
