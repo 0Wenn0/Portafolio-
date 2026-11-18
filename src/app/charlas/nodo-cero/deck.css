@@ -254,3 +254,30 @@
 .nc-verdict { margin-top: 3vh; font-size: clamp(18px, 1.5vw, 26px); }
 .nc-verdict b { font-family: var(--serif); font-size: 1.4em; margin-right: 10px; }
 @media (max-width: 900px) { .nc-check ul { grid-template-columns: 1fr; } }
+
+/* Encuadre y mapa de Design Thinking */
+.nc-dt-map { list-style: none; padding: 0; margin: 3vh 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; counter-reset: dt; }
+.nc-dt-map li { counter-increment: dt; padding: 16px; border-radius: 16px; background: rgba(24, 33, 58, 0.6); border: 1px solid rgba(111, 227, 200, 0.3); }
+.nc-dt-map li b { display: block; font-family: var(--serif); font-size: clamp(20px, 1.6vw, 28px); color: var(--mint); }
+.nc-dt-map li b::before { content: counter(dt) " · "; color: var(--muted); font-size: 0.7em; }
+.nc-dt-map li span { color: var(--muted); font-size: clamp(14px, 1vw, 17px); }
+.nc-frame { margin-top: 2.6vh; display: grid; gap: 8px; max-width: 80ch; }
+.nc-frame p { margin: 0; font-size: clamp(16px, 1.2vw, 21px); color: var(--muted); }
+.nc-frame b { color: var(--ivory); }
+.nc-dt-strip { list-style: none; padding: 0; margin: 0 0 1.6vh; display: flex; flex-wrap: wrap; gap: 6px; }
+.nc-dt-strip li { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(244, 241, 234, 0.18); color: var(--muted); }
+.nc-dt-strip li.done { border-color: rgba(111, 227, 200, 0.4); color: var(--mint); }
+.nc-dt-strip li.now { background: var(--mint); border-color: var(--mint); color: var(--ink); font-weight: 700; }
+.nc-takeaway { margin-top: 2.4vh; font-family: var(--serif); font-size: clamp(20px, 1.7vw, 30px); color: var(--coral); }
+.nc-takeaway::before { content: "→ "; }
+
+/* Anatomía del pitch */
+.nc-anatomy { margin-top: 2.6vh; display: grid; gap: 8px; max-width: 1050px; }
+.nc-anatomy [role="row"] { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 12px; padding: 12px 18px; border-radius: 14px; background: rgba(24, 33, 58, 0.6); border: 1px solid rgba(244, 241, 234, 0.14); font-size: clamp(15px, 1.15vw, 20px); }
+.nc-anatomy .head { background: transparent; border: 0; padding-top: 0; padding-bottom: 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.nc-anatomy [role="row"] span:last-child { color: var(--mint); }
+@media (max-width: 900px) {
+  .nc-dt-map { grid-template-columns: 1fr; }
+  .nc-anatomy [role="row"] { grid-template-columns: 1fr; gap: 2px; }
+}
+.nc-compact { font-size: clamp(30px, 3vw, 50px) !important; }
