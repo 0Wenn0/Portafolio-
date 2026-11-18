@@ -28,10 +28,10 @@ const STEPS: SimStep[] = [
     short: "Disparador",
     title: "Valeria pega una convocatoria",
     n8n: "n8n Form Trigger",
-    explain: "Valeria copia el texto que le llegó por un grupo y lo pega en un formulario. Ese hecho inicia el flujo.",
+    explain: "Valeria ya inició sesión con Clerk. Copia el texto que le llegó por un grupo y lo pega en un formulario. Ese hecho inicia el flujo.",
     lesson: "Todo flujo empieza con algo que la persona ya hace.",
     label: "Sale de este nodo",
-    json: () => pretty({ convocatoria: CONVOCATORIA }),
+    json: () => pretty({ usuaria_id: "user_valeria", convocatoria: CONVOCATORIA }),
   },
   {
     short: "IA interpreta",
@@ -53,7 +53,7 @@ const STEPS: SimStep[] = [
     short: "Código calcula",
     title: "El código hace las cuentas",
     n8n: "Code (JavaScript)",
-    explain: "Con los campos limpios, unas líneas de código calculan cuántos días faltan y comparan los requisitos con el perfil de Valeria.",
+    explain: "Con los campos limpios, unas líneas de código calculan cuántos días faltan y comparan los requisitos con el perfil de Valeria, que se guardó en Supabase cuando se registró con Clerk.",
     lesson: "Las cuentas se las dejamos al código: un modelo puede equivocarse con una fecha; una resta, no.",
     label: "Código y resultado",
     json: () =>
@@ -81,13 +81,15 @@ const STEPS: SimStep[] = [
   },
   {
     short: "Registro",
-    title: "Queda una fila en su hoja",
-    n8n: "Google Sheets · Append row",
-    explain: "Se guarda la convocatoria, la fecha, los documentos y la decisión de Valeria.",
-    lesson: "Esa hoja es tu evidencia: cuántas convocatorias revisó y a cuántas aplicó.",
+    title: "Queda una fila en la base de datos",
+    n8n: "Supabase · Create a new row",
+    explain: "Se guarda la convocatoria, la fecha, los documentos y la decisión de Valeria en una tabla de Supabase, ligada a su usuaria.",
+    lesson: "Esa tabla es tu evidencia: cuántas convocatorias revisó y a cuántas aplicó.",
     label: "Fila nueva",
     json: (d) =>
       pretty({
+        tabla: "postulaciones",
+        usuaria_id: "user_valeria",
         programa: "Programa Horizonte 2027",
         cierre: "2026-12-12",
         documentos_pendientes: 3,
@@ -97,8 +99,8 @@ const STEPS: SimStep[] = [
   {
     short: "Recordatorio",
     title: "Siete días antes, un aviso",
-    n8n: "Schedule Trigger + Gmail (segundo flujo)",
-    explain: "Cada mañana otro flujo revisa la hoja. Si una convocatoria cierra en siete días, le escribe qué documentos le faltan.",
+    n8n: "Schedule Trigger + Supabase · Get many rows + Gmail",
+    explain: "Cada mañana otro flujo consulta la tabla. Si una convocatoria cierra en siete días, le escribe qué documentos le faltan.",
     lesson: "Lo que antes dependía de su memoria ahora lo sostiene el sistema.",
     label: "Correo programado",
     json: (d) =>
