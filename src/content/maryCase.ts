@@ -200,7 +200,7 @@ const es: MaryCaseContent = {
     {
       id: "evaluacion",
       title: "Evaluación y rúbrica",
-      lead: "Se evalúa el proceso de razonamiento, no la postura que elige la persona.",
+      lead: "Se evalúa el proceso de razonamiento: cualquier postura bien argumentada puede obtener el puntaje completo.",
       tables: [
         {
           caption: "Niveles de evaluación",
@@ -434,7 +434,7 @@ const en: MaryCaseContent = {
     {
       id: "evaluacion",
       title: "Assessment and rubric",
-      lead: "The reasoning process is assessed, not the stance the learner chooses.",
+      lead: "The reasoning process is assessed: any well-argued stance can earn full marks.",
       tables: [
         {
           caption: "Evaluation levels",

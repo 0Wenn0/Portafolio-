@@ -27,7 +27,7 @@ const learningDesignEs: LearningDesignItem[] = [
     },
     kind: "App para docentes universitarios",
     tools: "Replit · IA generativa",
-    desc: "Herramienta para que docentes universitarios diseñen actividades de aprendizaje con IA sin dejarle a la IA el juicio pedagógico. Está pensada para cualquier carrera: lo central es el criterio del docente, no un banco de casos de una disciplina. No tiene puntos, insignias ni cuentas; la biblioteca de actividades se guarda solo en el navegador.",
+    desc: "Herramienta para que docentes universitarios diseñen actividades de aprendizaje con IA sin dejarle a la IA el juicio pedagógico. Sirve en cualquier carrera porque gira en torno al criterio del docente. No tiene puntos, insignias ni cuentas; la biblioteca de actividades se guarda solo en el navegador.",
     flow: [
       {
         step: "Pienso",
@@ -50,7 +50,7 @@ const learningDesignEs: LearningDesignItem[] = [
       {
         title: "Diseño instruccional",
         points: [
-          "Diseño inverso: parte del objetivo, no de la primera actividad que proponga la IA.",
+          "Diseño inverso: parte del objetivo de aprendizaje y después decide qué papel tiene la IA.",
           "Hace visibles las decisiones de diseño para que el razonamiento se pueda revisar.",
           "Coincide con el marco de competencias en IA para docentes de la UNESCO (2024), que separa usar la IA de evaluar críticamente lo que produce.",
         ],
@@ -67,7 +67,7 @@ const learningDesignEs: LearningDesignItem[] = [
       {
         title: "Innovación educativa",
         points: [
-          "La alfabetización en IA se aprende en el trabajo real del docente, no en un curso aparte.",
+          "La alfabetización en IA se aprende dentro del trabajo real del docente, mientras diseña sus propias actividades.",
           "Cambia la pregunta de «¿qué me hace la IA?» a «¿qué decido yo con ayuda de la IA?».",
         ],
       },
@@ -85,9 +85,9 @@ const learningDesignEs: LearningDesignItem[] = [
       ],
     },
     contribution:
-      "Concepto, diseño pedagógico, flujo de interacción, fundamentos y diseño UX; desarrollo con herramientas asistidas por IA en Replit. Llevé una regla pedagógica al código: si la IA cita normas legales numeradas que el docente no aportó, el servidor rechaza la propuesta y pide otra en lugar de dejar pasar fuentes inventadas.",
+      "Concepto, diseño pedagógico, flujo de interacción, fundamentos y diseño UX; desarrollo con herramientas asistidas por IA en Replit. Llevé una regla pedagógica al código: si la IA cita normas legales numeradas que el docente no aportó, el servidor rechaza la propuesta y pide otra, para que no pasen fuentes inventadas.",
     evidence:
-      "Prototipo publicado (octubre de 2026) que muestra un método, no una herramienta validada. Los fundamentos son hipótesis sustentadas en la literatura; falta un piloto con docentes para medir cuántas propuestas modifican o rechazan y cómo justifican sus decisiones.",
+      "Prototipo publicado (octubre de 2026) para mostrar un método; todavía no está validado. Los fundamentos son hipótesis sustentadas en la literatura; falta un piloto con docentes para medir cuántas propuestas modifican o rechazan y cómo justifican sus decisiones.",
     links: [
       {
         label: "Abrir Criterio",
@@ -122,7 +122,7 @@ const learningDesignEs: LearningDesignItem[] = [
     contribution:
       "Concepto, objetivos de aprendizaje, narrativa, mecánicas y diseño UX; desarrollo con herramientas asistidas por IA. Tras un primer playtest con cuatro personas, rediseñé la entrada con un tutorial porque no quedaba claro cómo decidir ni cómo funcionaban los turnos.",
     evidence:
-      "Prototipo jugable. La segunda versión todavía no se ha probado; el impacto educativo es un objetivo, no un resultado medido.",
+      "Prototipo jugable. La segunda versión todavía no se ha probado; el impacto educativo es un objetivo que aún no se ha medido.",
     links: [
       { label: "Jugar", href: "https://pactsafterthe-fall.netlify.app/" },
       {
@@ -153,7 +153,7 @@ const learningDesignEn: LearningDesignItem[] = [
     },
     kind: "App for university faculty",
     tools: "Replit · generative AI",
-    desc: "A tool that helps university faculty design learning activities with AI without handing their pedagogical judgment to the AI. It is meant for any field: the core is the teacher's judgment, not a case bank for one discipline. No points, badges, or accounts; the activity library is stored only in the browser.",
+    desc: "A tool that helps university faculty design learning activities with AI without handing their pedagogical judgment to the AI. It works in any field because it centers on the teacher's judgment. No points, badges, or accounts; the activity library is stored only in the browser.",
     flow: [
       {
         step: "I think",
@@ -176,7 +176,7 @@ const learningDesignEn: LearningDesignItem[] = [
       {
         title: "Instructional design",
         points: [
-          "Backward design: it starts from the objective, not from the AI's first suggestion.",
+          "Backward design: it starts from the learning objective and then decides what role AI plays.",
           "It makes design decisions visible so the reasoning can be reviewed.",
           "It aligns with UNESCO's AI competency framework for teachers (2024), which separates using AI from critically evaluating its output.",
         ],
@@ -193,7 +193,7 @@ const learningDesignEn: LearningDesignItem[] = [
       {
         title: "Educational innovation",
         points: [
-          "AI literacy is learned inside the teacher's real work, not in a separate course.",
+          "AI literacy is learned inside the teacher's real work, while designing their own activities.",
           "It shifts the question from \"what does AI do for me?\" to \"what do I decide with AI's help?\"",
         ],
       },
@@ -211,9 +211,9 @@ const learningDesignEn: LearningDesignItem[] = [
       ],
     },
     contribution:
-      "Concept, pedagogical design, interaction flow, rationale, and UX design; development with AI-assisted tools on Replit. I turned a pedagogical rule into code: if the AI cites numbered legal provisions the teacher didn't supply, the server rejects the proposal and requests a new one instead of letting invented sources through.",
+      "Concept, pedagogical design, interaction flow, rationale, and UX design; development with AI-assisted tools on Replit. I turned a pedagogical rule into code: if the AI cites numbered legal provisions the teacher didn't supply, the server rejects the proposal and requests a new one, so invented sources don't get through.",
     evidence:
-      "Published prototype (October 2026) that demonstrates a method, not a validated tool. The rationale consists of hypotheses grounded in the literature; a pilot with faculty is still needed to measure how many proposals they modify or reject and how they justify their decisions.",
+      "Published prototype (October 2026) that demonstrates a method; it has not been validated yet. The rationale consists of hypotheses grounded in the literature; a pilot with faculty is still needed to measure how many proposals they modify or reject and how they justify their decisions.",
     links: [
       {
         label: "Open Criterio",
@@ -248,7 +248,7 @@ const learningDesignEn: LearningDesignItem[] = [
     contribution:
       "Concept, learning objectives, narrative, mechanics, and UX design; development with AI-assisted tools. After a first playtest with four people, I redesigned the opening with a tutorial because how to decide and how turns worked was unclear.",
     evidence:
-      "Playable prototype. The second version has not been tested yet; educational impact is a goal, not a measured result.",
+      "Playable prototype. The second version has not been tested yet; educational impact is a goal that has not been measured yet.",
     links: [
       { label: "Play", href: "https://pactsafterthe-fall.netlify.app/" },
       {

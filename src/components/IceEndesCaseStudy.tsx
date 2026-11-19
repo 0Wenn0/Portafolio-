@@ -41,7 +41,7 @@ const externalSourcesEs = [
   { code: "US", name: "NHANES", desc: "Registro de variables en PostgreSQL, inmutabilidad de archivos por ciclo.", tag: "CDC" },
   { code: "DHS", name: "IPUMS-DHS", desc: "Variables armonizadas entre años y países, pesos pre-transformados.", tag: "Univ. Minnesota" },
   { code: "R", name: "nhanesA", desc: "Encapsula svydesign() y controles de calidad por ciclo.", tag: "Paquete R" },
-  { code: "PE", name: "CRONICAS", desc: "Cohorte peruana (UPCH): profundidad clínica en 4 sitios específicos — complementaria, no equivalente.", tag: "UPCH" },
+  { code: "PE", name: "CRONICAS", desc: "Cohorte peruana (UPCH): profundidad clínica en 4 sitios específicos, complementaria a la ENDES.", tag: "UPCH" },
   { code: "LAC", name: "SABE", desc: "Precedente regional en cognición y envejecimiento; ICE-ENDES tiene mayor continuidad temporal (1996–2024).", tag: "OPS/OMS" },
 ];
 
@@ -49,7 +49,7 @@ const externalSourcesEn = [
   { code: "US", name: "NHANES", desc: "Variable registry in PostgreSQL, file immutability per cycle.", tag: "CDC" },
   { code: "DHS", name: "IPUMS-DHS", desc: "Harmonized variables across years and countries, pre-transformed weights.", tag: "Univ. of Minnesota" },
   { code: "R", name: "nhanesA", desc: "Encapsulates svydesign() and quality controls per cycle.", tag: "R package" },
-  { code: "PE", name: "CRONICAS", desc: "Peruvian cohort (UPCH): clinical depth at 4 specific sites — complementary, not equivalent.", tag: "UPCH" },
+  { code: "PE", name: "CRONICAS", desc: "Peruvian cohort (UPCH): clinical depth at 4 specific sites, complementary to ENDES.", tag: "UPCH" },
   { code: "LAC", name: "SABE", desc: "Regional precedent in cognition and aging; ICE-ENDES has greater temporal continuity (1996–2024).", tag: "PAHO/WHO" },
 ];
 

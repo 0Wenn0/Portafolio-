@@ -96,7 +96,7 @@ const es: OpenAiMethodContent = {
     {
       code: "05",
       title: "Alcance y colaboraciones",
-      desc: "Qué diseñé, qué impartí y qué apliqué, con qué instituciones, y lo que no puedo mostrar.",
+      desc: "Qué diseñé, qué impartí y qué apliqué, con qué instituciones, y qué parte queda bajo contrato.",
       notThis: "No incluye materiales de ese trabajo ni nombres de personas.",
       status: "draft",
       table: {
@@ -125,7 +125,7 @@ const es: OpenAiMethodContent = {
           {
             what: "Medí el porcentaje de satisfacción de los asistentes, nivel 1 (reacción) del modelo de Kirkpatrick: 93.9 % en DGCyVE y 80 % en COSFAC.",
             who: "DGCyVE y COSFAC.",
-            limit: "Entre 80 y 100 respuestas por institución, sin número exacto. Mide satisfacción, no aprendizaje ni cambio de conducta (niveles 2 y 3).",
+            limit: "Entre 80 y 100 respuestas por institución, sin número exacto. Mide satisfacción; el aprendizaje y el cambio de conducta (niveles 2 y 3) no se evaluaron.",
           },
           {
             what: "Redacté policy briefs y decks para cada institución participante, junto con el mapeo de actores de cada una.",
@@ -229,7 +229,7 @@ const en: OpenAiMethodContent = {
     {
       code: "05",
       title: "Scope and collaborations",
-      desc: "What I designed, delivered, and applied, with which institutions, and what I cannot show.",
+      desc: "What I designed, delivered, and applied, with which institutions, and which parts remain under contract.",
       notThis: "It includes no material from that work and no names of people.",
       status: "draft",
       table: {
@@ -258,7 +258,7 @@ const en: OpenAiMethodContent = {
           {
             what: "I measured the attendee satisfaction rate, Kirkpatrick level 1 (reaction): 93.9% at DGCyVE and 80% at COSFAC.",
             who: "DGCyVE and COSFAC.",
-            limit: "Between 80 and 100 responses per institution, no exact count. It measures satisfaction, not learning or behavior change (levels 2 and 3).",
+            limit: "Between 80 and 100 responses per institution, no exact count. It measures satisfaction; learning and behavior change (levels 2 and 3) were not assessed.",
           },
           {
             what: "I wrote policy briefs and decks for each participating institution, alongside a stakeholder map for each.",
