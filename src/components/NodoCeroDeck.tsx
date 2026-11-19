@@ -13,13 +13,13 @@ const SCENES: Scene[] = [
   { title: "Portada", chapter: 0, notes: "Saludo y agradecimiento a WTM Santa Cruz y a Geraldine. Presentarte en una frase: neuropsicóloga y científica de datos que estudia cómo las personas adoptan la tecnología." },
   { title: "Encuadre", chapter: 0, notes: "Encuadre: el objetivo en una frase, el camino en cinco fases y qué se llevan. Explicar cómo participar en los comentarios. Mañana construyen; hoy deciden qué vale la pena construir." },
   { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria. Pausa: ¿quién es la Valeria de su comunidad? Cinco segundos de silencio antes de seguir." },
-  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Luego tus tres lentes, cada una con dónde la verán hoy. Subrayar la ciencia de datos: es la que les permite medir si su solución funciona. Remata: su proyecto del sábado sigue el mismo orden." },
+  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Luego tus tres lentes, cada una con dónde la verán hoy. Subrayar la ciencia de datos: es la que les permite medir si su solución funciona. Remata: su proyecto del sábado sigue el mismo orden. Puente con el anuncio (20 s): «Les prometieron un agente que evalúa vacantes. Es real: lo uso en mi propia búsqueda de empleo. Evalúa cada vacante con mis reglas, registra el resultado en una hoja y me deja borradores, pero yo decido qué se envía. Hoy verán ese mismo patrón con Valeria, que busca becas, porque se parece más a los problemas que ustedes pueden resolver el sábado.»" },
   { title: "Proto-persona", chapter: 1, notes: "Empatizar. Proto-persona: una persona hecha con supuestos que luego verifican. Presentar a Valeria y pedir su usuaria en los comentarios." },
   { title: "Mini journey map", chapter: 1, notes: "Cinco pasos de Valeria. El paso coral es donde más duele: ahí va el flujo. Cerrar la fase con la frase: primero la persona, después el flujo." },
   { title: "¿Vale la pena el problema?", chapter: 2, notes: "Definir. El corazón de la charla. Marcar los criterios con Valeria (cumple los seis) y pedir que cada equipo escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar. Equipos sin idea: elegir un reto." },
   { title: "Job story", chapter: 2, notes: "Job story: cuando, quiero, para. Su «cuando» será el disparador del flujo. 3 minutos con el temporizador (tecla T) y pedirla en los comentarios." },
   { title: "MoSCoW", chapter: 3, notes: "Idear. MoSCoW versión hackathon: lo que debe estar el sábado y lo que puede esperar. Clasificar con los comentarios y mostrar la sugerencia." },
-  { title: "Simulación del flujo", chapter: 4, notes: "Prototipar. Es una simulación didáctica; la plantilla real se comparte como ejemplo. Avanzar nodo por nodo. Momento clave: la IA interpreta, el código calcula y Valeria decide. En el nodo 5, preguntar qué respondería ella." },
+  { title: "Simulación del flujo", chapter: 4, notes: "Prototipar. Es una simulación didáctica; la plantilla real se comparte como ejemplo. Avanzar nodo por nodo. Momento clave: la IA interpreta, el código calcula y Valeria decide. En el nodo 5, preguntar qué respondería ella. Al terminar, la línea final: el mismo flujo sirve para vacantes, becas o convocatorias, y el registro puede ser Google Sheets o Supabase. Es el agente del anuncio." },
   { title: "Momentos de contacto", chapter: 4, notes: "UX/UI: la interfaz del flujo son el formulario, el correo y el recordatorio. Microcopy claro, diseño para celular. Luego datos (RLS en Supabase: cada usuaria ve solo sus filas), decisión humana e inclusión." },
   { title: "¿Cómo sabrás que funciona?", chapter: 5, notes: "Probar. Hipótesis Lean UX y la pregunta de impacto: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
   { title: "Anatomía del pitch", chapter: 6, notes: "La base del pitch. Cada parte responde una pregunta del jurado y sale de algo que ya hicieron: job story, proto-persona, MoSCoW, flujo y métrica. Ya tienen el 80 %." },
@@ -593,6 +593,7 @@ export function NodoCeroDeck() {
               </article>
             </div>
             <p className="nc-sub nc-step">Primero el criterio, después la herramienta. <b>Su proyecto del sábado sigue el mismo orden.</b></p>
+            <p className="nc-sub nc-step">Mi agente de vacantes sigue ese orden: evalúa con mis reglas, registra en una hoja y prepara borradores. <b>Yo decido qué se envía.</b> Hoy lo verán con Valeria.</p>
           </div>
         </section>
 
@@ -711,6 +712,7 @@ export function NodoCeroDeck() {
             <p className="nc-kicker">Prototipar · Simulación didáctica del flujo</p>
             <h2 className="nc-compact">La IA interpreta, el código calcula y Valeria decide</h2>
             <NodoCeroFlowSim />
+            <p className="nc-sub nc-step">Antes de automatizar, hay que diseñar el proceso. Este flujo sirve igual para <b>vacantes, becas o convocatorias</b>; el registro puede ser Google Sheets o Supabase.</p>
           </div>
         </section>
 
