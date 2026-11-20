@@ -1,10 +1,13 @@
+import Link from "next/link";
 import { getCommunity } from "@/content/community";
+import { getTalksCopy } from "@/content/talks";
 import { t } from "@/content/ui";
 import type { Locale } from "@/content/types";
 
 export function CommunitySection({ locale = "es" }: { locale?: Locale }) {
   const ui = t(locale);
   const community = getCommunity(locale);
+  const talks = getTalksCopy(locale);
 
   return (
     <section
@@ -23,6 +26,9 @@ export function CommunitySection({ locale = "es" }: { locale?: Locale }) {
         <p className="m-0 text-base md:text-[17px] leading-relaxed text-(--color-secondary)">
           {ui.communitySubtitle}
         </p>
+        <Link href={talks.href} className="inline-flex items-center min-h-11 text-[15px] font-medium">
+          {talks.all} <span aria-hidden="true">&nbsp;→</span>
+        </Link>
       </div>
       <ul className="md:col-start-5 md:col-span-8 m-0 p-0 list-none grid grid-cols-1 sm:grid-cols-3 gap-6">
         {community.map((item, index) => (
