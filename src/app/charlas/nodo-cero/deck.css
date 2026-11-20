@@ -289,3 +289,14 @@
 .nc-arc li span { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mint); }
 .nc-arc li:last-child { color: var(--coral); font-weight: 700; }
 @media (max-width: 900px) { .nc-arc li { grid-template-columns: 1fr; gap: 2px; } }
+
+/* Valores: tarjetas compactas de la interfaz */
+.nc-values { margin-top: 2vh; }
+.nc-values .nc-card { padding: 12px 20px; }
+.nc-values .nc-card h3 { margin: 4px 0 0; }
+.nc-values .nc-num { font-size: 1em; }
+.nc-anatomy-2 { margin-top: 1.6vh; gap: 6px; }
+.nc-anatomy-2 [role="row"] { grid-template-columns: 1fr 2fr; padding: 7px 18px; }
+.nc-values .nc-card h3 { font-size: 1em; }
+.nc-values .nc-lens { margin-top: 6px !important; padding-top: 6px; }
+.nc-anatomy-tight [role="row"] { padding: 8px 18px; }
