@@ -302,3 +302,17 @@
 .nc-anatomy-tight [role="row"] { padding: 8px 18px; }
 .nc-anatomy-4 [role="row"] { grid-template-columns: 0.7fr 1.1fr 1fr 1.5fr; }
 .nc-scene a { color: var(--mint); }
+
+/* Gracias: animación de cierre */
+.nc-gracias-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 3vw; align-items: center; }
+.nc-gracias-title { font-size: clamp(48px, 6vw, 104px); line-height: 1; margin: 1vh 0 2vh; }
+.nc-gracias-art { position: relative; display: grid; justify-items: center; gap: 1vh; }
+.nc-gracias-canvas { width: 100%; height: min(58vh, 46vw); }
+.nc-gracias-canvas canvas { width: 100%; height: 100%; display: block; }
+.nc-gracias-label { min-height: 1.4em; font-family: var(--serif); font-size: clamp(18px, 1.5vw, 26px); color: var(--ivory); text-align: center; }
+.nc-gracias-replay { font: inherit; font-size: 13px; color: var(--muted); background: transparent; border: 1px solid rgba(184, 191, 208, 0.35); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.nc-gracias-replay:hover, .nc-gracias-replay:focus-visible { color: var(--ivory); border-color: var(--mint); }
+@media (max-width: 760px) {
+  .nc-gracias-grid { grid-template-columns: 1fr; }
+  .nc-gracias-canvas { height: 46vh; }
+}

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { NodoCeroFlowSim } from "./NodoCeroFlowSim";
+import { NodoCeroGracias } from "./NodoCeroGracias";
 
 /* Presentación «De la idea al pitch» para Nodo Cero (WTM Santa Cruz).
    Navegación con flechas por escenas y pasos, notas de la ponente (N),
@@ -32,6 +33,7 @@ const SCENES: Scene[] = [
   { title: "El sábado en cinco bloques", chapter: 7, notes: "A las 9:00, la práctica de Nicolás con la plantilla. Construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45: dividir al equipo según lo que necesiten. Llevar su job story y su MoSCoW a las mentoras. Congelar a las 14:00. Presentación de un minuto a las 15:00." },
   { title: "Lo que veo cuando ustedes crean", chapter: 7, notes: "Tu perspectiva, despacio. Patrones Hermosos: la comunidad que te dio espacio para equivocarte; del pánico a hablar en público a hablar frente a diputados y senadores. Primera de tu familia en la universidad. En el caso de Valeria, sus amigas que se pasan convocatorias son quienes harían que el flujo se use: la comunidad sostiene el cambio. Remate: la joven innovadora de esta historia son ustedes." },
   { title: "Cierre", chapter: 7, notes: "Recoger las cuatro decisiones de esta noche y recordar el Explorador para quien siga sin idea. Eco del lema del evento. Mensaje central despacio, la pregunta y unos segundos de silencio. Preguntas (10 min), LinkedIn y agradecer a WTM Santa Cruz y n8n Bolivia." },
+  { title: "Gracias", chapter: 7, notes: "Dejar que corra la animación (unos 14 s) mientras agradeces: nodos de IA, un cerebro que entiende a las personas, un corazón que cuida lo que valoran y un cometa que despega. Es el mismo cierre de las mentorías de BécALAS. Agradecer a WTM Santa Cruz, n8n Bolivia y Geraldine; desearles suerte mañana. Si quieres verla otra vez, el botón «Repetir»." },
 ];
 
 const CHAPTER_NAMES = ["Inicio", "Empatizar", "Definir", "Idear", "Prototipar", "Probar", "Contarlo", "Cierre"];
@@ -937,6 +939,19 @@ export function NodoCeroDeck() {
               <span className="nc-coral">¿qué decisión debe seguir siendo de una persona?</span>
             </h2>
             <p className="nc-contact nc-step">¿Preguntas? Te leo en los comentarios. Después, búscame en LinkedIn: <b>linkedin.com/in/wendyRB-ai</b> · Mi método: <b>portafolio-wendyrb.vercel.app/metodo-evident</b> · ¿Sin idea todavía? <a href="https://0wenn0.github.io/nodo-cero-wenn.ai/" target="_blank" rel="noopener noreferrer"><b>Explorador de Nodo Cero</b></a></p>
+          </div>
+        </section>
+        {/* Gracias */}
+        <section {...sceneProps(22, "nc-gracias")}>
+          <div className="nc-gracias-grid">
+            <div>
+              <p className="nc-kicker">Nodo Cero · Women Techmakers Santa Cruz · n8n Bolivia</p>
+              <h2 className="nc-gracias-title">¡Gracias!</h2>
+              <p className="nc-sub">La tecnología empieza en la mente, pasa por el corazón y se vuelve real cuando alguien se atreve a lanzarla.</p>
+              <p className="nc-takeaway">Mañana les toca despegar.</p>
+              <p className="nc-contact">Wendy Ramírez · <b>linkedin.com/in/wendyRB-ai</b> · <a href="https://0wenn0.github.io/nodo-cero-wenn.ai/" target="_blank" rel="noopener noreferrer"><b>Explorador de Nodo Cero</b></a></p>
+            </div>
+            <NodoCeroGracias active={index === 22} />
           </div>
         </section>
       </main>
