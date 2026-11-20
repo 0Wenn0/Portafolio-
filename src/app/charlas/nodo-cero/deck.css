@@ -156,7 +156,7 @@
 .nc-template em { font-style: normal; color: var(--mint); font-weight: 700; margin-right: 6px; }
 
 /* Cierre */
-.nc-close { margin-top: 4vh; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.nc-close { margin-top: 4vh; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .nc-contact { margin-top: 4vh; font-size: clamp(16px, 1.2vw, 22px); color: var(--muted); }
 .nc-contact b { color: var(--ivory); }
 
@@ -256,7 +256,7 @@
 @media (max-width: 900px) { .nc-check ul { grid-template-columns: 1fr; } }
 
 /* Encuadre y mapa de Design Thinking */
-.nc-dt-map { list-style: none; padding: 0; margin: 3vh 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; counter-reset: dt; }
+.nc-dt-map { list-style: none; padding: 0; margin: 3vh 0 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; counter-reset: dt; }
 .nc-dt-map li { counter-increment: dt; padding: 16px; border-radius: 16px; background: rgba(24, 33, 58, 0.6); border: 1px solid rgba(111, 227, 200, 0.3); }
 .nc-dt-map li b { display: block; font-family: var(--serif); font-size: clamp(20px, 1.6vw, 28px); color: var(--mint); }
 .nc-dt-map li b::before { content: counter(dt) " · "; color: var(--muted); font-size: 0.7em; }

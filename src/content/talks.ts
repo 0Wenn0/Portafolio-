@@ -20,10 +20,10 @@ const talksEs: TalkGroup[] = [
     items: [
       {
         kind: "Charla",
-        title: "De la idea al pitch",
+        title: "De la idea al workflow",
         where: "Nodo Cero, hackathon de Women Techmakers Santa Cruz",
         period: "2026",
-        desc: "Para equipos de la hackathon: elegir un problema que valga la pena, escribir la job story, priorizar con MoSCoW, simular un flujo con n8n y contar el proyecto en un minuto.",
+        desc: "Para equipos de la hackathon: revisar si el problema cabe en un día, diseñar el proceso antes de automatizar, decidir dónde actúa la persona, medir la adopción y contar el proyecto en un minuto.",
         links: [{ label: "Ver la presentación interactiva", href: "/charlas/nodo-cero" }],
         featured: true,
       },
@@ -80,10 +80,10 @@ const talksEn: TalkGroup[] = [
     items: [
       {
         kind: "Talk",
-        title: "From idea to pitch",
+        title: "From idea to workflow",
         where: "Nodo Cero, Women Techmakers Santa Cruz hackathon",
         period: "2026",
-        desc: "For hackathon teams: choosing a problem worth solving, writing the job story, prioritizing with MoSCoW, simulating an n8n flow, and pitching the project in one minute.",
+        desc: "For hackathon teams: checking whether a problem fits in one day, designing the process before automating it, deciding where the person stays in charge, measuring adoption, and pitching the project in one minute.",
         links: [{ label: "See the interactive deck (in Spanish)", href: "/charlas/nodo-cero" }],
         featured: true,
       },
