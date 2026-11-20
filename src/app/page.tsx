@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { HowIWorkCompact } from "@/components/HowIWorkCompact";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TalksSection } from "@/components/TalksSection";
 import { WorkGallery } from "@/components/WorkGallery";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <CasesSection locale={locale} />
         <WorkGallery locale={locale} />
         <HowIWorkCompact locale={locale} />
+        <TalksSection locale={locale} />
         <AboutSection locale={locale} />
         <ContactSection locale={locale} />
       </main>

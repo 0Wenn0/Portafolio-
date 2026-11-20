@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/servicios",
     "/trabajo",
     "/como-trabajo",
+    "/charlas",
+    "/charlas/nodo-cero",
     "/en",
     "/en/casos/ice-endes",
     "/en/casos/openai-metodo",
@@ -24,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/en/servicios",
     "/en/trabajo",
     "/en/como-trabajo",
+    "/en/charlas",
   ];
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,
