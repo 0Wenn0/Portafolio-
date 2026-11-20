@@ -20,7 +20,7 @@ const talksEs: TalkGroup[] = [
     items: [
       {
         kind: "Charla",
-        title: "De la idea al workflow",
+        title: "Automatizar con criterio: agentes de IA en n8n",
         where: "Nodo Cero, hackathon de Women Techmakers Santa Cruz",
         period: "2026",
         desc: "Para equipos de la hackathon: revisar si el problema cabe en un día, diseñar el proceso antes de automatizar, decidir dónde actúa la persona, medir la adopción y contar el proyecto en un minuto.",
@@ -80,7 +80,7 @@ const talksEn: TalkGroup[] = [
     items: [
       {
         kind: "Talk",
-        title: "From idea to workflow",
+        title: "Automating with judgment: AI agents in n8n",
         where: "Nodo Cero, Women Techmakers Santa Cruz hackathon",
         period: "2026",
         desc: "For hackathon teams: checking whether a problem fits in one day, designing the process before automating it, deciding where the person stays in charge, measuring adoption, and pitching the project in one minute.",
