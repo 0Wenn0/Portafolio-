@@ -23,7 +23,8 @@ const SCENES: Scene[] = [
   { title: "Lo que la persona valora", chapter: 4, notes: "Heller (Values as Strategy): los valores entran al principio de la estrategia. Son los de las usuarias y los de la organización a la que propones la solución: escuchar sus preocupaciones, miedos y problemas, y responder desde lo que tú aportas como persona, con tu experiencia. Leer la tabla: cada decisión del flujo sale de algo que Valeria valora; cada momento de la interfaz protege uno. Datos: en proyectos para mujeres pueden ser muy sensibles (salud, violencia, ubicación); pidan lo mínimo y nunca usen datos reales en la demo. Gestión del cambio: la gente adopta lo que respeta lo que valora. Si proponen su solución a una organización (una universidad, una colectiva), pregúntense qué le preocupa: eso alimenta su petición en el pitch." },
   { title: "¿Cómo sabrás que funciona?", chapter: 5, notes: "Probar. Su flujo ya guarda la evidencia: cada fila en Supabase es un caso medido. Lente de gestión del cambio: la señal de adopción es el segundo uso; el primero puede ser curiosidad. Si pueden, muéstrenselo a una estudiante real y anoten lo que dice. Cerrar: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
   { title: "Estructura del pitch", chapter: 6, notes: "Una sola estructura: la misma de las sesiones anteriores, en seis partes. Cada parte sale de algo que hicieron hoy. Jerga: palabras simples, porque la jerga cierra tantas puertas como abre (Heller). Empiecen por la persona." },
-  { title: "Un pitch armado", chapter: 6, notes: "Ejemplo resuelto: leerlo completo. Aclarar que Valeria y sus números son ficticios. Copien la estructura; la idea es de ustedes." },
+  { title: "Hagan que importe", chapter: 6, notes: "Tu diferenciador. Lo que aprendiste como representante de políticas públicas y programas educativos para OpenAI en México, en interlocuciones de alto nivel con gobierno (por ejemplo, con el senador Rolando Zapata), universidades, startups y empresas de innovación, y viendo keynotes de OpenAI, NVIDIA, Google, IBM y Oracle en eventos como Talent Land: los pitches que se recuerdan cuentan la historia de una persona. Las seis partes sostienen; la historia conmueve. Neuropsicología: recordamos mejor a una persona concreta que una estadística (efecto de la víctima identificable, Small, Loewenstein y Slovic, 2007) y lo que nos emociona se graba mejor en la memoria (McGaugh). Cuidado: conmover con respeto; la protagonista actúa, no se inventa dolor, y los temas sensibles se cuentan con dignidad." },
+  { title: "Un pitch armado", chapter: 6, notes: "Leerlo completo, despacio, como se diría el sábado: pausa después de «Cerró hace dos días» y en la frase final. Señalar las cuatro claves: el momento (las once de la noche), lo que estaba en juego (no dejar la ingeniería), el giro (la demo) y la frase más grande que el producto. Aclarar que Valeria y sus números son ficticios, y que «a una de nosotras le pasó» solo se dice si es verdad. Copien la estructura; la idea es de ustedes." },
   { title: "Práctica del pitch", chapter: 6, notes: "Ahora ellas: correr el reloj de 60 s. Si hay tiempo, pedir a un equipo que lo intente en voz alta." },
   { title: "El sábado en cinco bloques", chapter: 7, notes: "A las 9:00, la práctica de Nicolás con la plantilla. Construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45: dividir al equipo según lo que necesiten. Llevar su job story y su MoSCoW a las mentoras. Congelar a las 14:00. Presentación de un minuto a las 15:00." },
   { title: "Lo que veo cuando ustedes crean", chapter: 7, notes: "Tu perspectiva, despacio. Patrones Hermosos: la comunidad que te dio espacio para equivocarte; del pánico a hablar en público a hablar frente a diputados y senadores. Primera de tu familia en la universidad. En el caso de Valeria, sus amigas que se pasan convocatorias son quienes harían que el flujo se use: la comunidad sostiene el cambio. Remate: la joven innovadora de esta historia son ustedes." },
@@ -185,12 +186,12 @@ function ProblemCheck() {
 
 /* ───────── Reloj del pitch ───────── */
 const PITCH = [
-  { label: "Problema", until: 12, cue: "Cuenta el problema con una persona concreta: quién es y qué le pasa." },
-  { label: "Solución", until: 27, cue: "Muestra el flujo funcionando con un caso, sin nombres de herramientas." },
-  { label: "Diferencia", until: 35, cue: "Di qué la hace distinta: dónde decide la persona, cómo cuidas sus datos." },
+  { label: "Problema", until: 12, cue: "Empieza en un momento: una persona, una hora, un lugar, y qué estaba en juego." },
+  { label: "Solución", until: 27, cue: "Muestra el giro: el instante en que cambia su experiencia, con tu flujo funcionando." },
+  { label: "Diferencia", until: 35, cue: "Di qué la hace distinta: lo que valoran tu usuaria y tu equipo." },
   { label: "Evidencia", until: 45, cue: "Da tu prueba: cuántos casos corriste y en cuántos acertó." },
-  { label: "Impacto", until: 53, cue: "Di qué podrá hacer tu usuaria que hoy no puede y cómo llegará a más personas." },
-  { label: "Petición", until: 60, cue: "Pide lo que necesitan: usuarias para probar, aliados o mentoría." },
+  { label: "Impacto", until: 53, cue: "Muestra el después en la persona y cómo llegará a otras." },
+  { label: "Petición", until: 60, cue: "Pide lo que necesitan y cierra con una frase más grande que tu producto." },
 ];
 
 function PitchClock() {
@@ -768,25 +769,42 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* Pitch armado */}
+        {/* Hagan que importe */}
         <section {...sceneProps(13)}>
+          <div>
+            <p className="nc-kicker">Contarlo · Lo que aprendí en pitches y keynotes</p>
+            <h2>Al final, la tecnología habla más de las personas que del código</h2>
+            <p className="nc-sub">Las seis partes sostienen el pitch. La historia hace que importe.</p>
+            <div className="nc-anatomy nc-anatomy-2 nc-anatomy-tight" role="table" aria-label="Cuatro claves para contar una historia">
+              <div role="row" className="nc-step"><span role="cell"><b>Empiecen en un momento</b></span><span role="cell">Una persona, una hora, un lugar.</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Digan qué estaba en juego</b></span><span role="cell">Lo que esa persona pierde, más allá de la molestia.</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>La demo es el giro</b></span><span role="cell">El instante en que cambia su experiencia.</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Cierren con una frase más grande</b></span><span role="cell">El mundo que quieren, más allá de su producto.</span></div>
+            </div>
+            <p className="nc-sub nc-step">Lo aprendí presentando propuestas de IA ante gobierno, universidades y empresas como representante de políticas públicas y programas educativos para OpenAI en México, y viendo keynotes de OpenAI, NVIDIA, Google, IBM y Oracle.</p>
+            <p className="nc-takeaway nc-step">Conmuevan con respeto: la protagonista actúa y nadie inventa dolor.</p>
+          </div>
+        </section>
+
+        {/* Pitch armado */}
+        <section {...sceneProps(14)}>
           <div>
             <p className="nc-kicker">Contarlo · Ejemplo completo · caso ficticio</p>
             <h2>Así suena un pitch armado</h2>
             <div className="nc-template">
-              <p className="nc-step"><em>Problema</em>Valeria tiene 20 años, estudia y trabaja. La semana pasada perdió una beca por dos días: la convocatoria se quedó entre 50 mensajes.</p>
-              <p className="nc-step"><em>Solución</em>Aquí pegamos una convocatoria… en un minuto le dice si califica, qué documentos necesita y cuántos días le quedan.</p>
-              <p className="nc-step"><em>Diferencia</em>La IA lee y calcula, pero Valeria decide si aplica. Sus datos solo los ve ella.</p>
-              <p className="nc-step"><em>Evidencia</em>Con 10 convocatorias de prueba acertó la fecha en 9.</p>
-              <p className="nc-step"><em>Impacto</em>Valeria ya no pierde fechas, y lo comparte con las amigas que le pasan convocatorias.</p>
-              <p className="nc-step"><em>Petición</em>Buscamos 30 estudiantes para probarlo durante un mes.</p>
+              <p className="nc-step"><em>Problema</em>Son las once de la noche. Valeria sale del trabajo, abre WhatsApp y, entre cincuenta mensajes, encuentra la beca que estaba esperando. Cerró hace dos días. Esa beca era su forma de no dejar la ingeniería.</p>
+              <p className="nc-step"><em>Solución</em>Hoy Valeria pega la convocatoria aquí… y en un minuto sabe si califica, qué le falta y cuántos días tiene.</p>
+              <p className="nc-step"><em>Diferencia</em>La IA lee y calcula; la decisión es de ella. Lo construimos así porque a una de nosotras le pasó.</p>
+              <p className="nc-step"><em>Evidencia</em>Con diez convocatorias de prueba, acertó la fecha en nueve.</p>
+              <p className="nc-step"><em>Impacto</em>La próxima vez, Valeria llega a tiempo. Y cuando lo logre, se lo pasará a sus amigas.</p>
+              <p className="nc-step"><em>Petición</em>Buscamos treinta estudiantes para probarlo. Porque ninguna chica debería perder su oportunidad por un mensaje enterrado en un chat.</p>
             </div>
             <p className="nc-takeaway nc-step">Copien la estructura. La idea es de ustedes.</p>
           </div>
         </section>
 
         {/* Pitch en 60 s */}
-        <section {...sceneProps(14)}>
+        <section {...sceneProps(15)}>
           <div>
             <p className="nc-kicker">Contarlo · Práctica</p>
             <h2>Ahora ustedes: un minuto con reloj</h2>
@@ -796,7 +814,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* El sábado */}
-        <section {...sceneProps(15)}>
+        <section {...sceneProps(16)}>
           <div>
             <p className="nc-kicker">El sábado en cinco bloques</p>
             <h2>Tienen unas 3.5 horas para construir</h2>
@@ -832,7 +850,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Historia de una idea */}
-        <section {...sceneProps(16)}>
+        <section {...sceneProps(17)}>
           <div>
             <p className="nc-kicker">Mi perspectiva</p>
             <h2>Lo que veo cuando ustedes crean</h2>
@@ -847,7 +865,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Para mañana */}
-        <section {...sceneProps(17)}>
+        <section {...sceneProps(18)}>
           <div>
             <p className="nc-kicker">Lo que se llevan</p>
             <h2>Cuatro decisiones para esta noche</h2>
@@ -862,7 +880,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Cierre */}
-        <section {...sceneProps(18)}>
+        <section {...sceneProps(19)}>
           <div>
             <p className="nc-kicker">Para cerrar</p>
             <p className="nc-sub">Todo workflow empieza con un nodo. Todo proyecto empieza con una persona.</p>
