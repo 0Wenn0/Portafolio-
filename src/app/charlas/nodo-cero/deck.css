@@ -300,3 +300,5 @@
 .nc-values .nc-card h3 { font-size: 1em; }
 .nc-values .nc-lens { margin-top: 6px !important; padding-top: 6px; }
 .nc-anatomy-tight [role="row"] { padding: 8px 18px; }
+.nc-anatomy-4 [role="row"] { grid-template-columns: 0.7fr 1.1fr 1fr 1.5fr; }
+.nc-scene a { color: var(--mint); }
