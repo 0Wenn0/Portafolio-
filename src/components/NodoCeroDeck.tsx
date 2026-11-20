@@ -14,13 +14,13 @@ const SCENES: Scene[] = [
   { title: "Encuadre", chapter: 0, notes: "Continuidad con las sesiones anteriores (si la mencionas, Varinia les dio las preguntas para pensar su proyecto). Hoy lo aplicamos de punta a punta con un caso. Usamos el Design Thinking como mapa y en cada fase una herramienta de UX, Jobs to be Done, ágil o Lean UX. Mañana construyen; hoy deciden qué. Explicar cómo participar en los comentarios." },
   { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria. Pausa: ¿quién es la Valeria de su comunidad? Cinco segundos de silencio antes de seguir." },
   { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto, desde la gestión del cambio. En el programa de adopción de IA con OpenAI en México (más de 3,000 asistentes), la herramienta ya estaba disponible. Entre tenerla y usarla hubo un camino: entender, confiar, practicar y sostener. Tu forma de trabajarlo: análisis, estrategia y comunidad. Mencionar EVIDENT en una línea, sin explicarlo: está en tu portafolio. Puente con el anuncio (20 s): «Les prometieron un agente que evalúa vacantes. Ese patrón lo uso en mi propia búsqueda de empleo: evalúa cada vacante con mis reglas, registra el resultado y me deja borradores, pero yo decido qué se envía. Hoy lo verán con Valeria, que busca becas.» Remate: mañana construyen la herramienta; piensen también en el camino." },
-  { title: "Mini journey map", chapter: 1, notes: "Empatizar. Cinco pasos de Valeria. El paso coral es donde más duele: ahí va el flujo. Neuropsicología: cuando decidir cuesta, posponemos; ahí pierde Valeria la beca. Cerrar con: primero la persona, después el flujo." },
+  { title: "Mini journey map", chapter: 1, notes: "Empatizar. Cinco pasos de Valeria. El paso coral es donde más duele: ahí va el flujo. Neuropsicología: cuando decidir cuesta, posponemos; ahí pierde Valeria la beca. Aquí entran los valores desde el inicio: qué valora Valeria. Cerrar con: primero la persona, después el flujo." },
   { title: "¿Cabe mañana?", chapter: 2, notes: "Definir, como repaso: las preguntas de las sesiones anteriores sirven para entender el problema; estos seis criterios deciden si cabe mañana. Marcar los criterios con Valeria (cumple los seis) y pedir que cada equipo escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar." },
   { title: "Job story", chapter: 2, notes: "Job story: cuando, quiero, para. Su «cuando» será el disparador del flujo. 90 segundos con el temporizador (tecla T) y pedirla en los comentarios." },
   { title: "De la frase al workflow", chapter: 3, notes: "Idear. Diseñar el proceso antes de automatizar: cada parte de la job story responde una decisión del flujo. Quedarse en el qué, sin nombrar nodos ni configuraciones: el cómo lo verán mañana con Nicolás y en los talleres. La pregunta clave: ¿dónde decide la persona?" },
   { title: "MoSCoW", chapter: 3, notes: "MoSCoW versión hackathon: lo que debe estar el sábado y lo que puede esperar. Clasificar con los comentarios y mostrar la sugerencia. Avalanche y Clerk tienen mención especial: úsenlos cuando resuelvan algo de su usuaria; el taller de mañana les ayuda a decidirlo. Cerrar: empieza con lo que tienes." },
   { title: "Simulación del flujo", chapter: 4, notes: "Prototipar. Es una simulación didáctica para ver la lógica; mañana Nicolás y los talleres les muestran cómo se construye con las plantillas del evento. Avanzar nodo por nodo. Momento clave: la IA interpreta, el código calcula y Valeria decide. En el nodo 5, preguntar qué respondería ella. Al terminar: es el mismo patrón del agente del anuncio." },
-  { title: "Los valores desde el inicio", chapter: 4, notes: "Los valores se diseñan desde el inicio. UX/UI: la interfaz del flujo son el formulario, el correo y el recordatorio. Datos: en proyectos para mujeres pueden ser muy sensibles (salud, violencia, ubicación); pidan lo mínimo, nunca usen datos reales en la demo y activen RLS en Supabase. Luego decisión humana e inclusión. Así queda lista para usuarias reales." },
+  { title: "Lo que la persona valora", chapter: 4, notes: "Heller (Values as Strategy): los valores entran al principio de la estrategia. Son los de las usuarias y los de la organización a la que propones la solución: escuchar sus preocupaciones, miedos y problemas, y responder desde lo que tú aportas como persona, con tu experiencia. Leer la tabla: cada decisión del flujo sale de algo que Valeria valora; cada momento de la interfaz protege uno. Datos: en proyectos para mujeres pueden ser muy sensibles (salud, violencia, ubicación); pidan lo mínimo y nunca usen datos reales en la demo. Gestión del cambio: la gente adopta lo que respeta lo que valora. Si proponen su solución a una organización (una universidad, una colectiva), pregúntense qué le preocupa: eso alimenta su petición en el pitch." },
   { title: "¿Cómo sabrás que funciona?", chapter: 5, notes: "Probar. Su flujo ya guarda la evidencia: cada fila en Supabase es un caso medido. Lente de gestión del cambio: la señal de adopción es el segundo uso; el primero puede ser curiosidad. Si pueden, muéstrenselo a una estudiante real y anoten lo que dice. Cerrar: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
   { title: "Estructura del pitch", chapter: 6, notes: "Una sola estructura: la misma de las sesiones anteriores, en seis partes. Cada parte sale de algo que hicieron hoy. Jerga: palabras simples, porque la jerga cierra tantas puertas como abre (Heller). Empiecen por la persona." },
   { title: "Un pitch armado", chapter: 6, notes: "Ejemplo resuelto: leerlo completo. Aclarar que Valeria y sus números son ficticios. Copien la estructura; la idea es de ustedes." },
@@ -572,7 +572,7 @@ export function NodoCeroDeck() {
           <div>
             <p className="nc-kicker">Lo que aprendí con más de 3,000 personas · Gestión del cambio</p>
             <h2>Entre tener la herramienta y usarla hay un camino</h2>
-            <p className="nc-sub">En el programa de adopción de IA con OpenAI en México, la herramienta ya estaba disponible. El trabajo fue que las personas la entendieran, confiaran en ella, la practicaran y la sostuvieran. Así lo trabajo:</p>
+            <p className="nc-sub">En el programa de adopción de IA con OpenAI en México, la herramienta ya estaba disponible. El trabajo fue que las personas la entendieran, confiaran en ella, la practicaran y la sostuvieran. Lo ordené en un método propio, <b>EVIDENT</b>, y empieza así:</p>
             <div className="nc-grid">
               <article className="nc-card">
                 <span className="nc-num">01</span>
@@ -593,7 +593,6 @@ export function NodoCeroDeck() {
                 <p className="nc-lens">En esta charla: la adopción y el pitch.</p>
               </article>
             </div>
-            <p className="nc-sub nc-step">Esa experiencia la ordené en un método propio: <b>EVIDENT</b>.</p>
             <p className="nc-sub nc-step">Mi agente de vacantes sigue el mismo orden: evalúa con mis reglas, registra el resultado y prepara borradores. <b>Yo decido qué se envía.</b> Hoy lo verán con Valeria.</p>
             <p className="nc-takeaway nc-step">Mañana construyen la herramienta. Piensen también en el camino.</p>
           </div>
@@ -633,6 +632,7 @@ export function NodoCeroDeck() {
                 <small>…o se le pasa la fecha.</small>
               </li>
             </ol>
+            <p className="nc-sub nc-step">Antes de diseñar, pregúntense qué valora. Valeria valora su tiempo, decidir ella misma y que nadie más vea sus datos.</p>
             <p className="nc-takeaway nc-step">Primero la persona, después el flujo.</p>
           </div>
         </section>
@@ -675,7 +675,7 @@ export function NodoCeroDeck() {
             <p className="nc-kicker">Idear · Diseñar el proceso</p>
             <h2>Antes de automatizar, hay que diseñar el proceso</h2>
             <p className="nc-sub">Cada parte de su job story responde una decisión de su workflow. Con Valeria:</p>
-            <div className="nc-anatomy" role="table" aria-label="De la job story al workflow">
+            <div className="nc-anatomy nc-anatomy-tight" role="table" aria-label="De la job story al workflow">
               <div role="row" className="head"><span role="columnheader">Su frase</span><span role="columnheader">La decisión</span><span role="columnheader">Con Valeria</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Cuando…</b></span><span role="cell">¿Qué lo pone en marcha?</span><span role="cell">Pega una convocatoria</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Quiero…</b></span><span role="cell">¿Qué hace el flujo por ella?</span><span role="cell">Lee requisitos y cuenta los días</span></div>
@@ -709,23 +709,26 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* Momentos de contacto */}
+        {/* Valores */}
         <section {...sceneProps(10)}>
           <div>
-            <p className="nc-kicker">Prototipar · Experiencia (UX/UI) y valores</p>
-            <h2>Los valores se diseñan desde el inicio</h2>
-            <p className="nc-sub">La interfaz de tu flujo son los momentos en que la persona lo toca.</p>
-            <div className="nc-grid">
-              <article className="nc-card"><span className="nc-num">1</span><h3>El formulario</h3><p>Un solo campo: «Pega aquí la convocatoria». Que funcione bien en el celular.</p></article>
-              <article className="nc-card"><span className="nc-num">2</span><h3>El correo de aprobación</h3><p>Una pregunta y dos botones: «¿Aplicas? Sí / Ahora no». Sin jerga técnica.</p></article>
-              <article className="nc-card"><span className="nc-num">3</span><h3>El recordatorio</h3><p>Qué falta y cuándo cierra, en una línea.</p></article>
+            <p className="nc-kicker">Prototipar · Valores (Values as Strategy)</p>
+            <h2>Diseñen para lo que la persona valora</h2>
+            <p className="nc-sub">Primero escuchamos qué le importa a Valeria. Cada decisión del flujo responde a eso.</p>
+            <div className="nc-anatomy nc-anatomy-2" role="table" aria-label="De los valores al diseño">
+              <div role="row" className="head"><span role="columnheader">Lo que valora Valeria</span><span role="columnheader">Cómo se diseña</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Su tiempo</b></span><span role="cell">Un solo campo; respuesta en un minuto</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Decidir ella</b></span><span role="cell">La IA organiza, ella aprueba</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Su privacidad</b></span><span role="cell">Pedir lo mínimo; solo ella ve sus filas (RLS)</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Que funcione donde está</b></span><span role="cell">Celular, poca señal, lector de pantalla</span></div>
             </div>
-            <div className="nc-banned">
-              <span className="nc-step">Datos<i>→ pide lo mínimo, nada de datos reales en la demo y RLS en Supabase</i></span>
-              <span className="nc-step">Decisión<i>→ la IA organiza, una persona aprueba</i></span>
-              <span className="nc-step">Inclusión<i>→ poca señal, solo celular, lector de pantalla</i></span>
+            <div className="nc-grid nc-values">
+              <article className="nc-card"><h3>El formulario</h3><p className="nc-lens">Protege su tiempo</p></article>
+              <article className="nc-card"><h3>El correo de aprobación</h3><p className="nc-lens">Protege su decisión</p></article>
+              <article className="nc-card"><h3>El recordatorio</h3><p className="nc-lens">Protege su tranquilidad</p></article>
             </div>
-            <p className="nc-takeaway nc-step">Diseña los momentos en que la persona toca tu flujo.</p>
+            <p className="nc-action nc-step">En los comentarios: ¿qué valora su usuaria y qué le preocupa a quien lo adoptaría?</p>
+            <p className="nc-takeaway nc-step">Cuando una herramienta respeta lo que la persona valora, es más fácil que la adopte.</p>
           </div>
         </section>
 
@@ -756,10 +759,10 @@ export function NodoCeroDeck() {
               <div role="row" className="head"><span role="columnheader">Parte</span><span role="columnheader">Pregunta del jurado</span><span role="columnheader">Sale de</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Problema</b> · 12 s</span><span role="cell">¿Esto importa?</span><span role="cell">Su job story</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Solución</b> · 15 s</span><span role="cell">¿Funciona?</span><span role="cell">Su flujo, en vivo</span></div>
-              <div role="row" className="nc-step"><span role="cell"><b>Diferencia</b> · 8 s</span><span role="cell">¿Por qué esta?</span><span role="cell">Dónde decide la persona</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Diferencia</b> · 8 s</span><span role="cell">¿Por qué esta?</span><span role="cell">Lo que valoran su usuaria y su equipo</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Evidencia</b> · 10 s</span><span role="cell">¿Cómo lo saben?</span><span role="cell">Su prueba</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Impacto</b> · 8 s</span><span role="cell">¿Lo van a usar?</span><span role="cell">Su señal de adopción</span></div>
-              <div role="row" className="nc-step"><span role="cell"><b>Petición</b> · 7 s</span><span role="cell">¿Qué necesitan?</span><span role="cell">Su MoSCoW: lo que puede esperar</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Petición</b> · 7 s</span><span role="cell">¿Qué necesitan?</span><span role="cell">Lo que le preocupa a quien lo adoptaría</span></div>
             </div>
             <p className="nc-sub nc-step">Empiecen por la persona y usen palabras simples: el jurado recuerda historias antes que funciones.</p>
           </div>
