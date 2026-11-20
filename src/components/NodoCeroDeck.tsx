@@ -13,18 +13,18 @@ const SCENES: Scene[] = [
   { title: "Portada", chapter: 0, notes: "Saludo y agradecimiento a WTM Santa Cruz y a Geraldine. Presentarte en una frase: neuropsicóloga y científica de datos que estudia cómo las personas adoptan la tecnología." },
   { title: "Encuadre", chapter: 0, notes: "Encuadre: el objetivo en una frase, el camino en cinco fases y qué se llevan. Explicar cómo participar en los comentarios. Mañana construyen; hoy deciden qué vale la pena construir." },
   { title: "Problemas normalizados", chapter: 0, notes: "Gancho. Leer la pregunta y dejar un silencio. Contar a Valeria. Pausa: ¿quién es la Valeria de su comunidad? Cinco segundos de silencio antes de seguir." },
-  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Luego tus tres lentes, cada una con dónde la verán hoy. Subrayar la ciencia de datos: es la que les permite medir si su solución funciona. Remata: su proyecto del sábado sigue el mismo orden. Puente con el anuncio (20 s): «Les prometieron un agente que evalúa vacantes. Es real: lo uso en mi propia búsqueda de empleo. Evalúa cada vacante con mis reglas, registra el resultado en una hoja y me deja borradores, pero yo decido qué se envía. Hoy verán ese mismo patrón con Valeria, que busca becas, porque se parece más a los problemas que ustedes pueden resolver el sábado.»" },
+  { title: "Lo que aprendí", chapter: 0, notes: "Tu historia en un minuto: en el programa con OpenAI, la herramienta estaba disponible; el trabajo fue construir criterio. Luego tus tres lentes, cada una con dónde la verán hoy. Subrayar la ciencia de datos: es la que les permite medir si su solución funciona. Remata: su proyecto del sábado sigue el mismo orden. Si hay tiempo, cita a Cheryl Heller (Values as Strategy, CENTRO): los valores entran al principio de la estrategia, no al final «si sobra». Con la IA pasa lo mismo. Puente con el anuncio (20 s): «Les prometieron un agente que evalúa vacantes. Es real: lo uso en mi propia búsqueda de empleo. Evalúa cada vacante con mis reglas, registra el resultado en una hoja y me deja borradores, pero yo decido qué se envía. Hoy verán ese mismo patrón con Valeria, que busca becas, porque se parece más a los problemas que ustedes pueden resolver el sábado.»" },
   { title: "Proto-persona", chapter: 1, notes: "Empatizar. Proto-persona: una persona hecha con supuestos que luego verifican. Presentar a Valeria y pedir su usuaria en los comentarios." },
   { title: "Mini journey map", chapter: 1, notes: "Cinco pasos de Valeria. El paso coral es donde más duele: ahí va el flujo. Cerrar la fase con la frase: primero la persona, después el flujo." },
   { title: "¿Vale la pena el problema?", chapter: 2, notes: "Definir. El corazón de la charla. Marcar los criterios con Valeria (cumple los seis) y pedir que cada equipo escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar. Equipos sin idea: elegir un reto." },
   { title: "Job story", chapter: 2, notes: "Job story: cuando, quiero, para. Su «cuando» será el disparador del flujo. 3 minutos con el temporizador (tecla T) y pedirla en los comentarios." },
-  { title: "MoSCoW", chapter: 3, notes: "Idear. MoSCoW versión hackathon: lo que debe estar el sábado y lo que puede esperar. Clasificar con los comentarios y mostrar la sugerencia." },
+  { title: "MoSCoW", chapter: 3, notes: "Idear. MoSCoW versión hackathon: lo que debe estar el sábado y lo que puede esperar. Clasificar con los comentarios y mostrar la sugerencia. Cerrar con Heller: empieza con lo que tienes; actuar, aprender y construir." },
   { title: "Simulación del flujo", chapter: 4, notes: "Prototipar. Es una simulación didáctica; la plantilla real se comparte como ejemplo. Avanzar nodo por nodo. Momento clave: la IA interpreta, el código calcula y Valeria decide. En el nodo 5, preguntar qué respondería ella. Al terminar, la línea final: el mismo flujo sirve para vacantes, becas o convocatorias, y el registro puede ser Google Sheets o Supabase. Es el agente del anuncio." },
-  { title: "Momentos de contacto", chapter: 4, notes: "UX/UI: la interfaz del flujo son el formulario, el correo y el recordatorio. Microcopy claro, diseño para celular. Luego datos (RLS en Supabase: cada usuaria ve solo sus filas), decisión humana e inclusión." },
-  { title: "¿Cómo sabrás que funciona?", chapter: 5, notes: "Probar. Hipótesis Lean UX y la pregunta de impacto: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
+  { title: "Los valores desde el inicio", chapter: 4, notes: "Los valores se diseñan desde el inicio, no se agregan al final. UX/UI: la interfaz del flujo son el formulario, el correo y el recordatorio. Microcopy claro, diseño para celular. Luego datos (RLS en Supabase: cada usuaria ve solo sus filas), decisión humana e inclusión." },
+  { title: "¿Cómo sabrás que funciona?", chapter: 5, notes: "Probar. Hipótesis Lean UX y la pregunta de impacto. Demostrar el valor es mostrar qué cambia para la persona: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
   { title: "Anatomía del pitch", chapter: 6, notes: "La base del pitch. Cada parte responde una pregunta del jurado y sale de algo que ya hicieron: job story, proto-persona, MoSCoW, flujo y métrica. Ya tienen el 80 %." },
   { title: "Un pitch armado", chapter: 6, notes: "Ejemplo resuelto: leerlo completo antes de que practiquen. Aclarar que Valeria y sus números son ficticios." },
-  { title: "Errores que restan puntos", chapter: 6, notes: "Contraste con el ejemplo. En el de los premios: Clerk y Avalanche tienen mención; úsenlos si resuelven algo de su usuaria." },
+  { title: "Errores que restan puntos", chapter: 6, notes: "Contraste con el ejemplo. Jerga: como dijo Heller, las palabras rebuscadas cierran tantas puertas como abren. En el de los premios: Clerk y Avalanche tienen mención; úsenlos si resuelven algo de su usuaria." },
   { title: "Práctica del pitch", chapter: 6, notes: "Ahora ellas: correr el reloj de 60 s. Si hay tiempo, pedir a un equipo que lo intente en voz alta." },
   { title: "El sábado en cinco bloques", chapter: 7, notes: "Construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45. Dividir al equipo durante los talleres. Congelar a las 14:00. Presentación de un minuto a las 15:00." },
   { title: "La historia de una idea", chapter: 7, notes: "Cerrar el arco de Valeria, paso por paso, ligando cada uno a su fase. Remate despacio: la joven innovadora de esta historia son ustedes." },
@@ -701,7 +701,7 @@ export function NodoCeroDeck() {
             <h2>¿Qué debe estar el sábado?</h2>
             <p className="nc-sub">Ayúdame a clasificar. En una hackathon gana <b>lo pequeño que funciona</b>.</p>
             <Sorter />
-            <p className="nc-takeaway nc-step">Lo pequeño que funciona gana.</p>
+            <p className="nc-takeaway nc-step">Empieza con lo que tienes: lo pequeño que funciona gana.</p>
           </div>
         </section>
 
@@ -719,8 +719,9 @@ export function NodoCeroDeck() {
         {/* Momentos de contacto */}
         <section {...sceneProps(10)}>
           <div>
-            <p className="nc-kicker">Prototipar · Experiencia (UX/UI)</p>
-            <h2>La interfaz de tu flujo son los momentos en que la persona lo toca</h2>
+            <p className="nc-kicker">Prototipar · Experiencia (UX/UI) y valores</p>
+            <h2>Los valores se diseñan desde el inicio</h2>
+            <p className="nc-sub">La interfaz de tu flujo son los momentos en que la persona lo toca.</p>
             <div className="nc-grid">
               <article className="nc-card"><span className="nc-num">1</span><h3>El formulario</h3><p>Un solo campo: «Pega aquí la convocatoria». Que funcione bien en el celular.</p></article>
               <article className="nc-card"><span className="nc-num">2</span><h3>El correo de aprobación</h3><p>Una pregunta y dos botones: «¿Aplicas? Sí / Ahora no». Sin jerga técnica.</p></article>
@@ -749,7 +750,7 @@ export function NodoCeroDeck() {
               <article className="nc-card"><span className="nc-num">🧪</span><h3>Una prueba</h3><p>Corre el flujo con 10 convocatorias de prueba y cuenta en cuántas acertó la fecha.</p></article>
               <article className="nc-card"><span className="nc-num">🗣️</span><h3>Una voz</h3><p>Muéstraselo a una estudiante real y anota lo que dice.</p></article>
             </div>
-            <p className="nc-action nc-step">¿Qué podrá hacer mañana Valeria que hoy no puede?</p>
+            <p className="nc-action nc-step">Demuestra el valor: ¿qué podrá hacer mañana Valeria que hoy no puede?</p>
             <p className="nc-takeaway nc-step">Sin métrica, es una promesa.</p>
           </div>
         </section>
@@ -797,6 +798,7 @@ export function NodoCeroDeck() {
               <span className="nc-step">«Es para todas las mujeres»<i>→ elige a una</i></span>
               <span className="nc-step">Prometer impacto sin pruebas<i>→ muestra tu métrica</i></span>
               <span className="nc-step">Usar una herramienta solo por el premio<i>→ úsala si resuelve algo de tu usuaria</i></span>
+              <span className="nc-step">Hablar en jerga<i>→ palabras simples: la jerga cierra tantas puertas como abre</i></span>
             </div>
           </div>
         </section>
