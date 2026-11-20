@@ -856,7 +856,7 @@ export function NodoCeroDeck() {
               <p className="nc-step"><em>Solución</em>Hoy Valeria pega la convocatoria aquí… y en un minuto sabe si califica, qué le falta y cuántos días tiene.</p>
               <p className="nc-step"><em>Diferencia</em>La IA lee y calcula; la decisión es de ella. Lo construimos así porque a una de nosotras le pasó.</p>
               <p className="nc-step"><em>Evidencia</em>Con diez convocatorias de prueba, acertó la fecha en nueve.</p>
-              <p className="nc-step"><em>Impacto</em>La próxima vez, Valeria llega a tiempo. Y cuando lo logre, se lo pasará a sus amigas.</p>
+              <p className="nc-step"><em>Impacto</em>La próxima vez, Valeria llegará a tiempo y tendrá la oportunidad de seguir estudiando y luchando por sus sueños. Y cuando lo logre, se lo pasará a sus amigas.</p>
               <p className="nc-step"><em>Llamado a la acción</em>Si estudias y trabajas, pruébalo hoy. Y si conoces a una Valeria, compártele este enlace. Porque ninguna chica debería perder su oportunidad por un mensaje enterrado en un chat.</p>
             </div>
             <p className="nc-takeaway nc-step">Copien la estructura. La idea es de ustedes.</p>
