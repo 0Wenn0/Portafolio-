@@ -647,7 +647,7 @@ export function NodoCeroDeck() {
             <h2>¿Su problema cabe en la hackathon de mañana?</h2>
             <p className="nc-sub">Estos seis criterios deciden si su problema cabe mañana. Primero con el de Valeria; después, con el suyo.</p>
             <ProblemCheck />
-            <p className="nc-sub nc-step">¿Su equipo aún no tiene idea? Usen el <a href="https://sites.google.com/view/nodo-cero-explorador-wenn-ai/full-page-embed" target="_blank" rel="noopener noreferrer"><b>Explorador de Nodo Cero</b></a>: observar, identificar, conectar, imaginar y proyectar.</p>
+            <p className="nc-sub nc-step">¿Su equipo aún no tiene idea? Usen el <a href="https://0wenn0.github.io/nodo-cero-wenn.ai/" target="_blank" rel="noopener noreferrer"><b>Explorador de Nodo Cero</b></a>: observar, identificar, conectar, imaginar y proyectar.</p>
           </div>
         </section>
 
@@ -918,7 +918,7 @@ export function NodoCeroDeck() {
               <br />
               <span className="nc-coral">¿qué decisión debe seguir siendo de una persona?</span>
             </h2>
-            <p className="nc-contact nc-step">¿Preguntas? Te leo en los comentarios. Después, búscame en LinkedIn: <b>linkedin.com/in/wendyRB-ai</b> · Mi método: <b>portafolio-wendyrb.vercel.app/metodo-evident</b> · ¿Sin idea todavía? <a href="https://sites.google.com/view/nodo-cero-explorador-wenn-ai/full-page-embed" target="_blank" rel="noopener noreferrer"><b>Explorador de Nodo Cero</b></a></p>
+            <p className="nc-contact nc-step">¿Preguntas? Te leo en los comentarios. Después, búscame en LinkedIn: <b>linkedin.com/in/wendyRB-ai</b> · Mi método: <b>portafolio-wendyrb.vercel.app/metodo-evident</b> · ¿Sin idea todavía? <a href="https://0wenn0.github.io/nodo-cero-wenn.ai/" target="_blank" rel="noopener noreferrer"><b>Explorador de Nodo Cero</b></a></p>
           </div>
         </section>
       </main>
