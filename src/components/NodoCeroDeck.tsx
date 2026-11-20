@@ -18,15 +18,16 @@ const SCENES: Scene[] = [
   { title: "¿Cabe mañana?", chapter: 2, notes: "Definir, como repaso: las preguntas de las sesiones anteriores sirven para entender el problema; estos seis criterios deciden si cabe mañana. Marcar los criterios con Valeria (cumple los seis) y pedir que cada equipo escriba su puntaje en los comentarios. Si sacan 3 o 4, acotar; si sacan menos, volver a observar. Equipos sin idea: el Explorador de Nodo Cero (tu herramienta) los guía en cinco pasos; compartir el enlace en los comentarios." },
   { title: "Job story", chapter: 2, notes: "Job story: cuando, quiero, para. Su «cuando» será el disparador del flujo. 90 segundos con el temporizador (tecla T) y pedirla en los comentarios." },
   { title: "De la frase al workflow", chapter: 3, notes: "Idear. Diseñar el proceso antes de automatizar: cada parte de la job story responde una decisión del flujo, y cada decisión tiene una pieza en n8n. Esta es la traducción de lo práctico a lo técnico. Nombrar la pieza sin configurarla: el cómo lo verán mañana con Nicolás y en los talleres. La pausa es la operación «Send and Wait for Response» (correo, chat). La pregunta clave: ¿dónde decide la persona?" },
-  { title: "MoSCoW", chapter: 3, notes: "MoSCoW versión hackathon: lo que debe estar el sábado y lo que puede esperar. Clasificar con los comentarios y mostrar la sugerencia. Avalanche y Clerk tienen mención especial: úsenlos cuando resuelvan algo de su usuaria; el taller de mañana les ayuda a decidirlo. Cerrar: empieza con lo que tienes." },
+  { title: "MoSCoW", chapter: 3, notes: "SI VAS TARDE: clasifica solo tres ideas y muestra la sugerencia. MoSCoW versión hackathon: lo que debe estar el sábado y lo que puede esperar. Clasificar con los comentarios y mostrar la sugerencia. Avalanche y Clerk tienen mención especial: úsenlos cuando resuelvan algo de su usuaria; el taller de mañana les ayuda a decidirlo. Cerrar: empieza con lo que tienes." },
   { title: "El mapa de su stack", chapter: 4, notes: "Automatizar con criterio (el título de la charla). Organizador previo: un mapa antes de los talleres para que mañana aprendan más rápido. Cada herramienta responde una pregunta: Clerk, quién es (sus webhooks avisan a n8n); n8n, qué pasa y en qué orden (entre nodos viaja un JSON, la ficha de datos); el modelo de IA, qué significa (pídanle campos fijos, no texto libre); Supabase, qué se guarda (Postgres, Storage, pgvector); HTTP Request, con quién más habla (cualquier API, Avalanche Fuji). Flujo o agente: en un flujo los pasos son fijos; en un agente (nodo AI Agent) el modelo elige herramientas. n8n permite pedir aprobación humana antes de que un agente use una herramienta. Cinco preguntas antes de construir: ¿qué lo dispara?, ¿qué datos entran y en qué forma?, ¿dónde interpreta la IA y con qué campos responde?, ¿dónde decide una persona?, ¿qué pasa si algo falla? Mañana aprenden a configurarlas; hoy, para qué sirve cada una." },
+  { title: "Cómo funciona un agente", chapter: 4, notes: "La parte de IA que nadie más cubre. Anatomía del nodo AI Agent de n8n: instrucciones (mensaje del sistema: qué hace y qué no), modelo (el que interpreta), memoria (lo que recuerda de la conversación), herramientas (lo que puede hacer: buscar en Supabase, llamar una API, mandar un correo) y una persona que aprueba antes de acciones importantes (n8n permite pedir aprobación por herramienta). IA con criterio: 1) contrato de salida: campos fijos en JSON, para que el siguiente nodo pueda usar lo que devuelve; 2) validar antes de actuar: la IA puede inventar, así que un nodo revisa que no falte nada; 3) evaluarla con casos de respuesta conocida y contar aciertos. Tu agente de vacantes lo armaste así." },
   { title: "Simulación del flujo", chapter: 4, notes: "Prototipar. Es una simulación didáctica para ver la lógica; mañana Nicolás y los talleres les muestran cómo se construye con las plantillas del evento. Avanzar nodo por nodo. Momento clave: la IA interpreta, el código calcula y Valeria decide. En el nodo 5, preguntar qué respondería ella. Al terminar: es el mismo patrón del agente del anuncio." },
-  { title: "Lo que la persona valora", chapter: 4, notes: "Heller (Values as Strategy): los valores entran al principio de la estrategia. Son los de las usuarias y los de la organización a la que propones la solución: escuchar sus preocupaciones, miedos y problemas, y responder desde lo que tú aportas como persona, con tu experiencia. Leer la tabla: cada decisión del flujo sale de algo que Valeria valora; cada momento de la interfaz protege uno. Datos: en proyectos para mujeres pueden ser muy sensibles (salud, violencia, ubicación); pidan lo mínimo y nunca usen datos reales en la demo. Gestión del cambio: la gente adopta lo que respeta lo que valora. Si proponen su solución a una organización (una universidad, una colectiva), pregúntense qué le preocupa: eso alimenta su petición en el pitch." },
+  { title: "Lo que la persona valora", chapter: 4, notes: "Heller (Values as Strategy): los valores entran al principio de la estrategia. Son los de las usuarias y los de la organización a la que propones la solución: escuchar sus preocupaciones, miedos y problemas, y responder desde lo que tú aportas como persona, con tu experiencia. Leer la tabla: cada decisión del flujo sale de algo que Valeria valora; cada momento de la interfaz protege uno. Datos: en proyectos para mujeres pueden ser muy sensibles (salud, violencia, ubicación); pidan lo mínimo y nunca usen datos reales en la demo. Gestión del cambio: la gente adopta lo que respeta lo que valora. Si proponen su solución a una organización (una universidad, una colectiva), pregúntense qué le preocupa: eso también alimenta su llamado a la acción." },
   { title: "¿Cómo sabrás que funciona?", chapter: 5, notes: "Probar. Su flujo ya guarda la evidencia: cada fila en Supabase es un caso medido. Lente de gestión del cambio: la señal de adopción es el segundo uso; el primero puede ser curiosidad. Si pueden, muéstrenselo a una estudiante real y anoten lo que dice. Cerrar: ¿qué podrá hacer mañana Valeria que hoy no puede?" },
-  { title: "Estructura del pitch", chapter: 6, notes: "Una sola estructura: la misma de las sesiones anteriores, en seis partes. Cada parte sale de algo que hicieron hoy. Jerga: palabras simples, porque la jerga cierra tantas puertas como abre (Heller). Empiecen por la persona." },
+  { title: "Estructura del pitch", chapter: 6, notes: "La última parte es un llamado a la acción: en la sala hay usuarias como Valeria, así que la invitación va para ellas (pruébalo, compártelo). Si un equipo necesita algo concreto del jurado o de aliados, como un piloto con una universidad, también cabe ahí. Una sola estructura: la misma de las sesiones anteriores, en seis partes. Cada parte sale de algo que hicieron hoy. Jerga: palabras simples, porque la jerga cierra tantas puertas como abre (Heller). Empiecen por la persona." },
   { title: "Hagan que importe", chapter: 6, notes: "Tu diferenciador. Lo que aprendiste como representante de políticas públicas y programas educativos para OpenAI en México, en interlocuciones de alto nivel con gobierno (por ejemplo, con el senador Rolando Zapata), universidades, startups y empresas de innovación, y viendo keynotes de OpenAI, NVIDIA, Google, IBM y Oracle en eventos como Talent Land: los pitches que se recuerdan cuentan la historia de una persona. Las seis partes sostienen; la historia conmueve. Neuropsicología: recordamos mejor a una persona concreta que una estadística (efecto de la víctima identificable, Small, Loewenstein y Slovic, 2007) y lo que nos emociona se graba mejor en la memoria (McGaugh). Cuidado: conmover con respeto; la protagonista actúa, no se inventa dolor, y los temas sensibles se cuentan con dignidad." },
   { title: "Un pitch armado", chapter: 6, notes: "Leerlo completo, despacio, como se diría el sábado: pausa después de «Cerró hace dos días» y en la frase final. Señalar las cuatro claves: el momento (las once de la noche), lo que estaba en juego (no dejar la ingeniería), el giro (la demo) y la frase más grande que el producto. Aclarar que Valeria y sus números son ficticios, y que «a una de nosotras le pasó» solo se dice si es verdad. Copien la estructura; la idea es de ustedes." },
-  { title: "Práctica del pitch", chapter: 6, notes: "Ahora ellas: correr el reloj de 60 s. Si hay tiempo, pedir a un equipo que lo intente en voz alta." },
+  { title: "Práctica del pitch", chapter: 6, notes: "SI VAS TARDE: salta esta escena y diles que la usen esta noche (la página queda abierta). Si hay tiempo: correr el reloj de 60 s y pedir a un equipo que lo intente en voz alta." },
   { title: "El sábado en cinco bloques", chapter: 7, notes: "A las 9:00, la práctica de Nicolás con la plantilla. Construyen de 9:45 a 14:30, con talleres a las 10:00 y 10:45: dividir al equipo según lo que necesiten. Llevar su job story y su MoSCoW a las mentoras. Congelar a las 14:00. Presentación de un minuto a las 15:00." },
   { title: "Lo que veo cuando ustedes crean", chapter: 7, notes: "Tu perspectiva, despacio. Patrones Hermosos: la comunidad que te dio espacio para equivocarte; del pánico a hablar en público a hablar frente a diputados y senadores. Primera de tu familia en la universidad. En el caso de Valeria, sus amigas que se pasan convocatorias son quienes harían que el flujo se use: la comunidad sostiene el cambio. Remate: la joven innovadora de esta historia son ustedes." },
   { title: "Cierre", chapter: 7, notes: "Recoger las cuatro decisiones de esta noche y recordar el Explorador para quien siga sin idea. Eco del lema del evento. Mensaje central despacio, la pregunta y unos segundos de silencio. Preguntas (10 min), LinkedIn y agradecer a WTM Santa Cruz y n8n Bolivia." },
@@ -191,7 +192,7 @@ const PITCH = [
   { label: "Diferencia", until: 35, cue: "Di qué la hace distinta: lo que valoran tu usuaria y tu equipo." },
   { label: "Evidencia", until: 45, cue: "Da tu prueba: cuántos casos corriste y en cuántos acertó." },
   { label: "Impacto", until: 53, cue: "Muestra el después en la persona y cómo llegará a otras." },
-  { label: "Petición", until: 60, cue: "Pide lo que necesitan y cierra con una frase más grande que tu producto." },
+  { label: "Acción", until: 60, cue: "Llamado a la acción: invita a las usuarias de la sala a actuar hoy y cierra con una frase más grande que tu producto." },
 ];
 
 function PitchClock() {
@@ -524,7 +525,7 @@ export function NodoCeroDeck() {
               <br />
               <span className="nc-coral">con criterio</span>
             </h1>
-            <p className="nc-lede">Agentes de IA en n8n · De la idea al workflow. Diseñar el proceso, decidir dónde actúa la persona y lograr que lo usen.</p>
+            <p className="nc-lede">Agentes de IA en n8n. De la idea al workflow.</p>
             <div className="nc-meta">
               <span>Wendy Ramírez Burgos</span>
               <span>Neuropsicóloga y científica de datos · adopción de IA</span>
@@ -721,8 +722,28 @@ export function NodoCeroDeck() {
           </div>
         </section>
 
-        {/* Simulación */}
+        {/* Anatomía del agente */}
         <section {...sceneProps(10)}>
+          <div>
+            <p className="nc-kicker">Prototipar · Agentes de IA con criterio</p>
+            <h2 className="nc-compact">Cómo funciona un agente de IA en n8n</h2>
+            <div className="nc-anatomy nc-anatomy-2 nc-anatomy-tight" role="table" aria-label="Partes de un agente de IA">
+              <div role="row" className="nc-step"><span role="cell"><b>Instrucciones</b></span><span role="cell">Qué hace y qué no. Su rol, en palabras claras.</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Modelo</b></span><span role="cell">El que interpreta el texto.</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Memoria</b></span><span role="cell">Lo que recuerda de la conversación.</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Herramientas</b></span><span role="cell">Lo que puede hacer: buscar en Supabase, llamar una API, enviar un correo.</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Una persona</b></span><span role="cell">Aprueba antes de las acciones importantes.</span></div>
+            </div>
+            <div className="nc-grid nc-values nc-step">
+              <article className="nc-card"><h3>1 · Contrato de salida</h3><p className="nc-lens">Que responda con campos fijos (JSON), no con texto libre.</p></article>
+              <article className="nc-card"><h3>2 · Validar antes de actuar</h3><p className="nc-lens">La IA puede inventar: un nodo revisa que no falte nada.</p></article>
+              <article className="nc-card"><h3>3 · Evaluarla</h3><p className="nc-lens">Casos con respuesta conocida: cuenten aciertos.</p></article>
+            </div>
+          </div>
+        </section>
+
+        {/* Simulación */}
+        <section {...sceneProps(11)}>
           <div>
             <p className="nc-kicker">Prototipar · Simulación didáctica del flujo</p>
             <h2 className="nc-compact">La IA interpreta, el código calcula y Valeria decide</h2>
@@ -732,7 +753,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Valores */}
-        <section {...sceneProps(11)}>
+        <section {...sceneProps(12)}>
           <div>
             <p className="nc-kicker">Prototipar · Valores (Values as Strategy)</p>
             <h2>Diseñen para lo que la persona valora</h2>
@@ -755,7 +776,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Evidencia */}
-        <section {...sceneProps(12)}>
+        <section {...sceneProps(13)}>
           <div>
             <DtStrip active={4} />
             <p className="nc-kicker">Probar · Evidencia y adopción</p>
@@ -763,7 +784,7 @@ export function NodoCeroDeck() {
             <p className="nc-story">Su flujo ya guarda la evidencia: <em>cada fila en Supabase es un caso medido</em>.</p>
             <div className="nc-grid">
               <article className="nc-card"><span className="nc-num">📏</span><h3>Una métrica</h3><p>Antes tardaba 40 minutos en entender una convocatoria; con el flujo, dos.</p></article>
-              <article className="nc-card"><span className="nc-num">🧪</span><h3>Una prueba</h3><p>Corre el flujo con 10 convocatorias de prueba y cuenta en cuántas acertó la fecha.</p></article>
+              <article className="nc-card"><span className="nc-num">🧪</span><h3>Evalúen a la IA</h3><p>Diez convocatorias con la respuesta correcta conocida: cuenten en cuántas acierta.</p></article>
               <article className="nc-card"><span className="nc-num">🔁</span><h3>Una señal de adopción</h3><p>¿Valeria lo usa una segunda vez? El primer uso puede ser curiosidad; el segundo es adopción.</p></article>
             </div>
             <p className="nc-action nc-step">Demuestra el valor: ¿qué podrá hacer mañana Valeria que hoy no puede?</p>
@@ -772,7 +793,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Anatomía del pitch */}
-        <section {...sceneProps(13)}>
+        <section {...sceneProps(14)}>
           <div>
             <p className="nc-kicker">Contarlo · Una sola estructura</p>
             <h2>Ya tienen casi todo su pitch</h2>
@@ -784,14 +805,14 @@ export function NodoCeroDeck() {
               <div role="row" className="nc-step"><span role="cell"><b>Diferencia</b> · 8 s</span><span role="cell">¿Por qué esta?</span><span role="cell">Lo que valoran su usuaria y su equipo</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Evidencia</b> · 10 s</span><span role="cell">¿Cómo lo saben?</span><span role="cell">Su prueba</span></div>
               <div role="row" className="nc-step"><span role="cell"><b>Impacto</b> · 8 s</span><span role="cell">¿Lo van a usar?</span><span role="cell">Su señal de adopción</span></div>
-              <div role="row" className="nc-step"><span role="cell"><b>Petición</b> · 7 s</span><span role="cell">¿Qué necesitan?</span><span role="cell">Lo que le preocupa a quien lo adoptaría</span></div>
+              <div role="row" className="nc-step"><span role="cell"><b>Llamado a la acción</b> · 7 s</span><span role="cell">¿Qué hago yo hoy?</span><span role="cell">Quién puede actuar hoy</span></div>
             </div>
             <p className="nc-sub nc-step">Empiecen por la persona y usen palabras simples: el jurado recuerda historias antes que funciones.</p>
           </div>
         </section>
 
         {/* Hagan que importe */}
-        <section {...sceneProps(14)}>
+        <section {...sceneProps(15)}>
           <div>
             <p className="nc-kicker">Contarlo · Lo que aprendí en pitches y keynotes</p>
             <h2>Al final, la tecnología habla más de las personas que del código</h2>
@@ -808,7 +829,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Pitch armado */}
-        <section {...sceneProps(15)}>
+        <section {...sceneProps(16)}>
           <div>
             <p className="nc-kicker">Contarlo · Ejemplo completo · caso ficticio</p>
             <h2>Así suena un pitch armado</h2>
@@ -818,14 +839,14 @@ export function NodoCeroDeck() {
               <p className="nc-step"><em>Diferencia</em>La IA lee y calcula; la decisión es de ella. Lo construimos así porque a una de nosotras le pasó.</p>
               <p className="nc-step"><em>Evidencia</em>Con diez convocatorias de prueba, acertó la fecha en nueve.</p>
               <p className="nc-step"><em>Impacto</em>La próxima vez, Valeria llega a tiempo. Y cuando lo logre, se lo pasará a sus amigas.</p>
-              <p className="nc-step"><em>Petición</em>Buscamos treinta estudiantes para probarlo. Porque ninguna chica debería perder su oportunidad por un mensaje enterrado en un chat.</p>
+              <p className="nc-step"><em>Llamado a la acción</em>Si estudias y trabajas, pruébalo hoy. Y si conoces a una Valeria, compártele este enlace. Porque ninguna chica debería perder su oportunidad por un mensaje enterrado en un chat.</p>
             </div>
             <p className="nc-takeaway nc-step">Copien la estructura. La idea es de ustedes.</p>
           </div>
         </section>
 
         {/* Pitch en 60 s */}
-        <section {...sceneProps(16)}>
+        <section {...sceneProps(17)}>
           <div>
             <p className="nc-kicker">Contarlo · Práctica</p>
             <h2>Ahora ustedes: un minuto con reloj</h2>
@@ -835,7 +856,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* El sábado */}
-        <section {...sceneProps(17)}>
+        <section {...sceneProps(18)}>
           <div>
             <p className="nc-kicker">El sábado en cinco bloques</p>
             <h2>Tienen unas 3.5 horas para construir</h2>
@@ -871,7 +892,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Historia de una idea */}
-        <section {...sceneProps(18)}>
+        <section {...sceneProps(19)}>
           <div>
             <p className="nc-kicker">Mi perspectiva</p>
             <h2>Lo que veo cuando ustedes crean</h2>
@@ -886,7 +907,7 @@ export function NodoCeroDeck() {
         </section>
 
         {/* Cierre */}
-        <section {...sceneProps(19)}>
+        <section {...sceneProps(20)}>
           <div>
             <p className="nc-kicker">Para cerrar</p>
             <p className="nc-sub">Todo workflow empieza con un nodo. Todo proyecto empieza con una persona.</p>
