@@ -3,8 +3,7 @@ import type { Locale } from "./types";
 // Caso "Producción de video con IA generativa": dos piezas y lo que aprendí al
 // escribir prompts de video. Regla del sitio: solo se afirma lo verificado.
 // - BécALAS: imagen con Google Vids (Veo 3.1) y voz con ElevenLabs (confirmado
-//   por Wenn el 22 nov 2026). El archivo de video aún no está en el repositorio:
-//   mientras `video` sea undefined, la pieza se muestra sin reproductor.
+//   por Wenn el 22 nov 2026). Es el mismo video publicado en el micrositio de BécALAS.
 // - Microcápsula: avatar y voz de Synthesia; composición, gráficos y subtítulos
 //   programados con Claude porque el agente de Synthesia se quedó sin créditos.
 //   Es un primer borrador; la siguiente iteración ya está definida.
@@ -87,7 +86,11 @@ const es: VideoAiContent = {
         { label: "Voz", value: "ElevenLabs" },
         { label: "Prompts", value: "Revisados con Claude" },
       ],
-      pendingNote: "El video se agrega en cuanto esté editado.",
+      video: {
+        src: "/video-ia/presentacion-becalas.mp4",
+        poster: "/video-ia/presentacion-becalas-poster.webp",
+        label: "Video de presentación como mentora de BécALAS, ochenta segundos con subtítulos",
+      },
       detailTitle: "Qué pasó",
       detail: [
         "El primer guion tenía siete clips. Al generarlos, la ropa cambiaba entre escenas, la gata se duplicaba y aparecían letras inventadas en los libros.",
@@ -186,7 +189,11 @@ const en: VideoAiContent = {
         { label: "Voice", value: "ElevenLabs" },
         { label: "Prompts", value: "Reviewed with Claude" },
       ],
-      pendingNote: "The video will be added once it is edited.",
+      video: {
+        src: "/video-ia/presentacion-becalas.mp4",
+        poster: "/video-ia/presentacion-becalas-poster.webp",
+        label: "Introduction video as a BécALAS mentor, eighty seconds in Spanish with subtitles",
+      },
       detailTitle: "What happened",
       detail: [
         "The first script had seven clips. Outfits changed between scenes, the cat was duplicated and made-up letters appeared on the books.",
